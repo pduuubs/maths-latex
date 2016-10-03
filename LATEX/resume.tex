@@ -280,6 +280,77 @@ pag%style des hauts de page en avant garde small caps
 		Soit ($u_n$) une suite, si $\lim_{n \rightarrow \infty}u_n = l$ alors $\lim_{n \rightarrow \infty}u_{n+1} = l$ $\lim_{n \rightarrow \infty}u_{n+p} = l$ (avec $p \in \mathbb{N}^*$)
 	\end{prop}
 
+	\begin{prop} On considere deux suites $u_n$ et $v_n$, on note $\lim_{n \rightarrow \infty}u_n = l$ et $\lim_{n \rightarrow \infty}v_n = l'$. On a alors :
+		\begin{enumerate}
+			\item $\lim_{n \rightarrow \infty}(u_n + v_n) = l + l'$
+			\item $\lim_{n \rightarrow \infty}(u_n - v_n) = l - l'$
+			\item $\lim_{n \rightarrow \infty}(k*u_n) = kl,$ $k$ est une constante.
+			\item $\lim_{n \rightarrow \infty}(u_n * v_n) = l * l'$
+			\item $\lim_{n \rightarrow \infty}(\frac{1}{u_n}) = \frac{1}{l}$
+			\item $\lim_{n \rightarrow \infty}(\frac{1}{v_n}) = \frac{l}{l'}$
+			\item $\lim_{n \rightarrow \infty}(u_n)^p = l^p$ avec $p \in \mathbb{N}^*$
+			\item Dans la cas, ou, $\exists n_0 \in \mathbb{N} / \forall n \in \mathbb{N}, n \geq n_0$, on ait, $u_n \geq 0$, alors, $\lim_{n \rightarrow \infty}\sqrt{u_n} = \sqrt{l}$
+		\end{enumerate}
+	\end{prop}
+
+	\section{Suites divergentes}
+	\label{sec:Suites divergentes}
+
+	\subsection{Definition}
+	\label{sub:Definition}
+
+	\begin{prop}
+		\begin{enumerate}
+			\item On dit que $u_n$ diverge vers $\infty$ si : \begin{center}$(\forall A \in \mathbb{R})(\exists n_0 \in \mathbb{N}) / (\forall n \in \mathbb{N}, n \geq n_0)(u_n > A)$\end{center}
+			\item On dit que $u_n$ diverge vers $\infty$ si : \begin{center}$(\forall A \in \mathbb{R})(\exists n_0 \in \mathbb{N}) / (\forall n \in \mathbb{N}, n \geq n_0)(u_n < A)$\end{center}
+		\end{enumerate}
+	\end{prop}
+
+	\begin{prop}Proprietes sur les limites :\\
+		\begin{enumerate}
+			\item $\lim_{n \rightarrow \infty}(kn) =$ \begin{enumerate}\item $+ \infty$ si $k > 0$ \item $- \infty$ si $k < 0$\end{enumerate}
+			\item $\lim_{n \rightarrow \infty}(kn^2) =$ \begin{enumerate}\item $+ \infty$ si $k > 0$ \item $- \infty$ si $k < 0$\end{enumerate}
+			\item $\lim_{n \rightarrow \infty}(kn^p) =$ avec $p \in \mathbb{N}^*$ \begin{enumerate}\item $+ \infty$ si $k > 0$ \item $- \infty$ si $k < 0$\end{enumerate}
+			\item $\lim_{n \rightarrow \infty}(k\sqrt{n}) =$ \begin{enumerate}\item $+ \infty$ si $k > 0$ \item $- \infty$ si $k < 0$\end{enumerate}
+		\end{enumerate}
+	\end{prop}
+
+	\newpage
+
+	\begin{prop}
+		On considere 2 suites $u_n$ et $v_n$. On suppose $\exists n_0 \in \mathbb{N} / \forall n \in \mathbb{N}, n > n_0, u_n < v_n$
+		\begin{enumerate}
+			\item $\lim_{n \rightarrow \infty}u_n = \infty$ alors $\lim_{n \rightarrow \infty}v_n = \infty$, si $u_n$ diverge alors $v_n$ aussi.
+			\item $\lim_{n \rightarrow \infty}u_n = - \infty$ alors $\lim_{n \rightarrow \infty}v_n = - \infty$, si $u_n$ diverge alors $v_n$ aussi.
+		\end{enumerate}
+	\end{prop}
+
+	\begin{prop} Divergence d'une suite :\\
+		\begin{enumerate}
+			\item $u_n$ croissante et $u_n$ non majoree alors $u_n$ diverge vers $\infty$
+			\item $u_n$ decroissante et $u_n$ non minoree alors $u_n$ diverge vers $-\infty$
+		\end{enumerate}
+		reciproques fausses.
+	\end{prop}
+
+	\begin{prop} \textbf{Inegalite de Bernoulli:}
+		Soit $x \geq 0$ un $\mathbb{R}^+$ et $n \in \mathbb{N}$ alors :
+		\begin{equation}
+			(1+x)^n \geq 1 + nx
+		\end{equation}
+	\end{prop}
+
+	\begin{prop}
+		Soit $q$ un reel quelconque.
+		\begin{enumerate}
+			\item si $q \in ]-1;1[$ alors $\lim_{n \rightarrow \infty}(q^n) = 0$
+			\item si $q = 1$ alors $\lim_{n \rightarrow \infty}(q^n) = 1$
+			\item si $q > 1$ alors $\lim_{n \rightarrow \infty}(q^n) = \infty$
+			\item si $q < 1$ alors $\lim_{n \rightarrow \infty}(q^n)$ n'existe pas.
+		\end{enumerate}
+	\end{prop}
+
+
 
 
 
