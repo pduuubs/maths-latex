@@ -1,0 +1,302 @@
+\chapter{Logarithme népérien}
+%\section{}
+\section{Premi\`eres propri\'et\'es}
+\label{sec:para1}
+
+La fonction $\exp$ est continue et strictement croissante sur
+$\R$. Ses limites en $-\infty$ et $+\infty$ sont respectivement $0$ et
+$+\infty$. Donc d'après le théorème des valeurs intermédiaires, pour
+tout réel strictement positif $y$, l'équation en $x$:
+\begin{equation}
+  \label{eq:exy}
+  \e^x=y
+\end{equation}
+a une unique solution que l'on note: $\ln(y)$ appelée logarithme
+néperien de~$y$. Ainsi $\ln$ est la fonction réciproque de
+$\exp$. Elle est définie sur $\into{0}{+\infty}$.
+\begin{equation}
+  \label{eq:def}
+  \forall y\in \into{0}{+\infty},\quad \e^x=y \iff x=\ln(y)
+\end{equation}
+\exemples $\e^0=1$ donc $0=\ln(1)$. $\e^1=\e$ donc $1=\ln(\e)$ 
+\Def{Pour tout réel $x$ strictement positif on définit le logarithme
+néperien de~$x$ noté $\ln(x)$ comme étant l'unique réel $a$ vérifiant:
+\[ \exp(a)=x.\quad \text{On a donc: }\quad  \boxed{\exp(\ln(x))=x}\]}
+\begin{prop}
+On a ainsi défini la fonction logarithme néperien sur
+  $\into{0}{+\infty}$. $\ln$ est la fonction réciproque de
+$\exp$. Elle  vérifie:
+\begin{eqnarray}
+  \label{eq:recip}
+  \forall x \in \into{0}{+\infty},\quad \e^{\ln(x)}=x\\
+  \forall x \in \R, \quad \ln(\e^x)=x \label{eq:recip2}
+\end{eqnarray}
+\end{prop}
+\begin{proof}
+\eqref{eq:recip} c'est la définition. On prouve la suivante \eqref{eq:recip2}:
+Soit un réel $x$, on note $y=\e^x$. Alors par définition
+$x=\ln(y)$. En remplaçant $y$ dans cette dernière par $\e^x$ on a le
+résultat.
+\end{proof}%, pour tout réel $x$: $\quad \ln(\e^x)=x$}
+\exercice 
+Dresser le tableau de variation de la fonction $\ln$ par un raisonnement
+graphique de la résolution de $\e^x=y$. Prouver que $\ln$ est
+croissante sur $\into{0}{+\infty}$.
+\exercice Résoudre les équations suivantes:
+\begin{enumerate}
+\item $\e^x=2$
+\item $\e^{2x}=4$
+\item $\e^{\e^x}=3$
+\item $\ln(x)=2$
+\item $\ln(x^2)=4$
+\end{enumerate}
+\begin{prop}\label{eqineq_ln}
+Comme conséquence de la croissance de $\ln$ sur
+  $\into{0}{+\infty}$ on a pour tous réels $a$ et $b$ strictement
+  positifs:
+\[\ln(a)\leq\ln(b)\iff a\leq b \quad\et{}\quad \ln(a)=\ln(b)\iff a= b\]
+\end{prop}
+\exemple Résoudre $\ln(x-2)\leq 1$ Sol: $ \iff x-2>0\ \et{}\ x-2\leq\e\iff
+2<x\leq \e+2$
+
+%\hfill{\stretch{1}}
+%\newpage
+%\begin{center}
+Comme la fonction $\ln$ est la réciproque de la fonction exponentielle, leurs courbes sont symétriques l'une de l'autre par rapport à la droite $\Dr$ d'équation $y=x$\\
+%\vspace{0.5cm}
+\psfrag{i}{$\vec{\imath}$} \psfrag{j}{$\vec{\jmath}$} \psfrag{O}{$O$}
+\psfrag{F}{$\Cr_{\exp}$}
+\psfrag{L}{$\Cr_{\ln}$}
+\psfrag{D}{$\Dr:\ y=x$}
+\psfrag{e}{$\e$}
+\begin{figure}
+  \centering
+  \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.5}
+  \caption{Courbes de $\exp$ et $\ln$.}
+  \label{fig:exp_ln}
+\end{figure}
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.5}\\
+% \vspace{3cm}
+%  Comme la fonction $\ln$ est la réciproque de la fonction
+%  exponentielle, leurs courbes sont symétriques l'une de l'autre par
+%  rapport à la droite $\Dr$ d'équation $y=x$\\
+% \vspace{0.5cm}
+% \includegraphics{/Figures/Courbes/Courbe.5}
+% \end{center}
+% \newpage
+\section{Propriétés algébriques}
+cf T.D. pour les preuves:
+\subsection{Relation fonctionnelle}
+Soient deux réels $a$ et $b$ strictement positifs.
+\begin{enumerate}
+\item Simplifier $\e^{\ln(a)}$, $\e^{\ln(b)}$, $\e^{\ln(ab)}$. Ecrire
+  le produit  $ab$ de deux manières.
+\item En déduire la relation fonctionnelle: $\boxed{\ln(ab)=
+    \phantom{\sum \sum \sum \sum }}$
+\item L'exponentielle transforme les sommes en produits. Que fait sa
+  fonction réciproque?
+\end{enumerate}
+\subsection{Puissance}
+\begin{enumerate}
+\item Par récurrence on peut montrer que pour tout entier naturel $n$
+  on a donc: $\boxed{\ln(a^n)=
+    \phantom{\sum \sum \sum  }}$
+\item En posant $a=\e^\alpha$ (donc $\alpha=\ldots$) prouver cette
+  même propriété directement.
+% en utilisant les propriétés de  l'exponentielle.
+
+\item Etablir une formule pour $\boxed{\ln(\sqrt a)=
+    \phantom{\sum \sum \sum  }}$
+\end{enumerate}
+\subsection{Inverse et quotients}
+\begin{enumerate}
+\item En calculant $\ln(a\times\frac{1}{a})$ de deux manières,
+  compléter la formule: $\boxed{\ln(\frac{1}{a})=
+    \phantom{\sum \sum \sum  }}$
+\item En déduire la formule: $\boxed{\ln(\frac{a}{b})=
+    \phantom{\sum \sum \sum  }}$
+\end{enumerate}
+\subsection{Applications}
+Exprimer en fonction de $\ln(2)$ uniquement les réels suivants:% ($n\in\N$):
+\begin{enumerate}
+\item \qcmabc{$\ln(2^9\times \e^7)$}{$\frac12\ln(16)$}{$\ln(\frac{32}{\e})$}
+\item \qcmabc{$\frac{\ln{2^n}}{\ln(2)}$}{$\e^{3\ln(2)}$}{$\ln(-2)$}
+\end{enumerate}
+
+
+\section{Propriétés analytiques}
+\subsection{Dérivée}
+{\small
+La courbe de la fonction $\exp$ et celle de la fonction $\ln$ sont
+symétriques par rapport à la droite d'équation $y=x$. Ainsi
+géométriquement il est clair que la courbe de $\ln$ admet une tangente
+en tout point.% de $\R^{+*}$ 
+(car $\exp$ est dérivable sur $\R$). On
+admet donc que $\ln$ est dérivable sur  $\R^{+*}$.}
+\begin{enumerate}
+\item Déterminer l'expression de la dérivée de la fonction
+  $\ln$. Rappel: $\forall x \in \R^{+*}, \e^{\ln x}=x\qquad$
+
+
+\item Déterminer la formule pour la dérivée d'une composée de la forme
+  $\ln(u)$ où $u$ est une fonction dérivable, strictement positive.
+$\boxed{\ln'(x)=\phantom{\sum \sum }}\qquad$  $\boxed{\left(\ln(u)\right)'=\phantom{\sum \sum }}$
+\end{enumerate}
+
+\item {\bf Applications}
+Déterminer l'ensemble de dérivabilité puis dériver les fonctions
+suivantes:
+\qcmabc{$f(x)=x\ln(x)$}{$g(x)=\frac{\ln(x)}{x}$}{$h(x)=\ln{x^3-1}$}
+\subsection{Résoudre des \'equations et inéquations avec $\ln$}
+On a vu un outil avec la propriété~\ref{eqineq_ln}. Mais cela ne
+suffit pas\dots
+%\item Donner le tableau de variation puis de signe de $\ln$ sur $\R^{+*}$.
+ Pour étudier le signe d'une dérivée qui comporte des $\ln$ on se
+  ramène à résoudre des inéquations du type $\ln(X)\leq a$ où
+  $a\in\R$. Compléter et justifier: $\boxed{\ln(X)\leq a \iff
+     ( X\leq\phantom{\sum \sum } \et{}\ X>\phantom{\sum})}$  
+{\bf Application.} Résoudre les inéquations suivantes:
+\begin{enumerate}
+\item \qcmabc{$1+\ln(x)\leq 0$}{$\ln(x-1)<3$}{$\ln(-2x+3)\geq 2$}
+\item \qcmabc{$\ln(2x)-\ln(x^2)<1$}{$\ln x+\ln x^2+\ln x^3 >1$}{$\ln(x^2)-\ln(x+3)<0$}
+
+\item \'Etudier les variations de $f$ sur $\R^{+*}$ où: $f(x)=x^2\ln(x)$.
+\end{enumerate}
+
+\subsubsection{Formalisation}
+On veut résoudre des équations telles que $\ln(X)=a$ ou $\ln(X)\geq
+a$. On détermine d'abord l'ensemble des nombres réels
+  pour lesquels l'inéquation a un sens, sachant que $\ln(X)$ n'est
+défini que pour $X>0$. 
+\begin{list}{$\bullet$}{}
+\item \'Equation. $\ln(X)=a \iff X=\e^a$
+\item Inéquation. 
+\end{list}
+
+
+\exemples Résoudre:\\
+\qcmabc{$\ln(3x-2)=-1$}{$\ln(2x-1)-\ln(x)=-1$}{$\ln(x-1)\geq -3$}\\
+\qcmabc{$\ln(x-2)<5$}{$\ln(-2x+1)-\ln(x)\leq
+  1$}{$\ln(-2x+1)+\ln(x)=-2$}
+\section{\'Etude de la fonction $\ln$}
+\subsection{Continuité, dérivée}
+\subsection{Limites}
+\begin{list}{$\bullet$}{}
+\item En $+\infty$. Soit A>0 Pour $x>\e^A$ alors $\ln(x)>A$
+\item En $0$. On pose $X=\frac{1}{x}$.
+\item Croissance comparée: 
+  \begin{dingautolist}{172}
+  \item $\lim\limits_{ x \to \infty } \ln(x)/x=0$\quad On pose $X=\ln x$.
+  \item $\lim\limits_{ x \to 0+  }  x\ln(x)=0$
+  \end{dingautolist}
+\end{list}
+
+\section{Logarithmes et exponentielles de base \textit{a}}
+Dans la suite, $a$ désigne un réel strictement positif.
+
+\subsection{$a^x$}
+\label{sec:expbasea}
+\subsubsection{Definition, props}
+
+
+\begin{Def}
+  $\exp_a(x)=\e^{x\ln a}$. On note: $a^x=\e^{x\ln a}$
+\end{Def}
+\begin{rem}
+Pour $a=e$ on retrouve $\e^x$ c'est pourquoi on dit parfois
+l'exponentielle de base~e.
+\end{rem}
+\begin{rem}
+  Cette notation est cohérente, elle élargit la notation uniquement
+  valable pour $x\in\mathbb{Z}$. En effet: $\e^{n\ln a}=a^n$
+\end{rem}
+\begin{rem}
+  On donne ainsi sens à des nombres comme $10^{-7,321}$ ou pire $\pi^{\sqrt2}$.
+\end{rem}
+\DangerZ Ne pas confondre $a^x$ et $x^a$. Toujours partir de $\ln
+(a^n)=n\ln a$ pour retrouver l'expression correcte.\\
+Prop en vrac: 
+\begin{dingautolist}{172}
+  \item Les même prop alg que exp.
+  \item Signe.
+
+  \item Dérivabilité
+
+  \item \'Etude de la monotonie: Deux cas.
+  \end{dingautolist}
+Courbes à distribuer.
+\exercice Résoudre $2^x=3$, $\left(\frac13\right)^x=2$, $x^3=8$, $x^{\frac12}=3$
+\subsubsection{Racine énième}
+On peut avec cette nouvelle notion résoudre l'eq en $x$ (solve for
+$x$): $x^n=a$ où $a\in\mathbb{R}^+_*$ et $n\in\mathbb{N}^*$
+\begin{Def}
+  Pour $a\in\mathbb{R}^+_*$ et $n\in\mathbb{N}^*$, il existe un unique
+  réel $x$ strictement positif tel que $x^n=a$, c'est
+  $x=a^{\frac{1}{n}}$ on l'appelle la racine énième (ou $n$\ieme)
+  de~$a$. On note aussi: \[a^{\frac{1}{n}}=\sqrt[n]{a}\]
+\end{Def}
+\begin{proof} Pour $x$ et $a$ sont strictement positifs:
+  \[x^n=a\iff n\ln x=\ln a\iff \ln x=\frac{1}{n}\ln a\iff
+  x=\left(\e^{\ln a}\right)^{\frac{1}{n}}\iff x=a^\frac{1}{n}\]
+\end{proof}
+\begin{rem}
+  La racine carrée de $a$ apparait donc (enfin) comme
+  $a^\frac12$. \'Ecrire avec des radicaux $x^{\frac32}$ et
+  $x^{-\frac23}$ où $x\in\mathbb{R}^+_*$
+\end{rem}
+
+\exemple Résoudre $x^3=9$. 
+\exercice Application: Coefficient multiplicatif moyen. 
+Un prix augmente de 10\%, puis de 20\%, puis de 30\%, puis baisse de
+30\%. Quel est le pourcentage d'évolution global du prix? Quel est le
+pourcentage moyen d'évolution du prix à chaque étape? Solution:
+$CM=1.2012$ augmentation de $20,21\%$. En moyenne:
+$1.2012^{0.25}\simeq 1.0469$ soit à chaque étape une augmentation moyenne de
+$4,7\%$.\\
+Si on a $n$ réels strictement positifs $a_1$, \dots $a_n$, alors:
+\[ a_1 \cdots a_n= \left( (a_1 \cdots a_n)^\frac{1}{n}\right)^n\]
+Alors multiplier par $a_1$, puis $a_2$, puis \dots $a_n$ revient à
+multiplier $n$ fois de suite par $(a_1 \cdots a_n)^\frac{1}{n}$.
+\subsubsection{$x^\alpha$, généralisations}
+Certains résultats  se généralisent\dots
+Pour $\alpha$ réel:
+\paragraph{Dérivée}
+\[\frac{d}{dx}x^\alpha=\alpha x^{\alpha -1}\]
+En particulier on retrouve la dérivée de $\sqrt x$. Exercice.
+\paragraph{Limites}
+\begin{dingautolist}{172}
+\item Pour $\alpha$ strictement positif, $\lim\limits_{ x \to +\infty } x^\alpha=+\infty$
+\item Pour $\alpha$ strictement négatif, $\lim\limits_{ x \to +\infty } x^\alpha=0$
+\end{dingautolist}
+
+\paragraph{Croissance comparée pour ln}
+(Pour $\alpha$ strictement positif mais surtout intéressant pour $\alpha\in\left]0\,;1\right[$)
+\begin{dingautolist}{172}
+  \item $\lim\limits_{ x \to \infty } \ln(x)/x^\alpha=0$\quad On pose $X=x^\alpha$.
+  \item $\lim\limits_{ x \to 0+  }  x^\alpha\ln(x)=0$
+  \end{dingautolist}
+\paragraph{Croissance comparée pour exp}
+(Pour $\alpha$ strictement positif)
+\begin{dingautolist}{172}
+  \item $\lim\limits_{ x \to +\infty } \exp(x)/x^\alpha=+\infty$
+  %\item $\lim\limits_{ x \to -\infty  }  x^\alpha\exp(x)=0$ C'est FAUX!
+  \end{dingautolist}
+\subsection{$\log_a(x)$}
+\label{sec:loga}
+
+On veut maintenant définir sur $\mathbb{R}^+_*$ la réciproque de $\exp_a$.
+\begin{Def}
+  $\log_a(x)=\dfrac{\ln x}{\ln a}$
+\end{Def}
+\begin{rem}
+  C'est la réciproque de la fct $\exp_a$. En effet: 
+\end{rem}
+\[x\in\mathbb{R}^+_*\implies \exp_a\circ
+  \log_a(x)=\e^{\frac{\ln x}{\ln a}\ln a} =\e^{\ln x}=x\]
+\[x\in\mathbb{R}\implies \log_a\circ\exp_a (x)=\dots=x\]
+\begin{Def}
+  En particulier, le logarithme décimal, noté log est le logarithme de
+  base~10. $\log(x)=\frac{\ln(x)}{\ln 10}$. C'est la réciproque de
+  $x\mapsto 10^x$
+\end{Def}
+\exemple 

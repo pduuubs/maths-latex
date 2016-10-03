@@ -1,0 +1,106 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\activite{Diff\'erentes moyennes}{\term}
+\cfoot{}\lfoot{}
+\section{Trois moyennes}
+ Soit $x$ et $y$ deux r\'eels strictement positifs.\\
+{\bf D\'efinition:} On d\'efinit $m$, $g$ et $h$ respectivement les moyennes arithm\'etique, g\'eom\'etrique et
+harmonique de $x$ et $y$ par:
+\[ m=\frac{x+y}{2}\qquad \quad g=\sqrt{xy}\qquad \quad h=\frac{2}{\frac{1}{x}+\frac{1}{y}}\]
+\begin{enumerate}
+\item Prouver que: $g\leq m$ avec \'egalit\'e ssi $x=y$
+\rotatebox{180}{On pourra factoriser $m-g$ avec une I.R.}
+\item Exprimer $h$ en fonction de $m$ et $g$.
+\item En d\'eduire que: 
+  \begin{enumerate}
+  \item $h\leq g\leq m$
+  \item $g$ est aussi la moyenne  g\'eom\'etrique de $m$ et~$h$.
+  \end{enumerate}
+\end{enumerate}
+
+\section{Suites adjacentes}
+Maintenant on va s'amuser \`a calculer des moyennes successives. Soit
+$u_0$ et $v_0$ deux r\'eels strictement positifs. On d\'efinit alors les
+deux suites $(u_n)$ et $(v_n)$ sur $\N$ par:
+\[ u_{n+1}=\frac{u_n+v_n}{2} \qquad \et{} \qquad v_{n+1}=\frac{2}{\frac{1}{u_n}+\frac{1}{v_n}}\]
+
+\begin{enumerate}
+\item On part de $u_0=1$ et $v_0=16$, calculer et placer sur l'axe
+  gradu\'e les valeurs $u_1$, $v_1$, $u_2$ et~$v_2$.
+
+%%%%%%%%%%%%%%%%
+
+\setlength{\unitlength}{9.5mm}
+\begin{picture}(15,1)\noindent
+%\linethickness{0.2mm}
+
+%\multiput(0,0)(1,0){161}% graduations sur (Ox) fines (1mm)
+%{\line(0,1){1}}
+
+%\multiput(0,0)(0,1){101}% graduations sur (Oy) fines (1mm)
+%{\line(1,0){1}}
+
+\linethickness{0.2mm}
+\put(0,0.5){\line(1,0){15}}
+\multiput(0,0.4)(1,0){16}% graduations sur (Ox)
+{\line(0,1){0.2}}
+
+\linethickness{0.1mm}
+\multiput(0,0.5)(0.1,0){150}% graduations sur (Ox)
+{\line(0,1){0.1}}
+
+\put(-0.1,0.1){$u_0$}
+\put(-0.1,0.4){$\bullet$}
+\put(-0.1,0.7){$1$}
+
+\put(14.9,0.1){$v_0$}
+\put(14.9,0.4){$\bullet$}
+\put(14.9,0.7){$16$}
+
+\put(2.9,0.7){$4$}
+\put(6.9,0.7){$8$}
+\put(10.8,0.7){$12$}
+
+
+%\multiput(0,0)(0,4){26}% graduations sur (Oy) 
+%{\line(-1,0){1}}
+
+%\linethickness{0.3mm}
+%\put(0,0){\vector(1,0){165}} %Axe (Ox)
+%\put(0,0){\vector(0,1){105}} %Axe (Oy)
+
+%\put(-5,-5){O}
+
+%\put(38,-5){10}   %unités (Ox)
+\end{picture}
+
+%%%%%%%%%%%%%%%%
+
+
+\item Prouver par r\'ecurrence que les deux suites sont \`a termes
+  strictement positifs.
+\item D\'emontrer que $(v_n)$ est croissante.
+\item Justifier \`a l'aide de la premi\`ere partie que pour $n\in\N$ on a:  $v_{n+1}\leq u_{n+1}$
+% $v_1\leq  u_1$. D\'emontrer alors par r\'ecurrence que pour $n\in\N^*$ on a:  $v_n\leq u_n$
+\item En d\'eduire que $(u_n)$ est d\'ecroissante sur $\N^*$
+\item Prouver que pour $n\in\N$ on a:
+\[ u_{n+1}-v_{n+1}=\frac{(u_n-v_n)^2}{2(u_n+v_n)}\]
+\item On pose $d_n=u_n-v_n$. Prouver que pour $n\in\N$:  $d_{n+1}\leq\frac12 d_n$
+\item En d\'eduire que: $n\in\N \implies d_n\leq \left(\dfrac12\right)^nd_0$
+\item Prouver que $(u_n)$ et $(v_n)$ sont adjacentes. 
+\item On note pour $n$ dans $\N$, $g_{n+1}$ la moyenne g\'eom\'etrique de $u_n$
+  et $v_n$. Traduire les r\'esultats du {\bf I.3.} avec les suites
+  $(u_n)$, $(v_n)$ et~$(g_n)$. 
+%Justifier \`a l'aide de la premi\`ere partie que pour tout $n$  dans $\N$:  $g_{n+1}=g_n$. Qu'en d\'eduit-on pour la suite $(g_n)$?
+
+
+\item En d\'eduire que: $\forall n \in\N^*,\ v_n\leq \sqrt{u_0v_0}\leq u_n$
+\item En d\'eduire la limite commune de $(u_n)$ et $(v_n)$.
+\item \'Enoncer sous forme de propri\'et\'e ce que l'on vient de d\'emontrer
+  concernant les moyennes arithm\'etiques, g\'eom\'etriques et harmoniques.
+\end{enumerate}
+\end{document}

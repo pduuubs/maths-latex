@@ -1,0 +1,30 @@
+\begin{exercice}
+On joue à la roulette. La boule tombe au hasard sur un des numéros de
+0 à 36. Le 0 est considéré comme étant ni pair ni impair. On mise $m$
+euros sur pair (par exemple). Si on gagne, on récupère $2m$ et sinon
+on ne récupère rien.
+\begin{enumerate}
+\item Calculer la probabilité que l'on notera $p$ de gagner en un coup.
+\item On note $X$ le gain du joueur. Donner la loi et l'espérance de $X$.
+\item Maintenant on joue encore et encore. Soit $n\in\N^*$. Calculer la probabilité $p_n$
+  de
+  gagner en $n$ coups exactement (\ie{} de perdre les premiers coups
+  et de gagner le $n$\ieme{}).
+\item On note $N$ la variable aléatoire qui donne le nombre de coups
+  qu'on a  joué pour gagner . 
+  \begin{enumerate}
+  \item Que vaut $P(N=n)$?
+  \item Calculer $P(N\leq n)$ et sa limite quand $n$ tend vers l'infini.
+
+  \item Déterminer le rang $n$ à partir duquel $P(N>n) < 10^{-6}$.
+
+  \item $\bigstar$ Prouver que
+    $\displaystyle E(N)=p\times\lim_{M\to +\infty}\sum_{k=1}^{M}(k+1)x^k$ où
+    $x=1-p$. \'Etablir que  $E(N)=\frac{1}{p}$ en remarquant que
+    $\displaystyle \sum_{k=1}^{M}(k+1)x^k$ est la dérivée d'une fonction $f$ dont on
+    donnera une expression sans somme.
+  \end{enumerate}
+\end{enumerate}
+
+ 
+\end{exercice}

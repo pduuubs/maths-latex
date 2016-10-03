@@ -1,0 +1,7 @@
+\begin{exercice}
+Tracer sur $\left[-2\,;4\right]$ la courbe de la fonction \og partie fractionnaire \fg{}
+notée~$f$, définie à partir de la fonction partie entière~$E$ par:
+\[ f(x)=x-E(x)\]
+Cette fonction est-elle continue sur~$\mathbb{R}$? Justifier.
+
+\end{exercice}

@@ -1,0 +1,125 @@
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan}
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+\newcommand{\inputexo}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/\CLASSE/Chapitres/#1/Exos/exo-7_#2/texte.tex}}
+\newcommand{\inputBANK}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/Seconde/Bankexos/#1/exo-#2/texte.tex}}
+\newcommand{\Mfig}[2]{\includegraphics[width=#2]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/#1}}% 1: Nom fichier, 2:largeur image
+%---------
+\newcounter{CL}
+%%%%%%%%%%%%%%%%%%%%%%---------CHANGER ICI (ONLY) LA CLASSE
+\setcounter{CL}{2}  %% 2: Seconde et Sinon Terminale
+%%%%%%%%%%%%%%%%%%%%%%---------
+\ifthenelse{\theCL=2}{\def\CLASSE{Seconde} \def\ClasseABR{\seconde}}%
+{\def\CLASSE{TS} \def\ClasseABR{\term}}
+
+\renewcommand{\exercice}{} 
+%\renewenvironment{exercice}{\exocursif} 
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CHAP}{Nombres}      % Changer ici le chapitre
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\fcours{Titre}
+%\fexos{Titre}{\ClasseABR}
+\activite{Méthode d'Euler: aspect graphique}{\ClasseABR}
+%\ds{\ClasseABR}
+%\dl{2}{Titre}{\ClasseABR}
+\cfoot{}  % si commenté donne page n° x/ nb_de_pages
+%\pagestyle{fancy}  \rhead{\Large{\textbf{} }} \lfoot{\Pdpmail}
+%%#######################################################
+%%%%
+
+
+%M\section{Aspect graphique}
+On va utiliser la méthode d'Euler pour approximer la courbe d'une fonction $f$ (si elle existe) telle que $f$ est définie et dérivable sur $\R$ et:
+
+\[ \left\{ 
+\begin{array}{ll}
+f'(x)=f(x)\, , \quad \forall x\in\R \\
+f(0)=1
+\end{array} \right.%
+\]
+Cette méthode utilise l'approximation affine d'une fonction dérivable.
+% suivante: 
+%\[f(a+h)\approx f(a)+hf'(a)\]
+% valable pour une fonction dérivable sur un intervalle ouvert $I$,
+% $a$  dans $I$ et $h$ petit (et $a+h$ dans $I$). 
+Graphiquement cela revient
+ à confondre la courbe de la fonction avec sa tangente sur un
+petit intervalle. La longueur de cet intervalle est
+ le {\emph pas de la méthode}, on le note~$h$. On fera ensuite tendre le pas vers zéro.
+%$\intf{a}{a+h}$. On fera ensuite tendre le pas vers zéro.
+On va construire une suite de points $A_0$, $A_1$, $A_2$, \dots dont
+on notera les coordonnées $A_n(x_n\,;y_n)$ et telle que la ligne
+polygonale joignant ces points approxime la courbe de la fonction~$f$
+cherchée.\\
+\centrage{Méthode}
+\vspace{-2ex}
+\begin{dingautolist}{172}
+\item \textbf{Point de départ:} Comme $f(0)=1$ on place le premier point $A_0$ de
+coordonnées~$A_0(0;1)$. Comme $f'(0)=f(0)$, on trace sur l'intervalle
+$\left[0\,;h\right]$ la droite passant par $A_0$ et de coefficient
+directeur: $y_0=1$.
+\item \textbf{Récurrence:} \`A chaque fois on trace la droite passant
+  par $A_n$ de  coefficient directeur~$y_n$ (car $f'(x_n)=f(x_n)=y_n$)
+  sur un intervalle de longueur~$h$. Alors $A_{n+1}$ est le point de
+  cette droite d'abscisse:~$x_{n+1}=x_n+h$
+\end{dingautolist}
+\vspace{1ex}
+\hrule
+\begin{enumerate}
+\item Commençons avec un pas assez grossier: $h=1$.
+\begin{enumerate}
+\item Placer $A_0$ et tracer sur l'intervalle $\left[0\,;1\right]$ la
+  droite passant par $A_0$ et de coefficient directeur~$y_0=1$.
+\item Le point $A_1$ est l'autre extrémité de ce segment. Donner les
+  coordonnées de $A_1$ (ce sont donc $x_1$ et $y_1$ qui vous relevez graphiquement)
+\item On recommence, en partant de $A_1$: Tracer sur l'intervalle $\left[1\,;2\right]$ la
+  droite passant par $A_1$ et de coefficient directeur~$y_1$. Le point
+  d'abscisse $2$ sur cette droite est~$A_2$.
+\item Selon la même méthode, placer $A_3$.
+\item Prouver que la suite des ordonnées est définie par:
+\[ \forall n \in\mathbb{N}\ , y_{n+1}=2y_n \quad\text{et}\quad y_0=1\]
+\item En déduire que pour $n$ dans $\mathbb{N}$: $f(n)\simeq 2^n$ .%Déterminer l'expression de $y_n$ pour tout entier $n$.
+\end{enumerate}
+
+\item Reprendre la même procédure pour $h=0,5$. On complètera aussi
+  \og dans l'autre sens\fg{} vers les réels négatifs, en utilisant un pas de $-0,5$ (toujours  en partant de $A_0$).
+%C'est à dire que la suite des abscisses vérifie: 
+%\[ \forall n \in\mathbb{N}\ x_{n+1}=x_n+h \quad\text{et}\quad x_0=0\]
+
+\item Prouver de manière générale que:
+\[\forall n \in\mathbb{N}\ , \frac{y_{n+1}-y_n}{h}=y_n \]
+
+
+\item En déduire l'expression du terme général de la suite~$y_n$.
+\item Comme la suite des abscisses vérifie: 
+\[ \forall n \in\mathbb{N}\ x_{n+1}=x_n+h \quad\text{et}\quad x_0=0\]
+Déterminer l'expression du terme général~$x_n$ pour $n$ dans~$\mathbb{N}$.
+\item Par cette méthode, $y_n$ est censé donner une valeur approchée
+  de~$f(x_n)$. Soit un réel $x$. On veut obtenir une valeur approchée
+  de~$f(x)$, alors on pose pour $n\in\mathbb{N}^*$:  $h=\frac{x}{n}$. 
+  \begin{enumerate}
+  \item Déterminer l'expression de $x_n$ dans ce cas, et jusftier que le pas $h$ tend vers zéro lorsque $n$  tend vers plus l'infini.
+\item Prouver que: 
+\[ y_n=\left(1+\frac{x}{n}\right)^n\]
+
+  \end{enumerate}
+\centrage{Bilan}
+On n'a pas prouvé que la méthode d'Euler était une \og bonne méthode
+\fg{} c'est à dire qu'on obtient bien ainsi une approximation de la
+fonction cherchée. Mais si la méthode converge bien, alors notre
+fonction $f$ existe et elle vérifie:
+\[ \forall x \in\mathbb{R},\ f(x)=\lim\limits_{ n \to +\infty }
+\left(1+\frac{x}{n}\right)^n \]
+
+\end{enumerate}
+
+\end{document}
+
+
+

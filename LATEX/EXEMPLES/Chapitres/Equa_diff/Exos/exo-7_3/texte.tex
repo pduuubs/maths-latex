@@ -1,0 +1,48 @@
+\begin{exercice}
+On consid\`ere un circuit $RC$, o\`u un condensateur de capacit\'e $C$
+est branch\'e en s\'erie avec une r\'esistance $R$ au bornes d'un
+g\'en\'erateur de tension d\'elivrant une tension constante $E$. \`A
+$t=0$ la charge $q$ du condensateur est nulle, on branche alors le
+g\'en\'erateur. On note respectivement $u_C(t)$ et $u_R(t)$ les tensions aux bornes du
+condensateur et de la r\'esistance \`a l'instant $t$. $q(t)$ d\'esigne la
+charge du condensateur et $i(t)$ l'intensit\'e dans le circuit \`a
+l'instant $t$. On admet les r\'esultats de sciences physiques suivants:
+\aligneabcd{$Cu_C(t)=q(t)$}{$i(t)=q'(t)$}{$u_R(t)=Ri(t)$}{$E=u_R(t)+u_C(t)$}
+
+\begin{enumerate}
+\item D\'emontrer que $u_C$ v\'erifie: $RCu'_C(t)+u_C(t)=E$ 
+
+\item On pose $\tau=RC$ (homog\`ene \`a un temps). R\'esoudre l'\'equation diff\'erentielle:
+  $\tau y'+y=0$
+
+\item  On admet que les solutions de $\tau y'+y=E$ sont de la forme:
+  $f(t)=E+k\e^{-\frac{t}{\tau}}$ o\`u $k$ est une
+  constante. Prouver que: $u_C(t)=E(1-\e^{-\frac{t}{\tau}})$
+
+\item Etudier les variations de $u_C$ en fonction du temps sur $\intfo{0}{+\infty}$
+\item En utilisant la propri\'et\'e ci-dessous d\'eterminer la limite
+  de la limite de $u_C$ en $+\infty$\\
+\textbf{Propri\'et\'e (Composition des limites)} Soit $f$ et $g$ sont
+deux fonctions telles que $f\circ g$ est d\'efinie sur un intervalle
+$I$. Alors:
+
+\[\left\{
+\begin{array}{ll}
+  \lim_{x\to\alpha}g(x)=\beta\\
+\lim_{x\to\beta}f(x)=\gamma
+\end{array}
+\right. \implies \lim_{x\to\alpha}f\circ g(x)=\gamma \]
+Ici $\alpha$, $\beta$ et$\gamma$ d\'esignent soit des r\'eels soit
+$+\infty$ ou $-\infty$.
+
+\item D\'eterminer l'\'equation de la tangente en $0$ \`a la courbe de
+  $u_C$, puis tracer l'allure de cette courbe.
+
+\item  Prouver que l'on peut d\'eterminer  graphiquement la valeur de $\tau$ comme \'etant l'abscisse du point  d'intersection de la tangente en $t=0$ et de l'asymptote de la  courbe de $u_C$. 
+
+\item Quel est au temps $t=5\tau$ le pourcentage de charge du condensateur par rapport \`a sa charge
+  maximale~$CE$. 
+
+\end{enumerate}
+ 
+\end{exercice}

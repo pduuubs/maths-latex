@@ -1,0 +1,285 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Produit scalaire dans l'espace}%{\term}
+\newcommand{\f}{\varphi}
+\newcommand{\vn}{\vec{n}\,}
+%\newcommand{\ve}{\V}
+%\newcommand{\ve{u}}{\vu}
+%\newcommand{\ve{v}}{\vv}
+
+
+%%-----------------------
+
+%\section{Extension aux vecteurs de l'espace.}
+\section{Recherche d'une définition}
+\label{sec:para1}
+On voudrait définir le produit scalaire dans l'espace par:
+\begin{Def}
+  Deux vecteurs $\vu$ et $\vv$ de l'espace sont toujours coplanaires
+  \ie{} il existe trois points $A$, $B$ et $C$ tels que: $\vu=\V{AB}$
+  et $\vv=\V{AC}$.  Le produit
+  scalaire de  $\vu$ et $\vv$ est défini comme le produit
+  scalaire de $\V{AB}$ et $\V{AC}$.
+\end{Def}
+\begin{rem} Comme $A$, $B$, $C$ sont coplanaires, on se ramène ainsi à la
+définition plane du produit scalaire. Il faudrait quand même vérifier
+que cette définition ne dépend pas des représentants $\V{AB}$ et
+$\V{AC}$ choisis. De plus il y
+a de nombreuses expressions du produit scalaire dans le plan (avec des projetés,
+avec un cosinus, avec des normes uniquement, avec des coordonnées
+uniquement) alors laquelle prend-on comme définition? Je choisis cette
+définition du produit scalaire dans l'espace:
+\end{rem}
+\begin{Def}
+Soient $\vu$ et $\vv$ de coordonnées respectives $(x,y,z)$ et $(x', y', z')$  dans un repère orthonormé de
+l'Espace. On appelle produit scalaire de $\vu$ et $\vv$  et on note $\vu\cdot\vv$ le réel:
+\[\boxed{\vu\cdot\vv = xx'+yy'+zz'}\]
+\end{Def}
+Il faut voir que cette définition ne dépend pas du repère orthonormé
+choisi. On sait que d'après le théorème de Pythagore, dans un repère
+orthonormé de l'Espace: $||\vu||^2=x^2+y^2+z^2$ et donc:
+\[\boxed{\vu\cdot\vu= ||\vu||^2}\]
+\begin{rem} Pour deux points $A$ et $B$, on a donc: $AB^2=\V{AB}\cdot\V{AB}$.\end{rem}
+Intéressons-nous maintenant à $||\vu+\vv||^2$:
+\begin{eqnarray*}
+||\vu+\vv||^2 &=& (x+x')^2+(y+y')^2+(z+z')^2\\
+                    &=&
+                    x^2+y^2+z^2+x'^2+y'^2+z'^2+2(xx'+yy'+zz')\\
+                    &=&
+                    ||\vu||^2+||\vv||^2+2(\vu\cdot\vv)
+\end{eqnarray*}
+\noindent
+Je vous laisse le soin d'obtenir une formule similaire en remplaçant
+$\vv$ par son opposé on obtient alors:
+\begin{prop}{\bf Expression du produit scalaire en fonction de la norme}
+\begin{eqnarray*} \vu\cdot\vv &=&
+\frac{1}{2}\left(||\vu+\vv||^2-||\vu||-||\vv||\right)\\
+&=& \frac{1}{2}\left(||\vu||^2+||\vv||^2-||\vu-\vv||^2\right)
+\end{eqnarray*}\label{psnorme}
+\end{prop}
+Certes ces formules sont moins agréables mais elles ont l'avantage de
+prouver que le produit scalaire ne dépend pas des coordonnées et donc
+du repère choisi. Nous pouvons donc utiliser sans retenue la
+définition 2 qui en est bien une finalement.
+
+%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.2cm}
+\noindent%
+{\small
+$\star \star \star $
+On peut définir le produit scalaire de manière bien plus générale : c'est une \og{}~forme~\fg{} (notons-la~$\f$) qui <<~transforme~>> deux
+vecteurs en un réel et qui est \emph{bilinéaire, symétrique, définie
+  positive.} \ie{} qui vérifie les propriétés:
+\begin{list}{$\bullet$}{}
+\item $\f$ est symétrique : $\f (u,v)=\f(v,u)$.
+\item  $\f$ est bilinéaire : $\f (\lambda u+\mu v, w)=\lambda\f (u,w)+\mu \f (v,w)$ pour tous réels $\lambda$ et $\mu$.
+\item $\f$ est positive : $\f (u,u)\geq 0$.
+\item $\f$ est définie : $\f (u,u)=0\iff u=0$.
+\end{list}
+\hfill $\star \star \star $
+}
+%%%%%%%%%%%%%%%%%%%
+\section{Propriétés algébriques}
+\begin{prop} Pour tous vecteurs $\vu$,  $\vv$ et $\vw$,  le produit
+  scalaire vérifie:\\
+%\medskip
+%\vspace{0.3cm}%\end{prop}
+%\hspace{1cm}%
+\begin{minipage}{0.3\linewidth}
+  \begin{description}
+  \item[Symétrie]
+  \item[Bilinéarité]($\lambda\in\R$)
+  \item[Distributivité]
+  \item[Positivité]
+  \item[Définie]
+  %\item[Identité remarquable] 
+  \end{description}
+\end{minipage}\hfill
+\begin{minipage}{0.65\linewidth} 
+\begin{description}
+\item $\vu\cdot\vv =\vv\cdot\vu$
+\item $(\lambda\vu)\cdot\vv=\vu\cdot(\lambda\vv)=\lambda(\vu\cdot\vv)$
+\item $\vu\cdot(\vv+\vw)=\vu\cdot\vv+\vu\cdot\vw$
+\item $\vu\cdot\vu \geq 0$
+\item $\vu\cdot\vu=0 \iff \vu=\V{0}$
+  \end{description}
+\end{minipage}
+\end{prop}
+%\end{prop}
+Preuves faciles à partir de la définition. On en déduit les identités remarquables usuelles:
+\begin{prop}[Produits scalaires remarquables]
+\begin{align}
+(\vu+\vv)^2&=\vu^2+2\usv+\vv^2  \label{u+v}\\
+(\vu-\vv)^2&=\vu^2-2\usv+\vv^2  \label{u-v}\\
+(\vu+\vv)\cdot(\vu-\vv)&=\vu^2-\vv^2  \label{u2-v2}
+\end{align}
+\end{prop}
+\section{Produit scalaire et cosinus}
+
+On choisit deux points $A$ et $B$  tels que $\V{OA}=\vu{}$ et
+$\V{OB}=\vv$. On note $H$ le projeté orthogonal de $A$ sur
+$(OB)$. De plus on notera  $(\vu;\vv)$ l'angle $\widehat{AOB}$. On
+obtient donc deux cas de figure selon que: $H\in [OB)$ \ou{}  $H\notin
+[OB)$. On veut retrouver les formules vues en première comme définition du produit scalaire dans le plan:
+\\
+\begin{small}
+\psfrag{A}{$O$} \psfrag{B}{$A$} \psfrag{C}{$B$} \psfrag{H}{$H$}
+\psfrag{v}{$\vec{u}$} \psfrag{u}{$\vec{v}$}
+
+$\ $\hspace{\stretch{1}}\includegraphics[width=3cm]{Prodscalproj1}  \hspace{\stretch{1}}\includegraphics[width=3cm]{Prodscalproj2}\hspace{\stretch{1}}$\ $
+\\
+$\star $\hspace{\stretch{1}} $\qquad\usv=OB\times OH$ \hspace{\stretch{1}}
+$\qquad\usv=-OB\times OH$ \hspace{\stretch{1}} $\star $\\
+\end{small}
+%\[\V{AB}\cdot \V{AC}=AB\times AH \qquad \qquad \qquad \qquad \V{AB}\cdot \V{AC}=-AB\times AH \]
+%On note $\usv$ le produit scalaire des deux vecteurs $\vu$ et $\vv$. 
+
+%\noindent Sur la figure de gauche on a: $\usv=AB\times AH$ et sur la figure de droite on a: $\usv=-AB\times AH$. D'où:
+\[ \boxed{\usv=\|\vu\| \times \|\vv\| \times \cos (\vu;\vv)} \]
+%%-----------------------
+\begin{proof}
+À l'aide du théorème de Pythagore on prouve dans la figure de gauche que:
+\[  OB\times
+OH=\frac{1}{2}\left(OA^2+OB^2-AB^2\right)=\frac{1}{2}\left(||\vu||^2+||\vv||^2-||\vu-\vv||^2\right)=\vu\cdot\vv\] 
+On prouverait le même résultat dans la figure de droite pour $-
+OB\times OH$
+\end{proof}
+\begin{rem}%\end{rem}
+L'angle orienté $(\vu;\vv)$ a été défini dans le plan, mais on se sait
+pas définir un sens de rotation dans l'espace. Les angles seront donc
+définis comme des angles géométriques, (comme au collège) avec des
+mesures en radians dans l'intervalle~$[0,\pi]$. Cette dernière formule
+permet d'ailleurs de mesurer un angle entre deux vecteurs non nuls de l'espace:
+\end{rem}
+\[\boxed{
+\cos (\vu;\vv)=\frac{\usv}{||\vu||\times||\vv||}
+}\]
+
+\section{Orthogonalité}
+\subsection{Vecteurs orthogonaux}
+\begin{prop} %\end{prop}
+Soient deux vecteurs $\vu$ et $\vv$ non nuls et trois points $O$,
+$A$ et $B$ tels que $\vu=\V{OA}$ et $\vv=\V{OB}$. Les trois propositions suivantes sont équivalentes :
+\end{prop}
+\begin{itemize}
+\item[(1)] $(OA)$ et $(OB)$ sont perpendiculaires
+\item[(2)] $\usv=0$
+\item[(3)] $\vu$ et $\vv$ sont orthogonaux. On notera:
+  $\vu\bot\vv$.\hfill{\bf (Définition)}
+\end{itemize}
+
+\begin{rem}Par souci de cohérence, on dira aussi que le vecteur nul
+  est orthogonal à tout vecteur.\end{rem}
+\subsection{Droites orthogonales}
+\begin{Def} On dit que deux droites $(AB)$ et $(CD)$ sont orthogonales
+si $\V{AB}\cdot\V{CD}=0$\end{Def}
+\begin{rem} Ce n'est pas la même chose que des droites
+  perpendiculaires, qui sont elles toujours coplanaires! Mais deux
+  droites perpendiculaires sont orthogonales. \end{rem}
+\begin{Def} On dit qu'une droite $\Dr$ est perpendiculaire à un plan $\Para$
+  si elle est orthogonale à deux droites non parallèles du
+  plan~$\Para$.\end{Def}
+On prouve alors que $\Dr$ est orthogonale toute droite du
+  plan~$\Para$:
+\begin{proof}
+Soit $\vu$ un vecteur directeur de
+  $\Dr$. Notons $(OA)$ et $(OB)$ les deux droites non parallèles du
+  plan~$\Para$ qui sont orthogonales à $\Dr$. Alors $\Para=(OAB)$. Si
+  on note de plus $\vi=\V{OA}$ et $\vj=\V{OB}$ alors $\oij$ est un
+  repère du plan $\Para$ et on a par hypothèse:
+  $\vu\cdot\vi=0\quad\et{}\quad \vu\cdot\vj=0$. Soit $\vw$ un vecteur directeur d'une droite
+  $\Dr'$ de $\Para$. Alors en notant $x$ et $y$ les coordonnées de
+  $\vw$ dans la base $(\vi;\vj)$, on a: $\vw=x\vi+y\vj$ Alors:
+\[ \usw=\vu\cdot(x\vi+y\vj)=x\vu\cdot\vi+y\vu\cdot\vj=x\times
+0+y\times 0=0\]
+
+\end{proof}
+\subsection{Vecteur normal}
+
+\begin{Def} Un vecteur $\vn$ non nul est dit normal à un plan $\Para$
+  lorsque toute droite de vecteur directeur $\vn$ est perpendiculaire à~$\Para$.
+\end{Def}
+\begin{prop} Soit $\vn$ un vecteur normal à un plan $\Para$. Soit
+  $\vu$ un vecteur non nul. Alors, $\vu$ est normal à  $\Para$ ssi
+  $\vu$ et $\vn$ sont colinéaires. \end{prop}
+\begin{prop} %\end{prop}
+Soit un plan $\Para$, $A$ un point de $\Para$ et $\vn$ un vecteur
+normal à $\Para$. Alors $\Para$ est l'ensemble des point $M$ de
+l'espace vérifiant:
+\[\boxed{\V{AM}\cdot\vn =0}\]
+$\Para$ est alors défini comme le plan passant par $A$ et de vecteur
+normal~$\vn$.
+\end{prop}
+\begin{proof} Tout point $M$ du plan vérifie cette relation car une
+  droite de vecteur directeur $\vn$ est orthogonale à toute droite
+  $(AM)$ de $\Para$. L'inclusion inverse est admise. 
+%(\ie{} que tout
+%  point $M$ vérifiant la relation $\V{AM}\cdot\vn =0$ est dans le plan $\Para$.
+\end{proof}
+\begin{rem} Cette relation caractéristique permet de déterminer
+  l'équation cartésienne du plan $\Para$.
+\end{rem}
+
+\begin{prop} %\end{prop}
+Soit $\Para$ et $\Para'$ deux plans ayant respectivement $\vn$ et
+$\vn'$ pour vecteur normal.
+\begin{list}{$\bullet$}{}
+\item $\Para \bot \Para' \iff \vn\bot\vn'$
+\item $\Para \parallele \Para' \iff \vn$ et  $\vn'$ sont colinéaires.
+\end{list}
+\end{prop}
+\begin{Def} Soit un plan $\Para$, $A$ un point de l'espace, on appelle
+  projeté orthogonal de $A$ sur $\Para$ l'unique point $H$ de $\Para$
+  tel que $(AH)\bot\Para$. \ie{} tel que $\V{AH}$ soit normal à
+  $\Para$. La distance $AH$ est alors appelée distance du point $A$
+  au plan~$\Para$.
+\end{Def}
+\begin{prop} Soit $A$ et $B$ deux points distincts de l'espace. L'ensemble des
+  points $M$ à égale distance de $A$ et $B$ est un plan, appelé plan
+  médiateur de $[AB]$. C'est le plan de vecteur normal $\V{AB}$
+  passant par le milieu de $[AB]$.
+\end{prop}
+\begin{proof} Soit $I$ le milieu du segment $[AB]$. On a alors: $\V{MA}+\V{MB}=2\V{MI}$
+\[ MA=MB \iff MA^2=MB^2\iff \V{MA}^2-\V{MB}^2=0 
+\iff (\V{MA}-\V{MB})\cdot(\V{MA}+\V{MB})=0\] 
+\[MA=MB \iff  \V{BA} \cdot (2\V{MI})=0 \iff  \V{IM} \cdot \V{AB}=0
+\]
+Cette dernière caractérise le plan passant par $I$ et de vecteur
+normal $\V{AB}$. \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{pspicture}(0,-0.5)(5,4.5)
+\rput(2.2,4){{\it diagramme de Venn}}
+\rput(2.2,3){$A\cup B$}
+\psframe(0,0)(4.5,3.6)
+\pscircle[fillstyle=hlines](1.5,1.5){1}
+\pscircle[fillstyle=hlines](3,1.5){1}
+\rput(1.5,1.5){A}
+\rput(3,1.5){B}
+\end{pspicture}
+\begin{pspicture}(0,-0.5)(5,4.5)
+\rput(2.2,4){{\it diagramme de Venn}}
+\rput(2.2,3){$A\cap B$}
+\psclip{% bloc colorier
+\pscustom{% 1re partie colorier
+\pscircle(1.5,1.5){1}}
+\pscustom{% 2me partie
+\pscircle(3,1.5){1}}
+\psframe[fillstyle=hlines](0,0)(4,3)} % hachurer l'intersection des 2
+% parties qui se trouvent dans le frame indiquÃ©
+\endpsclip % fin bloc colorier (pas de } fermant)  %% style=hachured
+
+\psframe(0,0)(4.5,3.6)
+\pscircle(1.5,1.5){1}
+\pscircle(3,1.5){1}
+\rput(1.5,1.5){A}
+\rput(3,1.5){B}
+\end{pspicture}\\

@@ -1,0 +1,297 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[]{paul}
+
+\usepackage{eso-pic} %pour filigrane
+\usepackage{minitoc}
+
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=12pt,headheight=3cm]{geometry}
+
+\usepackage[dvips,ps2pdf,colorlinks=false]{hyperref} %gestions des hyperliens dans un document .dvi
+
+\pagestyle{fancy}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\Alph{section}}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+
+\newcommand{\coordp}[2]{%
+\left(\begin{array}{c}
+#1 \\ #2
+\end{array}\right)%
+}
+\newsavebox{\fmbox}
+\newenvironment{encadrer}{%
+\smallskip \par \noindent
+\begin{lrbox}{\fmbox}\begin{minipage}{.98\linewidth}}
+	{%\vspace{1em}
+\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}
+\vspace{0.2em}
+%\vspace{1em minus .5em }
+}
+\renewcommand{\sectionmark}[1]%
+{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]%
+{\markright{\MakeUppercase{\thesection.\ #1}}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\Police}{%
+\fontfamily{%
+pag%style des hauts de page en avant garde small caps
+}\fontseries{m}\fontshape{sc}\fontsize{9}{11}\selectfont}
+\fancyhf{}
+\fancyhead[LE,RO]{\Police \thepage}
+\fancyhead[LO]{\Police \rightmark}
+\fancyhead[RE]{\Police \leftmark}
+\usepackage{epstopdf}
+
+\title{%
+{\bf Resume en Mathematiques de \term}}
+\author{Paul PLANCHON}
+\date{{\small {\Police Version du \today}}}
+\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 				          DEBUT DU DOCUMENT                       %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\lfoot{\Pdpweblink}
+	\rfoot{{\small {\Police Version du \today}}}
+
+	\maketitle
+	\tableofcontents
+	\mainmatter
+
+	\chapter{Les suites, rappels de premiere}
+	\label{chap:Les suites, rapelles de premiere}
+
+	\section{Generalitees sur les suites}
+	\label{sec:Generalitees sur les suites}
+
+	\subsection{Definitions}
+	\label{sub:Definitions}
+
+	\begin{prop}
+		Un raisonnement par recurrence ne s'applique que pour une proposition construite sur $\mathbb{N}$.
+		Elle se passe en 2 etapes :
+		\begin{enumerate}
+			\item L'initialisation : On verifie que la proposition est vraie pour la premiere valeur de l'entier naturel. (en general, $n=0$, parfois $n=1$ ou $n=2$).
+			\item L'heredite : cette etape se coupe en 2 etapes :
+			\begin{enumerate}
+				\item L'hypothese de recurence : On suppose que la proposition est vraie pour $k$.
+				\item On demontre que la proposition est vraie pour le successeur de $k$, $k+1$.
+			\end{enumerate}
+		\end{enumerate}
+	\end{prop}
+
+	\subsection{Suites bornees}
+	\label{sub:Suites bornees}
+
+	\begin{itemize}
+		\item $\exists M \in \mathbb{R} / \forall n \in \mathbb{N} , U_n \leq M$
+		\item $\exists m \in \mathbb{R} / \forall n \in \mathbb{N} , U_n \geq m$
+		\item $\exists (m;M) \in \mathbb{R}^2 / \forall n \in \mathbb{N} , m \leq U_n \leq M$
+	\end{itemize}
+
+	\subsection{Monotomie d'une suite}
+	\label{sub:Monotomie d'une suite}
+
+	\begin{Def}
+		Soit $(U_n)$ une suite,\\
+		\begin{enumerate}
+			\item On dit que $(U_n)$ est croissante ssi $\forall n \in \mathbb{N}, U_{n+1} - U_n \geq 0$
+			\item On dit que $(U_n)$ est decroissante ssi $\forall n \in \mathbb{N}, U_{n+1} - U_n \leq 0$
+		\end{enumerate}
+		(Si les inegalites sont strictes, on dit que la suite sera, respectivement, strictement croissante et strictement decroissante).
+	\end{Def}
+
+	\textbf{Remarque : }
+
+	Si tous les termes de la suite sont strictement positifs, alors :\\
+	\begin{enumerate}
+		\item $\frac{U_{n+1}}{U_n} \geq 1$, alors la suite est croissante
+		\item $\frac{U_{n+1}}{U_n} \leq 1$, alors la suite est decroissante
+	\end{enumerate}
+
+	\subsection{Representation graphique d'une suite explicite}
+	\label{sub:Representation graphique d'une suite explicite}
+
+	\begin{Def}
+		Une suite est definie de maniere explicite si $(U_n)$ s'exprime directement en fonction de $n$, cad, $U_n = f(n)$.
+	\end{Def}
+
+	\subsection{Theoremes divers}
+	\label{sub:Theoremes divers}
+
+	\begin{prop}
+		On considere une suite $(U_n)$ qui est definie de maniere explicite, cad $U_n = f(n)$, alors :
+		\begin{description}
+			\item si $f$ est croissante alors $(U_n)$ aussi.
+			\item si $f$ est decroissante alors $(U_n)$ aussi.
+			\item si $f$ est constante alors $(U_n)$ aussi.
+		\end{description}
+	\end{prop}
+	\textbf{ATTENTION, LES RECIPROQUES SONT FAUSSES}
+
+	\begin{prop}
+		\begin{description}
+			\item Toute suite croissante est minoree par son premier terme.
+			\item Toute suite decroissante est majoree par son premier terme.
+		\end{description}
+	\end{prop}
+
+	\section{Suites arithmetiques et geometriques}
+	\label{sec:Suites arithmetiques et geometriques}
+
+	$\exists n \in \mathbb{R} / \forall n \in \mathbb{N}, U_{n+1} = U_n + r$
+
+	\subsection{Theoremes Somme}
+	\label{sub:Theoremes Somme}
+
+	\begin{prop}
+		Soit ($U_n$) une suite de raison $r$ et de premier terme $U_0$.
+		\begin{enumerate}
+			\item $\forall n \in \mathbb{N}, U_n = U_0 + nr$
+			\item $\sum_{k = 0}^{n} U_k = U_0 + U_1 + U_2 + ... + U_n = \frac{(n+1)(U_0 + U_n)}{2} = \frac{(\text{nombre de terme})(\text{premier terme + dernier terme})}{2}$
+		\end{enumerate}
+	\end{prop}
+
+	\begin{prop}
+		Soit $(U_n)$ une suite s.a. de raison $r$ et de premier terme $U_a$ alors,
+		\begin{enumerate}
+			\item $U_n = U_0 + (n-a)r$
+			\item $U_a + U_{a+1} + ... + U_n = \frac{(n-a+1)(U_a+U_n)}{2}$
+		\end{enumerate}
+	\end{prop}
+
+	$\exists n \in \mathbb{R} / \forall n \in \mathbb{N}, U_{n+1} = q * U_n$
+
+	\begin{prop}
+		Soit $U_n$ une suite geo. de raison $q$ ($q \neq 1 \text{ et } q \neq 0$) et de premier terme $U_0$.
+		\begin{enumerate}
+			\item $U_n = U_0 * q^n$
+			\item $\sum_{k = 0}^{n}U_n = U_0 + U_1 + ... + U_n = U_0 * \frac{1-q^{n+1}}{1 - q}$\\
+		\end{enumerate}
+
+		Cas particuliers :
+		\begin{enumerate}
+			\item pour $q=1$, $U_n = U_0$, donc, $U_0 + U_1 + U_2 + ... + U_n = (n+1)U_0$.
+			\item pour $q=0$, $U_n = 0$ avec $n \geq 1$, $U_0 + U_1 + ... U_n = U_0$\\
+		\end{enumerate}
+	\end{prop}
+
+	\subsection{Formules importantes a savoir}
+	\label{sub:Formules importantes a savoir}
+
+	\begin{prop}
+		Soit $q \in \mathbb{R} \setminus \big\{1\big\} $ alors $1+q+q^2+q^3+...+q^n = \frac{1-q^{n+1}}{1-q}$
+	\end{prop}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%                  FIN DU CHAPITRE 1                        %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Convergence et divergence des suites}
+	\label{chap:Convergence et divergence des suites}
+
+	\section{Convergence d'une suite}
+	\label{sec:Convergence d'une suite}
+
+	\subsection{Partie entiere d'une suite}
+	\label{sub:Partie entiere d'une suite}
+
+	\begin{prop}
+		Soit $x \in \mathbb{R}$. On appelle partie entiere de $x$, notee, $E(x)$, l'unique entier verifiant :\\
+
+		$E(x) \leq x < 1+E(x)$
+
+	\end{prop}
+
+	\begin{prop}
+		$(\forall \varepsilon > 0)(\exists n_0 \in \mathbb{N})$ / $(\forall n \in \mathbb{N})$, $n \geq n_0)$  $\left| U_n - l \right| < \varepsilon$
+	\end{prop}
+
+	\subsection{Beaucoup de theoremes}
+	\label{sub:Beaucoup de theoremes}
+
+	\begin{prop}
+		Si une suite est convergente, alors sa limite est \textbf{unique}.
+	\end{prop}
+
+	\begin{prop}
+		Si une suite est convergente, alors elle est bornee.
+	\end{prop}
+
+	\begin{prop}
+		On considere une suite $u_n$ qui converge vers $l$ alors,
+			\begin{enumerate}
+				\item si ($u_n$) est croissante, on aura $\forall n \in \mathbb{N}$, $u_n \leq l$
+				\item si ($u_n$) est decroissante, on aura $\forall n \in \mathbb{N}$, $u_n \geq l$
+			\end{enumerate}
+	\end{prop}
+
+	\begin{prop}
+		Toute suite constante est convergente.
+	\end{prop}
+
+	\begin{prop}
+		On considere deux suites ($u_n$) et ($v_n$). On suppose qu'il existe un entier $n_0 \in \mathbb{N} / \forall n \in \mathbb{N}, n \geq n_0$, on ait, $u_n \leq v_n$\\
+		On suppose que ($u_n$) converge vers $l$ et ($v_n$) vers $l'$. Alors, $l \leq l'$.
+	\end{prop}
+
+	\begin{prop}
+		Soit ($u_n$) une suite arithmetique,
+		\begin{enumerate}
+			\item On suppose que $u_n$ est majoree par $M$ et qu'elle converge vers $l$. Alors, $l \leq M$.
+			\item On suppose que $u_n$ est minoree par $m$ et qu'elle converge vers $l$. Alors, $l \geq M$.
+		\end{enumerate}
+	\end{prop}
+
+	\subsection{Theoreme fondamental}
+	\label{sub:Theoreme fondamental}
+
+	\begin{prop}
+		\begin{enumerate}
+			\item Toute suite croissante et majoree est alors convergente.
+			\item Toute suite decroissante et minoree est alors convergente.
+		\end{enumerate}
+	\end{prop}
+
+	\begin{prop}
+		On considere 3 suites $u_n, v_n, w_n$. On suppose qu'il existe un entier $n_0 \in \mathbb{N} / \forall n \in \mathbb{N}, n \geq n_0$.\\
+		On a : $u_n \leq v_n \leq w_n$.\\
+		On suppose que les suites extremes $u_n$ et $w_n$ sont convergente vers $l$, alors $v_n$ converge aussi vers $l$.
+	\end{prop}
+
+	\subsection{Les limites fondamentales}
+	\label{sub:Les limites fondamentales}
+
+	\begin{prop}
+		Limites a connaitre : \\
+		\begin{enumerate}
+			\item $ \lim_{n \rightarrow \infty}(\frac{k}{n}) = 0$ avec $k$ une constante.
+			\item $ \lim_{n \rightarrow \infty}(\frac{k}{n^2}) = 0$ avec $k$ une constante.
+			\item $ \lim_{n \rightarrow \infty}(\frac{k}{n^p}) = 0$ avec $k$ une constante et $p \in \mathbb{N}^*$.
+			\item $ \lim_{n \rightarrow \infty}(\frac{k}{\sqrt{n}}) = 0$ avec $k$ une constante.
+		\end{enumerate}
+	\end{prop}
+
+	\begin{prop}
+		Soit ($u_n$) une suite, si $\lim_{n \rightarrow \infty}u_n = l$ alors $\lim_{n \rightarrow \infty}u_{n+1} = l$ $\lim_{n \rightarrow \infty}u_{n+p} = l$ (avec $p \in \mathbb{N}^*$)
+	\end{prop}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

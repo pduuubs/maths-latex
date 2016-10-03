@@ -1,0 +1,314 @@
+
+\chapter{Nombres Complexes, forme exponentielle et transformations}
+\section{Forme trigonométrique d'un nombre complexe}
+\subsection{Rep\'erage polaire dans le plan}
+Soit $\oij$ un rep\`ere orthonorm\'e du plan. Un point $M$ y est rep\'er\'e
+par ses coordonn\'ees cart\'esiennes (de \textsc{Descartes})   \ie{}
+$M(x;y)\iff \V{OM}  = x\vi + y\vj$. Il y a une autre faÃ§on de d\'efinir
+la position du point $M$ : Par la donn\'ee de la longueur $OM$ et de
+l'angle orient\'e $(\vi  ; \V{OM} )$. Cela donne les coordonn\'ees
+polaires: $M(\rho;\theta)$ o\`u $x=\rho\cos \theta$ et $y=\rho\sin
+\theta$. Donc:
+\[
+\rho=\sqrt{x^2+y^2}\qquad \et{}\ \theta\ \text{v\'erifie:}
+\left\{
+\begin{array}[c]{ll}
+\cos \theta&= \frac{x}{\rho}\\
+\sin \theta&=\frac{y}{\rho}\\
+  \end{array} \right.
+\]
+
+\noindent
+\exemple  Le point $M$ a pour coordonn\'ees cart\'esiennes $(-\sqrt3;3)$. On calcule $\rho$:
+\[ \rho=\sqrt{(-\sqrt3)^2+3^2} = \sqrt{12 } = 2\sqrt 3 \]
+Il faut toujours simplifier la racine. Puis:
+
+\[  
+\Bigl\{
+\begin{array}[c]{ll}
+\cos \theta&=\frac{-\sqrt3}{2\sqrt 3} \\
+\sin \theta&=\frac{3}{2\sqrt 3} 
+  \end{array}
+\iff 
+\Bigl\{
+\begin{array}[c]{ll}
+\cos \theta&=-\frac12 \\
+\sin \theta&=\frac{\sqrt3}{2} 
+  \end{array}
+ \]
+On part de l'angle de r\'ef\'erence qui a les m\^emes valeurs de cos et sin
+en valeur absolue. C'est $\frac{\pi}{3}$. On place $\frac{\pi}{3}$ sur
+un cercle trigonom\'etrique, ainsi que l'angle $\theta$ cherch\'e et on
+observe que $\theta=\pi- \frac{\pi}{3}$. Donc $\theta=\frac{2\pi}{3}$
+convient. Ainsi des coordonn\'ees polaires de $M$ sont: $(2\sqrt
+3;\frac{2\pi}{3})$.\qed %\hline
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[l]{6.8cm}
+%\begin{table}[htbp]
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{||c|c|c|c|c|c||}
+\hline 
+%Ligne 1
+% $ x$ en degr\'es& 
+%0& 30&45&60&90 \\\hline
+%Ligne 2
+ $\dfrac{}{}$$ x$ en radians& 
+0& $\frac{\pi}{6}$&$\frac{\pi}{4}$&$\frac{\pi}{3}$&$\frac{\pi}{2}$ \\\hline \hline
+%Ligne 3
+ $\dfrac{}{}$$ \cos x$& 
+1& $\frac{\sqrt{3}}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{1}{2}$&0 \\\hline
+
+%Ligne 4
+ $\dfrac{}{}$$ \sin x$& 
+0& $\frac{1}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{\sqrt{3}}{2}$&1 \\\hline 
+\end{tabular}
+\label{tab1}
+\renewcommand{\arraystretch}{1}
+ Pour se souvenir de ce tableau il suffit de conna\^itre le quart de
+ cercle trigonom\'etrique  et de se souvenir de: 
+$\frac{1}{2}<\frac{\sqrt{2}}{2}<\frac{\sqrt{3}}{2}$
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[l]{0.5\textwidth}
+\begin{center}
+\psfrag{O}{$O$} \psfrag{x}{$x$} \psfrag{y}{$y$} \psfrag{vi}{$\vi$} \psfrag{vj}{$\vj$} 
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/pol_cart.1}%[totalheight=4cm]{cercle_trigo.3}
+\end{center}
+\end{minipage}
+\subsection{Forme trigonom\'etrique d'un nombre complexe}
+Traduisons cel\`a en complexe. Soit M un point d'affixe $z=x+\I y$ (o\`u
+$x\in\R$, $y\in\R$). $x+\I y$ est la forme alg\'ebrique de $z$, M a pour
+coordonn\'ees cart\'esiennes $(x;y)$. Le rayon polaire $\rho$ est le module de
+$z$, et un angle polaire $\theta$ s'appelle  {\bf un argument}
+de~$z$.\\
+\noindent
+\begin{Def} Tout complexe $z$ peut s'\'ecrire sous la forme appel\'ee forme trigonom\'etrique de~$z$:
+\[z=|z|\times(\cos \theta +\I \sin\theta)  \]
+\end{Def}
+Un argument $\theta$ n'est pas unique, car d\'efini modulo $2\pi$. On
+note: $\arg (z)=\theta$ un argument de~$z$.\newline
+%\hline
+\begin{prop}
+  Deux nombres complexes sont égaux ssi ils ont même module et même
+  argument à $2\pi$ près.
+\end{prop}
+\noindent
+\exemple {\sl Cf exemple pr\'ec\'edent.} Soit
+$z=-\sqrt3+3\I $. Mettre $z$ sous forme trigonom\'etrique.\\
+$|z|=\sqrt{12}=2\sqrt3$. La suite est identique et donc
+$\theta=\frac{2\pi}{3}$ d'o\`u: $z=2\sqrt3(\cos\frac{2\pi}{3}  +\I \sin\frac{2\pi}{3})$
+\qed
+\exercice
+Mettre les nombres complexes suivants sous forme trigonom\'etrique:
+\begin{enumerate}
+\item \qcmabc{$z=1+\I{}$}{$z=5-5\I{}$}{$z=-3-3\I{}$}
+\item \qcmabc{$z=-4$}{$z=\I{}$}{$z=-2\I{}$}
+\item \qcmabc{$z=2\sqrt3-2\I{}$}{$z=-3+\I{}\sqrt3$}{$z=-1+\I{}\sqrt3$}
+\end{enumerate}
+\exercice
+Mettre les nombres complexes $z$ et $z'$ suivants sous forme
+trigonom\'etrique, ainsi que $zz'$ et $\dfrac{z}{z'}$:
+\begin{enumerate}
+\item %
+\begin{minipage}[l]{0.45\textwidth}
+(a) $z=4\I \quad$ et $\quad z'=1+\I{}\sqrt3$
+\end{minipage}\hfill
+\begin{minipage}[l]{0.45\textwidth}
+(b) $z=-2+2\I{}\sqrt3\quad$ et $\quad z'=-\sqrt3-\I{}$
+\end{minipage}%
+\item $z=\cos\theta+\I{}\sin\theta\quad$ et $\quad
+  z'=\cos\theta'+\I{}\sin\theta'$ \\
+On donnera $\arg{}(zz')$ et
+  $\arg{}(\dfrac{z}{z'})$ en fonction de $\theta$ et~$\theta'$.
+\item D\'emontrer les formules dans le cas g\'en\'eral:
+\[ \arg{}(zz')=\arg{}(z)+\arg{}(z')\quad\et{}\quad \arg{}(\dfrac{z}{z'})=\arg{}(z)-\arg{}(z')\]
+\end{enumerate}
+\subsection{Propriétés des arguments}
+\paragraph{ Rappel de trigonométrie}
+$\cos(a+b)=$\\
+$\sin(a+b)=$
+
+\begin{prop} Pour $z$ et $z'$ deux complexes non nuls:
+  \begin{dingautolist}{172}
+  \item $\arg{zz'}=\arg{z}+\arg{z'}\quad [2\pi]$
+  \item $\arg{\frac{1}{z}}=-\arg{z}\quad [2\pi]$
+  \item $\arg{\frac{z}{z'}}=\arg{z}-\arg{z'}\quad [2\pi]$
+  \item $\arg{z^n}=n\arg{z}\quad [2\pi]$
+  \item $\arg{\bar{z}}=-\arg{z}\quad [2\pi]$
+  \end{dingautolist}
+\end{prop}
+
+\paragraph{Interprétation géométrique}
+\begin{list}{$\bullet$}{}
+\item Argument de l'affixe d'un vecteur: $\arg{(z_B-z_A)}=( \vec{u}\, ;\overrightarrow{AB})$ 
+\item $\arg\dfrac{z_B-z_A}{z_D-z_C}=(\overrightarrow{CD};\overrightarrow{AB})$
+\end{list}
+\paragraph{Ensembles de points}
+
+\begin{list}{$\bullet$}{}
+\item $z\in\R^* \iff \arg z =0 \quad [\pi]$
+\item $z\in\R^{+*} \iff \arg z =0 \quad [2\pi]$
+\item $z\in\R^{-*} \iff \arg z =\pi \quad [2\pi]$
+\item $z\ \text{est imaginaire pur} \iff (\arg z =\dfrac{\pi}{2} \quad
+  [\pi] \quad\text{ou}\quad z=0)$
+
+\end{list}
+\exercice
+Déterminer et tracer  l'ensemble $\mathscr{E}_i$ des points $M$ d'affixe
+$z$ vérifiant une des conditions suivantes:
+\begin{dingautolist}{172}
+\item $\mathscr{E}_1$: $(1+i)z\in \mathbb{R}$
+\item $\mathscr{E}_2$: $\arg iz =\dfrac{\pi}{4} \quad [2\pi]$
+\item  $\mathscr{E}_3$: $\arg\left(\dfrac{z-z_B}{z-z_A}\right)=\pi \quad [2\pi]$ où
+  $z_A=2-\I$ et $z_B=-1+\I$
+\item  $\mathscr{E}_4$: $\arg\left(\dfrac{z-z_B}{z-z_A}\right)=\dfrac{\pi}{2} \quad [2\pi]$ où
+  $z_A=2-\I$ et $z_B=-1+\I$
+\item  $\mathscr{E}_5$: $\arg\left(\dfrac{z-z_B}{z-z_A}\right)=\dfrac{\pi}{2} \quad [\pi]$ où
+  $z_A=-2-2\I$ et $z_B=-\I$
+\item  $\mathscr{E}_6$: $\dfrac{z-z_B}{z-z_A}\in \mathbb{R}^{-*}$ où
+  $z_A=3$ et $z_B=1+2\I$
+\end{dingautolist}
+
+
+\section{Forme exponentielle d'un nombre complexe}
+Vues les propriétés des arguments, on pose pour $\theta$ réel :
+\[ \e^{\I{}\theta}=\cos\theta+\I{}\sin\theta\]
+On peut vérifier la cohérence de cette notation avec l'équa diff
+$y'=iy$ vérifiée par $\theta \longmapsto \cos\theta+\I{}\sin\theta$.
+\begin{Def} Le complexe non nul $z$, de module $|z|$ et
+  d'argument $\theta$ est mis sous forme exponentielle lorsque l'on écrit:
+  $z=|z|\e^{\I{}\theta}$ où:
+\[ \e^{\I{}\theta}=\cos\theta+\I{}\sin\theta\]
+\end{Def}
+Ainsi $\e^{\I{}\theta}$ désigne un nombre complexe de module
+1. Réciproquement, tout nombre complexe de module 1 peut s'écrire sous
+cette forme. 
+\noindent Les propriétés suivantes sont valables pour tous réels $\theta$ et $\theta'$,
+$r$ et $r'$, pour tous $n$ et~$k$ dans $\Z$. Elles découlent des
+propriétés vues sur le module et les arguments d'un nombre complexe
+non nul.
+
+\begin{list}{}{}
+
+\item[{\bf Addition d'angles}]
+{\large\[ \e^{\I{}(\theta+\theta')}=\e^{\I{}\theta}\e^{\I{}\theta'}\]}
+\item[{\bf Conjugué}]
+{\large\[ \overline{r\e^{\I{}\theta}}=r\e^{-\I{}\theta} \]}
+\item[{\bf Module unitaire}]
+{\large\[ \left|\e^{\I{}\theta}\right|=1\]}
+\item[{\bf Inverse}]
+{\large\[ \frac{1}{\e^{\I{}\theta}}=\e^{-\I{}\theta}\]}
+\item[{\bf Quotient}]
+{\large\[ \frac{\e^{\I{}\theta}}{\e^{\I{}\theta'}}=\e^{\I{}(\theta-\theta')}\]}
+\item[{\bf Puissance-Formule de De Moivre}]
+{\large\[ \left( \e^{\I{}\theta}\right)^n=\e^{in\theta}\]}
+\item[{\bf Produit, quotient de deux complexes}]
+{\large\[
+\left(r\e^{\I{}\theta}\right)\times\left(r'\e^{\I{}\theta'}\right)=rr'\e^{\I{}(\theta+\theta')}\qquad
+et \qquad
+\frac{r\e^{\I{}\theta}}{r'\e^{\I{}\theta'}}=\frac{r}{r'}\e^{\I{}(\theta-\theta')}
+\]}
+\item[{\bf Valeurs remarquables}]
+{\Large\[ \e^{0}=1\quad;\quad \e^{\I{}\frac{\pi}{2}}=\I{}\quad;\quad
+  \e^{\I{}\pi}=-1 \quad;\quad \e^{2\I{}\pi}=1 \]}
+\item[{\bf Opposé d'un complexe}]
+{\large\[ -r\e^{\I{}\theta}=r\e^{\I{}(\theta+\pi)}\]}
+\item[{\bf $\theta\mapsto\e^{\I{}\theta}$ est $2\pi$ périodique}]
+{\large\[ \e^{\I{}(\theta+2k\pi)}=\e^{\I{}\theta}\]}
+{\large\[ \e^{\I{}\theta}=\e^{\I{}\theta'} \iff \theta=\theta'\ [2\pi]\]}
+\item[{\bf Formules d'Euler }]
+{\large\[ \cos\theta=\frac{\e^{\I{}\theta}+\e^{-\I{}\theta}}{2}\quad\et{}\quad
+\sin\theta=\frac{\e^{\I{}\theta}-\e^{-\I{}\theta}}{2\I{}}\]}
+Ces formules proviennent de ce que pour tout complexe $z$:
+\[Re(z)=\frac{z+\overline{z}}{2}\quad\et{}\quad Im(z)=\frac{z-\overline{z}}{2\I{}}\]
+\item[{\bf Attention!}] $\e^{\I{}\theta}$ est un nombre complexe, on ne peut donc pas parler de son signe\ldots \DangerZ
+%\[ \]
+%\ding{63} 
+%exp est positif ne veut rien dire
+
+\end{list}
+\exercice
+Résoudre dans $\mathbb{C}$:\quad $z^3=8\I$
+\subsection{Paramétrisation d'un cercle}
+Le cercle de centre $O$ et de rayon $r$ est l'ensemble des points
+d'affixe de module $R$, donc de la forme: $R\e^{\I{}\theta}$ où
+$\theta$ décrit $\mathbb{R}$ (ou tout intervalle de longueur au moins
+égale à $2\pi$). Plus généralement:
+\begin{prop}
+  Le cercle de centre $\Omega$ d'affixe $z_{\Omega}$ et de rayon $R$
+  ($R\in\mathbb{R}^+$) est l'ensemble des points d'affixe:
+\[ z=z_{\Omega}+R\e^{\I{}\theta}\]
+où $\theta$ décrit $\mathbb{R}$ (ou tout intervalle de longueur au moins
+égale à $2\pi$)
+\end{prop}
+\begin{proof}
+ $M\in C\iff |z-z{\Omega}|=R$
+\end{proof}
+On a ainsi une fonction de $\mathbb{R}$ dans le plan qui fournit
+l'enroulement de la droite réelle sur le cercle que l'on a vu \og avec
+les mains\fg{} en seconde.
+\section{Transformations complexes}
+
+Soit $\Fr$ une transformation du plan qui au point $M$ associe le
+point $M'$. \ie{} $\Fr(M)=M'$. On associe à cette transformation la
+fonction complexe $f$ qui à l'affixe $z$ de $M$ associe l'affixe $z'$
+de~$M'$. On dit que {\bf $z'=f(z)$ est l'écriture complexe de la
+transformation~$\Fr$.} On va donner les écritures complexes de trois
+transformations usuelles.
+\subsection{Translation}
+\begin{prop} Soit $\vw$ un vecteur d'affixe $b$. 
+L'écriture complexe de la translation de vecteur $\vw$ est:
+\[\boxed{z'=z+b}\]
+\end{prop}
+
+\begin{proof} Ici $\Fr$ est la translation de vecteur
+  $\vw$.  
+\[\Fr(M)=M' \iff \V{MM'}=\vw\iff z'-z=b\iff z'=z+b\]
+\end{proof}
+\subsection{Homothétie}
+\begin{prop} Soit $\Omega$ un point d'affixe $z_{\Omega}$ et
+  $k\in\R^*$. L'écriture complexe de l'homothétie de centre $\Omega$ et de rapport $k$ est:
+\[\boxed{z'-z_{\Omega}=k(z-z_{\Omega})}\]
+\end{prop}
+
+\begin{proof}Ici $\Fr$ est l'homothétie de centre $\Omega$ et de
+  rapport $k$.
+\[\Fr(M)=M' \iff \V{\Omega M'}=k \V{\Omega M} \iff z'-z_{\Omega}=k(z-z_{\Omega})\]
+\end{proof}
+\subsection{Rotation}
+\begin{prop} Soit $\theta\in\R$.
+L'écriture complexe de la rotation de  centre $\Omega$ et d'angle
+$\theta$ est:
+\[\boxed{z'-z_{\Omega}=\e^{\I\theta}(z-z_{\Omega})}\]
+\end{prop}
+
+\begin{proof}Ici $\Fr$ est la rotation de  centre $\Omega$ et d'angle
+$\theta$. 
+\begin{list}{$\bullet$}{}
+\item Si $M=\Omega$ alors $\Fr(M)=M' \iff M'=\Omega \iff z'=z_{\Omega}$. Car le centre
+  d'une rotation est l'unique point invariant par cette
+  rotation. L'égalité voulue est donc vraie (0=0)
+\item Si $M\neq \Omega$ alors $\Fr(M)=M'$ signifie:
+\[ \Omega M'=\Omega M\quad \et{}\quad (\V{\Omega M};\V{\Omega
+  M'})=\theta\]
+Ce qui se traduit en module et argument par:
+\[ |z'-z_{\Omega}|=|z-z_{\Omega}|\quad \et{}\quad
+\arg(\frac{z'-z_{\Omega}}{z-z_{\Omega}})=\theta [2\pi]\]
+C'est à dire que le complexe $\frac{z'-z_{\Omega}}{z-z_{\Omega}}$ est
+de module 1 et d'argument $\theta$. Il est donc égal à
+$\e^{i\theta}$. D'où le résultat:
+\[ \frac{z'-z_{\Omega}}{z-z_{\Omega}}=\e^{\I\theta}\iff
+z'-z_{\Omega}=\e^{\I\theta}(z-z_{\Omega})\]
+\end{list}
+\end{proof}
+\noindent
+{\bf Cas particulier.} $z'=\I z$ est l'écriture complexe de la rotation
+de centre $O$ et d'angle $\frac{\pi}{2}$ car
+$\I =\e^{\I \frac{\pi}{2}}$. Donc le triangle $OMM'$ est isocèle rectangle
+en~ $O$.

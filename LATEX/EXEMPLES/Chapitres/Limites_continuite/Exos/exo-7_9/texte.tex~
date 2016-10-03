@@ -1,0 +1,19 @@
+\begin{exercice}
+
+ On d\'efinit les deux suites $(u_n)$ et $(v_n)$ pour $n\in\N^*$ par:
+\[ u_n=\sum_{k=1}^{n}\dfrac{1}{k^2}\quad \et{}\quad v_n=u_n+\frac{1}{n} \]
+
+Prouver que ces suites sont adjacentes. Donner une valeur approch\'ee
+\`a $10^{-1}$ pr\`es de leur limite commune. En fait on a: 
+\[\lim_{n\to+\infty}u_n=  \sum_{k=1}^{+\infty}\dfrac{1}{k^2}=\dfrac{\pi^2}{6\phantom{^2}}\]
+}
+%-------------------------
+\Exo[]{La suite $(u_n)$ est d\'efinie pour $n\in\N^*$ par:
+\[ u_n=\sum_{k=1}^{n}\dfrac{1}{k}=\frac{1}{1}+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\]
+  \begin{enumerate}
+  \item Prouver que $(u_n)$ est croissante.
+  \item Prouver que: $\forall n\in\N^*,\quad u_{2n}-u_n\geq\dfrac12$
+  \item Prouver par r\'ecurrence que pour tout $n$ dans $\N^*$: $u_{2^n}\geq \dfrac{n}{2}$
+\item Que peut-on en d\'eduire pour la limite \'eventuelle de la suite $(u_n)$?
+  \end{enumerate}
+\end{exercice}

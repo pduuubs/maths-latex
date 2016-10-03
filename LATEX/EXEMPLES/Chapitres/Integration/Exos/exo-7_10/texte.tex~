@@ -1,0 +1,10 @@
+\begin{exercice}
+\begin{minipage}{5cm}
+  On donne ci-contre une partie de la courbe de la fonction
+inverse dans un reère orthonormal. En utilisant le quadrillage,
+déterminer un encadrement de $\ln(2)$ et de~$\ln(3)$.
+\end{minipage}\hfill%
+\begin{minipage}{9cm}
+  \includegraphics[width=7cm]{Chapitres/Integration/Exos/exo-7_10/aire_inv_ln_2}
+\end{minipage} 
+\end{exercice}

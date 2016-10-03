@@ -1,0 +1,762 @@
+
+% Les packages suivants sont necessaires pour une bonne compilation du
+% document. Il contiennent les definitions de certains symboles.
+\usepackage[T1]{fontenc} %encodage des caract�es
+\usepackage[latin1]{inputenc}%decodage des caract�es
+\usepackage[frenchb]{babel}   %gestion du francais
+\usepackage{verbatim,ifthen}
+\usepackage{textcomp,psfrag}
+\usepackage[dvips]{epsfig}
+
+%%%%
+
+%\usepackage[francais]{babel}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{slashbox}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{multicol}
+%%%%%%
+%\usepackage[greek]{babel}
+\usepackage{amsmath}  %gestion des symboles math\'{e}matiques
+\usepackage{amsfonts,mathrsfs} %gestion des fontes math\'{e}matiques
+\usepackage{amssymb,amsthm}  %gestion des symboles math\'{e}matiques
+\usepackage[official]{eurosym} %pour avoir le symbole euro: \euro
+%%%%%   PSTRICKS STUFF   %%%%%%%%%%
+\usepackage{pstricks} %figures en postscript conflit avec color???
+\usepackage{pst-plot,array}
+\usepackage{pst-math}
+\usepackage{pstricks-add}
+\usepackage{pst-tree}
+\usepackage{pst-eucl}\usepackage{pst-3d}
+
+\usepackage{pst-node,pstcol}
+\usepackage{fancyhdr} %gestion des entetes et des pieds de page
+\usepackage{lastpage} %gestion du nombre total de pages du document
+\usepackage{color} %gestion des couleurs, necessite french
+% 2========================================================================
+% Les packages suivants ne sont pas indispensables. Il permettent d'am\'{e}liorer
+% la mise en page, d'ins\'{e}rer des d\'{e}corations ou des images, de changer la police
+% du texte. Ils d\'{e}finissent aussi certaines macros.
+% Ils sont soit activ\'{e}s, soit d\'{e}sactiv\'{e}s en fonction des choix effectu\'{e}s par
+% l'auteur. Un % devant la ligne correspondante d\'{e}sactive le package.
+%\usepackage[]{palatino,euler} %changement des fontes par d\'{e}faut
+%\usepackage[]{palatino} %changement des fontes par d\'{e}faut
+%\usepackage[dvips]{graphicx} %gestion des graphiques en postcript
+%\usepackage{fancybox} %gestion des encadrements, empeche l'affichage
+%de la table des matieres
+
+%\usepackage{geometry} %gestion des marges du document
+%% Changement depuis pan.sty le format de page est dans le .tex
+
+%\usepackage[marginratio=1:1,textwidth=15cm,lines=59,marginparwidth=0pt,headheight=3cm]{geometry}
+
+
+%\usepackage{enumerate}
+\definecolor{gris}{gray}{0.7}
+
+%\ifhyperref
+%\usepackage[colorlinks]{hyperref} %gestions des hyperliens dans un document .dvi
+%\fi
+
+\usepackage{floatflt} %gestion des insertions de figures dans un
+                                   %document latex, necessite le
+                                   %package french
+%%  FONTES
+\usepackage{mflogo} %pour �crire MetaPost par \MP
+%\usepackage{marvosym} %conflit avec \rightarrow et donc \iff
+\usepackage{pifont}
+\usepackage{frcursive} %pour une fonte d'�colier
+\usepackage{manfnt}    % Que pour le symbole danger: \textdbend
+\usepackage{variations} %pour les tab de var et de signes Sous emacs
+                        %raccourcis dans macroemacs: M-x tab1c, tab3cdc...etc
+
+% 3========================================================================
+%
+% commandes personnelles. Je tends � ne plus utiliser de raccourcis
+% pour am�liorer la portabilit� des documents, je pr�f�re utiliser des
+% macros emacs qui inserent directement la commande LaTeX. Cependant,
+% pour les ``vieux fichiers'' ces raccourcis sont parfois utilis�s.
+%%%%
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\Th}{th} %\th est interdit (� cause de \the.. ?)
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\Bary}{Bar}
+%\DeclareMathOperator{\Re}{Re} %existe d�j� mais � red�finir
+%\DeclareMathOperator{\Im}{Im}
+
+%Vecteurs================================================================
+
+\newcommand{\Vect}[1]{\overrightarrow{\strut #1}}
+\newcommand{\V}[1]{\overrightarrow{\strut #1}} %vecteur AB: $\V{AB}$
+\newcommand{\vu}{\vec{u}\,} %vecteur u
+\newcommand{\vv}{\vec{v}\,}
+\newcommand{\vw}{\vec{w}\,}
+\newcommand{\vi}{\vec{\imath}\,}
+\newcommand{\vj}{\vec{\jmath}\,}
+\newcommand{\vn}{\vec{n}\,}
+\newcommand{\usv}{\vec{u}\cdot \vec{v}} %u scalaire v%
+\newcommand{\vsu}{\vec{v}\cdot \vec{u}} %v scalaire u%
+\newcommand{\usw}{\vec{u}\cdot \vec{w}} %u scalaire w%
+\newcommand{\vsw}{\vec{v}\cdot \vec{w}} %v scalaire w%
+%produit scalaire=====================================================
+\newcommand{\ps}[2]{\overrightarrow{\strut #1} \cdot \overrightarrow{\strut #2}}
+% Constantes en romain:
+%\newcommand{\e}{{\rm e}} % la constante 2,718 remplac� par mathop ci-dessus
+\newcommand{\I}{{\rm i}} %pour le i complexe
+\renewcommand{\i}{{\rm i}} %pour le i complexe � �viter mais j'en ai
+                         %d�j� mis...
+\newcommand{\ud}{\,\mathrm{d}} %Pour faire un d droit dans les ``dx''
+                               %des int�rales %%Essayer\DIFF
+
+%Pour le symbole //  essayer \varparallel (marche pas)
+\newcommand{\parallele}{\makebox[0.7\width][l]{/}\makebox[0.7\width][r]{/}}
+
+%Rep�res. Commandes perso et autres crois�es dans certains fichiers.
+\newcommand{\oij}{(O;\vec{\imath}\,;\vec{\jmath}\,)} %perso
+\newcommand{\Oij}{(O;\vec{\imath}\,;\vec{\jmath}\,)}
+\newcommand{\oijk}{(O;\vec{\imath}\,;\vec{\jmath}\,;\vec{k}\,)}
+\newcommand{\Oijk}{(O;\vec{\imath}\,;\vec{\jmath}\,;\vec{k}\,)}
+\newcommand{\ouv}{(O;\vec{u}\,;\vec{v}\,)}
+\newcommand{\Ouv}{(O;\vec{u}\,;\vec{v}\,)}
+\newcommand{\oi}{(O;\vec{\imath}\,)}
+\newcommand{\rep}{$\left(O;\vect{\imath},\vect{\jmath}\right)$}
+\newcommand{\repc}{$\left(O;\vect{u},\vect{v}\right)$}
+
+%Liens logiques
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\ou}{\textbf{ou}}
+\newcommand{\et}{\textbf{et}}
+% Cursif
+\newcommand{\Ar}{\mathscr{A}} %Utiliser plut�t M-x scr
+\newcommand{\Br}{\mathscr{B}}
+\newcommand{\Cr}{\mathscr{C}}
+\newcommand{\Dr}{\mathscr{D}}
+\newcommand{\Er}{\mathscr{E}}
+\newcommand{\Fr}{\mathscr{F}}
+\newcommand{\Gr}{\mathscr{G}}
+\newcommand{\Hr}{\mathscr{H}}
+\newcommand{\Para}{\mathscr{P}}
+
+%norme=====================================================
+\newcommand{\norme}[1]{\Vert #1 \Vert}
+
+%Pr\'{e}sentation du d\'{e}terminant=====================================================
+\newcommand{\deter}[4]{
+\left\vert
+\begin{array}{cc}
+         #1& #3  \\
+        #2 & #4
+\end{array}
+\right\vert                                      }
+
+%coordonn\'{e}es verticales=====================================================
+%dimension 2
+\newcommand{\cp}[2]{
+                                    \left(
+                                    \begin{array}{c}
+                                            #1\\
+                                    #2
+                                     \end{array}
+                            \right)
+                                     }
+%dimension 3
+\newcommand{\ce}[3]{
+                                    \left(
+                                    \begin{array}{c}
+                                            #1\\
+                                    #2 \\
+                            #3
+                                     \end{array}
+                            \right)
+                                     }
+
+%Ensembles==============================================================
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\ZP}{\mathbb{Z}[X]}
+\newcommand{\QP}{\mathbb{Q}[X]}
+\newcommand{\RP}{\mathbb{R}[X]}
+\newcommand{\CP}{\mathbb{C}[X]}
+
+%Operateurs==============================================================
+\newcommand{\card}{\operatorname{card}}
+\newcommand{\diff}{\operatorname{{\rm d}}}
+
+%Symboles===============================================================
+\renewcommand{\leq}{\leqslant} % � la fran�aise
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\approx}{\simeq} %symbole ``environ �gal'' j'oublie tt
+                               %le tps ce simeq.
+\newcommand{\congru}{\equiv}
+\renewcommand{\epsilon}{\varepsilon} % lettres grecques � la fran�aise
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\egaldef}{\stackrel{d\'{e}f}{=}}
+\newcommand{\equivdef}{\stackrel{d\'{e}f}{\iff}}
+  %%%%Intervalles------------ Utiliser les m�mes en macro emacs.
+\newcommand{\intf}[2]{\left[ #1\, ; #2 \right]}
+\newcommand{\into}[2]{\left] #1\, ; #2 \right[}
+\newcommand{\intfo}[2]{\left[ #1\, ; #2 \right[}
+\newcommand{\intof}[2]{\left] #1\, ; #2 \right]}
+  %%%%---------------
+
+%Combinatoire=============================================================
+\newcommand{\comb}[2]{{{\Large
+C}}$_{#1}^{\raisebox{1mm}{\scriptsize{$#2$}}}$}
+
+
+%========================================================================
+\renewcommand{\thesection}{\Roman{section}}% si on veut une autre
+% enum\'{e}ration des sections
+\renewcommand{\labelenumi}{{\bf{\arabic{enumi}}.}}
+\renewcommand{\labelenumii}{{\bf{\alph{enumii}}.}}
+
+
+%liens avec le web============================================================
+%\newcommand{\dvilink}[2]{\href{dvi:#1}{#2}}
+
+% Raccourcis de noms de classe.
+\newcommand{\term}{T$^{\text{ale}}$}
+\newcommand{\premiere}{1$^{\text{\`ere}}$}
+\newcommand{\seconde}{2$^{\text{de}}$}
+%%%----- Signature de pied de page
+\newcommand{\Pdpmail}{
+\footnotesize{Prof. \bsc{Pantaloni }  {\tt leprofdemath@yahoo.fr}}}
+\newcommand{\Pdpweb}{{\footnotesize {\tt
+      https://pdubs.xyz}}}
+\newcommand{\Pdpweblink}{{\footnotesize
+    \url{https://pdubs.xyz}}}
+% \url utilise le package href
+
+%Pr\'{e}sentation des devoirs==================================================
+%
+% Projet: Faire un pr�ambule simple avec des compteurs permettant de
+% choisir le type de feuille (cours, dl, exos...)
+% sans avoir �  recourir � ces diff�rents raccourcis.
+%
+%devoir surveille -classe---------------------------------------
+\newcommand{\ds}[1] {\noindent
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\hspace{\stretch{1}}
+\fbox{
+\begin{minipage}[b]{0.75\linewidth}
+\textit{ Classe de #1 } \hspace{\stretch{1}} %\hspace{1.53cm}
+ \begin{center}\begin{LARGE}%
+Devoir surveill\'{e} de math\'ematiques
+\end{LARGE}\end{center}
+\end{minipage} } \hspace{\stretch{1}}
+\lfoot{\Pdpweb}
+\cfoot{}
+\rfoot{\today}
+\vspace{1em} }
+
+ %% DS presentation police cursive
+\newcommand{\dscursif}[1] {\noindent
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\hspace{\stretch{1}}
+%\fbox{
+\begin{minipage}[t]{0.7\linewidth}
+\begin{center}\begin{LARGE}%
+\textcursive{Devoir surveill\'{e} de math\'ematiques}%
+\end{LARGE}\end{center}
+\end{minipage} %}
+\hspace{\stretch{1}}
+\lhead{\textcursive{Nom:}}
+\rhead{\textcursive{Classe de #1}}
+\lfoot{\Pdpweb}
+\cfoot{}
+\rfoot{\today}
+\vspace{1em}}
+
+%
+%%----------------------------------------------------
+%feuille de cours     Titre
+\newcommand{\fcours}[1]{
+\pagestyle{fancy}
+\lhead{\textsl{Cours de math\'ematiques}}
+\rhead{\textbf{#1}}
+\chead{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\lfoot{}
+\lfoot{\Pdpweb}
+\rfoot{page \thepage / \pageref{LastPage}}
+\cfoot{}
+     \hspace{\stretch{1}}   {\Huge{#1}}  \hspace{\stretch{1}}
+\\\rule{0pt}{\headsep}
+\noindent
+\rule{\linewidth}{0.5pt}
+\\\rule{0pt}{0.5\headsep}
+}
+%%------------------------------------------------------
+%%% Faire un titre comme dans \fcours
+\newcommand{\Titre}[1]{
+ \hspace{\stretch{1}}   {\Huge{#1}}  \hspace{\stretch{1}}
+\\\rule{0pt}{0.8\headsep}
+%\noindent
+%\rule{\linewidth}{0.5pt}
+%\\\rule{0pt}{0.5\headsep}
+                                     }
+%----------------------------------------------
+%fiche d'exos  titre-classe
+\newcommand{\fexos}[2]{
+\pagestyle{fancy}
+\lhead{%\textcursive{Fiche d'exercices  #2}}
+\textsl{Fiche d'exercices  #2}}
+\rhead{\Large{\textbf{#1} }}
+%\rhead{}
+\lfoot{\Pdpweb}
+%\rfoot{\today}
+\renewcommand{\headrulewidth}{0.4pt}
+\cfoot{ page \no \thepage / \pageref{LastPage}}
+}
+%----------------------------------------------
+%Activité  titre-classe
+\newcommand{\activite}[2]{
+\pagestyle{fancy}
+\lhead{\textsl{Activit\'e math\'ematique  #2} }
+\rhead{{\Large \textbf{#1} }}
+%\rhead{}
+\lfoot{\Pdpweb}
+\rfoot{}
+%\rfoot{\today}
+\renewcommand{\headrulewidth}{0.4pt}
+\cfoot{ page \no \thepage / \pageref{LastPage}}
+}
+%----------------------------------------------
+%DM  n? titre?  classe
+\newcommand{\dm}[3]{
+\pagestyle{fancy}
+
+\lhead{\textsl{Devoir maison}}
+\rhead{\textsl{Classe de #3}}
+\chead{}
+%\rhead{}
+\lfoot{\Pdpweb}
+\cfoot{}
+%\rfoot{\today}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{huge}
+\begin{center} \textbf{Devoir de math\'ematiques \no #1}
+\\#2 %titre
+\end{center}
+\end{huge}
+}
+%----------------------------------------------
+%DL  n? titre?  classe
+\newcommand{\dl}[3]{
+\pagestyle{fancy}
+
+\lhead{\textsl{Devoir en temps libre}}
+\rhead{\textsl{Classe de #3}}
+\chead{}
+%\rhead{}
+\lfoot{\Pdpweb}
+\cfoot{}
+%\rfoot{\today}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{huge}
+\begin{center} \textbf{Devoir de math\'ematiques \no #1}
+\\#2 %titre
+\end{center}
+\end{huge}
+}
+
+%Pr\'{e}sentation des exos=========================================================
+\newcounter{exercice}
+\newcommand{\exo}[1]{% Titre
+                     \refstepcounter{exercice}
+                     \vspace{1em} \par \noindent
+                     \raisebox{-0.7ex}{\bf Exercice \no \arabic{exercice}  #1}
+                     \hrulefill
+                     \par \vspace{0.5em}
+                    }
+
+\newcommand{\exods}[2]{% Titre-bareme
+                     \refstepcounter{exercice}
+                     \vspace{1em} \par \noindent
+                     \raisebox{-0.7ex}{\bf Exercice \no \arabic{exercice}  #1}
+                     \hrulefill \raisebox{-0.7ex}{\, (\, \textit{#2 points} \, )}
+                     \par \vspace{0.5em}
+                    }
+%Pareil mais en style cursif.
+\newcommand{\exodsc}[2]{% Titre-bareme
+                     \refstepcounter{exercice}
+                     \vspace{1em} \par \noindent
+                     \raisebox{-0.7ex}{\textcursive{Exercice \no \arabic{exercice}  #1}}
+                     \hrulefill \raisebox{-0.7ex}{\, (\, \textit{#2 points} \, )}
+                     \par \vspace{0.5em}
+                    }
+
+%------------------------------------------------------------------
+\newcounter{numeroexo}
+
+%%%%%%%%%%%%%%%%%%%%  Pour les fichiers de RUBIO
+
+% Environnement ``exercice''
+%\newenvironment{exercice}{\noindent {\bf Exercice
+%\theexo}\quad\hrulefill\\}{\addtocounter{exo}{1}}
+% initialisation du compteur
+%\newcounter{exo}\setcounter{exo}{1}
+%%-----------------------------------------
+
+
+\newenvironment{exercice}%
+{\par\noindent\refstepcounter{numeroexo}
+  \rule{0pt}{3ex}\hspace{-2ex}\raisebox{-0.7ex}{\textbf{Exercice
+      \no\arabic{numeroexo} }}\hspace{2ex}\hrulefill \par \vspace{1em}%
+ \noindent }
+
+\newenvironment{exocursif}%
+{\par\noindent\refstepcounter{numeroexo} \rule{0pt}{3ex}\hspace{-2ex}\raisebox{-0.7ex}{\textcursive{Exercice \no\arabic{numeroexo}}}\hspace{2ex}\hrulefill \par \vspace{1em}%
+ \noindent }
+%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------
+
+
+
+% Environnements pour les cours======================================
+
+\newenvironment{exemple}{\par\medskip\noindent\textbf{Exemple: }}{\par\smallskip}
+\newenvironment{appli}{\par\medskip\noindent\textbf{Application: }}{\par\smallskip}
+\newenvironment{exemples}{\par\medskip\noindent\textbf{Exemples: }}{\par\smallskip}
+\def\encadre#1{\framebox{#1}}    % pas perso et sans int�ret
+
+%theoremes, lemmes ,etc..
+
+\newtheorem{lemme}{Lemme}
+\newtheorem{corollaire}{Corollaire}
+%\newcounter{DEF}
+%\newcounter{PROP}
+\theoremstyle{definition}\newtheorem{Def}{D\'efinition}
+\theoremstyle{plain}\newtheorem{prop}{Propri\'et\'e}
+\theoremstyle{plain}\newtheorem{theo}{Th\'{e}or\`{e}me}
+\theoremstyle{remark}\newtheorem*{rem}{Remarque}
+%\theoremstyle{definition}\newtheorem{exo}{Exercice}
+
+
+%%Vieux trux pour les exos de 1S
+% Exos avec correction en option
+\newcounter{Aff}
+
+%-------------------
+\setcounter{Aff}{0}  %<<<<<<<<<<<<<<<<<<<
+%-------------------
+%
+%Si ``Aff'' vaut 0 on n'affiche pas les solutions sinon, on les affiche, s'il y en a... ( Aff=\theAff )
+%
+
+%%%%%%%%%%%%%%%%%
+\newcommand{\Exo}[2][] { \def\prem{#1} \def\deux{#2}
+\par\noindent\stepcounter{numeroexo} \rule{0pt}{3ex}\hspace{-2ex}\raisebox{-0.7ex}{\textbf{Exercice \no\arabic{numeroexo}}}\hspace{2ex}\hrulefill \par \vspace{1em}%
+ \noindent #2 %\\\hspace{\stretch{1}}\rule{0.4\textwidth}{0.5pt}\hspace{\stretch{1}}%
+\ifthenelse{\value{Aff}=0}%
+{}%Si Aff=0 on ne fait rien et sinon:
+{\ifx \prem \empty% On ne fait rien si il n'y a pas de solution r�ig�, et
+                  % sinon:
+\else
+\\\rule{0pt}{3ex}\hspace{0ex}\begin{small}\textbf{Solution:
+    }\textsl{\prem}\end{small}
+\fi}% On l'affiche!
+}
+
+
+%%%
+%%%############################
+%%AJOUTS 2007
+%%
+\newcommand{\Sr}{\mathscr{S}}
+\newcommand{\Rr}{\mathscr{R}}
+\newlength{\longueur}
+%\usepackage{latexsym}
+%%  Marge: Met le texte dans la marge en gras
+\newcommand{\Marge}[1]%
+{\settowidth{\longueur}{\textbf{#1.}}%
+\par\noindent \hspace{-\longueur}{\textbf{#1}}\hspace{1ex} }
+%------------------
+\newcommand{\MargeT}[1]% Pareil+hrule+retour ligne
+{\settowidth{\longueur}{\textbf{#1.}}%
+\par\noindent \rule{0pt}{3ex}\hspace{-\longueur}\raisebox{-0.6ex}{\textbf{#1}}\hspace{1ex}\hrulefill \par \vspace{1em}%
+ \noindent }
+%------------------
+%%%  CENTRAGE: Met le texte au centre, en gras, avec une ligne horizontale avant et apr�s sur la largeur de la page.
+\newcommand{\centrage}[1]%
+{\settowidth{\longueur}{\textbf{#1x.}}%
+\par\noindent \rule{0pt}{2ex}%
+\rule{(\linewidth-\longueur)/2}{0.4pt}
+\hspace{0.6ex}\raisebox{-0.6ex}{\textbf{#1}}\hspace{0.8ex}\hrulefill
+\\%[0.5em]%
+\noindent }
+%-----------------------
+\newcommand{\entouregras}[1]% Entoure le texte et le met en gras
+{\par\noindent \rule{0pt}{4ex}%
+\noindent\hspace{-0.3em}
+\raisebox{0.5ex}{\ovalbox{\textbf{#1}}}
+}{\par\smallskip}
+%-----------------------
+\newcommand{\Bullet}[1]% Met le texte en gras avec un $\bullet$ et espace
+{\par\noindent \rule{0pt}{2ex}%
+\noindent\hspace{-1em}
+\raisebox{0ex}{$\bullet$ \textbf{#1}}
+}{\par\smallskip}
+
+
+%------------------------%Place le symbole danger en marge
+%Version 1
+\newcommand{\Danger}{
+\settowidth{\longueur}{\Large$\triangle$}
+\par\noindent \rule{0pt}{3ex} \hspace{-\longueur}\hspace{-1ex}%
+{\Large$\triangle$}\hspace{-.6\longueur}\raisebox{0.3ex}{\footnotesize
+  !}\hspace{\longueur}\hspace{1ex}}{\par\smallskip}
+%Version 2 utilise \usepackage{manfnt}
+\reversemarginpar
+\def\DangerZ{\marginpar{\scalebox{.77}{\textdbend}}}
+%-------------------------
+
+
+
+\newcommand{\Mod}[3]{#1\equiv #2\ [#3]}
+%%-----------------------
+%% Les deux suivantes sont utiles lors de la preuve d'une �quivalence
+%% et notent une fl�che d'implication (ou r�cip) entre parenth�ses
+%% dans la marge
+\newcommand{\Impli}{\settowidth{\longueur}{$(\Longrightarrow )$}%
+\par\noindent \hspace{-\longueur}{$(\Longrightarrow )$}\hspace{1ex} }
+\newcommand{\Recip}{\settowidth{\longueur}{$(\Longleftarrow )$}%
+\par\noindent \hspace{-\longueur}{$(\Longleftarrow )$}\hspace{1ex} }
+
+
+
+%% Plus bas des vieilles bidouilles pour les QCM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%#############################################
+%%     Ne plus utiliser les trucs suivants:
+%%    #############################################
+%%%Les environnements d'alignement peuvent etre remplac�s par un
+%%%multicols{n}
+%% Pour les qcm utiliser M-x qcm et regler le multicols.
+%
+%% Environnement pour les 3 équations par exemple en line
+\newcommand{\alignetrois}[3]{%
+\begin{minipage}[t]{0.30\textwidth}
+ \begin{minipage}[t]{0.90\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.31\textwidth}
+\begin{minipage}[t]{0.90\textwidth} #2 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.31\textwidth}
+\begin{minipage}[t]{0.90\textwidth} #3 \end{minipage}
+  \end{minipage}
+}
+%% Environnement pour les 4 équations  par exemple en line
+\newcommand{\alignequatre}[4]{%
+\begin{minipage}[t]{0.23\textwidth}
+\begin{minipage}[t]{0.95\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+\begin{minipage}[t]{0.95\textwidth} #2 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+\begin{minipage}[t]{0.95\textwidth} #3 \end{minipage}
+\end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+\begin{minipage}[t]{0.95\textwidth} #4 \end{minipage}
+\end{minipage}
+}
+%%_______
+%% Environnement pour les 4 équations (a) (b) (c) (d) par exemple en line
+\newcommand{\aligneabcd}[4]{
+\begin{minipage}[t]{0.23\textwidth}
+ (a)$\ $\begin{minipage}[t]{0.95\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+(b)$\ $\begin{minipage}[t]{0.95\textwidth} #2 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+(c)$\ $\begin{minipage}[t]{0.95\textwidth} #3 \end{minipage}
+\end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+(d)$\ $\begin{minipage}[t]{0.95\textwidth} #4 \end{minipage}
+\end{minipage}
+}
+%%_______
+%% Environnement pour les 4 r�onses possibles �un QCM
+%% sur deux ligne avec a b c d
+\newcommand{\aligneabcddeuxlignes}[4]{
+\begin{minipage}[t]{0.47\textwidth}
+ (a) \begin{minipage}[t]{0.85\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.47\textwidth}
+ (b) \begin{minipage}[t]{0.85\textwidth} #2 \end{minipage}
+  \end{minipage}\\
+\begin{minipage}[t]{0.47\textwidth}
+ (c) \begin{minipage}[t]{0.85\textwidth} #3 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.47\textwidth}
+ (d) \begin{minipage}[t]{0.85\textwidth} #4 \end{minipage}
+  \end{minipage}}
+%%_____________________
+%%_______________________________________________________________
+%% Environnement pour les 3 r�onses possibles �un QCM.
+\newcommand{\qcmabc}[3]{
+\begin{minipage}[t]{0.3\textwidth}
+ (a)$\ \ $ \begin{minipage}[t]{0.8\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+(b)$\ \ $ \begin{minipage}[t]{0.8\textwidth} #2 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+(c)$\ \ $ \begin{minipage}[t]{0.8\textwidth} #3 \end{minipage}
+  \end{minipage}
+}
+%%Exemple de tableau de r�onses:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\arraystretch}{1.5}
+%\centering
+%\begin{tabular}{||r|c|c|c|c|c|c||}
+%\hline
+%%Ligne 1
+ %Question \no &
+%1&2&3&4&5&6 \\\hline
+%%Ligne 2
+%R�onse a, b ou c &
+% & & & & &  \\\hline
+%\end{tabular}
+%\renewcommand{\arraystretch}{1}
+%\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%_______________________________________________________________
+
+
+%%_______________________________________________________________
+%% Environnement pour les 3 r�onses possibles �un QCM avec des cases �cocher
+\newcommand{\qcmtrois}[3]{\\
+\begin{minipage}[t]{0.3\textwidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.8\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+$\Box \ \ $ \begin{minipage}[t]{0.8\textwidth} #2 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+$\Box \ \ $ \begin{minipage}[t]{0.8\textwidth} #3 \end{minipage}
+  \end{minipage}}
+%%___________________________________________________________
+%% Environnement pour les 4 r�onses possibles �un QCM avec des cases �cocher sur une ligne
+\newcommand{\qcmquatre}[4]{\\
+\begin{minipage}[t]{0.23\textwidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.85\textwidth}\begin{flushleft} #1
+   \end{flushleft} \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+$\Box \ \ $ \begin{minipage}[t]{0.85\textwidth}\begin{flushleft} #2 \end{flushleft}\end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+$\Box \ \ $ \begin{minipage}[t]{0.85\textwidth}  \begin{flushleft} #3 \end{flushleft}\end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.23\textwidth}
+$\Box \ \ $ \begin{minipage}[t]{0.85\textwidth} \begin{flushleft} #4 \end{flushleft}\end{minipage}
+  \end{minipage}}
+%% Environnement pour les 4 r�onses possibles �un QCM
+%% sur deux lignes
+\newcommand{\qcmquatredeuxlignes}[4]{
+\begin{minipage}[t]{0.47\textwidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.85\textwidth} #1 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.47\textwidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.85\textwidth} #2 \end{minipage}
+  \end{minipage}\\
+\begin{minipage}[t]{0.47\textwidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.85\textwidth} #3 \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.47\textwidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.85\textwidth} #4 \end{minipage}
+  \end{minipage}}
+%% Environnement pour les 4 r�onses possibles �un QCM avec des
+%% cases �cocher sur une ligne MAIS plus resserr�e
+\newcommand{\qcmq}[4]{\\
+\begin{minipage}[t]{0.25\linewidth}
+ $\Box \ \ $ \begin{minipage}[t]{0.9\linewidth}\begin{flushleft} #1
+   \end{flushleft} \end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.25\linewidth}
+$\Box \ \ $ \begin{minipage}[t]{0.9\linewidth}\begin{flushleft} #2 \end{flushleft}\end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.25\linewidth}
+$\Box \ \ $ \begin{minipage}[t]{0.9\linewidth}  \begin{flushleft} #3 \end{flushleft}\end{minipage}
+  \end{minipage}
+\begin{minipage}[t]{0.25\linewidth}
+$\Box \ \ $ \begin{minipage}[t]{0.9\linewidth} \begin{flushleft} #4 \end{flushleft}\end{minipage}
+  \end{minipage}}
+%%___________________________________________________________

@@ -1,0 +1,9 @@
+\begin{exercice}
+
+ Un Q.C.M. comporte quatre questions comportant chacune quatre réponses
+possibles dont une seule est correcte. 
+\begin{enumerate}
+\item Une réponse correcte rapporte un point. On veut oter un nombre
+  $x$ de point pour chaque réponse fausse de manière à ce qu'une personne
+  répondant au hasard à une question ait en moyenne zéro à cette question. Trouver $x$.
+\end{exercice}

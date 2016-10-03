@@ -1,0 +1,703 @@
+%
+%		Intégration 	TS 
+%
+%		Liste d'exercices
+%
+
+\documentclass[a4paper]{article}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%           En_Tête
+%\usepackage{tarassconf}		%%%%%%%%%%   LE FICHIER DE STYLE !!!
+%
+%
+%
+\usepackage{fancyheadings}
+\pagestyle{fancyplain}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+%%%%
+%\usepackage{textcomp}		%%%%%%%   	Euro
+%\usepackage[T1]{fontenc}
+%\renewcommand{\Euro}{\texteuro}
+%
+%
+\usepackage{makeidx}	%%%%%%%%%%%%%%   Constitution d'un INDEX
+\makeindex		%%%%%%%%%%%%%%   Constitution d'un INDEX
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagestyle{empty} %fancy
+\setlength{\textheight}{26cm}
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}.}}
+\renewcommand{\labelenumii}{\textbf{\alph{enumii}.}}
+\definecolor{gris}{gray}{0.90}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\leq=\leqslant
+\let\geq=\geqslant
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%	Ent^ete et Pied de page	%%%%%%%%%%%%%%%%%%%%%%
+
+\lhead{\small\bf Exercices Intégration }
+%\chead{\Large{\textbf{\textsc{Devoir surveillé n° 3 - Correction}}}}    %%% Devoir à la maison
+\rhead{\sc TS }    %%% lundi 30 septembre 2002
+\cfoot{\ }
+%\lfoot{ \textit{JP Spriet}}
+\setlength{\headrulewidth}{0pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\R{\ensuremath{\Bbb R}}
+\def\C{\ensuremath{\Bbb C}}
+\def\N{\ensuremath{\Bbb N}}
+\def\NN{\ensuremath{\Bbb N}}
+\def\QQ{\ensuremath{\Bbb Q}}
+\def\RR{\ensuremath{\Bbb R}}
+\def\CC{\ensuremath{\Bbb C}}
+\def\TT{\ensuremath{\Bbb T}}
+\def\UU{\ensuremath{\Bbb U}}
+\def\ZZ{\ensuremath{\Bbb Z}}
+
+\def\encadre#1{\framebox{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%	DEBUT		%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%	DEBUT		%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%	DEBUT		%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%       debut du document         %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin {document}
+
+\everymath{\displaystyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{center}
+{\Large \bf  Exercices sur les intégrales}
+\end{center}
+
+
+
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+\`A l'aide d'intégration(s) par parties, calculer :\\
+
+$\displaystyle \int_{0}^{\frac{\pi}{2}}  t \sin(t) \,dt$
+\hfill
+\encadre{
+$1$
+}
+
+
+$\displaystyle \int_{0}^{1} (2-t)e^{t} \, dt$
+\hfill
+\encadre{
+$2e-3$
+}
+
+
+$\displaystyle \int_{0}^{\pi}  (2t+3) \sin(t) \, dt$
+\hfill
+\encadre{
+$2 \pi+6$
+}
+
+
+$\displaystyle \int_{1}^{x}  t\ln(t) \, dt$
+\hfill
+\encadre{
+$\frac{1}{2} {x}^{2}  \ln (x) - \frac{1}{4} {x}^{2}$
+}
+
+
+
+%%%%%%%%%%%$\displaystyle \int_{0}^{-1}  t^2 e^t \, dt$
+
+$\displaystyle \int_{0}^{-1}  (3t^2-t+1) e^t \, dt$
+\hfill
+\encadre{
+$-8+18\,{e^{-1}}$
+}
+
+
+
+$\displaystyle \int_{0}^{1} t^2 e^{3t}  \, dt$
+\hfill
+\encadre{
+${\frac {5}{27}}\,{e^{3}}-{\frac {2}{27}}$
+}
+
+
+
+$\displaystyle \int_{0}^{\pi}  e^t \cos(t)  \, dt$
+\hfill
+\encadre{
+$-\frac{1}{2} {e^{\pi }} - \frac{1}{2}$
+}
+
+
+
+$\displaystyle \int_{0}^{\pi}  e^{-t} \sin(t)  \, dt$
+\hfill
+\encadre{
+$\frac{1}{2} {e^{-\pi }}+ \frac{1}{2}$
+}
+
+
+
+\end{exercice}%%%
+
+
+%%%%%%%%%%
+
+\begin{exercice} %2
+%
+\noindent
+À l'aide de deux  intégrations par parties successives, prouver
+que 
+$\displaystyle 
+\int_{0}^{\frac{\pi}{8}}  e^{-2x} \cos(2x) \,dx = \frac{1}{4}$
+
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercice} %3
+%
+\noindent
+Calculer les intégrales suivantes :\\
+
+$\displaystyle \int_{0}^{1} t^2 e^{-t} \, dt$
+\hfill
+\encadre{
+$-5\,{e^{-1}}+2$
+}
+
+$\displaystyle \int_{0}^{1} t \sqrt{t^2+1} \, dt$
+\hfill
+\encadre{
+$\frac{2 \sqrt {2}-1}{3}$
+}
+
+$\displaystyle \int_{1}^{e} \ln(t) \, dt$
+\hfill
+\encadre{
+$1$
+}
+
+$\displaystyle \int_{0}^{\frac{\pi}{2}} \sqrt{1+2t} + \sin(t) \,
+dt$
+\hfill
+\encadre{
+$\frac{ \left (1+\pi \right )^{3/2}+2}{3}$
+}
+
+\end{exercice}%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+%
+\begin{exercice} %4
+%
+Soit 
+$I= \displaystyle \int_{0}^{1} \frac{x}{1+x^2}  \, dx$
+et
+$J= \displaystyle \int_{0}^{1} \frac{x^3}{1+x^2}  \, dx$
+
+\begin{enumerate}
+\item
+Calculer $I$.
+\item
+Calculer $I+J$ et en déduire la valeur de $J$.
+
+\end{enumerate}
+
+\end{exercice}%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+
+\begin{exercice} %5
+%
+Soit $f$ la fonction définie pour $x\neq 1$ par 
+$\displaystyle f(x)= \frac{x-2}{(x-1)^2}$.
+\begin{enumerate}
+\item
+Montrer qu'il existe deux réels $a$ et $b$ tels que pour tout
+$x\neq 1$, 
+\quad $\displaystyle   f(x) = \frac{a}{(x-1)^2} +\frac{b}{(x-1)}$.
+\item
+Calculer $\displaystyle \int_{-1}^{0}  f(t) \, dt$.
+
+\end{enumerate}
+\end{exercice}%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+%
+\begin{exercice} %6
+%
+\noindent
+\begin{enumerate}
+\item 
+
+Montrer que la fonction $f$ définie sur $\RR$ par 
+$f(x)= \frac{x^2+4x}{(x^2+x+2)^2}$ admet une primitive de la
+forme $F(x)= \frac{ax+b}{x^2+x+2}$ où $a$ et $b$ sont deux
+constantes réelles.
+\item
+Calculer $\displaystyle \int_{0}^{A}  f(t) \, dt$.
+
+\end{enumerate}
+
+\end{exercice}%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+%
+\begin{exercice} 
+%
+\noindent
+Soit
+$I  = \displaystyle \int_{0}^{1}  t e^{-t} \, dt$.
+Dériver la fonction $f$ définie par $f(t) = (at+b) e^{-t}$ 
+où $a$ et $b$ sont deux constantes réelles; 
+et en déduire le calcul de $I$.
+
+\end{exercice}%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+Soit
+$I  = \displaystyle \int_{0}^{1}  \frac{dx}{\sqrt{x^2+2}}$
+et $f$  la fonction définie sur $[0;1]$
+par $f(x) = \ln(x+\sqrt{x^2+2}) $.\\ 
+Calculer la dérivée de $f$ 
+et en déduire la valeur de $I$.
+
+\end{exercice}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} %9
+%
+
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{1} t^n \cos(t)  \, dt$.
+%
+\begin{enumerate}
+\item
+Montrer que la suite $(I_n)$ est décroissante.
+\item
+Trouver une relation de récurrence entre $I_n$ et $I_{n-2}$ pour
+$n\geq 2$.
+\item
+Monter que pour tout $n\geq 1$, $0 \leq I_n \leq \frac{1}{n+1}$.
+\item
+Que peut-on en déduire sur la suite $(I_n)$ ?
+
+\end{enumerate}
+\end{exercice}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+\begin{enumerate}
+\item 
+Soit 
+$I= \displaystyle \int_{0}^{\frac{\pi}{4}} (2t+1) \cos^2(t)  \, dt$
+et
+$J= \displaystyle \int_{0}^{\frac{\pi}{4}} (2t+1) \sin^2(t)  \, dt$.
+\item
+Calculer $I+J$.
+\item
+Calculer $I-J$ à l'aide d'une intégration par parties (on
+pourra se servir de l'égalité $\cos^2(t)-\sin^2(t)=\cos(2t)$ pour
+tout $t$).
+\item
+En déduire les valeurs de $I$ et $J$.
+
+\end{enumerate}
+
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} %11
+%
+\noindent
+\begin{enumerate}
+\item 
+
+Montrer que pour tout $t \geq 0$, on a : $1-t^2 \leq 1 \leq
+1+t^3$.
+\item
+En déduire que pour tout $t\geq 0$ :
+$\displaystyle 1-t \leq \frac{1}{1+t} \leq 1-t+t^2$.
+\item
+Calculer pour $x\geq 0$ l'intégrale 
+$\displaystyle \int_{0}^{x}  \frac{1}{1+t}  \, dt$.
+\item
+En déduire que pour tout $x\geq 0$ :
+$\displaystyle x-\frac{x^2}{2} \leq \ln(1+x) \leq
+x-\frac{x^2}{2}+\frac{x^3}{3}$.
+\item
+Retrouver $\displaystyle \lim_{x\to 0^+} \frac{\ln(1+x)}{x} $.
+
+\end{enumerate}
+ 
+\end{exercice}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+Vérifier que pour tout $x \in \RR$, 
+$\displaystyle \frac{e^x}{e^{x}-x} = 1+\frac{x}{e^{x}-x}$
+puis montrer que 
+$\displaystyle \int_{0}^{n}  \frac{e^x}{e^{x}-x} \, dx 
+= n + \int_{0}^{n } \frac{x}{e^{x}-x} \, dx$
+
+\end{exercice}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{1} t^n e^t  \, dt$.
+\begin{enumerate}
+\item 
+\'Etudier la monotonie de $(I_n)$.
+\item
+Trouver une relation de récurrence entre $I_n$ et $I_{n-1}$ pour
+$n\geq 1$.
+\item
+Monter que pour tout $n\geq 1$, $0 \leq I_n \leq \frac{e}{n+1}$.
+\item
+Que peut-on en déduire sur la suite $(I_n)$ ?
+
+\end{enumerate}
+%
+\end{exercice}%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+%
+\begin{exercice} %14
+%
+
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{1}^{2} t^n e^t  \, dt$.
+\begin{enumerate}
+\item 
+\'Etudier la monotonie de $(I_n)$.
+\item
+Trouver une relation de récurrence entre $I_n$ et $I_{n-1}$ pour
+$n\geq 1$.
+\item
+Monter que pour tout $n\geq 1$, $ I_n \geq \frac{2^{n+1}-1}{n+1} e$.
+\item
+Que peut-on en déduire sur la suite $(I_n)$ ?
+\end{enumerate}
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+
+%
+\begin{exercice} 
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{1}^{e} t (\ln(t))^n  \, dt$.
+\begin{enumerate}
+\item 
+Calculer $I_0$ et $I_1$.
+\item
+Montrer que pour $n\geq1$, on a 
+$\displaystyle I_n= \frac{e^2}{2} -\frac{n}{2} I_{n-1}$
+\end{enumerate}
+\end{exercice}%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{1} \frac{e^{nx}}{e^{x}+1}  \, dx$.
+\begin{enumerate}
+\item 
+
+Calculer $I_1$ et $I_0+I_1$. En déduire $I_0$.
+\item
+Calculer $I_{n+1} + I_{n}$.
+\item
+Trouver une relation de récurrence entre $I_{n+1}$ et $I_n$ pour
+$n\in \NN $.
+\end{enumerate}
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+
+%
+\begin{exercice} %17
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{\pi} e^{-nx}  \cos(x)  \,
+dx$.
+\begin{enumerate}
+\item 
+\'Etudier les variations de $I_n$.
+\item
+Montrer que pour tout $n\geq 1$, 
+$|I_n| \leq \frac{1}{n}(1-e^{n\pi})$.
+\item
+En déduire le comportement de $I_n$ lorsque $n$ tend vers $+\infty$.
+
+\end{enumerate}
+%
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%
+%
+\begin{exercice} %
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{1} \frac{e^{nx}}{e^{x}+1}  \,
+dx$.
+\begin{enumerate}
+\item 
+Sans calculer $I_n$, montrer que la suite$(I_n)$ est
+croissante.
+\item
+Montrer que pour tout $x\in[0;1]$, 
+$\displaystyle \frac{e^{nx}}{e+1} \leq  \frac{e^{nx}}{e^x+1} \leq
+\frac{1}{2} e^{nx}$.
+\item
+En déduire un encadrement de $I_n$.
+\item
+\'Etudier la limite de $I_n$ lorsque $n$ tend vers $+\infty$.
+
+\end{enumerate}
+
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{1} x^n \sqrt{1+x}  \, dx$
+pour $n\geq 1$ et 
+$I_0 = \displaystyle \int_{0}^{1} \sqrt{1+x}  \, dx$.
+\begin{enumerate}
+\item 
+Calculer $I_0$, puis $I_1$ à l'aide d'une intégration par
+parties.
+\item
+\begin{enumerate}
+\item
+Comparer $x^n$ et $x^{n+1}$ lorsque $0\leq x \leq 1$.
+\item
+En déduire que $(I_n)$ est décroissante.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+Grâce à un encadrement de $\sqrt{1+x}$, établir que 
+$\displaystyle \frac{1}{n+1} \leq I_n \leq \frac{2}{n+1}$.
+\item
+En déduire $\displaystyle \lim_{n\to +\infty } I_n$.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+Montrer que pour tout $x \in [0;1]$, 
+$\displaystyle 0 \leq \sqrt{2}-\sqrt{1+x} \leq \frac{1}{2}
+(1-x)$.
+\item
+En déduire que 
+$\displaystyle \frac{2}{n+1}  - \frac{1}{2n^2} \leq I_n \leq \frac{2}{n+1}$;
+et en déduire $\displaystyle \lim_{n\to +\infty } n \, I_n$.
+\end{enumerate}
+
+\end{enumerate}
+%
+\end{exercice}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} %20
+
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\geq 1$ 
+par $I_n = \displaystyle \int_{0}^{1} \frac{dt}{(t^n+1)^2} $.\\
+Répondre par vrai ou faux :\\
+La suite $(I_n)$ est bornée.\\
+La suite $(I_n)$ est croissante.\\
+La suite $(I_n)$ est décroissante.\\
+$\displaystyle \lim_{n\to +\infty } I_n =0$.
+
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+
+Soit $(I_n)$ la suite d'intégrales définie pour $n\geq 1$ 
+par $I_n = \displaystyle \int_{1}^{e} t (\ln(t))^n \, dt $.
+
+\begin{enumerate}
+\item 
+Montrer que $2I_n +n I_{n-1} =e^2$ pour tout $n\geq 2$.
+\item
+Montrer que la suite $(I_n)$ est décroissante.
+\item
+Déduire de ce qui précède l'encadrement
+$\displaystyle \frac{e^2}{n+3} \leq I_n \leq \frac{e^2}{n+2}$  
+pour tout $n\geq
+1$; puis la limite de $(I_n)$.
+
+\end{enumerate}
+
+\end{exercice}%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%
+\begin{exercice} 
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\geq 1$ 
+par $I_n = \displaystyle 
+\frac{1}{n!} \int_{0}^{1} (1-x)^n e^{x} \, dx $
+et $\displaystyle  I_0 = \int_{0}^{1}  e^{x} \, dx $.
+
+\begin{enumerate}
+\item 
+
+Calculer $ \displaystyle \int_{0}^{1} (1-x)^n  \, dx $.
+En déduire que 
+$\displaystyle \frac{1}{(n+1)!} \leq I_n \leq \frac{e}{(n+1)!}$.
+
+\item 
+Montrer que la suite $(I_n)$ converge et déterminer sa limite.
+
+\end{enumerate}
+
+\end{exercice}%%%
+
+%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exercice} %23
+%
+\noindent
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle  \int_{0}^{1} x^n e^{x} \, dx $.
+\begin{enumerate}
+\item 
+Calculer $I_0$.
+\item 
+Trouver une relation de récurrence liant $I_{n}$ et $I_{n-1}$.
+\item 
+Montrer que $\displaystyle 0 \leq I_n \leq \frac{e}{n+1}$.
+\item 
+Montrer que la suite $(I_n)$ converge et déterminer sa limite.
+\end{enumerate}
+\end{exercice}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\begin{exercice}
+
+On pose $I_0 = \int_0^{\frac{\pi}{6}}\sin(3x)\  dx$ et, pour tout nombre $n$
+entier naturel non nul, $I_n=\int_0^{\frac{\pi}{6}}x^n\sin(3x)\ dx$.
+  \begin{enumerate}[1.]
+  \item 
+    \begin{enumerate}[a)]
+    \item Calculer $I_0$.
+    \item En utilisant une intégration par parties, calculer $I_1$.
+    \end{enumerate}
+\item
+    \begin{enumerate}[a)]
+    \item En effectuant deux intégrations par parties successives,
+      prouver que pour $n \geqslant 1$, 
+      $$I_{n+2}=\frac{n+2}{9}\times\left(\frac{\pi}{6}\right)^{n+1}-\frac{(n+2)(n+1)}{9}I_n$$
+    \item Calculer $I_3$.
+    \end{enumerate}
+  \item Sans calculer l'intégrale $I_n$ :
+\begin{enumerate}[a)]
+  \item Prouver que la suite $(I_n)_{n\in\mathbb{N}}$ est monotone.
+  \item Prouver que pour tout nombre  $n$ entier naturel non nul, 
+    $$0 \leqslant I_n \leqslant \int_0^{\frac{\pi}{6}}x^n\ dx$$
+  \item Déterminer $\lim_{n\to+\infty} I_n$.
+  \end{enumerate}
+\end{enumerate}
+
+%
+%
+\end{exercice}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%      FIN du document         %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\printindex
+\end {document}
+
+

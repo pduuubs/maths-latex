@@ -1,0 +1,99 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\activite{Intégration}{\term}
+\cfoot{}
+\section{Aire sous la parabole}
+\begin{minipage}{9cm}
+On considère dans un repère orthonormé la courbe de la fonction carré,
+sur l'intervalle $I=\intf{0}{1}$. On veut calculer l'aire du domaine
+entre la courbe et l'axe des abscisses, pour $x$ variant de $0$
+à~$1$. Le principe de la méthode exposée était déja connu d'Archimède,
+et a donné lieu bien plus tard (Newton, Leibniz puis Riemann) à la
+théorie de l'intégration.\\
+  \noindent
+{\bf Principe:} On se donne un $n\in\N^*$. On découpe l'intervalle $I$ avec une
+\emph{subdivision} de $I$ en $n$ intervalles de longueur
+$\frac{1}{n}$. On considère alors (cf figure pour n=?) les aires de
+deux suites de rectangles, de manière à obtenir un encadrement de
+l'aire cherchée. On calcule les deux aires, puis on fait tendre $n$
+vers l'infini.
+\end{minipage}\hfill%
+\begin{minipage}{5.5cm}
+  \begin{center}
+\includegraphics[width=5cm]{integrale_carre}    
+  \end{center}
+\end{minipage}
+\vspace{0.0cm}
+\\
+\noindent
+Compléter la figure en notant les abscisses des sommets des rectangles
+qui sont sur l'axe des abscisses.
+On note $a_n$ l'aire des rectangles qui sont sous la courbe et
+  $A_n$ celle des rectangles qui vont de l'axe des abscisses jusqu'au
+  dessus de la courbe. 
+\begin{enumerate}
+\item Calcul de $a_n$:%
+  \begin{enumerate}
+  \item L'aire du premier rectangle sous la courbe est nulle, celle du second est
+    $\frac{1}{n}\times
+    \left(\frac{1}{n}\right)^2=\frac{1}{n^3}$. Combien y a-t-il de
+      rectangles sous la courbe?
+    \item \'Ecrire sans, puis avec symbole sigma l'expression de $a_n$.
+  \end{enumerate}
+\item Procéder de même pour donner l'expression de $A_n$ en fonction
+  d'une somme de carrés d'entiers.
+
+\item Calculer et donner la limite de $A_n-a_n$.
+\item En utilisant la formule: $\displaystyle
+  \sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}$ prouver que $a_n$ et $A_n$
+  ont une limite commune, et en déduire l'aire cherchée que l'on note:
+\[\int_0^1 x^2 {\rm d}x\]
+\end{enumerate}
+
+
+
+\section{Fonction aire}
+\begin{minipage}{6.5cm}
+  On étudie un cas un peu plus général. On considère une
+  fonction $f$ décroissante et continue sur un intervalle. On note
+  $C_f$ sa courbe. Sur la
+  figure, $f$ est décroissante sur $\R^+$. On appelle $A(x)$ l'aire entre la
+  courbe et l'axe des abscisses pour les abscisses variant de 0 à
+  $x$. C'est le domaine grisé. 
+\end{minipage}\hfill%
+\begin{minipage}{7.3cm}
+  \begin{center}
+    \includegraphics[width=7.1cm]{courbe_integrale} %[width=]
+  \end{center}
+\end{minipage}\\
+\begin{enumerate}
+\item Donner en utilisant les rectangles
+  tracés un encadrement pour $h>0$ de la différence: 
+\[A(x+h)-A(x)\]
+en fonction de $f$.
+\item En déduire que la fonction $A$ est dérivable en $x$, et donner
+  l'expression de sa dérivée.
+
+\item Combien vaut $A(0)$?
+\item Peut-on obtenir le même résultat si $f$ est croissante?
+\item {\bf Application} 
+  \begin{enumerate}
+  \item Vérifier le calcul de la première
+  partie: Trouver une fonction $A$ dont la dérivée a pour expression:
+  $x^2$ et telle que $A(0)=0$
+\item Déterminer l'aire sous la parabole de la fonction carré mais pour $x$
+variant entre $-1$ et~$2$.
+\item Vérifier qu'avec cette méthode on retrouve bien l'aire du
+  rectangle de côtés $a$ et $b$.
+  \end{enumerate}
+\end{enumerate}
+\end{document}
+\section{Primitive}
+Déterminer l'aire sous la parabole de la fonction carré mais pour $x$
+variant entre $-1$ et~$2$. 
+
+\end{document}

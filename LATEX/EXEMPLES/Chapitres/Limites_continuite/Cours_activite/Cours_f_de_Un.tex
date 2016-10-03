@@ -1,0 +1,117 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Continuité-Application à $u_{n+1}=f(u_n)$}%{\term}
+
+%%-----------------------
+{\tiny
+\section{Continuité}
+\section{Théorème des valeurs intermédiaires} 
+\section{Applications}
+\subsection{Racine d'un polynôme de degré impair}
+\subsection{Fonctions réciproques} }
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+\subsection{$u_{n+1}=f(u_n)$}
+On se donne une fonction $f$ définie, continue sur un intervalle $I$ de
+$\R$. Soit $u_0\in I$.
+\subsubsection{Intervalle stable}
+\Def{On dit que $I$ est stable par $f$ si $f(I)\subset I$}
+\exemples{
+  \begin{enumerate}
+  \item $f(x)=x(1-x)$ sur $I=\intf{0}{1}$. $I$ est stable par f, mais
+pas par $g=5f$. Il suffit d'étudier $f$.
+\item $f(x)=\frac{1}{x-1}$ et $u_0=\frac32$ Vérifier que la relation
+  $u_{n+1}=f(u_n)$ ne définit pas une suite. 
+  \end{enumerate}
+}
+La condition $I$ stable par $f$ permet de garantir que la suite est
+définie et que tous les termes de la suite sont dans l'intervalle $I$.
+(récurrence immédiate)
+
+\subsubsection{Sens de variation}
+\begin{prop}
+  \begin{enumerate} 
+  \item $ \forall x \in I,\ f(x)-x\geq 0 \implies$ $(u_n)$ croissante
+  \item $\iff \forall x \in I,\ f(x)-x\leq 0 \implies$ $(u_n)$ décroissante 
+  \end{enumerate}
+\end{prop}
+
+\proof{Facile}
+\begin{prop}
+\begin{enumerate} 
+  \item $f$ croissante $\implies$ $(u_n)$ monotone. Le sens de var est
+    donné par le signe de $u_1-u_0$
+  \item $f$ décroissante $\implies$ $(u_{2n})$ et $(u_{2n+1})$ sont
+    monotones de monotonies contraires
+\end{enumerate}
+\end{prop}
+\proof{ Supposons $u_1>u_0$.
+\begin{enumerate} 
+  \item Par récurrence. $\Para (n)$: \og $u_{n+1}-u_n\geq 0$\fg{}
+  \item On pose $p_n=u_{2n}$ et $i_n=u_{2n+1}$. Alors:
+\[p_{n+1}=fof(p_n) \quad \et{}\quad i_{n+1}=fof(i_n)\]
+Or $f$ dec. implique $fof$ croissante donc par le 1. $p$ et $i$ sont
+monotones.
+Supposons $p$ croissante, alors $u_2\geq u_0$ donc, en appliquant $f$
+qui est dec. on a $u_3\leq u_1$ donc $i_1 \leq i_0$ donc $i$ est dec.
+\end{enumerate}
+}
+
+\subsubsection{Convergence}
+\Def{On appelle point fixe d'une fonction $f$ un réel tel que $f(x)=x$}
+\begin{theo}Si $f$ est continue sur $I$ et que $(u_n)$ converge, alors la
+  limite est nécessairement un point fixe de $f$
+\end{theo}
+Attention: L'existence d'un point fixe ne garantit pas la convergence
+de $(u_n)$. Mais l'absence de point fixe suffit à justifier que $(u_n)$
+ne converge pas.
+En pratique: On justifie que $(u_n)$ CV (croissante majorée par
+exemple) puis on détermine la limite en cherchant les points fixes de
+$f$. Si le point fixe est unique, c'est facile, sinon il faut
+raisonner avec le sens de variation de $(u_n)$.
+
+\exemple{$u_{n+1}=\frac{u_n}{2-u_n}$ et $u_0 \in \intf{0}{1}$}
+
+
+
+
+
+\end{document}
+\label{sec:para1}
+
+\begin{pspicture}(0,-0.5)(5,4.5)
+\rput(2.2,4){{\it diagramme de Venn}}
+\rput(2.2,3){$A\cup B$}
+\psframe(0,0)(4.5,3.6)
+\pscircle[fillstyle=hlines](1.5,1.5){1}
+\pscircle[fillstyle=hlines](3,1.5){1}
+\rput(1.5,1.5){A}
+\rput(3,1.5){B}
+\end{pspicture}
+\begin{pspicture}(0,-0.5)(5,4.5)
+\rput(2.2,4){{\it diagramme de Venn}}
+\rput(2.2,3){$A\cap B$}
+\psclip{% bloc colorier
+\pscustom{% 1re partie colorier
+\pscircle(1.5,1.5){1}}
+\pscustom{% 2me partie
+\pscircle(3,1.5){1}}
+\psframe[fillstyle=hlines](0,0)(4,3)} % hachurer l'intersection des 2
+% parties qui se trouvent dans le frame indiquÃ©
+\endpsclip % fin bloc colorier (pas de } fermant)  %% style=hachured
+
+\psframe(0,0)(4.5,3.6)
+\pscircle(1.5,1.5){1}
+\pscircle(3,1.5){1}
+\rput(1.5,1.5){A}
+\rput(3,1.5){B}
+\end{pspicture}\\
+Bla bla
+%%-----------------------
+\end{document}

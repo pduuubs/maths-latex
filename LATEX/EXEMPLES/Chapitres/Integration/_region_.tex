@@ -1,0 +1,63 @@
+\message{ !name(Exos_Integrales.tex)}
+
+\documentclass[a4paper]{article}
+\usepackage[]{panpan}
+\newcommand{\ud}{\,\mathrm{d}}
+\begin{document}
+
+\message{ !name(Exos_Integrales.tex) !offset(-3) }
+
+\fexost{Intégrales}
+\chead{} \rhead{}
+\Titre{Intégrales}
+\Exo[]{Dériver la fonction $F$ définie sur $\R^{+*}$ par:
+  \[ F(x)=x\ln x-x\]
+En déduire la valeur exacte de l'intégrale:
+\[ \int_1^{\e} \ln x \ud x\]
+}
+\Exo[]{On considère la fonction $f$ définie sur $\R$ par $f(x)=\e^{-x}$. On note $\Cr $ sa courbe représentative dans un repère orthonormal, unités  2cm. 
+  \begin{enumerate}
+  \item Calculer l'aire (en unité d'aire puis en cm$^2$) entre $\Cr$ et $(Ox)$ et limitée par $(Oy)$ et la droite verticale d'équation $x=5$
+  \item Soit $b$ un réel positif. On note $I_b=\int_1^{b} f(x) \ud x$. 
+    \begin{enumerate}
+    \item Combien vaut $I_5$?
+    \item Calculer $I_b$ puis sa limite quand $b$ tend vers l'infini. Qu'est-ce que cela signifie en terme d'aire?
+    \end{enumerate}
+
+  \end{enumerate}
+}
+\Exo[]{On appelle valeur moyenne d'une fonction intégrable $f$ sur un intervalle $\intf{a}{b}$ le réel $M(f)$:
+\[ M(f)=\frac{1}{b-a} \int_a^{b} f(x) \ud x\]
+Calculer les valeurs moyennes des fonctions suivantes sur l'intervalle $\intf{a}{b}$ donné.
+\begin{enumerate}
+\item $f(x)=x$ sur $\intf{0}{10}$.
+\item $f(x)=x^2$ sur $\intf{-1}{1}$.
+\item $f(x)=\e^{2x}$ sur $\intf{-1}{1}$
+\item $f(x)=\sin (3x+5)$ sur $\intf{0}{\pi}$.
+\item $f(x)=\sin ^2(x)$ sur $\intf{0}{\pi}$. On rappelle les formules de linéarisation:
+\[ \sin ^2x=\frac{1-\cos 2x}{2} \quad \et{} \quad \cos ^2x=\frac{1+\cos 2x}{2}\]
+\end{enumerate}
+}
+\Exo[]{Soit $f(x)=(x^2-3x+1)\e^x$. Déterminer une primitive $F$ de $f$ sous la forme:
+\[ F(x)=(ax^2+bx+c)\e^x\]
+En déduire  la valeur de $\int_{-1}^{2} f(x) \ud x$
+}
+\Exo[]{Soit $i(t)$ une intensité de courant sinusoïdale, variable en fonction du temps $t$. On note $T$ la période de la fonction $i$. Un ampèremètre mesure $I_{\text{eff}}$ l'intensité efficace de cette intensité, définie par:
+\[ I_{\text{eff}}^2=\frac{1}{T}  \int_0^{T} i^2(t) \ud t \]
+L'intensité efficace au carré est donc la moyenne sur une période du carré de l'intensité. On a la même définition pour la tension efficace. Déterminer $I_{\text{eff}}$ pour les intensités $i(t)$ données, après avoir déterminé la période $T$. ( $i(t+T)=i(t)$ et on rappelle que $\sin$ et $\cos$ sont de période $2\pi$)
+  \begin{enumerate}
+  \item $i(t)=\sin t$
+  \item $i(t)=7\sin (2t-\frac{\pi}{4})$
+  \item $i(t)=2\cos (6\pi t+\frac{\pi}{3})$
+    \end{enumerate}
+}
+
+
+
+ 
+\end{document}
+
+
+
+
+\message{ !name(Exos_Integrales.tex) !offset(-63) }

@@ -1,0 +1,75 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -16 -2 171 123 
+%%Creator: MetaPost
+%%CreationDate: 2007.06.27:2056
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 0 3 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+28.34645 0 lineto
+42.51968 24.54881 lineto
+28.34636 49.09764 lineto
+-0.00027 49.09756 lineto
+-14.17354 24.54854 lineto
+ closepath stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 0 0 moveto
+28.34645 0 lineto
+42.51968 24.54881 lineto
+28.34636 49.09764 lineto
+-0.00027 49.09756 lineto
+-14.17354 24.54854 lineto
+ closepath stroke
+newpath 42.51968 24.54881 moveto
+70.86613 24.54881 lineto
+85.03937 49.09763 lineto
+70.86604 73.64645 lineto
+42.51941 73.64638 lineto
+28.34615 49.09735 lineto
+ closepath stroke
+newpath 0 49.09763 moveto
+28.34645 49.09763 lineto
+42.51968 73.64644 lineto
+28.34636 98.19527 lineto
+-0.00027 98.19519 lineto
+-14.17354 73.64616 lineto
+ closepath stroke
+newpath 42.51968 73.64644 moveto
+70.86613 73.64644 lineto
+85.03937 98.19525 lineto
+70.86604 122.74408 lineto
+42.51941 122.744 lineto
+28.34615 98.19498 lineto
+ closepath stroke
+newpath 85.03935 0 moveto
+113.3858 0 lineto
+127.55904 24.54881 lineto
+113.38571 49.09764 lineto
+85.03908 49.09756 lineto
+70.86581 24.54854 lineto
+ closepath stroke
+newpath 127.55904 24.54881 moveto
+155.90549 24.54881 lineto
+170.07872 49.09763 lineto
+155.9054 73.64645 lineto
+127.55876 73.64638 lineto
+113.3855 49.09735 lineto
+ closepath stroke
+newpath 85.03935 49.09763 moveto
+113.3858 49.09763 lineto
+127.55904 73.64644 lineto
+113.38571 98.19527 lineto
+85.03908 98.19519 lineto
+70.86581 73.64616 lineto
+ closepath stroke
+newpath 127.55904 73.64644 moveto
+155.90549 73.64644 lineto
+170.07872 98.19525 lineto
+155.9054 122.74408 lineto
+127.55876 122.744 lineto
+113.3855 98.19498 lineto
+ closepath stroke
+showpage
+%%EOF

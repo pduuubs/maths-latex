@@ -1,0 +1,47 @@
+\begin{exercice}
+\noindent \textbf{Partie A}\\
+Soit $f$ la fonction d\'efinie sur l'intervalle $]1 ~;~ +\infty[$ par 
+\[f (x) = \dfrac{x}{\ln x}\]
+
+\begin{enumerate}
+\item  \begin{enumerate}
+\item D\'eterminer les limites de la fonction $f$ en $1$ et en $+\infty$.
+\item \'Etudier les variations de la fonction $f$.
+\end{enumerate}
+\item Soit $\left(u_{n}\right)$ la suite d\'efinie par $u_{0} = 5$ et $u_{n+1}  =f\left(u_{n}\right)$ pour tout entier naturel $n$.
+\begin{enumerate}
+\item  On a trac\'e ci-dessous $\mathscr{C}$, la courbe repr\'esentative  de la
+  fonction $f$ .
+% sur la figure donn\'ee en annexe qui sera rendue avec la copie. 
+Construire la droite d'\'equation $y = x$ et les points $M_{1}$ et $M_{2}$ de la courbe $\mathscr{C}$ d'abscisses respectives $u_{1}$ et~$u_{2}$. Proposer une conjecture sur le comportement de la suite $\left(u_{n}\right)$.
+\item D\'emontrer que pour tout entier naturel $n$, on a: $u_{n} \geqslant  \text{e}$. \\ (\textit{On pourra utiliser la question {\bf 1.b.}}).
+\item D\'emontrer que la suite $\left(u_{n}\right)$ converge vers un r\'eel  $\ell$ de l'intervalle $[\text{e} ~ ;~ +\infty[$.
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+\noindent \textbf{Partie B}\\
+On rappelle que la fonction $f$ est continue sur l'intervalle $]1 ~;~ +\infty[$.
+\begin{enumerate}
+\item  En \'etudiant de deux mani\`eres la limite de la suite $\left(f\left(u_{n}\right)\right)$, d\'emontrer que $f(\ell) = \ell$.
+\item En d\'eduire la valeur de $\ell$.
+\end{enumerate}
+ 
+\vspace{1cm}
+\begin{center}
+
+\begin{pspicture}(0,0)(12,12)
+
+  \psgrid[griddots=10,gridlabels=0pt, subgriddiv=0]
+\psset{xunit=2cm,yunit=2cm}
+  \psaxes(0,0)(0,0)(6,6)
+  \psplot[%linecolor=gris, 
+linewidth=0.5pt]%
+     {1.23}{6}{x dup ln div}
+\put(2.2,9.2){$\Cr$}
+%neg -1 atan 180 sub 180 div 3.1416 mul}
+\end{pspicture}
+\end{center}
+ 
+\end{exercice}

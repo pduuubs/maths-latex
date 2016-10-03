@@ -1,0 +1,27 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -61 -10 61 67 
+%%Creator: MetaPost
+%%CreationDate: 2008.02.05:2247
+%%Pages: 1
+%%DocumentFonts: CMMI10
+ /cmmi10 /CMMI10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath -56.6929 0 moveto
+28.34645 0 lineto
+56.6929 56.6929 lineto
+-28.34645 56.6929 lineto
+ closepath stroke
+-60.42891 -9.8078 moveto
+(A) cmmi10 9.96265 fshow
+24.31815 -9.8078 moveto
+(B) cmmi10 9.96265 fshow
+52.77635 59.6929 moveto
+(C) cmmi10 9.96265 fshow
+-32.60895 59.6929 moveto
+(D) cmmi10 9.96265 fshow
+showpage
+%%EOF

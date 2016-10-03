@@ -1,0 +1,131 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Intégrales, aires et volumes}%{\term}
+\rhead{}
+%%-----------------------
+
+\section{Aires}
+
+\label{sec:para1}
+\noindent
+\begin{minipage}{0.5\linewidth}
+{\bf Aire algébrique.} %
+L'aire est comptée négativement lorsque la fonction est négative,
+\ie{} lorsque sa courbe se trouve sous l'axe des abscisses. Ainsi,
+pour prouver que le domaine hachuré et le domaine grisé ont la même
+aire, il suffit de prouver que:
+\[ \int_0^{\pi} \sin x\cos x\ud x=0\]  
+\end{minipage}\hfill%
+\begin{minipage}{0.5\linewidth}
+ % \input{Courbes/aire_int_2.psf}
+\psfrag{L1}{\makebox(0,0)[r]{\small $0$}}
+\psfrag{L2}{\makebox(0,0)[l]{\normalsize $f(x)=\sin x \cos x$}}
+\psfrag{L3}{\makebox(0,0)[t]{\small $\pi$}}
+\hfill \includegraphics{Courbes/aire_int_2}
+\end{minipage}\\
+\vspace{0.3cm}
+\noindent
+\begin{minipage}{0.5\linewidth}
+{\bf Unité d'aire.} %
+L'unité pour l'aire obtenue grace au calcul d'une intégrale est
+l'unité d'aire (u.a.). Dans le repère orthogonal ci-contre (2cm pour une unité
+en abscisse et 1cm en ordonnée) l'unité
+d'aire mesure: $2\times 1=2$cm$^2$. Calculer alors l'aire du domaine
+hachuré en cm$^2$ (penser à la relation de Chasles).
+\end{minipage}\hfill%
+\begin{minipage}{0.5\linewidth}
+ % \input{Courbes/aire_int_1.psf}
+\psfrag{L1}{\makebox(0,0)[t]{\footnotesize $0$}}
+\psfrag{L2}{\makebox(0,0)[t]{\footnotesize $1$}}
+\psfrag{L3}{\makebox(0,0)[t]{\footnotesize $2$}}
+\psfrag{L4}{\makebox(0,0)[t]{\footnotesize $-1$}}
+\psfrag{L5}{\makebox(0,0)[r]{\footnotesize $0$}}
+\psfrag{L6}{\makebox(0,0)[r]{\footnotesize $1$}}
+\psfrag{L7}{\makebox(0,0)[r]{\footnotesize $2$}}
+\psfrag{L8}{\makebox(0,0)[r]{\footnotesize $-1$}}
+\psfrag{L9}{\makebox(0,0)[l]{\small $f(x)=(x+1)(x-1)(x-2)$}}
+\hfill \includegraphics{Courbes/aire_int_1}
+\end{minipage}
+\\
+\vspace{0.3cm}
+\noindent
+\begin{minipage}{0.5\linewidth}
+{\bf Aire entre deux courbes}
+Si sur un intervalle $\intf{a}{b}$ on a $f(x)\geq g(x)$ alors l'aire
+du domaine compris entre les deux courbes sur 
+$\intf{a}{b}$ est:
+ \[\int_a^{b} f(x)-g(x)\ud x\]
+ 
+
+ En déduire l'aire en u.a. du domaine hachuré sur la figure
+   ci-contre après avoir prouvé que:
+\[ f(x)\geq g(x)  \iff
+   \sin(x-\frac{\pi}{6})\geq 0 \]
+
+\end{minipage}\hfill%
+\begin{minipage}{0.5\linewidth}
+  %\input{Courbes/aire_int_3.psf}
+\psfrag{L1}{\makebox(0,0)[t]{\small $0$}}
+\psfrag{L2}{\makebox(0,0)[t]{\small $1$}}
+\psfrag{L3}{\makebox(0,0)[t]{\small $2$}}
+\psfrag{L4}{\makebox(0,0)[t]{\small $3$}}
+\psfrag{L5}{\makebox(0,0)[t]{\small $-1$}}
+\psfrag{L6}{\makebox(0,0)[t]{\small $-2$}}
+\psfrag{L7}{\makebox(0,0)[t]{\small $-3$}}
+\psfrag{L8}{\makebox(0,0)[r]{\small $0$}}
+\psfrag{L9}{\makebox(0,0)[r]{\small $1$}}
+\psfrag{L10}{\makebox(0,0)[r]{\small $2$}}
+\psfrag{L11}{\makebox(0,0)[r]{\small $-1$}}
+\psfrag{L12}{\makebox(0,0)[r]{\small $-2$}}
+\psfrag{L13}{\makebox(0,0){\normalsize $\mathscr{C}_f$}}
+\psfrag{L14}{\makebox(0,0){\normalsize $\mathscr{C}_g$}}
+\psfrag{L15}{\makebox(0,0){\normalsize $f(x)=\sqrt3\sin x$}}
+\psfrag{L16}{\makebox(0,0){\normalsize $g(x)=\cos x$}}
+\hfill \includegraphics{Courbes/aire_int_3}
+\end{minipage}
+\section{Volume}
+\noindent
+\begin{minipage}{0.5\linewidth}
+{\bf Volume obtenu par rotation autour d'un axe.} Si on a une fonction
+$f$ positive sur un intervalle $\intf{a}{b}$, et que l'on \og fait
+tourner \fg{} la courbe de $f$ autour de $(Ox)$ on délimite alors un
+volume qui vaut:
+ \[\int_a^{b}\pi f(x)^2\ud x\]
+On somme en fait l'aire des disques de rayon $f(x)$ (qui est positif) pour $x$
+variant de $a$ à~$b$.\\
+La courbe représentée dans le plan $(xOy)$ est celle de la fonction
+$f:\ x\mapsto \frac{1}{4}x^2$. Calculer le volume alors défini sur la
+figure ci-contre. Où $A(2;1;0)$.
+
+\end{minipage}\hfill%
+\begin{minipage}{0.5\linewidth}
+\psfrag{L1}{\makebox(0,0){\footnotesize 0}}
+\psfrag{L2}{\makebox(0,0){\footnotesize 1}}
+\psfrag{L3}{\makebox(0,0){\footnotesize 2}}
+\psfrag{L4}{\makebox(0,0){\footnotesize 0}}
+\psfrag{L5}{\makebox(0,0){\footnotesize 1}}
+\psfrag{L6}{\makebox(0,0){\footnotesize -5}}
+\psfrag{L7}{\makebox(0,0){\footnotesize -4}}
+\psfrag{L8}{\makebox(0,0){\footnotesize -3}}
+\psfrag{L9}{\makebox(0,0){\footnotesize -2}}
+\psfrag{L10}{\makebox(0,0){\footnotesize -1}}
+\psfrag{L11}{\makebox(0,0){\footnotesize 0}}
+\psfrag{L12}{\makebox(0,0){\footnotesize 1}}
+\psfrag{L13}{\makebox(0,0){\footnotesize 2}}
+\psfrag{L14}{\makebox(0,0)[r,b]{\small $A$}}
+\psfrag{L15}{\makebox(0,0){\small $x$}}
+\psfrag{L16}{\makebox(0,0){\small $y$}}
+\psfrag{L17}{\makebox(0,0){\small $z$}}
+  %\input{Courbes/volume_int.psf}
+\hfill \includegraphics{Courbes/volume_int}
+\end{minipage}
+
+
+
+%%-----------------------
+\end{document}

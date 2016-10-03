@@ -1,0 +1,112 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -24 -10 298 161 
+%%Creator: MetaPost
+%%CreationDate: 2007.09.18:1119
+%%Pages: 1
+%%DocumentFonts: CMMI10 CMR10
+ /cmmi10 /CMMI10 def
+ /cmr10 /CMR10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0 0.49814 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+294.80292 0 lineto stroke
+ 0.49814 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 155.90556 lineto stroke
+newpath 0 1.88977 moveto
+0 -1.88977 lineto stroke
+newpath 56.6929 1.88977 moveto
+56.6929 -1.88977 lineto stroke
+newpath 113.3858 1.88977 moveto
+113.3858 -1.88977 lineto stroke
+newpath 170.0787 1.88977 moveto
+170.0787 -1.88977 lineto stroke
+newpath 226.7716 1.88977 moveto
+226.7716 -1.88977 lineto stroke
+newpath 283.46451 1.88977 moveto
+283.46451 -1.88977 lineto stroke
+newpath 0 1.88977 moveto
+0 -1.88977 lineto stroke
+ 0 0.49814 dtransform truncate idtransform setlinewidth pop
+newpath 1.88977 0 moveto
+-1.88977 0 lineto stroke
+newpath 1.88977 14.17323 moveto
+-1.88977 14.17323 lineto stroke
+newpath 1.88977 28.34647 moveto
+-1.88977 28.34647 lineto stroke
+newpath 1.88977 42.5197 moveto
+-1.88977 42.5197 lineto stroke
+newpath 1.88977 56.69293 moveto
+-1.88977 56.69293 lineto stroke
+newpath 1.88977 70.86617 moveto
+-1.88977 70.86617 lineto stroke
+newpath 1.88977 85.0394 moveto
+-1.88977 85.0394 lineto stroke
+newpath 1.88977 99.21263 moveto
+-1.88977 99.21263 lineto stroke
+newpath 1.88977 113.38586 moveto
+-1.88977 113.38586 lineto stroke
+newpath 1.88977 127.5591 moveto
+-1.88977 127.5591 lineto stroke
+newpath 1.88977 141.73233 moveto
+-1.88977 141.73233 lineto stroke
+newpath 1.88977 155.90556 moveto
+-1.88977 155.90556 lineto stroke
+newpath 1.88977 0 moveto
+-1.88977 0 lineto stroke
+newpath 56.6929 35.43309 moveto
+60.47444 35.43324 64.25537 35.52779 68.03218 35.71661 curveto
+71.8184 35.90591 75.5993 36.18993 79.37144 36.56718 curveto
+83.16113 36.9462 86.9408 37.41924 90.70726 37.98416 curveto
+94.50256 38.5534 98.2833 39.21579 102.04652 39.9684 curveto
+105.84608 40.72827 109.6267 41.57993 113.3858 42.5197 curveto
+117.18936 43.47058 120.96983 44.51144 124.72508 45.63805 curveto
+128.53232 46.78024 132.31264 48.0103 136.06435 49.32344 curveto
+139.87378 50.65678 143.65279 52.07547 147.40016 53.57437 curveto
+151.21379 55.09978 154.99379 56.70793 158.73943 58.39343 curveto
+162.55576 60.11075 166.3356 61.908 170.0787 63.77956 curveto
+173.89738 65.68889 177.67708 67.67517 181.41798 69.73271 curveto
+185.23868 71.83412 189.0182 74.00946 192.75725 76.25293 curveto
+196.57845 78.5457 200.35672 80.90923 204.09306 83.33781 curveto
+207.91685 85.82324 211.69615 88.3764 215.43233 90.9917 curveto
+219.25728 93.66913 223.03647 96.41129 226.7716 99.21263 curveto
+230.59744 102.082 234.37657 105.0131 238.11089 108.00061 curveto
+241.93738 111.06186 245.71638 114.18196 249.45015 117.35565 curveto
+253.27596 120.60757 257.05386 123.91544 260.78596 127.27449 curveto
+264.61313 130.71912 268.39175 134.21725 272.12523 137.7632 curveto
+275.95308 141.3988 279.73317 145.08437 283.46451 148.81895 curveto stroke
+251.2015 131.92453 moveto
+(C) cmmi10 9.96265 fshow
+-9.976 -8.90779 moveto
+(O) cmmi10 9.96265 fshow
+54.20226 -9.4204 moveto
+(1) cmr10 9.96265 fshow
+110.89516 -9.4204 moveto
+(2) cmr10 9.96265 fshow
+167.58806 -9.4204 moveto
+(3) cmr10 9.96265 fshow
+224.28096 -9.4204 moveto
+(4) cmr10 9.96265 fshow
+280.97386 -9.4204 moveto
+(5) cmr10 9.96265 fshow
+-7.9813 10.96303 moveto
+(1) cmr10 9.96265 fshow
+-7.9813 67.65596 moveto
+(5) cmr10 9.96265 fshow
+-12.9627 138.52213 moveto
+(10) cmr10 9.96265 fshow
+292.40047 -7.2895 moveto
+(q) cmmi10 9.96265 fshow
+-23.4822 153.4149 moveto
+(E) cmmi10 9.96265 fshow
+-15.55359 153.4149 moveto
+(\() cmr10 9.96265 fshow
+-11.6792 153.4149 moveto
+(q) cmmi10 9.96265 fshow
+-6.87439 153.4149 moveto
+(\)) cmr10 9.96265 fshow
+showpage
+%%EOF

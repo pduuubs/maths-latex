@@ -1,0 +1,68 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Dérivabilité}%{\term}
+
+%%-----------------------
+
+\section{Définition}
+\Def{Soit $a\in I$ où $I$ est un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable en $a$
+  si:
+\[\frac{f(a+h)-f(a)}{h}\quad \text{admet une limite finie quand $h$ tend
+  vers 0}\]
+Si cette limite finie existe, on l'appelle le nombre dérivé de $f$ en
+$a$, noté~$f'(a)$}
+Remarque: Cette def signifie que
+$\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)$ où $\varepsilon(h)$ tend vers 0 en~0
+\begin{prop}{\bf Approximation affine} On en déduit que si $f$ est dérivable
+en $a$, et que $h$ est proche de zéro: $f(a+h)\approx f(a)+hf'(a)$
+\end{prop}
+\exemples Pour $x$ proche de 0: $\e^x\approx x+1$ 
+$\sin x \approx x$, $(1+x)^n\approx 1+nx$\\
+
+Cette propriété doit son nom au fait que faire cette approximation
+revient à confondre au point d'abscisse $(a+h)$ la courbe avec sa
+tangente en $a$: 
+\proof{Eq de la tangente. ordonnée pour $x=a+h$}
+\Def{Soit $I$  un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable sur $I$
+  si elle est dérivable en tout en $a$ de $I$.
+Pour prouver qu'une fonction est dérivable en un point, il faut donc
+calculer une limite. En particulier lorsque ce point est aux bornes
+d'un intervalle fermé.
+Pour prouver que $f$ est dérivable sur un intervalle ouvert, en
+général on utilise que:
+
+\prop{La composée de fonctions dérivables est dérivable sur tout
+  intervalle ouvert où la fonction est définie.}
+\proof{Admis}
+\section{Propriétés}
+\prop{Une fonction dérivable en $a$ est continue en $a$}
+\proof{{\bf \`A connaître!}$f$ dérivable en $a$ signifie que:
+\[\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)\]
+où $\varepsilon(h)$ tend vers 0 en 0. D'où pour $h$ non nul:
+\[ f(a+h)=hf'(a)+h\varepsilon(h)+f(a)\]
+D'où la limite voule, et $f$ est continue en $a$.
+}
+
+
+\section{Exemples, contre exemples}
+{\bf Attention!}
+La réciproque de la propriété précédente est fausse:
+Valeur absolue et racine.
+On a même construit des fonctions continues sur [0;1] nulle part
+dérivable.
+
+Soit $f(x)=x\sin(\frac{1}{x})$ pour $x\in\into{0}{+\infty}$ et
+$f(0)=0$
+Prouver que $f$ est continue sur $\R^+$. Est-elle dérivable en 0?
+Même question avec $g(x)=xf(x)$. 
+Retour aux exos de la feuille avec $\e^{-\frac{1}{x}}$
+
+%%-----------------------
+\end{document}

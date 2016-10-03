@@ -1,0 +1,49 @@
+\begin{exercice}
+\textbf{\Large Polyn\'esie juin 2004}
+
+\vspace{0,5cm}
+
+Le laboratoire de physique d'un lycée dispose d'un parc d'oscilloscopes
+ identiques. La durée de vie en années d'un oscilloscope est une variable
+ aléatoire notée $X$ qui suit la \og loi de durée de vie sans vieillissement \fg{}
+ (ou encore loi exponentielle de paramètre $\lambda$ avec $\lambda > 0$.
+
+\noindent Toutes les probabilités seront données à $10^{-3}$ près.
+
+\begin{enumerate}\item Sachant que $p(X > 10) = 0,286$, montrer qu'une valeur approchée à $10^{-3}$
+près de $\lambda$ est $0,125$.
+
+\noindent On prendra $0,125$ pour valeur de $\lambda$ dans la suite de l'exercice.
+
+\item Calculer la probabilité qu'un oscilloscope du modèle étudié ait une
+ durée de vie inférieure à 6 mois.
+
+\item Sachant qu'un appareil a déjà fonctionné huit années, quelle est la
+ probabilité qu'il ait une durée de vie supérieure dix ans ?
+
+\item On considère que la durée de vie d'un oscilloscope est indépendante
+ de celle des autres appareils. Le responsable du laboratoire décide de
+ commander 15 oscilloscopes. Quelle est la probabilité qu'au moins un 
+oscilloscope ait une durée de vie supérieure â 10 ans ?
+
+\item Combien l'établissement devrait-il acheter d'oscilloscopes pour que
+ la probabilité qu'au moins l'un d'entre eux fonctionne plus de 10 ans
+ soit supérieure à 0,999 ?
+
+\vspace{0.4cm}\\
+
+\noindent Rappel :
+
+\noindent \textit{Loi exponentielle de paramètre $\lambda$ sur $[0~;~ + \infty [$,
+ dite aussi loi de durée de vie sans vieillissement }:
+
+\noindent pour $0 \leqslant a \leqslant  b,~ p([a~;~b]) = \displaystyle\int_a^b  
+\lambda \text{e}^{-\lambda t}\:\text{d}t \qquad$  et 
+
+\noindent pour $c \geqslant  0,~ 
+p([c~;~+ \infty[) = 1 -  \displaystyle\int_0^c \lambda \text{e}^{-\lambda t}
+\:\text{d}t$.
+
+\end{enumerate}
+ 
+\end{exercice}

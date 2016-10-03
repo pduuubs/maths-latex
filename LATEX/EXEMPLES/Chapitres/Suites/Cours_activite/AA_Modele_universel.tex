@@ -1,0 +1,165 @@
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan}
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+\begin{document}
+
+\fcours{Suites, raisonnement par récurrence}%{\term}
+\section{Rappels}
+Distribuer \texttt{Formulaire\_Suites}.
+\begin{prop}
+  Limite de $q^n$. Quatre cas.
+  \begin{list}{$\bullet$}{}
+  \item $q\leq -1$ pas de limite
+  \item $q\in\into{-1}{1} \implies \lim\limits_{ n \to +\infty } q^n=0$
+  \item $q=1\implies q^n=1 \ \forall n\in\N$
+  \item $q\in\into{1}{+\infty} \implies \lim\limits_{ n \to +\infty } q^n=+\infty$
+  \end{list}
+\end{prop}
+\section{Comportement global d'une suite}
+\subsection{Monotonie}
+\begin{Def}
+  Croissante, décroissante, constante, monotone.
+\end{Def}
+\begin{rem}
+  Pareil avec strict. Il existe des suites non monotone\dots $(-1)^n$.
+\end{rem}
+\Marge{Méthode} Pour étudier le sens de var de $(u_n)$:
+\begin{dingautolist}{172}
+\item On étudie le signe de $(u_{n+1}-u_n)$. Ou bien:
+\item Si elle est strictement positive, on peut choisir
+de comparer le rapport $\frac{u_{n+1}}{u_n}$ et~1.
+\end{dingautolist}
+
+ 
+\exemple Sens de variation de $\frac{2^n}{n}$ par les deux méthodes.
+
+\subsection{Majorée, minorée, bornée}
+\begin{Def}
+  Maj, min, bornée.
+\end{Def}
+\begin{rem}
+Pas unicité d'un maj.
+\end{rem}
+\exemple $u_n=4-\frac{1}{n}, n\in\N^*$ Sens de var, maj, min, le majorant 4
+n'est pas atteint, le minorant 3 l'est en 1.
+\section{Factorielle}
+\begin{Def}
+ Soit $n\in\N^*$ On appelle \og factorielle $n$ \fg{} et on note $n!$
+ l'entier:
+\[ n!=1\times 2\times 3\times \cdots \times n\]
+On pose par convention $0!=1$.
+\end{Def}
+
+\Marge{Calculette} On trouve cette fonction dans le menu \texttt{PROBA}.
+\begin{prop}[élémentaires]
+  On a les propriétés suivantes pour $n\in\N$
+  \begin{dingautolist}{172}
+  \item $(n+1)!=n!\times (n+1)$ et donc: \label{rel.facto.carac}
+  \item $\frac{(n+1)!}{n!}=n+1$
+  \item La suite de terme général $n!$ est croissante et:
+  \item $\lim\limits_{ n \to +\infty } n!=+\infty $ \label{limite.facto}
+
+  \end{dingautolist}
+  
+\end{prop}
+\begin{proof}
+  Pour \ref{limite.facto} il suffit de remarquer que $\forall n\in\N$,
+  $n!\geq n$.
+\end{proof}
+Définition équivalente:
+\begin{prop}[Caractéristique]
+  La suite de terme général $u_n=n!$ est déterminée par la relation de récurrence:
+\[\left\{
+\begin{array}{ll}
+  u_{n+1}=(n+1)u_n \ \forall n\in\N\\
+u_0=1
+\end{array}\right. \]
+\end{prop}
+\begin{proof}
+  La prop \ref{rel.facto.carac} prouve que $n!$ vérifie la relation de
+  récurrence, le terme initial étant identique, ces deux suites sont
+  bien identiques.
+\end{proof}
+\exercice Prouver que la suite de terme général $\frac{2^n}{n!}$ est
+décroissante sur $\N^*$.
+\exercice \'Ecrire le produit des $n$ premiers entiers pairs (non nuls) avec la
+notation factorielle.\[ 2\times 4\times 6\times 8\times\cdots \times 2n=?\]
+\centrage{Distribuer la page suivante}
+\newpage
+\rfoot{}
+\section{Raisonnement par récurrence}
+Le raisonnement par récurrence (on dit aussi par induction) est un principe de raisonnement (comme le raisonnement par l'absurde) qui sert à établir une propriété valable pour une infinité d'entiers naturels. Ce raisonnement comporte quatre étapes: L'initialisation, l'hypothèse de récurrence, l'hérédité et la conclusion. 
+\subsection{Principe}
+\noindent Soit $\Para (n)$ une propriété dépendant d'un entier naturel~$n$
+dont on veut prouver qu'elle est vraie pour tout $n$ dans
+$\N$. (Parfois pour tout $n$ dans $\N^*$ ou plus généralement pour $n$
+entier à partir d'un certain rang initial $n_0$, \ie{} $n\geq n_0$) \medskip\\
+\fbox{%{0.5\linewidth}{
+
+\parbox{0.9\linewidth}{
+%\noindent Soit $\Para (n)$ une propriété dépendant d'un entier~$n$ dont on veut prouver qu'elle est vraie pour tout $n$ dans $\N$. (Parfois pour tout $n$ dans $\N^*$ ou $n\geq 3$ \dots etc)
+\begin{itemize}
+\item[\bf Initialisation.] On vérifie que $\Para(0)$ est vraie. (ou $\Para(n_0)$)
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie.
+\item[\bf Hérédité.] On montre que sous l'hypothèse de récurrence, $\Para (k+1)$ est aussi vraie.
+\item[\bf Conclusion.] Alors par récurrence, la propriété $\Para (n)$ est vraie pour tout $n\in\N$.
+\end{itemize}
+}}\medskip\\
+Toutes les phases du raisonnement sont nécéssaires, mais l'essentiel de la difficulté provient en général dans la phase de l'hérédité. \`A cet endroit il faut trouver un lien entre $\Para (k)$ et $\Para (k+1)$.
+Pour expliquer ce raisonnement on utilise parfois l'analogie suivante:
+\subsection{Analogie: gravir un escalier}
+\noindent On se trouve sur la première marche d'un escalier infini à gravir. Si on sait monter une marche, alors on peut accéder à n'importe quelle marche de l'escalier.
+\begin{itemize}
+\item[\bf Initialisation.] On est sur la première marche, donc on peut commencer.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, on soit sur la $k$-ième marche.
+\item[\bf Hérédité.] On vérifie qu'on peut alors passer à la marche suivante, la $(k+1)$-ième.
+\item[\bf Conclusion.] Alors par récurrence, on peut accéder à la marche numéro $n$ pour tout $n$ dans~$\N^*$.
+\end{itemize}
+\subsection{Exemple}
+%\begin{dingautolist}{172}
+%\item 
+Prouver la formule suivante (pour $n\in\N^*$) donnant la somme des premiers entiers naturels:
+\[ 1+2+3+\cdots+n=\frac{n(n+1)}{2}\]
+\begin{proof}
+
+On note pour tout $n\in\N^*$: $S_n=1+2+3+\cdots+n$. La propriété à prouver par recurrence pour tout $n$ de $\N^*$ est donc:
+\[ \Para (n): \qquad S_n=\frac{n(n+1)}{2}\]
+\begin{itemize}
+\item[\bf Initialisation.] $S_1=1$ et pour $n=1$, $\frac{n(n+1)}{2}$ vaut $\frac{1\times 2}{2}=1$. Donc $\Para (1)$ est vraie.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie \ie{}  $S_k=\frac{k(k+1)}{2}$.
+\item[\bf Hérédité.] Ici on veut prouver que $S_{k+1}= \frac{(k+1)(k+2)}{2}$. Or\footnote{L'argument qui suit est la clef pour passer du rang $k$ au rang suivant~$k+1$.}: $S_{k+1}=S_k+(k+1)$. Comme par hypothèse de récurrence $S_k=\frac{k(k+1)}{2}$ on en déduit que:
+\[S_{k+1}=\frac{k(k+1)}{2}+(k+1)=(k+1)(1+\frac{k}{2})=\frac{(k+1)(k+2)}{2}\]
+Ainsi $\Para (k+1)$ est vraie.
+\item[\bf Conclusion.] Par récurrence, on a prouvé que  pour tout $n$ dans~$\N^*$,  $S_n=\frac{n(n+1)}{2}$. 
+
+\end{itemize}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+  
+
+Mauvais exemple car pouvant se traiter directement en étudiant
+$u_n=\frac{2^n}{n^2}$ (quotient $\frac{u_{n+1}}{u_n}$ à comparer à~1.
+\item Prouver par récurrence que pour $n$ entier assez grand, $2^n \geq  n^2$.
+\begin{proof} On commence par chercher à la main ou avec une calculette un rang à partir duquel la propriété semble vraie. On pense à $n=4$. Soit $\Para (n)$ la propriété: $2^n \geq  n^2$. On veut prouver qu'elle est vraie pour tout $n$ dans $\N$ supérieur ou égal à~$4$. 
+\begin{itemize}
+\item[\bf Initialisation.] $2^4=16$ et $4^2=16$ donc $2^4 \geq  4^2$. Donc $\Para (4)$ est vraie.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain
+  $k\in\N$, avec  $k\geq 4$, $\Para (k)$ est vraie \ie{} $2^k \geq  k^2$.
+
+\item[\bf Hérédité.] Ici on veut prouver que $2^{k+1} \geq  (k+1)^2$.
+\[2^{k+1}=2\times 2^{k} \geq 2k^2  \]
+Il suffit donc de prouver que pour $k\geq 4$ on a $2k^2\geq
+(k+1)^2$. Les deux membres sont positifs, cette égalité est
+équivalente à $\sqrt{2}k\geq k+1$ soit $k\geq \frac{1}{\sqrt{2}-1}$,
+ou encore $k\geq \sqrt{2}+1$. Or $\sqrt{2}+1\leq 4$.
+Ainsi $\Para (k+1)$ est vraie.
+\item[\bf Conclusion.] Par récurrence, on a prouvé que  pour tout
+  entier $n$ supérieur à 4, $2^n \geq  n^2$.
+
+\end{itemize}
+\end{proof}
+\end{dingautolist}
+\end{comment}
+\end{document}

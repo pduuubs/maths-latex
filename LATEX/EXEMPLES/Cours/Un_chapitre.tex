@@ -1,0 +1,61 @@
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan} 
+
+\usepackage[marginratio=1:1,textwidth=16cm,textheight=24.5cm,marginparwidth=0.8cm,headheight=3cm]{geometry}
+
+\usepackage[dvips,ps2pdf,colorlinks=false]{hyperref} %gestions des hyperliens dans un document .dvi
+\pagestyle{fancy}
+
+\renewcommand{\thesection}{\Roman{section}}
+%%
+
+
+%% Chemins des images
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+%penser à Command/File pour creer un .ps pour Metapost
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+
+
+
+%%%%%%%%%%%
+
+
+
+%\author{Vincent PANTALONI}
+%\date{{\small {\Police Version du \today}}}
+%\renewcommand{\iff}{\Longleftrightarrow}
+
+%------------- Fin préambule ----
+\begin{document}
+
+%\newcommand{\Pdpweblink}{\url{http://prof.pantaloni.free.fr}}
+%\lfoot{\Pdpweblink}
+
+\lfoot{\Pdpweb}
+\rfoot{}
+\newcommand{\chapter}[1]{\rfoot{\textsl{Chap. #1}}}
+\lhead{}
+
+%%___________________________________
+%%
+%%------------- Debut des INPUT  ----
+%%___________________________________
+%\input{Suites.1}
+%\input{Limites.continuite.tex}
+
+%\input{Exponentielle.1}
+%\input{Complexes.1}
+%\input{Barycentres.Droites.3D} 
+%%_______________________________Fin 1er trimestre
+%\input{Equa.diff}
+%\input{Proba.1} %conditionnelles
+%\input{Complexes.2} %Forme trigo, expo, transfos.
+%%_______________________________Fin 2e trimestre
+%\input{Limites.par.def}
+%\input{Suites.2} %Adjacentes
+%\input{Ln}
+%\input{Eq.de.plans}
+\input{Integration}
+%\input{Proba.2} %Lois de proba
+\end{document}

@@ -1,0 +1,112 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\activite{Repr\'esentation param\'etrique de droite}{\term}
+\cfoot{} \lfoot{}
+\section{Mobile dans le plan}
+On se place dans le plan muni d'un rep\`ere orthonorm\'e $\oij$. Un
+point $M$ mobile en fonction du temps $t$  est rep\'er\'e par ses
+coordonn\'ees variables en fonction du temps, not\'ees $x(t)$ et
+$y(t)$. On a donc: $M\left( x(t)\,;y(t)\right)$. On suppose que ces
+coordonn\'ees v\'erifient:
+\begin{equation}
+  \label{eq:para}
+  \left\{
+\begin{array}{ll}
+x(t)=2t+3\\
+y(t)=-t+\frac12
+\end{array}
+\right.
+\end{equation}
+
+\begin{enumerate}
+\item Prouver que $M$ appartient \`a une droite $\Delta$ dont on
+  donnera une \'equation r\'eduite et que l'on tracera.
+
+\item Et $t$ il varie dans quel ensemble?
+  \begin{enumerate}
+  \item Prouver que si $t$ d\'ecrit $\R$ alors $M$ d\'ecrit tout
+    $\Delta$.
+
+  \item Si $t\in\intfo{0}{+\infty}$ d\'efinir et colorier la partie du
+    plan d\'ecrite par~$M$.
+  \item Si $t\in\intfo{0}{1}$ d\'efinir et colorier (d'une autre
+    couleur!) la partie du plan d\'ecrite par~$M$.
+  \end{enumerate}
+
+\item Un second point mobile, not\'e $N$ arrive... ses coordonn\'ees
+  v\'erifient pour $t\in\R$:
+\begin{equation}
+  \label{eq:para2}
+  \left\{
+\begin{array}{ll}
+x(t)=5-\frac{t}{3}\\
+y(t)=-\frac12+\frac{t}{6}
+\end{array}
+\right.
+\end{equation}
+
+\begin{enumerate}
+\item Prouver que $N$ \'evolue aussi sur $\Delta$
+\item $M$ et $N$ vont-ils se rencontrer? Si oui, quand et o\`u ?
+\end{enumerate}
+
+
+\item V\'erifier que la relation \eqref{eq:para} est \'equivalente
+  \`a: $\V{AM}=t\vu$ o\`u $A$ et $\vu$ sont respectivement un point et
+  un vecteur dont on donnera les  coordonn\'ees.
+
+\item M\^eme question pour: \eqref{eq:para2} $\iff \V{BN}=t\vv$
+
+\item Que repr\'esentent $\vu$ et $\vv$ pour $\Delta$? D\'eterminer un
+  r\'eel $k$ tel que: $\vu=k\vv$.
+
+\item \textbf{Conclusion:} On dit que \eqref{eq:para} et
+  \eqref{eq:para2} (pour $t\in\R$) sont des repr\'esentations
+  param\'etriques de la droite~$\Delta$. \\
+\textbf{G\'en\'eralisation:} Soit $A$
+  un point d'une droite $Dr$ et $\vu$ un vecteur directeur
+  de~$\Dr$. On a l'\'equivalence: $M\in\Dr$ ssi il existe un
+  r\'eel $t$ tel que $\V{AM}=t\vu$. En d\'eduire une repr\'esentation
+  param\'etrique de $\Dr$ en fonction des coordonn\'ees de $A$ et de~$\vu$.
+\end{enumerate}
+\section{Droites de l'espace}
+On se place maintenant dans l'espace \`a trois dimensions ramen\'e \`a
+un rep\`ere orthonormal~$\oijk$. Le m\^eme principe s'applique et on a
+donc une repr\'esentation param\'etrique avec trois \'equations
+$(x=\ldots,\ y=\ldots,\ z=\ldots)$.
+
+\exercice{Soit les points: $A(1;-2;3)$ et $B(0;0;1)$.
+  \begin{enumerate}
+  \item D\'eterminer une repr\'esentation param\'etrique de $(AB)$\label{a}
+  \item Les points $C(-3;6;-5)$ et $D(2;-5;5)$ appartiennent-ils \label{b}
+    \`a~$(AB)$?
+
+  \item Soit $E(5;17;13)$ Prouver $(DE)$ et $(AB)$ sont s\'ecantes en
+    un point $I$ dont on d\'eterminera les coordonn\'ees. \label{c}
+
+  \end{enumerate}
+\hfill \rotatebox{180}{\small{\textsl{Solutions:} \textbf{\ref{a}.} $x=1-t$, $y-2+2t$, $z=3-2t$ avec
+  $t\in\R$ \textbf{\ref{b}.} $C\in(AB)$ et $D\notin(AB)$
+  \textbf{\ref{c}.} $I(\frac12;-1;2)$}}
+}
+\exercice{Soit le point: $A(-2;0;3)$ et la droite
+    $\Dr$ dont une repr\'esentation param\'etrique est:
+\[ 
+\left\{
+\begin{array}{ll}
+x=2+\frac{t}{2}\\
+y=-2t\\
+z=-3t+\frac{1}{2}
+\end{array}
+\right.\qquad ,t\in\R
+\]
+  D\'eterminer une repr\'esentation param\'etrique de la droite
+    $\Dr'$ telle que: $\Dr' // \Dr$ et $A\in\Dr'$
+
+}
+
+\end{document}

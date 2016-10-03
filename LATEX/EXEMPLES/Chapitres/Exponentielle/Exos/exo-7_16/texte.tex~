@@ -1,0 +1,50 @@
+\begin{exercice}
+\section{Méthode d'Euler}
+%\Titre{\'Equation de cercle}
+\subsection{Aspect graphique}
+On utilise la méthode d'Euler pour approximer la courbe d'une fonction $f$ (si elle existe) telle que $f$ est définie et dérivable sur $\R$ et:
+
+\[ \left\{ 
+\begin{array}{ll}
+f'(x)=f(x) \quad \forall x\in\R \\
+f(0)=1\\ 
+\end{array} \right. 
+\]
+Cette méthode utilise l'approximation affine suivante: $f(a+h)\approx f(a)+hf'(a)$ valable pour une fonction dérivable sur un intervalle ouvert $I$, $a$ dans $I$ et $h$ petit (et $a+h$ dans $I$). Graphiquement cela revient à confondre la courbe de la fonction avec sa tangente sur l'intervalle $\intf{a}{a+h}$. J'ai fait les graphiques sur l'intervalle $\intf{0}{1}$. Soit $n\in\N^*$. On pose $h=\frac{1}{n}$ pour le pas de la méthode. On fera ensuite tendre le pas vers zéro en faisant tendre $n$ vers l'infini.
+Comme $f(0)=1$ on place le premier point $A_0$ de coordonnées $A_0(0;1)$.
+Je fais l'explication pour $n=2$ donc $h=\frac12$ (cf. premier graphique). Comme $f'=f$ on a donc $f'(0)=f(0)=1$\\
+\rule{0cm}{3.4cm}
+\begin{minipage}{0.65\textwidth}
+\begin{enumerate}
+  \item On trace donc le segment partant de $A_0$ joignant $A_1$ tel que l'abscisse de $A_1$ soit $0+h=\frac12$ et tel que $(A_0A_1)$ ait pour coefficient directeur 1. Les coordonnées de $A_1$ sont donc $A_1(0,5;1,5)$. Par le calcul: 
+\[f(0+h)\approx f(0)+hf'(0)=(1+h)f(0)=1,5\]
+  \item On a donc $f(0,5)\approx 1,5$. Or $f'=f$ donc 1,5 est aussi une valeur approchée de $f'(0,5)$. On l'utilise pour obtenir le point suivant $A_2$ d'abscisse $0,5+0,5=1$. Et $(A_1A_2)$ a pour coefficient directeur $1,5$. On trouve donc l'ordonnée de $A_2$: $1,5+0,5\times 1,5=2,25$
+  \item Ainsi 2,25 est une valeur approchée de $f(1)$. On pourrait continuer ainsi indéfiniment. Le prochain segment a un coefficient directeur de $2,25$.
+  \end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}{0.32\textwidth}
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_16/meth_euler.2}
+\end{minipage}\\
+\rule{0cm}{0.5cm}
+  Les deux graphiques suivants s'obtiennent de la même manière mais avec des valeurs de $n$ plus grandes ($n=4$ et $n=8$ et donc des pas de $\frac14$ et $\frac18$). Le dernier est obtenu avec un pas de $\frac15$ et un pas de $-\frac15$ afin d'obtenir la courbe pour des valeurs négatives de $x$. De plus celui-ci est dans un repère orthonormal. Tous les graphiques de cette page comportent aussi en pointillé la \og courbe limite \fg{} recherchée afin que l'on voit mieux la convergence de la méthode.\\
+\rule{0mm}{0.8cm}
+
+\noindent
+\begin{minipage}{0.33\textwidth}
+\centering
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_16/meth_euler.3}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+\centering
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_16/meth_euler.4}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+\centering
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_16/meth_euler.6}
+\end{minipage}
+ 
+\end{exercice}

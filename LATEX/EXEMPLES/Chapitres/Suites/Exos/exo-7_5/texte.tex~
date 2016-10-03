@@ -1,0 +1,15 @@
+\begin{exercice}
+
+ Soit $f$ la fonction définie sur $I=\into{0}{+\infty}$ par:
+\[ f(x)=x\ln x-2x\]
+On notera $\Cr$ la courbe de $f$ dans un repère orthonormé $\oij$.
+\begin{enumerate}
+\item \'Etudier les variations de $f$ sur $I$.
+\item Déterminer les limites de $f$ aux bornes de son ensemble de définition. \\
+\emph{Indication: On pourra factoriser par $x$}
+\item Prouver que l'équation $f(x)=0$ admet une unique solution $x_0$ sur $\intf{7}{8}$. On donnera une valeur approchée à $10^{-2}$ près de $x_0$.
+\item Déterminer l'équation de $T$, la tangente à $\Cr$ en $1$.
+\item Tracer $\Cr$ et $T$.
+\item Déterminer une primitive de la fonction logarithme néperien sur $I$.
+\end{enumerate}
+\end{exercice}

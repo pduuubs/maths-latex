@@ -1,0 +1,146 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -1 -1 138 86 
+%%Creator: MetaPost
+%%CreationDate: 2007.09.29:1445
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath 0 85.03935 moveto
+0 0 lineto
+137.59724 0 lineto
+137.59724 85.03935 lineto
+ closepath stroke
+ 0.5 setgray
+newpath 85.03935 0 moveto
+85.03935 85.03935 lineto
+38.07343 85.03935 0 46.96593 0 0 curveto
+ closepath fill
+ 0 setgray
+newpath 85.03935 0 moveto
+85.03935 85.03935 lineto
+38.07343 85.03935 0 46.96593 0 0 curveto
+ closepath stroke
+ 0.58 setgray
+newpath 85.03935 32.48146 moveto
+137.59724 32.48146 lineto
+137.59724 61.50838 114.06627 85.03935 85.03935 85.03935 curveto
+ closepath fill
+ 0 setgray
+newpath 85.03935 32.48146 moveto
+137.59724 32.48146 lineto
+137.59724 61.50838 114.06627 85.03935 85.03935 85.03935 curveto
+ closepath stroke
+ 0.66 setgray
+newpath 105.11426 32.48146 moveto
+105.11426 -0.00153 lineto
+123.05411 -0.00153 137.59724 14.54161 137.59724 32.48146 curveto
+ closepath fill
+ 0 setgray
+newpath 105.11426 32.48146 moveto
+105.11426 -0.00153 lineto
+123.05411 -0.00153 137.59724 14.54161 137.59724 32.48146 curveto
+ closepath stroke
+ 0.74 setgray
+newpath 105.11426 20.07433 moveto
+85.0384 20.07433 lineto
+85.0384 8.98674 94.02667 -0.00153 105.11426 -0.00153 curveto
+ closepath fill
+ 0 setgray
+newpath 105.11426 20.07433 moveto
+85.0384 20.07433 lineto
+85.0384 8.98674 94.02667 -0.00153 105.11426 -0.00153 curveto
+ closepath stroke
+ 0.82 setgray
+newpath 97.44612 20.07433 moveto
+97.44612 32.48204 lineto
+90.59354 32.48204 85.0384 26.92693 85.0384 20.07433 curveto
+ closepath fill
+ 0 setgray
+newpath 97.44612 20.07433 moveto
+97.44612 32.48204 lineto
+90.59354 32.48204 85.0384 26.92693 85.0384 20.07433 curveto
+ closepath stroke
+ 0.90001 setgray
+newpath 97.44612 24.81355 moveto
+105.11462 24.81355 lineto
+105.11462 29.04874 101.68132 32.48204 97.44612 32.48204 curveto
+ closepath fill
+ 0 setgray
+newpath 97.44612 24.81355 moveto
+105.11462 24.81355 lineto
+105.11462 29.04874 101.68132 32.48204 97.44612 32.48204 curveto
+ closepath stroke
+ 0.98001 setgray
+newpath 100.37517 24.81355 moveto
+100.37517 20.0741 lineto
+102.99269 20.0741 105.11462 22.19603 105.11462 24.81355 curveto
+ closepath fill
+ 0 setgray
+newpath 100.37517 24.81355 moveto
+100.37517 20.0741 lineto
+102.99269 20.0741 105.11462 22.19603 105.11462 24.81355 curveto
+ closepath stroke
+ 1 setgray
+newpath 100.37517 23.00328 moveto
+97.44598 23.00328 lineto
+97.44598 21.38554 98.75743 20.0741 100.37517 20.0741 curveto
+ closepath fill
+ 0 setgray
+newpath 100.37517 23.00328 moveto
+97.44598 23.00328 lineto
+97.44598 21.38554 98.75743 20.0741 100.37517 20.0741 curveto
+ closepath stroke
+ 1 setgray
+newpath 99.25635 23.00328 moveto
+99.25635 24.81364 lineto
+98.25652 24.81364 97.44598 24.00311 97.44598 23.00328 curveto
+ closepath fill
+ 0 setgray
+newpath 99.25635 23.00328 moveto
+99.25635 24.81364 lineto
+98.25652 24.81364 97.44598 24.00311 97.44598 23.00328 curveto
+ closepath stroke
+ 1 setgray
+newpath 99.25635 23.69476 moveto
+100.37523 23.69476 lineto
+100.37523 24.3127 99.87428 24.81364 99.25635 24.81364 curveto
+ closepath fill
+ 0 setgray
+newpath 99.25635 23.69476 moveto
+100.37523 23.69476 lineto
+100.37523 24.3127 99.87428 24.81364 99.25635 24.81364 curveto
+ closepath stroke
+ 1 setgray
+newpath 99.68372 23.69476 moveto
+99.68372 23.00325 lineto
+100.06563 23.00325 100.37523 23.31285 100.37523 23.69476 curveto
+ closepath fill
+ 0 setgray
+newpath 99.68372 23.69476 moveto
+99.68372 23.00325 lineto
+100.06563 23.00325 100.37523 23.31285 100.37523 23.69476 curveto
+ closepath stroke
+ 1 setgray
+newpath 99.68372 23.43063 moveto
+99.25633 23.43063 lineto
+99.25633 23.1946 99.44768 23.00325 99.68372 23.00325 curveto
+ closepath fill
+ 0 setgray
+newpath 99.68372 23.43063 moveto
+99.25633 23.43063 lineto
+99.25633 23.1946 99.44768 23.00325 99.68372 23.00325 curveto
+ closepath stroke
+ 1 setgray
+newpath 99.52046 23.43063 moveto
+99.52046 23.69478 lineto
+99.37459 23.69478 99.25633 23.5765 99.25633 23.43063 curveto
+ closepath fill
+ 0 setgray
+newpath 99.52046 23.43063 moveto
+99.52046 23.69478 lineto
+99.37459 23.69478 99.25633 23.5765 99.25633 23.43063 curveto
+ closepath stroke
+showpage
+%%EOF

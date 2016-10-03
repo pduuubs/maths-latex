@@ -1,0 +1,98 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\renewcommand{\i}{\textbf{i}}
+
+\begin{document}
+\activite{Nombres complexes}{\term}
+
+\section{R\'esolution historique}
+Au \bsc{XVI}$^e$ si\`ecle les alg\'ebristes italiens apprennent
+\`a r\'esoudre les \'equations du troisi\`eme degr\'e, en les ramenant
+\`a des \'equations du deuxi\`eme degr\'e dont la r\'esolution est
+connue depuis le \bsc{IX}$^e$ si\`ecle gr\^ace auxs math\'ematiciens arabes.
+On attribue \`a \bsc{Cardan} (Girolamo Cardano: Pavie 1501-Rome 1576) la
+formule \eqref{eq:form} donnant une solution \`a l'\'equation du troisi\`eme
+degr\'e d'inconnue~$x$:
+\begin{equation}
+  \label{eq:deg3}
+  x^3=px+q
+\end{equation}
+En fait, \bsc{Tartaglia} (Niccol\`o Tartaglia:
+Brescia 1500 - Venise 1557)  autodidacte aurait d\'ecouvert la formule
+en 1539 et l'aurait expos\'ee au professeur respect\'e \bsc{Cardan}
+qui l'a publi\'e dans son \emph{Ars magna} en
+1545 comme \'etant sa propre d\'ecouverte, le reste de l'histoire est
+romanesque.
+\begin{equation}
+  \label{eq:form}
+  x=\sqrt[3]{\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3}}+\sqrt[3]{\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3}}
+\end{equation}
+\textbf{D\'efinition:} Pour $a\in\R$, on note $\sqrt[3]{a}$ appel\'e \emph{racine
+    cubique de $a$} l'unique r\'eel $x$ v\'erifiant $x^3=a$.
+
+La racine cubique, contrairement \`a la racine carr\'ee est d\'efinie
+pour tout r\'eel car $x\mapsto x^3$ est strictement croissante sur
+$\R$, et varie de $-\infty$ \`a $+\infty$. Par exemple,
+$\sqrt[3]{-8}=-2$ car $(-2)^3=-8$.
+\begin{enumerate}
+\item Prouver que toute \'equation de degr\'e trois donc de la forme
+  $ax³+bx²+cx+d=0$ avec $a$, $b$, $c$, $d$ trois r\'eels et $a\neq 0$
+  peut se mettre sous la forme $x^3+b'x^2+c'x+d'=0$
+\item Prouver que toute \'equation de degr\'e trois de la forme
+  $x³+bx²+cx+d=0$ peut se mettre sous la forme de l'\'equation
+  \eqref{eq:deg3} \`a l'aide du changement de variable:
+  $x=X-\frac{b}{3}$.
+
+\item Voyons sur un exemple comment ils trouv\`erent la formule
+  improbable \eqref{eq:form}. On consid\`ere l'\'equation:
+  \begin{equation}
+    \label{eq:eq1}
+    x³=6x+20
+  \end{equation}
+  \begin{enumerate}
+  \item On pose $x=u+v$. Que devient l'\'equation \eqref{eq:eq1}?
+  \item Quelle valeur suffit-il d'imposer au produit $uv$ pour que
+    \eqref{eq:eq1} s'\'ecrive $u³+v³=20$?
+  \item On pose $U=u³$ et $V=v³$. Former et r\'esoudre une \'equation
+    de degr\'e deux ayant pour solutions $U$ et~$V$.
+
+  \item En d\'eduire que:
+\[ \sqrt[3]{10+2\sqrt{23}} + \sqrt[3]{10-2\sqrt{23}}\]
+est une solution de \eqref{eq:eq1}.
+
+\item Optionnel: Etudier $x\mapsto x³-6x-20$ sur $\R$ pour voir qu'il
+  n'y a qu'une solution \`a l'\'equation \eqref{eq:eq1}.
+  \end{enumerate}
+
+\end{enumerate}
+La m\'ethode de \bsc{Tartaglia-Cardan} conduit cependant, dans certains cas,
+\`a un paradoxe que \bsc{Bombelli}(1526-1572) va essayer de surmonter. Il publie en
+1572 dans son \emph{l'Algebra opera} l'exemple suivant:
+\section{Des nombres impossibles}
+On consid\`ere l'\'equation:
+  \begin{equation}
+    \label{eq:eq2}
+    x³=15x+4
+  \end{equation}
+  \begin{enumerate}
+  \item Combien vaut alors la quantit\'e:
+    $\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3$ qui
+    appara\^it dans la formule \eqref{eq:form}?
+  \item Prouver cependant que 4 est solution de \eqref{eq:eq2}\\
+L'id\'ee et l'audace de \bsc{Bombelli} est de faire comme si $-121$
+\'etait le carr\'e d'un nombre imaginaire qui s'\'ecrirait
+$11\sqrt{-1}$. Il appella $\sqrt{-1}$ \emph{piu di meno} qui sera not\'e
+\textbf{i} plus tard par \bsc{Euler}(1734-1810) en 1777. Gr\^ace \`a ce stratag\`eme,\bsc{Bombelli} retrouve la solution r\'eelle 4:
+
+\item D\'evelopper $(2+\i)^3$ et $(2-\i)^3$ en tenant compte de $\i^2=-1$.
+\item En d\'eduire que $(2+\i)+(2-\i)$ est solution de
+  \eqref{eq:eq2}.\\
+Ce nombre \og $\sqrt{-1}$ \fg{} qualifi\'e d'impossible va susciter beaucoup de m\'efiance et
+de pol\'emique pendant deux si\`ecles jusqu'\`a \bsc{Argand} en 1806 qui
+proposera une repr\'esentation g\'eom\'etrique de ces nombres
+imaginaires (de la forme $a+\i b$ avec $a\in\R$, $b\in\R$) et \bsc{Gauss}(1777-1855) qui les
+nommera \textbf{Nombres complexes}.
+  \end{enumerate}
+\end{document}

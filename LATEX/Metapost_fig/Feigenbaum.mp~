@@ -1,0 +1,12 @@
+prologues:=2;
+verbatimtex
+etex
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+beginfig(1)
+endfig;
+
+
+
+ end

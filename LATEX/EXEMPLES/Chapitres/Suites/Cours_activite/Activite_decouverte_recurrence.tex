@@ -1,0 +1,112 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan} 
+\usepackage[marginratio=1:1,textwidth=15cm,lines=59,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\usepackage{calc}
+\newcommand{\inputexo}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/TS/Chapitres/#1/Exos/exo-7_#2/texte.tex}}
+\newcommand{\Mfig}[2]{\includegraphics[width=#2]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/#1}}% 1: Nom fichier, 2:largeur image
+%---------
+\begin{document}
+\newcommand{\CHAP}{Suites} % Changer ici le chapitre
+
+\activite{Raisonnement par récurrence}{\term}
+\cfoot{}  % si commenté donne page n° x/ nb_de_pages
+%\renewenvironment{exercice}{\exocursif}
+%\Titre{}
+%\lfoot{} % si commenté donne \Pdpmail
+\rfoot{Chap. \CHAP}  
+
+\exercice 
+On définit la suite $\left(u_{n}\right)_{n\in\mathbb{N^*}}$ par
+$u_1=1$ et la relation valable pour tout $n$ dans $\mathbb{N^*}$:
+\[ u_{n+1}=u_{n}+2n+1 \]
+\begin{enumerate}
+\item Calculer $u_2$, $u_3$, $u_4$.
+
+\item Quelle conjecture peut on faire sur l'expression de $u_n$ en
+  fonction de~$n$? On veut prouver cette conjecture, voici un nouveau type de
+  raisonnement:
+\item  Prouver que si pour un certain $k$  ($k\in\N^*$) on a bien
+  $u_k=k^2$, alors $u_{k+1}=(k+1)^2$. On dit que la propriété est \og héréditaire\fg{}.
+  
+\item Conclure et calculer: $1+3+5+7+\cdots+2007$
+\end{enumerate}
+\centrage{Principe du raisonnement par récurrence}
+On vient d'utiliser un raisonnement par récurrence (on dit aussi par
+induction\footnote{\emph{Proof by induction} or \emph{principle of
+    mathematical induction} in english}). C'est un principe de raisonnement (comme le raisonnement par l'absurde) qui sert à établir une propriété valable pour une infinité d'entiers naturels. Ce raisonnement comporte quatre étapes: L'initialisation, l'hypothèse de récurrence, l'hérédité et la conclusion. 
+
+\noindent Soit $\Para (n)$ une propriété dépendant d'un entier naturel~$n$
+dont on veut prouver qu'elle est vraie pour tout $n$ dans
+$\N$. (Parfois pour tout $n$ dans $\N^*$ ou plus généralement pour $n$
+entier à partir d'un certain rang initial $n_0$, \ie{} $n\geq n_0$) \medskip\\
+\fbox{%{0.5\linewidth}{
+
+\parbox{0.98\linewidth}{
+
+\begin{itemize}
+\item[\bf Initialisation.] On vérifie que $\Para(0)$ est vraie. (ou $\Para(n_0)$)
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie.
+\item[\bf Hérédité.] On montre que sous l'hypothèse de récurrence, $\Para (k+1)$ est aussi vraie.
+\item[\bf Conclusion.] Alors par récurrence, la propriété $\Para (n)$
+  est vraie pour tout $n\in\N$ (ou tout $n\geq n_0$).
+\end{itemize}
+}}\medskip\\
+
+\Danger L'initialisation est nécessaire:
+\exemple Prouver que la \og propriété \fg{} $\Para (n)$:  \og $2^n$
+est divisible par 3\fg{}  est héréditaire.  Est--elle vraie pour
+autant?
+\exercice Prouver par récurrence que pour tout $n$ dans $\N$, l'entier $8^n-1$ est
+divisible par~$7$.
+\exercice Prouver par récurrence que pour tout $n$ dans $\N^*$:
+$1+2+3+\cdots+n=\dfrac{n(n+1)}{2}$
+%\[\sum_{k=1}^n k=\frac{n(n+1)}{2}\]
+\exercice
+\begin{enumerate}
+\item Justifier que pour tout $n$ dans $\N^*$, on a: $\sqrt{n^2+n}\geq n$
+\item En déduire la preuve par récurrence que:
+\[\sum_{k=1}^n \frac{1}{\sqrt{k}} \geq \sqrt{n}\]
+\item En déduire la limite de la somme $\sum_{k=1}^n
+  \frac{1}{\sqrt{k}}$ quand $n$ tend vers l'infini.
+\end{enumerate}
+
+\exercice
+The triangle inequality says that for any two real numbers $x$ and
+$y$, $|x+y|\leq |x|+|y|$.  Show (by mathematical induction) that for
+any $n$ real numbers $x_1,\ x_2,\ \ldots ,\ x_n$, we have:
+%\[ | x_1+ x_2+ \cdots + x_n| \leq | x_1|+| x_2|+\cdots +| x_n|\]
+%C'est à dire plus précisément, avec la notation sigma:
+\[ \left|\sum_{k=1}^n x_k \right|\leq \sum_{k=1}^n \left|x_k\right|\]
+                               
+
+%\Inputexo{\CHAP}{1}
+%\inputexo{\CHAP}{4}
+
+%\Mfig{NewCourbe.5}{6cm}
+%\inputexo{\CHAP}{}
+%\inputexo{\CHAP}{}
+%\inputexo{\CHAP}{}
+
+\end{document}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+%penser à Command/File pour creer un .ps pour Metapost
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+\inputexo{}{}
+Complexes
+Equa_diff
+Etude_de_fonction
+Exponentielle
+Geometrie_3D
+Integration
+Limites_continuite
+Logarithme
+Proba_Denombrement
+Suites
+
+
+

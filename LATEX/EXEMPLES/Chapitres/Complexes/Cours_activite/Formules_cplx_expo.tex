@@ -1,0 +1,63 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pifont}
+\begin{document}
+\newcommand{\T}{\theta}
+\fcours{Exponentielle complexe $\e^{i\T}$}%{\term}
+\rhead{}
+%%-----------------------
+\begin{list}{}{}
+\item[{\bf Définition.}] Le complexe non nul $z$, de module $|z|$ et
+  d'argument $\theta$ est mis sous forme exponentielle lorsque l'on écrit:
+  $z=|z|\e^{i\theta}$ où:
+\[ \e^{i\theta}=\cos\theta+i\sin\theta\]
+\end{list}
+\noindent Les propriétés suivantes sont valables pour tous réels $\theta$ et $\theta'$,
+$r$ et $r'$, pour tous $n$ et~$k$ dans $\Z$
+\begin{list}{}{}
+
+\item[{\bf Addition d'angles}]
+{\large\[ \e^{i(\theta+\theta')}=\e^{i\theta}\e^{i\theta'}\]}
+\item[{\bf Conjugué}]
+{\large\[ \overline{r\e^{i\theta}}=r\e^{-i\theta} \]}
+\item[{\bf Module unitaire}]
+{\large\[ \left|\e^{i\theta}\right|=1\]}
+\item[{\bf Inverse}]
+{\large\[ \frac{1}{\e^{i\theta}}=\e^{-i\theta}\]}
+\item[{\bf Quotient}]
+{\large\[ \frac{\e^{i\theta}}{\e^{i\theta'}}=\e^{i(\theta-\theta')}\]}
+\item[{\bf Puissance-Formule de De Moivre}]
+{\large\[ \left( \e^{i\theta}\right)^n=\e^{in\theta}\]}
+\item[{\bf Produit, quotient de deux complexes}]
+{\large\[
+\left(r\e^{i\theta}\right)\times\left(r'\e^{i\theta'}\right)=rr'\e^{i(\theta+\theta')}\qquad
+et \qquad
+\frac{r\e^{i\theta}}{r'\e^{i\theta'}}=\frac{r}{r'}\e^{i(\theta-\theta')}
+\]}
+\item[{\bf Valeurs remarquables}]
+{\Large\[ \e^{0}=1\quad;\quad \e^{i\frac{\pi}{2}}=i\quad;\quad
+  \e^{i\pi}=-1 \quad;\quad \e^{2i\pi}=1 \]}
+\item[{\bf Opposé d'un complexe}]
+{\large\[ -r\e^{i\theta}=r\e^{i(\theta+\pi)}\]}
+\item[{\bf $\theta\mapsto\e^{i\theta}$ est $2\pi$ périodique}]
+{\large\[ \e^{i(\theta+2k\pi)}=\e^{i\theta}\]}
+{\large\[ \e^{i\theta}=\e^{i\theta'} \iff \theta=\theta'\ [2\pi]\]}
+\item[{\bf Formules d'Euler }]
+{\large\[ \cos\theta=\frac{\e^{i\theta}+\e^{-i\theta}}{2}\quad\et{}\quad
+\sin\theta=\frac{\e^{i\theta}-\e^{-i\theta}}{2i}\]}
+Ces formules proviennent de ce que pour tout complexe $z$:
+\[Re(z)=\frac{z+\overline{z}}{2}\quad\et{}\quad Im(z)=\frac{z-\overline{z}}{2i}\]
+\item[{\bf Attention!}] $\e^{i\theta}$ est un nombre complexe, on ne peut donc pas parler de son signe\ldots 
+%\[ \]
+%\ding{63} 
+%exp est positif ne veut rien dire
+
+\end{list}
+
+
+
+
+%%-----------------------
+\end{document}

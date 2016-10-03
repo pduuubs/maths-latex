@@ -1,0 +1,37 @@
+\begin{exercice}
+Le Mastermind est un jeu où un joueur cache une combinaison de quatre
+pions de couleur en ligne (donc dans un ordre précis) qu'on nommera code. Il existe six couleurs. L'autre joueur
+qu'on appelera Maurice tente de deviner le code caché.\\
+\noindent
+{\bf Partie A}
+\begin{enumerate}
+\item Si on s'autorise à mettre des pions de couleurs identiques,
+  combien y a-t-il de codes possibles?
+\item On joue dans la suite une version simplifiée où le code ne comporte pas de
+  couleurs identiques. Combien y a-t-il de tels codes?
+\end{enumerate}
+On va étudier deux stratégies pour le premier coup. On dispose d'une
+urne comportant six jetons, un de chaque couleur.\\
+\noindent
+{\bf Partie B - Stratégie 1}
+On choisit un jeton de l'urne, on pose un pion de cette couleur sur
+la première case, on remet le jeton dans l'urne et on recommence ainsi
+pour chacun des trois pions restant. On note $Y$ le nombre de pions
+ayant la bonne couleur, à la bonne place.
+\begin{enumerate}
+\item Quelle est la probabilité de deviner directement le code?
+\item Calculer $P(Y=2)$ et $P(Y\geq 2)$. %Déterminer la loi de $Y$, calculer
+\end{enumerate}
+\noindent
+{\bf Partie C - Stratégie 2}
+On choisit simultanément quatre jetons de l'urne. On note $X$ le
+nombre de couleurs correctes. Ensuite on pose au hasard quatre pions ayant les
+couleurs tirées. 
+\begin{enumerate}
+\item Déterminer la loi, l'espérance et l'écart type de $X$.
+\item Justifier que si $X=4$ est réalisé, $Y=3$ est de probabilité nulle.
+\item Calculer: $P(Y=4)$,  $P(Y=3)$,  $P(Y=2)$, puis $P(Y\geq
+  2)$. Comparer les deux stratégies.
+\end{enumerate}
+ 
+\end{exercice}

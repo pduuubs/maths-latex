@@ -1,0 +1,73 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -11 -10 103 67 
+%%Creator: MetaPost
+%%CreationDate: 2007.09.29:1445
+%%Pages: 1
+%%DocumentFonts: CMMI10
+ /cmmi10 /CMMI10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath 0 56.6929 moveto
+0 0 lineto
+91.73149 0 lineto
+91.73149 56.6929 lineto
+ closepath stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth 1 setlinecap
+newpath 56.6929 0 moveto
+56.6929 56.6929 lineto stroke
+-9.57199 58.7929 moveto
+(A) cmmi10 9.96265 fshow
+-10.15659 -8.90779 moveto
+(B) cmmi10 9.96265 fshow
+93.83148 -8.90779 moveto
+(C) cmmi10 9.96265 fshow
+93.83148 58.7929 moveto
+(D) cmmi10 9.96265 fshow
+52.72859 -9.8078 moveto
+(E) cmmi10 9.96265 fshow
+52.79779 59.6929 moveto
+(F) cmmi10 9.96265 fshow
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 56.6929 21.65431 moveto
+91.73149 21.65431 lineto stroke
+ 0.1 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 70.07617 21.65431 moveto
+70.07617 -0.001 lineto stroke
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 70.07617 13.38289 moveto
+56.69228 13.38289 lineto stroke
+ 0.1 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 64.9641 13.38289 moveto
+64.9641 21.6547 lineto stroke
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 64.9641 16.54236 moveto
+70.07642 16.54236 lineto stroke
+ 0.1 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 66.91678 16.54236 moveto
+66.91678 13.38274 lineto stroke
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 66.91678 15.33553 moveto
+64.96399 15.33553 lineto stroke
+ 0.1 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 66.1709 15.33553 moveto
+66.1709 16.54243 lineto stroke
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 66.1709 15.79651 moveto
+66.91682 15.79651 lineto stroke
+ 0.1 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 66.45581 15.79651 moveto
+66.45581 15.3355 lineto stroke
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 66.45581 15.62042 moveto
+66.17088 15.62042 lineto stroke
+ 0.1 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 66.34698 15.62042 moveto
+66.34698 15.79652 lineto stroke
+ 0 0.1 dtransform truncate idtransform setlinewidth pop
+newpath 66.34698 15.68768 moveto
+66.45581 15.68768 lineto stroke
+showpage
+%%EOF

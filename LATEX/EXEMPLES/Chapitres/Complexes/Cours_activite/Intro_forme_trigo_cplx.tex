@@ -1,0 +1,133 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\activite{Complexes-Forme trigonom\'etrique}{\term}
+
+\section{Rep\'erage polaire dans le plan}
+Soit $\oij$ un rep\`ere orthonorm\'e du plan. Un point $M$ y est rep\'er\'e
+par ses coordonn\'ees cart\'esiennes (de \textsc{Descartes})   \ie{}
+$M(x;y)\iff \V{OM}  = x\vi + y\vj$. Il y a une autre façon de d\'efinir
+la position du point $M$ : Par la donn\'ee de la longueur $OM$ et de
+l'angle orient\'e $(\vi  ; \V{OM} )$. Cela donne les coordonn\'ees
+polaires: $M(\rho;\theta)$ o\`u $x=\rho\cos \theta$ et $y=\rho\sin
+\theta$. Donc:
+\[
+\rho=\sqrt{x^2+y^2}\qquad \et{}\ \theta\ \text{v\'erifie:}
+\left\{
+\begin{array}[c]{ll}
+\cos \theta&= \frac{x}{\rho}\\
+\sin \theta&=\frac{y}{\rho}\\
+  \end{array} \right.
+\]
+\hline
+\noindent
+{\bf Exemple:} 
+ Le point $M$ a pour coordonn\'ees cart\'esiennes $(-\sqrt3;3)$. On calcule $\rho$:
+\[ \rho=\sqrt{(-\sqrt3)^2+3^2} = \sqrt{12 } = 2\sqrt 3 \]
+Il faut toujours simplifier la racine. Puis:
+
+\[  
+\Bigl\{
+\begin{array}[c]{ll}
+\cos \theta&=\frac{-\sqrt3}{2\sqrt 3} \\
+\sin \theta&=\frac{3}{2\sqrt 3} 
+  \end{array}
+\iff 
+\Bigl\{
+\begin{array}[c]{ll}
+\cos \theta&=-\frac12 \\
+\sin \theta&=\frac{\sqrt3}{2} 
+  \end{array}
+ \]
+On part de l'angle de r\'ef\'erence qui a les m\^emes valeurs de cos et sin
+en valeur absolue. C'est $\frac{\pi}{3}$. On place $\frac{\pi}{3}$ sur
+un cercle trigonom\'etrique, ainsi que l'angle $\theta$ cherch\'e et on
+observe que $\theta=\pi- \frac{\pi}{3}$. Donc $\theta=\frac{2\pi}{3}$
+convient. Ainsi des coordonn\'ees polaires de $M$ sont: $(2\sqrt
+3;\frac{2\pi}{3})$.\qed %\hline
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[l]{6.8cm}
+%\begin{table}[htbp]
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{||c|c|c|c|c|c||}
+\hline 
+%Ligne 1
+% $ x$ en degr\'es& 
+%0& 30&45&60&90 \\\hline
+%Ligne 2
+ $\dfrac{}{}$$ x$ en radians& 
+0& $\frac{\pi}{6}$&$\frac{\pi}{4}$&$\frac{\pi}{3}$&$\frac{\pi}{2}$ \\\hline \hline
+%Ligne 3
+ $\dfrac{}{}$$ \cos x$& 
+1& $\frac{\sqrt{3}}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{1}{2}$&0 \\\hline
+
+%Ligne 4
+ $\dfrac{}{}$$ \sin x$& 
+0& $\frac{1}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{\sqrt{3}}{2}$&1 \\\hline 
+\end{tabular}
+\label{tab1}
+\renewcommand{\arraystretch}{1}
+ Pour se souvenir de ce tableau il suffit de conna\^itre le quart de
+ cercle trigonom\'etrique  et de se souvenir de: 
+$\frac{1}{2}<\frac{\sqrt{2}}{2}<\frac{\sqrt{3}}{2}$
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[l]{0.5\textwidth}
+\begin{center}
+\psfrag{O}{$O$} \psfrag{x}{$x$} \psfrag{y}{$y$} \psfrag{vi}{$\vi$} \psfrag{vj}{$\vj$} 
+\includegraphics{pol_cart.1}%[totalheight=4cm]{cercle_trigo.3}
+\end{center}
+\end{minipage}
+\section{Forme trigonom\'etrique d'un nombre complexe}
+Traduisons cel\`a en complexe. Soit M un point d'affixe $z=x+iy$ (o\`u
+$x\in\R$, $y\in\R$). $x+iy$ est la forme alg\'ebrique de $z$, M a pour
+coordonn\'ees cart\'esiennes $(x;y)$. Le rayon polaire $\rho$ est le module de
+$z$, et un angle polaire $\theta$ s'appelle  {\bf un argument}
+de~$z$.\\
+\noindent
+{\bf D\'efinition:} Tout complexe $z$ peut s'\'ecrire sous la forme appel\'ee forme trigonom\'etrique de~$z$:
+\[z=|z|\times(\cos \theta +i\sin\theta)  \]
+Un argument $\theta$ n'est pas unique, car d\'efini modulo $2\pi$. On
+note: Arg$(z)=\theta$ un argument de~$z$
+\hline
+\noindent
+{\bf Exemple:} {\sl Cf exemple pr\'ec\'edent.} Soit
+$z=-\sqrt3+3i$. Mettre $z$ sous forme trigonom\'etrique.\\
+$|z|=\sqrt{12}=2\sqrt3$. La suite est identique et donc
+$\theta=\frac{2\pi}{3}$ d'o\`u: $z=2\sqrt3(\cos\frac{2\pi}{3}  +i\sin\frac{2\pi}{3})$
+\qed
+\exercice
+Mettre les nombres complexes suivants sous forme trigonom\'etrique:
+\begin{enumerate}
+\item \qcmabc{$z=1+i$}{$z=5-5i$}{$z=-3-3i$}
+\item \qcmabc{$z=-4$}{$z=i$}{$z=-2i$}
+\item \qcmabc{$z=2\sqrt3-2i$}{$z=-3+i\sqrt3$}{$z=-1+i\sqrt3$}
+\end{enumerate}
+\exercice
+Mettre les nombres complexes $z$ et $z'$ suivants sous forme
+trigonom\'etrique, ainsi que $zz'$ et $\dfrac{z}{z'}$:
+\begin{enumerate}
+\item %
+\begin{minipage}[l]{0.45\textwidth}
+(a) $z=4i\quad$ et $\quad z'=1+i\sqrt3$
+\end{minipage}\hfill
+\begin{minipage}[l]{0.45\textwidth}
+(b) $z=-2+2i\sqrt3\quad$ et $\quad z'=-\sqrt3-i$
+\end{minipage}%
+\item $z=\cos\theta+i\sin\theta\quad$ et $\quad
+  z'=\cos\theta'+i\sin\theta'$ \\
+On donnera $\text{Arg}(zz')$ et
+  $\text{Arg}(\dfrac{z}{z'})$ en fonction de $\theta$ et~$\theta'$.
+\item D\'emontrer les formules dans le cas g\'en\'eral:
+\[ \text{Arg}(zz')=\text{Arg}(z)+\text{Arg}(z')\quad\et{}\quad \text{Arg}(\dfrac{z}{z'})=\text{Arg}(z)-\text{Arg}(z')\]
+\end{enumerate}
+\end{document}

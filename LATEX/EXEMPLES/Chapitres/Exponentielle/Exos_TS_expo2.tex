@@ -1,0 +1,101 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{panpan}
+\renewcommand{\O}{\Omega}
+\begin{document}
+\setcounter{Aff}{1}
+\fexost{Exponentielle}
+\chead{\Large{\textbf{Fonction exponentielle}}}
+\rhead{}
+%\lfoot{}
+%\rfoot{}
+%\Titre{}
+%%%%%____________________________________________________________
+\Exo[]{En posant $X=\e^x$ résoudre dans $\R$ les équations suivantes:
+\begin{enumerate}
+\item \alignetrois{a) $3\e^{2x}-\e^x-2=0$}{b) $\e^{2x}+\e^x-2=0$}{c) $\e^{2x}-\e^{x+1}-\e^x+\e=0$}
+\item \alignetrois{a) $\e^{3x}-\e^x=0$}{b) $2\e^{x}+2\e^{-x}+5=0$}{c) $\e^{x}-\e^{-x}=0$}
+\end{enumerate}}
+%%%%%____________________________________________________________
+\Exo[]{\textbf{Exponentielle et tangentes}\\
+On note $\Cr$ la courbe de la fonction exponentielle dans un repère orthonormal.
+  \begin{enumerate}
+  \item Déterminer l'équation de $\Dr$, la tangente à $\Cr$ au point d'abscisse~$0$.
+  \item On veut prouver que $\Cr$ est au dessus de $\Dr$. On pose pour $x\in\R$:
+\[ \Xi(x)=\e^x -x-1\]
+\begin{enumerate}
+\item Etudier les variations de $\Xi$ sur $\R$.
+\item En déduire pour conclure l'inégalité suivante (à retenir):
+  \begin{equation}
+    \label{eq:tang}
+    \forall x \in\R,\quad \e^x \geq x+1
+  \end{equation}
+
+
+\end{enumerate}
+
+\item On passe au cas général. Soit $a\in\R$. On note $\Dr_a$ la
+  tangente à $\Cr$ au point d'abscisse~$a$. On veut prouver que $\Cr$ est au dessus de $\Dr_a$.
+  \begin{enumerate}
+  \item Prouver que l'assertion \og $\Cr$ est au dessus de $\Dr_a$\fg{} équivaut à:
+\[ \forall x \in\R,\quad \e^{x-a} \geq x-a+1\]
+\item Conclure à l'aide de \eqref{eq:tang}.
+  \end{enumerate}
+    
+  \end{enumerate}
+La courbe de la fonction exponentielle est donc au dessus de chacune
+de ses tangentes. On dit que la fonction exponentielle (comme la
+fonction carré) est \emph{convexe}.
+}
+%%%%%____________________________________________________________
+%\Exo[]{ Résoudre les équations différentielles suivantes
+%  \begin{enumerate}
+%  \item $y'=2y$ et $y(0)=1$
+%  \end{enumerate}
+%}
+%%%%%____________________________________________________________
+\Exo[]{ 
+\textbf{Application aux limites}
+ \begin{enumerate}
+
+ \item Limites de $\e^x$.
+    \begin{enumerate}
+    \item Déduire de \eqref{eq:tang} une preuve de la limite de
+    $\e^x$ en $+\infty$.
+
+     \item Déduire de \eqref{eq:tang} que pour tout réel $x$ tel que
+    $x<1$:
+       \begin{equation}
+         \label{eq:mino}
+\e^x\leq\frac{1}{1-x}
+       \end{equation}
+
+     \item En déduire la limite de $\e^x$ en $-\infty$.
+    \end{enumerate}
+
+\item Encadrement de $\e$.\label{enc}
+    \begin{enumerate}
+    \item Déduire de \eqref{eq:tang} que pour tout $n\in\N^*$:
+    \[\left( 1+\frac{1}{n}\right)^n\leq \e\]
+    \emph{Indication: }$\frac{1}{n}\times n=1$
+    \item Déduire de \eqref{eq:mino} que pour tout $n\in\N^*$:
+    \[\e\leq\left( 1+\frac{1}{n}\right)^{n+1}\]
+    \end{enumerate}
+\item Une suite qui converge vers $\e$ \\
+    On considère la suite $(u_n)$ définie par: 
+    \[ n\in\N^*,\quad u_n=\left( 1+\frac{1}{n}\right)^n \]
+    \begin{enumerate}
+    \item Démontrer que pour tout entier $n\in\N^*$:
+    \[ 0\leq \e- u_n\leq \frac{\e}{n}\]
+    \item En déduire que la suite $(u_n)$ converge vers $\e$
+    \item Calculer à l'aide de la calculatrice et de la suite $(u_n)$ une
+      valeur approchée à $10^{-6}$ près du nombre réel~$\e$.
+    \end{enumerate}%
+\end{enumerate}%
+}
+
+\end{document}
+
+
+

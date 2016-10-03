@@ -1,0 +1,70 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{panpan}
+\renewcommand{\O}{\Omega}
+\begin{document}
+%\setcounter{Aff}{1}
+\fexost{Suites et récurrence}
+\chead{}
+\rhead{Suites et récurrence}
+%\Titre{\'Equation de cercle}
+\section{Représentation d'une suite récurrente}
+On appelle suite récurrente une suite $u$ définie par une relation de la forme:
+\[ \forall n\in\N,\ u_{n+1}=f(u_n)\quad  \et{} \quad u_0=\ldots\]
+\exemples Une suite arithmétique de raison $r$ est de ce type où $f(x)=x+r$. Une suite géométrique de raison $q$ est de ce type où $f(x)=qx$
+
+%%---------------------------------
+\Exo[]{Suite arithmético-géométrique.
+Soit la suite $(u_n)$ définie par $u_0$ et: 
+\[ \forall n\in\N,\ u_{n+1}=f(u_n)\ \text{où }\ f(x)=ax+b\]
+Pour chacune des valeurs de $a$ et $b$ données, répondre aux questions ci-dessous:
+\begin{enumerate}
+\item $a=\dfrac12$ et $b=1$.
+\item $a=-\dfrac23$ et $b=5$
+\item $a=1,5$ et $b=-1$ (on prendra alors $u_0=1$ et $u_0=3$ à la question \ref{ques}
+
+\begin{enumerate}
+\item Représenter la courbe de $f$ dans un repère orthonormal ainsi que $\Dr$: $y=x$
+\item \label{ques}Représenter les premiers termes de la suite sur l'axe des abscisses pour $u_0=-4$ et $u_0=6$. Vérifier quelques termes par le calcul.
+\item Déterminer $\alpha$ la solution de $f(x)=x$.
+\item On pose $v_n=u_n-\alpha$. et $u_0=6$. Prouver que $(v_n)$ est une suite géométrique de raison~$a$.
+\item En déduire l'expression de $u_n$ et la limite éventuelle de $(u_n)$.
+\end{enumerate}
+\end{enumerate}
+
+}
+\section{Raisonnements par récurrence}
+\Exo[]{Quand  $n\in\N^*$ On note  $S(n)$  la somme des  $n$  premiers entiers naturels \emph{impairs} ; 
+par exemple:  $S(1) = 1$  ,  $S(2) = 1 + 3$  ,  $S(3) = 1 + 3 + 5$ 
+\begin{enumerate}
+\item Calculer  $S(1)$  ,  $S(2)$  ,  $S(3)$  ,  $S(4)$  ,  $S(5)$. Quelle conjecture émettre ?  
+\item On pose  $T(n) = n^2$. Démontrer par récurrence que pour tout entier naturel non nul: \[S(n) = T(n)\]
+\end{enumerate}
+}
+%%%%%%%
+\Exo[]{
+Soit une fonction $f$ définie sur $\R$ et vérifiant: pour tout $x\geq 2$, on a $f(x)\geq x$. Soit une suite $(u_n)$ définie par la donnée de $u_0\geq 2 $ et $\forall n\in\N,\ u_{n+1}=f(u_n)$. Démontrer par récurrence que la suite $(u_n)$ est croissante.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Exo[]{
+Soit une fonction $f$ définie sur $\R$ majorée par $M$. Soit une suite $(u_n)$ définie par la donnée de $u_0\in \R$ et $\forall n\in\N,\ u_{n+1}=f(u_n)$. Démontrer que pour tout $n\geq1$ la suite $(u_n)$ est aussi majorée par $M$.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Exo[]{
+Soit un entier naturel $ n\geq 2$. Sur un cercle sont donnés  $n$  points distincts  $A_ 1$  ,  $A_ 2$  , \ldots ,  $A_ n$. On désigne  par  $S(n)$  le nombre de segments obtenus en prenant ces points pour extrémités. 
+\begin{enumerate}
+\item À l'aide de figures, donner  $S(2)$  ,  $S(3)$  ,  $S(4)$  ,  $S(5)$. 
+\item Si à  $n$  points du cercle on ajoute  un point supplémentaire, combien de segments rajoute-t-on ?
+\item En déduire une relation entre $S(n + 1)$  et  $S(n)$.
+\item Démontrer par récurrence que l'on a : pour tout entier  $n\geq 2$  ,    $S(n) = \dfrac{ n (n - 1)}{ 2}$
+\end{enumerate}
+}
+
+\end{document}
+
+
+

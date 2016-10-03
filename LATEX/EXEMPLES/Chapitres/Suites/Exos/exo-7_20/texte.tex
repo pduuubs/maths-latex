@@ -1,0 +1,98 @@
+\begin{exercice}
+\noindent
+La suite de \textsc{Fibonacci}\footnote{Très célèbre, particulièrement depuis le
+  succès du livre \textsl{Da Vinci Code}. \textsc{Fibonacci} (Pise 1170--1245)} est la suite $(U_n)$ définie par $U_1=U_2=1$ et
+la relation de récurrence pour tout $n$ dans~$\mathbb{N}^*$:
+\begin{equation}
+  \label{eq:rel_fonk_fibo}
+  U_{n+2}=U_{n+1}+U_n
+\end{equation}
+\begin{enumerate}
+\item  Calculer les dix premiers termes de la suite de Fibonacci.\\
+
+Il a fallu attendre 500 ans pour trouver l'expression du terme général
+de la suite de Fibonacci. Je vous propose une démonstration de
+l'étonnante\footnote{Pourquoi peut--on trouver cette formule étonnante
+  au premier abord?} formule  découverte
+par \textsc{De Moivre}\footnote{Abraham \textsc{De Moivre} (Vitry le François
+  1667-- Londres 1754) Mathématicien français, ami d'Isaac
+  \textsc{Newton}. }:
+\begin{equation}
+  \label{eq:fibo_tg}
+ \forall n\in \mathbb{N}^*,\  U_n=\frac{1}{\sqrt{5}}\left[
+   \left(\frac{1+\sqrt{5}}{2} \right)^n- \left(\frac{1-\sqrt{5}}{2} \right)^n\right]
+\end{equation}
+%\begin{enumerate}
+\item Supposons un instant que $(V_n)$ soit une suite géométrique non nulle
+  vérifiant la même relation de récurrence que $(U_n)$. Prouver alors
+  que la raison de $(V_n)$ est nécessairement solution de:
+\begin{equation}
+    \label{eq:trino_fibo}
+    x^2=x+1
+  \end{equation}
+\item Résoudre dans $\mathbb{R}$ l'équation~\eqref{eq:trino_fibo}. On notera $\phi$ (le nombre d'or) la racine positive et $\bar{\phi}$ la racine négative
+de~\eqref{eq:trino_fibo}.
+%\item  Calculer $U_n$ pour $n$ allant de $1$ à $6$ à l'aide de~\eqref{eq:rel_fonk_fibo}.
+\item La suite de Fibonacci est--elle une suite  géométrique?
+
+\item \label{avecphi1} 
+ 
+    En utilisant uniquement l'équation~\eqref{eq:trino_fibo} vérifiée par
+  $\phi$ , exprimer $\phi^n$ pour $n$ valant $2$, $3$, $4$, $5$, puis
+  $6$ sous la forme $a\phi +b$ où à chaque fois $a$ et $b$ sont des
+  entiers naturels. On reproduira et complètera alors le tableau
+  ci--dessous avec les valeurs obtenues pour $a$ et $b$. Que remarque-t-on sur les coefficients $a$ et $b$?%\smallskip\\
+  \begin{center}
+    
+ 
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+$n$ &$1$&$2$&$3$&$4$&$5$&$6$ \\ \hline 
+$a$ & $1$  & $1$ &&&&\\ \hline
+$b$ & $0$  & $1$ &&&& \\ \hline
+  \end{tabular}
+ \end{center}
+% \begin{tabular}{|c|c|c|}
+%     \hline
+% $n$ &$a$&$b$\\ \hline \hline
+% $1$ & $1$  & $0$  \\ \hline
+% $2$ & $1$  & $1$  \\ \hline
+% $3$ &   &  \\ \hline
+% $\vdots$ & $\vdots$  & $\vdots$ %\\ 
+% %\hline
+% %$5$ &   &  \\ \hline
+% %$6$ &   &  \\ \hline
+%   \end{tabular}
+%\end{minipage}
+  
+
+
+\item \label{avecphi2} Prouver alors par récurrence que pour tout entier $n$ supérieur à~2:
+\[\phi^n=U_n\times\phi+U_{n-1}\]
+
+\item En déduire la formule~\eqref{eq:fibo_tg}. \hfill
+ \raisebox{0.8ex}{ \rotatebox{180}{{\footnotesize Indication: Peut--on traiter la question
+  \textbf{\ref{avecphi1}.} en remplaçant
+  $\phi$ par  $\bar{\phi}$?}}}
+
+\item En déduire la limite de $U_n$.
+\item On s'intéresse maintenant aux quotients de deux termes
+  successifs de la suite de Fibonacci. On considère donc la suite $(Q_n)$ définie par:
+  $Q_n=\frac{U_{n+1}}{U_n}$ pour tout $n$ de $\mathbb{N}^*$. Prouver que: 
+\[\forall n\in\mathbb{N}^*,\ 
+Q_n=\frac{\phi-\bar{\phi}\left(\frac{\bar{\phi}}{\phi}\right)^n} {1-\left(\frac{\bar{\phi}}{\phi}\right)^n}\]
+
+\item Prouver que\footnote{Cette limite  signifie que $(U_n)$ se
+    comporte  pour $n$ grand \og comme\fg{} une
+  suite géométrique de raison~$\phi$.}:
+ $\lim\limits_{ n \to +\infty }Q_n=\phi$.\\\noindent
+
+
+\item Prouver  en utilisant~\eqref{eq:rel_fonk_fibo} que
+  $\left(Q_{n}\right)_{n\in\mathbb{N}^*}$ est déterminée par:
+\[\forall n\in\mathbb{N}^*,\ Q_{n+1}=1+\frac{1}{Q_n} \quad\text{et}\quad Q_1=1\]
+\item Expliquer l'écriture de $\phi$ dite en \og fraction
+  continue\fg{}: $\phi=1+\cfrac{1}{1+\cfrac{1}{1+\cfrac{1}{1+\cdots}}}$
+\end{enumerate}
+
+ \end{exercice}

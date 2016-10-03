@@ -1,0 +1,15 @@
+\begin{exercice}
+\begin{enumerate}
+%\item R\'esoudre dans $\C$ l'\'equation: $$
+\item L'ensemble des points $M$  d'affixe $z$ tels que $|z|=z$ est:
+\qcmabc{une droite}{un cercle}{une demi droite}
+\item L'ensemble des points $M$  d'affixe $z$ tels que $|z+4|=1$ est: 
+\qcmabc{vide}{un cercle}{une droite}
+\item L'ensemble des points $M$  d'affixe $z$ tels que $|z|=z+\bar{z}$
+  est inclus dans: 
+\qcmabc{un cercle}{une demi droite}{deux droites}
+\item L'ensemble des points $M$  d'affixe $z$ tels que $|z-i|=|1-z|$ est: 
+\qcmabc{vide}{une droite}{un segment}
+\end{enumerate}
+ 
+\end{exercice}

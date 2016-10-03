@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan}
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+\newcommand{\inputexo}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/\CLASSE/Chapitres/#1/Exos/exo-7_#2/texte.tex}}
+\newcommand{\inputBANK}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/Seconde/Bankexos/#1/exo-#2/texte.tex}}
+\newcommand{\Mfig}[2]{\includegraphics[width=#2]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/#1}}% 1: Nom fichier, 2:largeur image
+%---------
+\newcounter{CL}
+%%%%%%%%%%%%%%%%%%%%%%---------CHANGER ICI (ONLY) LA CLASSE
+\setcounter{CL}{2}  %% 2: Seconde et Sinon Terminale
+%%%%%%%%%%%%%%%%%%%%%%---------
+\ifthenelse{\theCL=2}{\def\CLASSE{Seconde} \def\ClasseABR{\seconde}}%
+{\def\CLASSE{TS} \def\ClasseABR{\term}}
+
+\renewcommand{\exercice}{} 
+%\renewenvironment{exercice}{\exocursif} 
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CHAP}{Nombres}      % Changer ici le chapitre
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\fcours{Titre}
+\fexos{Titre}{\ClasseABR}
+%\activite{Titre}{\ClasseABR}
+%\ds{\ClasseABR}
+%\dl{2}{Titre}{\ClasseABR}
+\cfoot{}  % si commenté donne page n° x/ nb_de_pages
+%%#######################################################
+
+
+
+
+
+
+
+\end{document}
+%%#######################################################
+\exo{--- } 
+\inputexo{\CHAP}{1}
+\exods{--- Titre }{5} % donne le bareme (5pts)
+\exo{--- }
+\inputBANK{\BANK}{606}
+\Mfig{NewCourbe.5}{6cm}
+
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+
+%% Chapitres de TS
+Complexes
+Equa_diff
+Etude_de_fonction
+Exponentielle
+Geometrie_3D
+Integration
+Limites_continuite
+Logarithme
+Proba_Denombrement
+Suites
+
+%% Chapitres de Seconde
+Nombres
+Vecteurs
+Fonctions
+Droites.Systemes
+Geometrie_2D
+Geometrie_3D
+Triangles
+Stat

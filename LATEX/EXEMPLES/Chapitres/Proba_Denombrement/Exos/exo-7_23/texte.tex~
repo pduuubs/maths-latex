@@ -1,0 +1,18 @@
+\begin{exercice}
+
+ Soit $\lambda$ un réel strictement positif.
+\begin{enumerate}
+\item Démontrer que la fonction $f_{\lambda}$ définie par $f_{\lambda}(t)=\lambda e^{-\lambda t}$
+est effectivement une densité de probabilité sur $[0,+\infty[$. 
+
+\item Pour $c\geqslant 0$ , calculer $P\left([0,c]\right)$ puis en déduire $P\left([c,+\infty[\right)$
+\item Soit $F$ la fonction définie sur $[0,+\infty[$ par
+  $F(t)=P([0,t])$. $F$ est appelée \textbf{fonction de répartition }. Elle donne la probabilité qu'une substance ou un appareil donné ait une durée de vie inférieure ou égale à~$t$\\
+Vérifier que $F(t)=1-e^{-\lambda t}$ puis démontrer que pour tout $t$
+et $s$ positifs : 
+\[P_{[t,+\infty[}([t,t+s])=F(s)\]
+\item Pourquoi dit-on de cette loi de durée de vie qu'elle est \textbf{sans vieillissement} ?
+\item On note $E(X)$ la durée de vie moyenne . On admet que: $\displaystyle E(X)=\int_{0}^{+\infty}\lambda t e^{-\lambda t}dt$\\
+Calculer $E(X)$.
+\end{enumerate}
+\end{exercice}

@@ -1,0 +1,3043 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[]{pan_pan} 
+\usepackage{eso-pic} %pour filigrane
+%\setlength{\textheight}{24cm}
+%\setlength{\textwidth}{16cm}
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\usepackage[dvips,ps2pdf,colorlinks=false]{hyperref} %gestions des hyperliens dans un document .dvi
+\pagestyle{fancy}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+%%
+%% Pour en faire un BOOKLET A5
+%%
+% Suppose your source code is in the file Tous_les_exos_de_VP.tex, then the following
+% commands typed into the command prompt will convert the file into an
+% A5 booklet: 
+%
+% latex Tout_le_cours_TS.tex
+% latex Tout_le_cours_TS.tex
+% dvips -o Tout_le_cours_TS.ps Tout_le_cours_TS.dvi
+% psbook Tout_le_cours_TS.ps Tout_le_cours_TS.bk.ps
+% psnup -2 Tout_le_cours_TS.bk.ps Tout_le_cours_TS.booklet.ps
+% En pdf ensuite avec ps2pdf:
+% ps2pdf Tout_le_cours_TS.booklet.ps Tout_le_cours_TS.booklet.pdf
+
+%  The resulting file exam.booklet.ps should then be printed doubled-sided, stapled down the middle, and folded to produce an A5 booklet. The paper size can be changed by using different command line options, see the psutils documentation for more information.
+
+%% Chemins des images
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+%penser à Command/File pour creer un .ps pour Metapost
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+
+%%% Reste à faire:
+%
+%  1) chercher et remplacer les includegraphics par un environnement
+%  figure puis \tableoffigures
+%  2) Donner les ref des exos concernés à chaque partie... du livre
+%  aussi (?)
+%  3) Répertorier les exos séparément ? En faire une toc? Corrections
+%  en fin d'ouvrage?
+%  4) Faire un index et donc référencer des mots clefs
+%  
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style du livre AMS-math
+%%%%
+
+\renewcommand{\chaptermark}[1]%
+   {\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]%
+   {\markright{\MakeUppercase{\thesection.\ #1}}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\Police}{%
+   \fontfamily{%
+%lmr
+pag%style des hauts de page en avant garde small caps
+}\fontseries{m}\fontshape{sc}\fontsize{9}{11}\selectfont}
+\fancyhf{}
+\fancyhead[LE,RO]{\Police \thepage}
+\fancyhead[LO]{\Police \rightmark}
+\fancyhead[RE]{\Police \leftmark}
+%%%%%%%%%%%
+\title{%
+{\bf Cours de Mathématiques en \term S}}
+%\\rule{0cm}{1cm}\noindent\begin{center}
+%includegraphics[width=7cm]{petite_frise_bague_viking}
+%end{center}}
+\author{Vincent PANTALONI}
+\date{{\small {\Police Version du \today}}}
+\renewcommand{\iff}{\Longleftrightarrow}
+%%%%
+%\makeindex
+\begin{document}
+\frontmatter
+%\newcommand{\Pdpweb}{{\footnotesize {\tt
+%http://prof.pantaloni.free.fr}}}
+%\newcommand{\Pdpweblink}{\url{http://prof.pantaloni.free.fr}}
+\lfoot{\Pdpweblink}
+\rfoot{{\small {\Police Version du \today}}}
+\AddToShipoutPicture*{\AtTextUpperLeft{\rotatebox{270}{\
+      \includegraphics[scale=0.5]{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(111)%
+}}}}
+\maketitle
+
+\tableofcontents
+
+%\AddToShipoutPicture*{\AtTextLowerLeft{\includegraphics[width=16cm]{petite_frise_bague_viking}}}
+%\listoffigures
+\mainmatter
+\lfoot{\Pdpweb}%\lfoot{}
+\rfoot{}
+
+
+\chapter{Suites, récurrence, suites adjacentes}
+\section{Rappels}
+\par \noindent
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{||c|p{5.2cm}|p{5.5cm}||}
+\hline 
+%Ligne 1
+  Suite $(u_n)$, $n\in \N$ & \hspace{\stretch{1}} Suite \textbf{arithmétique} de raison $r$  \hspace{\stretch{1}} & \hspace{\stretch{1}}  Suite \textbf{géométrique} de raison $q$ \hspace{\stretch{1}} \\\hline \hline
+%Ligne 2
+Définition & On passe de chaque terme au suivant en ajoutant le même réel $r$ \[u_{n+1}=u_n+r \] & On passe de chaque terme au suivant en multipliant par le même réel $q$ \[u_{n+1}=q\times u_n \]\\ \hline
+%Ligne 3
+ Terme général& \[u_n=u_0+nr\]\[u_n=u_1+(n-1)r\] & \[u_n=u_0\times q^n\]\[u_n=u_1\times q^{n-1}\] \\\hline
+%Ligne 4 
+Somme de termes & ``Nombre de termes''$\times$ ``Moyenne du premier et dernier terme'' 
+\[ \sum_{k=0}^{n}u_k=(n+1)\times \frac{u_0+u_n}{2}\]& ``Premier terme''$\times \dfrac{1-q^{\text{nb de termes}}}{1-q}$ \[ \sum_{k=0}^{n}u_k=u_0\times \frac{1-q^{n+1}}{1-q}\] 
+\\\hline
+
+ Cas particuliers& \[1+2+\cdots+n=\dfrac{n(n+1)}{2}\]& \[1+q+q^2+\cdots+q^n=\frac{1-q^{n+1}}{1-q}\]\\\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1.5}
+\subsection{Exercices corrigés} 
+%-------------------
+\setcounter{Aff}{1}  %<<<<<<<<<<<<<<<<<<<
+%-------------------
+%
+%Si ``Aff'' vaut 0 on n'affiche pas les solutions sinon, on les affiche, s'il y en a... ( Aff=\theAff )
+\Exo[C'est une somme géométrique du type $1+q+q^2+\cdots+q^n $ avec $q=x^2$. D'où: $S=\dfrac{1-(x^2)^{n+1}}{1-x^2}$ si $x^2\neq1$. Si $x=1$ alors $S=1+1+\cdots+1=n+1$]{Calculer $S = 1 + x^2 + x^4 +\cdots + x^{2n}$}
+\Exo[On a $u_n=u_0+nr$. En remplaçant $n$ par 34, on détermine $r$. Puis on calcule $u_{100}$]{Soit $(u_n)$ une suite arithmétique de raison $r$. On donne: $u_0=3$ et $u_{34}=321$. Déterminer $u_{100}$.}
+\Exo[C'est la somme des termes de la suite $(u_n)$ géométrique de raison 2 et de premier terme 5. Il reste à déterminer le nombre de termes de la somme. $u_n=5\times 2^n \implies 5\times 2^n =5120 \implies 2^n=1024 \implies n=10$. Donc $S=u_0+\cdots+u_{10}$ qui comporte 11 termes. D'où: $S=5\times \dfrac{1-2^{11}}{1-2}=5(2^{11}-1)=10235$ ]{Calculer la somme: $S=5+10+20+40+\cdots+5120$}
+\Exo[$v_{n+1}=u_{n+1}-1=-2u_n+3-1=-2(u_n-1)$. Donc $v_{n+1}=-2v_n$, $(v_n)$ est géométrique de raison -2 et de premier terme $v_0=u_0-1=4$. D'où $v_n=4\times (-2)^n$. Ainsi $u_n=4\times (-2)^n+1$ ]{Soit la suite définie par $\forall n \in \N, u_{n+1}=-2u_n+3$ et $u_0=5$. On pose aussi $v_n=u_n-1$. Montrer que $(v_n)$ est géométrique, déterminer le terme général de $(u_n)$.}
+%%
+\setcounter{Aff}{0} 
+%%
+\begin{prop}
+  Limite de $q^n$.
+\end{prop}
+\section{Comportement global d'une suite}
+\subsection{Monotonie}
+\begin{Def}
+  Croissante, décroissante, constante, monotone
+\end{Def}
+\begin{rem}
+  Pareil avec strict.
+\end{rem}
+\subsection{Majorée, minorée, bornée}
+\begin{Def}
+  Maj, min, bornée.
+\end{Def}
+\begin{rem}
+Pas unicité d'un maj.
+\end{rem}
+\exemple $u_n=4-\frac{1}{n}$
+\section{Raisonnement par récurrence}
+Le raisonnement par récurrence (on dit aussi par induction) est un principe de raisonnement (comme le raisonnement par l'absurde) qui sert à établir une propriété valable pour une infinité d'entiers naturels. Ce raisonnement comporte quatre étapes: L'initialisation, l'hypothèse de récurrence, l'hérédité et la conclusion. 
+\subsection{Principe}
+\noindent Soit $\Para (n)$ une propriété dépendant d'un entier~$n$ dont on veut prouver qu'elle est vraie pour tout $n$ dans $\N$. (Parfois pour tout $n$ dans $\N^*$ ou $n\geq 3$ \dots etc)\medskip\\
+\fbox{%{0.5\linewidth}{
+
+\parbox{0.9\linewidth}{
+%\noindent Soit $\Para (n)$ une propriété dépendant d'un entier~$n$ dont on veut prouver qu'elle est vraie pour tout $n$ dans $\N$. (Parfois pour tout $n$ dans $\N^*$ ou $n\geq 3$ \dots etc)
+\begin{itemize}
+\item[\bf Initialisation.] On vérifie que $\Para(0)$ est vraie.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie.
+\item[\bf Hérédité.] On montre que sous l'hypothèse de récurrence, $\Para (k+1)$ est aussi vraie.
+\item[\bf Conclusion.] Alors par récurrence, la propriété $\Para (n)$ est vraie pour tout $n\in\N$.
+\end{itemize}
+}}\medskip\\
+Toutes les phases du raisonnement sont nécéssaires, mais l'essentiel de la difficulté provient en général dans la phase de l'hérédité. \`A cet endroit il faut trouver un lien entre $\Para (k)$ et $\Para (k+1)$.
+Pour expliquer ce raisonnement on utilise parfois l'analogie suivante:
+\subsection{Analogie: gravir un escalier}
+\noindent On se trouve sur la première marche d'un escalier infini à gravir. Si on sait monter une marche, alors on peut accéder à n'importe quelle marche de l'escalier.
+\begin{itemize}
+\item[\bf Initialisation.] On est sur la première marche, donc on peut commencer.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, on soit sur la $k$-ième marche.
+\item[\bf Hérédité.] On vérifie qu'on peut alors passer à la marche suivante, la $(k+1)$-ième.
+\item[\bf Conclusion.] Alors par récurrence, on peut accéder à la marche numéro $n$ pour tout $n$ dans~$\N^*$.
+\end{itemize}
+\subsection{Exemples}
+\begin{dingautolist}{172}
+\item 
+Prouver la formule suivante donnant la somme des premiers entiers naturels:
+\[ 1+2+3+\cdots+n=\frac{n(n+1)}{2}\]
+\begin{proof}
+
+On note pour tout $n\in\N^*$: $S_n=1+2+3+\cdots+n$. La propriété à prouver par recurrence pour tout $n$ de $\N^*$ est donc:
+\[ \Para (n): \qquad S_n=\frac{n(n+1)}{2}\]
+\begin{itemize}
+\item[\bf Initialisation.] $S_1=1$ et pour $n=1$, $\frac{n(n+1)}{2}$ vaut $\frac{1\times 2}{2}=1$. Donc $\Para (1)$ est vraie.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie \ie{}  $S_k=\frac{k(k+1)}{2}$.
+\item[\bf Hérédité.] Ici on veut prouver que $S_{k+1}= \frac{(k+1)(k+2)}{2}$. Or\footnote{L'argument qui suit est la clef pour passer du rang $k$ au rang suivant~$k+1$.}: $S_{k+1}=S_k+(k+1)$. Comme par hypothèse de récurrence $S_k=\frac{k(k+1)}{2}$ on en déduit que:
+\[S_{k+1}=\frac{k(k+1)}{2}+(k+1)=(k+1)(1+\frac{k}{2})=\frac{(k+1)(k+2)}{2}\]
+Ainsi $\Para (k+1)$ est vraie.
+\item[\bf Conclusion.] Par récurrence, on a prouvé que  pour tout $n$ dans~$\N^*$,  $S_n=\frac{n(n+1)}{2}$. 
+
+\end{itemize}
+\end{proof}
+
+\item Prouver par récurrence que pour $n$ entier assez grand, $2^n \geq  n^2$.
+\begin{proof} On commence par chercher à la main ou avec une calculette un rang à partir duquel la propriété semble vraie. On pense à $n=4$. Soit $\Para (n)$ la propriété: $2^n \geq  n^2$. On veut prouver qu'elle est vraie pour tout $n$ dans $\N$ supérieur ou égal à~$4$. 
+\begin{itemize}
+\item[\bf Initialisation.] $2^4=16$ et $4^2=16$ donc $2^4 \geq  4^2$. Donc $\Para (4)$ est vraie.
+\item[\bf Hypothèse de récurrence.] On suppose que pour un certain
+  $k\in\N$, avec  $k\geq 4$, $\Para (k)$ est vraie \ie{} $2^k \geq  k^2$.
+
+\item[\bf Hérédité.] Ici on veut prouver que $2^{k+1} \geq  (k+1)^2$.
+\[2^{k+1}=2\times 2^{k} \geq 2k^2  \]
+Il suffit donc de prouver que pour $k\geq 4$ on a $2k^2\geq
+(k+1)^2$. Les deux membres sont positifs, cette égalité est
+équivalente à $\sqrt{2}k\geq k+1$ soit $k\geq \frac{1}{\sqrt{2}-1}$,
+ou encore $k\geq \sqrt{2}+1$. Or $\sqrt{2}+1\leq 4$.
+Ainsi $\Para (k+1)$ est vraie.
+\item[\bf Conclusion.] Par récurrence, on a prouvé que  pour tout
+  entier $n$ supérieur à 4, $2^n \geq  n^2$.
+
+\end{itemize}
+\end{proof}
+\end{dingautolist}
+
+\section{Suites adjacentes}
+\subsection{Convergence monotone}
+\subsection{Suites adjacentes}
+
+\section{\'Etude des suites du type $u_{n+1}=f(u_n)$}
+On se donne une fonction $f$ définie, continue sur un intervalle $I$ de
+$\R$. Soit $u_0\in I$.
+\subsection{Intervalle stable}
+\Def{On dit que $I$ est stable par $f$ si $f(I)\subset I$}
+\exemples
+  \begin{enumerate}
+  \item $f(x)=x(1-x)$ sur $I=\intf{0}{1}$. $I$ est stable par f, mais
+pas par $g=5f$. Il suffit d'étudier $f$.
+\item $f(x)=\frac{1}{x-1}$ et $u_0=\frac32$ Vérifier que la relation
+  $u_{n+1}=f(u_n)$ ne définit pas une suite. 
+  \end{enumerate}
+
+La condition $I$ stable par $f$ permet de garantir que la suite est
+définie et que tous les termes de la suite sont dans l'intervalle $I$.
+(récurrence immédiate)
+
+\subsection{Sens de variation}
+\begin{prop}
+  \begin{enumerate} 
+  \item $ \forall x \in I,\ f(x)-x\geq 0 \implies$ $(u_n)$ croissante
+  \item $\iff \forall x \in I,\ f(x)-x\leq 0 \implies$ $(u_n)$ décroissante 
+  \end{enumerate}
+\end{prop}
+
+\proof{Facile}
+\begin{prop}
+\begin{enumerate} 
+  \item $f$ croissante $\implies$ $(u_n)$ monotone. Le sens de var est
+    donné par le signe de $u_1-u_0$
+  \item $f$ décroissante $\implies$ $(u_{2n})$ et $(u_{2n+1})$ sont
+    monotones de monotonies contraires
+\end{enumerate}
+\end{prop}
+\proof{ Supposons $u_1>u_0$.
+\begin{enumerate} 
+  \item Par récurrence. $\Para (n)$: \og $u_{n+1}-u_n\geq 0$\fg{}
+  \item On pose $p_n=u_{2n}$ et $i_n=u_{2n+1}$. Alors:
+\[p_{n+1}=f\circ f(p_n) \quad \et{}\quad i_{n+1}=f\circ f(i_n)\]
+Or $f$ dec. implique $f\circ f$ croissante donc par le 1. $p$ et $i$ sont
+monotones.
+Supposons $p$ croissante, alors $u_2\geq u_0$ donc, en appliquant $f$
+qui est dec. on a $u_3\leq u_1$ donc $i_1 \leq i_0$ donc $i$ est dec.
+\end{enumerate}
+}
+
+\subsection{Convergence}
+\Def{On appelle point fixe d'une fonction $f$ un réel tel que $f(x)=x$}
+\begin{theo}Si $f$ est continue sur $I$ et que $(u_n)$ converge, alors la
+  limite est nécessairement un point fixe de $f$
+\end{theo}
+Attention: L'existence d'un point fixe ne garantit pas la convergence
+de $(u_n)$. Mais l'absence de point fixe suffit à justifier que $(u_n)$
+ne converge pas.
+En pratique: On justifie que $(u_n)$ CV (croissante majorée par
+exemple) puis on détermine la limite en cherchant les points fixes de
+$f$. Si le point fixe est unique, c'est facile, sinon il faut
+raisonner avec le sens de variation de $(u_n)$.
+
+\exemple $u_{n+1}=\frac{u_n}{2-u_n}$ et $u_0 \in \intf{0}{1}$
+
+\chapter{Limites et continuité}
+\section{Rappels: Limites de référence}
+\noindent Voici les courbes des fonctions carré, cube et inverse. Leurs limites sont à connaître. \\\rule{0cm}{0.3cm}\\
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\resizebox{4cm}{!}{\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.2} }%\includegraphics[totalheight=6cm]{Courbe.2} %Para
+\hfill \resizebox{2.8cm}{!}{\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.6} }%\includegraphics[totalheight=6cm]{Courbe.6} %Cube
+\hfill \resizebox{6cm}{!}{\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.3} }
+%\includegraphics[totalheight=6cm]{Courbe.3} %Hyper
+
+
+\begin{minipage}{0.22\textwidth}
+\begin{align*}
+ \lim_{x\to +\infty}\,x^2&=+\infty\\
+\lim_{x\to -\infty}\,x^2&=+\infty
+\end{align*}
+\end{minipage} \hfill
+\begin{minipage}{0.32\textwidth}
+\begin{align*}
+ \lim_{x\to +\infty}\,x^3&=+\infty\\
+\lim_{x\to -\infty}\,x^3&=-\infty
+\end{align*}
+\end{minipage} \hfill
+\begin{minipage}{0.18\textwidth}
+\begin{align*}
+\lim_{x\to +\infty}\,\frac{1}{x}&=0\\ 
+\lim_{x\to -\infty}\,\frac{1}{x}&=0
+\end{align*}
+\end{minipage}\hfill 
+\begin{minipage}{0.18\textwidth}
+\begin{align*}
+\lim_{x\to 0^+}\,\frac{1}{x}&=+\infty\\ 
+\lim_{x\to 0^-}\,\frac{1}{x}&=-\infty
+%\lim_{\stackrel{x \to 0}{x<0}}\frac{1}{x}&=-\infty
+\end{align*}
+\end{minipage} 
+%\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.2} %Para
+%\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.6} %Cube
+%\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.3}
+% Hyper
+%\section{Fonctions continues}
+\section{Limites, par la définition}
+\section{Rappels sur la dérivation, notation différentielle}
+\begin{Def}
+ 
+Soit $a\in I$ où $I$ est un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable en $a$
+  si le taux de variation de $f$ entre $a$ et $a+h$:
+\[\frac{f(a+h)-f(a)}{h}\]
+admet une limite finie quand $h$ tend  vers~0.
+Si cette limite finie existe, on l'appelle le nombre dérivé de $f$ en
+$a$, noté~$f'(a)$.
+   \end{Def}
+\begin{rem}
+En posant $x=a+h$, cette définition équivaut à: $ \boxed{\lim\limits_{ x \to a } \frac{f(x)-f(a)}{x-a}=f'(a)}$
+\end{rem}
+
+\centrage{Interprétation graphique}
+\begin{multicols}{2}
+  
+  Avec les notations du graphique, on a: 
+\[\frac{\Delta y}{\Delta x}=\frac{f(a+h)-f(a)}{h}\]
+Quand  $h$ tend vers zéro  le point $M_h$ se rapproche du point
+$A$. Dire que $f$ est dérivable en $a$ signifie que la sécante
+$(AM_h)$ admet une position limite. On appelle alors tangente  à la courbe de~$f$ au point d'abscisse~$a$,
+la droite~$T_a$ passant par~$A$ et de coefficient directeur~$f'(a)$.
+Ainsi l'équation réduite de $T_a$ est: 
+\[ \boxed{y=f'(a)(x-a)+f(a)}\]
+
+  \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.18}
+\end{multicols}
+  Autour du point $A$, la courbe de $f$ et sa tangente $T_a$ sont \og
+  très proches \fg{}. D'où la propriété:%Cette constatation donne lieu à:
+\begin{prop}[Approximation affine] Si $f$ est dérivable
+en $a$, et que $h$ est proche de zéro: \\
+$\boxed{f(a+h)\approx f(a)+hf'(a)}$. Ou encore, si $x$ est proche de $a$, on a: $\boxed{f(x)\approx f(a)+(x-a)f'(a)}$
+\end{prop}
+\begin{proof}
+  La définition 1 signifie que $\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)$
+où $\varepsilon$ est une fonction qui tend vers 0 en~0. D'où le
+résultat, qui consiste à négliger le terme $h\varepsilon(h)$. L'autre
+expression vient en posant $x=a+h$.
+\end{proof}
+%\exemples Pour $x$ proche de 0: %$\e^x\approx x+1$ 
+%$\sin x \approx x$, $(1+x)^n\approx 1+nx$\\
+
+\centrage{Notation différentielle et sciences physiques}
+\begin{multicols}{2}
+Soit $f$ une fonction dérivable sur un intervalle $I$, c'est à dire
+dérivable en tout réel $a$ à l'intérieur de $I$. Alors en
+mathématiques, on note $f'$ la fonction dérivée de $f$, mais pas en
+physique\dots{} Comme:
+\[ f'(a)=\lim\limits_{\Delta x \to 0 } \frac{\Delta y}{\Delta x}\]
+Lorsque le $\Delta x$ est infiniment petit, on le note ${\rm d}x$.  De
+même le $\Delta y$ devient ${\rm d}y$. En physique, au lieu de noter
+$f'$ on notera alors $\frac{{\rm d}y}{{\rm d}x}$ ou $\frac{{\rm
+    d}f}{{\rm d}x}$. De plus, en physique, la variable est souvent le
+temps, donc noté $t$ au lieu de $x$. On a donc: $f:\ t \longmapsto
+f(t)$. Si on dérive à nouveau $f'$ on obtient la dérivée
+\emph{seconde} de $f$ notée $f''$. Si on redérive cette dernière on
+obtient $f'''$ que l'on note aussi $f^{(3)}$, ainsi de suite,
+$f^{(4)}$ désigne la dérivée quatrième de~$f$. Avec la notation
+différentielle utilisée en physique, celà donne:
+\[ f'=\frac{{\rm d}f}{{\rm d}t}\qquad f''=(f')'=\frac{{\rm d}}{{\rm d}t}\left(\frac{{\rm d}f}{{\rm d}t}\right)=\frac{{\rm d}^2f}{{\rm d}t^2}\]
+Remarquez comme l'opération \og dériver par rapport à $t$\fg{} se
+comporte avec cette notation comme si on multipliait par l'opérateur:
+$\frac{{\rm d}}{{\rm d}t}$.
+\par Pour embrouiller un peut plus, la fonction
+en physique est souvent notée $x$. $x(t)$ représente typiquement
+l'abscisse d'un point mobile en fonction du temps~$t$. La vitesse
+moyenne du point entre les temps $t_1$ et $t_2$ est alors:
+\[\frac{\Delta x}{\Delta t}=\frac{x(t_2)-x(t_1)}{t_2-t_1}\]
+ La vitesse
+instantanée est alors la limite de $\frac{\Delta x}{\Delta t}$ quand
+$\Delta t$ tend vers zéro, c'est donc: $x'(t)$, euh\ldots pardon
+$\frac{{\rm d}x}{{\rm d}t}$. Mais les physiciens aussi feignants que les mathématiciens
+on trouvé une notation plus courte~$\dot{x}$ qui désigne donc la
+vitesse $v$. De même vous savez (ou apprendrez) que l'accélération est la dérivée
+de la vitesse. On a alors:
+\[\dot{x}=\frac{{\rm d}x}{{\rm d}t}=x'\quad\text{et}\quad
+\ddot{x}=\frac{{\rm d}^2x}{{\rm d}t^2}\]
+Comment note--t--on alors la vitesse instantanée au temps~$t_1$? En
+maths ce serait $x'(t_1)$, en physique il y a trois notations
+possibles:
+
+\[\dot{x}(t_1)=\left(\frac{{\rm d}x}{{\rm d}t}\right)(t_1)=\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t=t_1}\]
+\end{multicols}
+\section{Continuité}
+\subsection{Définitions, exemples et contre exemples}
+La continuité est une notion de \emph{régularité} des fonctions. En
+voici une définition heuristique:
+\begin{Def}
+On dit qu'une fonction $f$ est continue sur un intervalle $I$ lorsque
+$f$ est définie sur $I$ et que sa courbe sur $I$ peut se tracer \og sans lever le crayon \fg{}.
+\end{Def}
+
+\begin{rem}
+Cette définition est évidement uniquement intuitive, une \emph{vraie}
+définition utilise les limites en un point (cf définition suivante).
+\end{rem}
+
+\begin{Def}
+On dit qu'une fonction $f$ est continue en $a$ ($a\in\R$) si les trois
+conditions suivantes sont vérifiées:
+\begin{dingautolist}{172}
+\item $f$ est définie en $a$.
+\item $f(x)$ admet une limite quand $x$ tend vers $a$.
+\item $\displaystyle \lim_{x\to a}f(x)=f(a)$
+\end{dingautolist}
+\end{Def}
+\noindent Si l'une quelconque de ces trois conditions n'est pas vérifiée, on dit
+que $f$ n'est pas continue en $a$, ou qu'elle présente une
+discontinuité en~$a$. 
+\begin{rem}
+Parfois le comportement d'une fonction $f$ est différent à gauche et à
+droite d'un réel $a$. Il pourra alors être utile pour étudier
+l'existence d'une limite en $a$ d'étudier les éventuelles limites à
+gauche et à droite de $a$, \emph{i.e.}:
+\[ \lim\limits_{ x \to a \atop x < a } f(x) \quad\text{et}\quad
+\lim\limits_{ x \to a \atop x > a } f(x)\]
+Si ces limites existent, alors, dire que  $f$ est continue en $a$
+revient à dire que ces deux limites sont égales à $f(a)$.
+\end{rem}
+\noindent Les quatre fonctions $f$ représentées ci--dessous présentent
+une discontinuité en~$1$. Dire lequel des trois points de la
+définition est mis en défaut et pourquoi.\\\noindent
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.20}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.21}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.22}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.23}%
+\\\noindent
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\] \end{minipage}}%
+
+\begin{Def}
+On dit qu'une fonction $f$ est continue sur un intervalle $I$ lorsque
+$f$ est continue en tout réel $a$ de~$I$.
+\end{Def}
+{\bf Convention} Dans un tableau de variation, lorsqu'on note une
+flèche pour une fonction croissante (ou décroissante) sur un
+intervalle, cette flèche signifie aussi la continuité de la fonction
+sur l'intervalle. On mettrait une double barre en un point de discontinuité.
+\begin{prop}
+  Une fonction dérivable sur un intervalle est continue sur cet intervalle.
+\end{prop}
+\Danger La réciproque est fausse. Contre--exemple: La fonction valeur
+absolue. Elle est continue sur~$\mathbb{R}$ mais non dérivable en~0.
+La dérivabilité est donc une notion de régularité plus forte que
+la continuité.
+\begin{proof}(Du contre--exemple)
+  $|x|= 
+\begin{cases} x & \text{if $x\geq 0$,}
+\\
+-x &\text{if $x\leq 0$.}
+\end{cases}\implies%
+\frac{|x|}{x}= 
+\begin{cases} 1 & \text{if $x> 0$,}
+\\
+-1 &\text{if $x< 0$.}
+\end{cases}$\\
+Le taux de variation de la valeur absolue en 0 a une limite à gauche
+qui vaut -1, et une limite à droite qui vaut 1. Donc la limite en 0
+n'existe pas.
+
+\end{proof}
+\begin{proof}
+  On écrit l'approximation affine avec une fonction $\epsilon$ telle
+  que: $\lim\limits_{ x \to a } \epsilon(x) =0$:
+\[f(x)=f(a)+(x-a)f'(a)+\epsilon(x)\]
+\end{proof}
+\begin{prop} (Admise)
+Les fonctions usuelles: polynômes, racine carrée, valeur absolue,
+fractions rationnelles, $\sin$, $\cos$,(bientôt  $\exp$ et $\ln$) et leurs composées sont continues sur les intervalles où elles sont définies.
+\end{prop}
+Cette propriété permet de justifier la continuité d'une fonction en un
+point ou sur un intervalle.
+\exemple Soit $f$ définie par: $f(x)=\sqrt{x^2-1}$. $f$ est définie
+dès que $x^2-1$ est positif donc sur les intervalles
+$\intof{-\infty}{-1}$ et $\intfo{1}{+\infty}$. Sur chacun de ces
+intervalles, $f$ est la composée de la fonction racine (continue sur
+$\R^+$) et d'un polynôme (donc continu sur $\R$). Ainsi $f$ est
+continue sur les intervalles $\intof{-\infty}{-1}$ et
+$\intfo{1}{+\infty}$. La phrase \og{\sl $f$ est continue sur les intervalles $\intof{-\infty}{-1}$ et
+$\intfo{1}{+\infty}$ comme composée  de fonctions continues}\fg{} est plus
+vague mais suffira.\\
+
+Cependant il existe des fonctions qui ne sont pas continues:
+
+\subsection{La fonction partie entière}
+\begin{Def}
+On appelle partie entière d'un réel $x$, notée $E(x)$, le plus grand entier inférieur ou égal à $x$. \ie{} $E(x)$ est l'entier $n$ tel que: $n\leq x < n+1$
+ \end{Def}
+\exemples $E(2,36)=2$;  $E(2)=2$; $E(\pi)=3$; $E(-2,36)=-3$
+\begin{prop}
+Pour tout entier $n$, sur l'intervalle $\intfo{n}{n+1}$, la fonction partie entière est constante égale à~$n$. Elle n'est pas continue sur $\R$, elle admet une discontinuité pour chaque entier.%\ie{} $\forall x \in \intfo{n}{n+1},\ E(x)=n$
+\end{prop}
+\begin{proof} Soit $n\in\Z$. Par définition de $E$, pour
+  $x\in\intfo{n}{n+1}$ on a $E(x)=n$. Prouvons la discontinuité de $E$
+  en~$n+1$. Par passage à la limite (en restant dans l'intervalle
+  $\intfo{n}{n+1}$): 
+\[ %\displaystyle 
+\lim_{x\rightarrow n+1\atop x<n+1}  E(x)=n\neq E(n+1)=n+1 \]
+
+\end{proof}
+On en déduit la courbe de la fonction partie entière, on dit que c'est une fonction en escalier.
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.9} %\hfill  \includegraphics{courbe.8}
+\end{center}
+\subsection{Prolongement par continuité}
+\exemple La fonction $f$ définie sur $\R\setminus \{3\}$ par:
+\[f(x)=\frac{x^2-9}{x-3}\] n'est pas continue sur $\R$ car non définie
+en $3$, mais:
+\[ x\neq 3\implies f(x)=\frac{(x-3)(x+3)}{x-3}=x+3\]
+Ainsi la courbe de $f$ est la droite d'équation: $y=x+3$ à laquelle il
+manque le point d'abscisse~3. On pose alors la fonction $\widetilde{f}$ définie sur
+$\R$:
+\[ \widetilde{f}(x)=x+3.\quad \text{donc}\quad \widetilde{f}(x)=
+\begin{cases} f(x) & \text{si $x\neq 3$,}
+\\
+6 &\text{si $x=3$.}
+\end{cases}
+\]
+La fonction $\widetilde{f}$ est alors continue sur $\R$, on dit que
+c'est un prolongement de $f$ par continuité en~3.
+\exemple La fonction $f$ définie sur $\R^*$ par $f(x)=\dfrac{\e^x-1}{x}$ n'est pas définie en zéro, mais on a vu que sa limite en zéro
+existe et vaut 1. On peut \og prolonger la fonction $f$ par
+continuité\fg{} en~0, en posant la fonction $\tilde f$ définie sur
+$\R$ par:
+$\tilde f(x)=f(x)$ si $x\in\R^*$ et $\tilde f(0)=1$
+\section{Théorème des valeurs intermédiaires}
+
+\begin{theo}{\bf Théorème des valeurs intermédiaires.}
+Soit $f$ une fonction continue sur un intervalle $\intf{a}{b}$. Soit $\lambda$ un réel compris strictement entre $f(a)$ et $f(b)$. Alors l'équation $f(x)=\lambda$ admet au moins une solution dans l'intervalle ouvert $\into{a}{b}$.
+\end{theo}
+
+\begin{rem}
+Si la fonction n'est pas continue, cette propriété n'est pas nécessairement vérifiée. La fontion partie entière fournit un contre exemple: $E(0)=0$ et $E(1)=1$ mais l'équation $E(x)=0,5$ n'a pas de solution dans $\into{0}{1}$ (ni ailleurs).
+\end{rem}
+
+\begin{prop}[Cas particulier important: $\lambda=0$]
+Soit $f$ une fonction continue sur un intervalle $\intf{a}{b}$ avec $f(a)$ et $f(b)$ de signes contraires, alors l'équation $f(x)=0$ admet au moins une solution dans l'intervalle ouvert $\into{a}{b}$
+\end{prop}
+C'est un cas particulier, mais en fait cette propriété est équivalente
+au théorème des valeurs intermédiaires, et on la démontre par
+dichotomie en utilisant des suites adjacentes qui convergent vers une
+racine de $f$. (cf TD)\\
+Ces propriétés nous garantissent l'existence de solutions pour des
+équations mais ne nous fournissent pas les solutions, ni leur unicité, juste des intervalles où elles se trouvent. On peut donc avec la calculatrice trouver des encadrements à la précision souhaitée des solutions cherchées.
+
+\exemple
+Sur le graphique ci-dessous, on a une courbe $\Cr$ représentant une fonction continue $f$ sur l'intervalle $\intf{-3}{2}$. On a $f(-3)=-1$ et $f(2)=$1,5. Comme la valeur $\lambda=1$ est comprise entre $-1$ et 1,5  le théorème des valeurs intermédiaires nous assure que l'équation $f(x)=1$ admet au moins une solution (ici il y en a trois) sur l'intervalle $\into{-3}{2}$. Autrement dit, la courbe $\Cr$ coupe la droite d'équation $y=1$ sur cet intervalle.
+
+\begin{center}
+\psfrag{C}{$\Cr$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.10} 
+\end{center}
+
+En pratique, la simple lecture d'un tableau de variation permet de
+répondre aux questions du type: ``Combien l'équation $f(x)=\lambda$
+admet elle de solutions? Donner des encadrements de ces solutions.''
+Rappel: on admet qu'une flèche dans un tableau de variation traduit
+aussi la continuité de la fonction sur l'intervalle en question. La
+version suivante du théorème des valeurs intermédiares permet de
+garantir l'unicité de la solution:
+
+\begin{theo}[Utile en pratique\footnote{On dit dans ce cas que $f$ réalise une \emph{bijection}
+croissante de $\intf{a}{b}$ dans $\intf{f(a)}{f(b)}$. C'est pourquoi
+cette propriété est parfois appellée \og théorème de la bijection\fg{}.}]
+Soit $f$ une fonction continue et strictement croissante sur un
+intervalle $\intf{a}{b}$. Soit $\lambda$ un réel tel que: $f(a)<
+\lambda < f(b)$.  Alors l'équation $f(x)=\lambda$ admet une {\bf unique} solution dans l'intervalle ouvert $\into{a}{b}$.
+\end{theo}
+\begin{proof}   Laissé en exercice.
+\end{proof}
+\begin{rem}
+Il existe évidemment un énoncé similaire pour une fonction strictement décroissante...
+\end{rem}
+\exemple Soit $f$ définie sur $\R$ par $f(x)=x^5+x+7$. Justifier que $f(x)=0$ admet une unique solution dans l'intervalle $\intf{-2}{1}$. Réponse d'un bon élève: \\
+$f$ est continue sur $\R$ (c'est un polynôme). Or $f'(x)=5x^4+1$ et $x^4$ est positif donc la dérivée de $f$ est strictement positive, donc $f$ est strictement croissante sur $\intf{-2}{1}$. De plus $f(-2)=-33<0 $ et $f(1)=9>0$. Donc $f(x)=0$ admet une unique solution dans l'intervalle $\intf{-2}{1}$.
+D'après le tableau de variation de $f$ et ses limites en $-\infty$ et $+\infty$ on en déduit aussi que $f(x)=0$ admet en fait une unique solution dans $\R$.
+\\ Il est par contre imposible de résoudre par le calcul cette
+équation, mais pouvez vous à l'aide de la calculette déterminer un
+encadrement d'amplitude $10^{-2}$ du réel $\alpha$ vérifiant
+$f(\alpha)=0$. Trois méthodes:\\
+
+{\bf Méthodes de résolution approchée de $f(x)=\lambda$}
+{\small
+\begin{list}{$\bullet$}{}
+\item Graphiquement, en zoomant de plus en plus sur le point
+  d'intersection de la courbe avec l'axe des abscisses (pour $\lambda=0$) ou avec la droite d'équation $y=\lambda$.
+\item Mieux encore, certaines calculettes disposent d'un outil de
+  résolution graphique (G-solv) il faut choisir {\sl isect} pour
+  l'intersection de deux courbes que l'on doit sélectionner (la courbe
+  de $f$ et la droite d'équation $y=\lambda$ si on veut résoudre
+  $f(x)=\lambda$) ou {\sl Root} si on cherche une racine.
+\item En utilisant le tableau de valeurs que l'on doit paramétrer
+  correctement. $pitch$ (Casio) ou $\Delta Tbl$ (TI) donne le pas de
+  la variation de $X$,  donc la précision voulue. Mais il faut d'abord
+  connaitre un vague encadrement de la solution (par une méthode
+  graphique par exemple)
+\item \`A l'aide d'un programme adapté, comme celui que nous allons
+  établir qui fonctionne par dichotomie. On peut utiliser la méthode
+  de Newton-Raphson ou méthode de la tangente\footnote{$x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)}$. Cette suite converge vers une
+  racine si elle existe, prendre $x_0$ assez près de la racine.} (plus rapide)
+  
+\end{list}
+}
+
+%%%
+
+\section{Preuve du T.V.I. par dichotomie}
+\subsection{\'Enoncés équivalents au T.V.I.}
+Soit $f$ une fonction continue sur un intervalle contenant deux réels
+$a$ et $b$ avec $a<b$. Soit $\lambda$ compris entre $f(a)$ et
+$f(b)$. Le théorème des valeurs intermédiaires nous dit qu'il existe (au moins) un réel $c$ dans $\into{a}{b}$ tel que
+$f(c)=\lambda$. \ie{}
+\begin{equation}
+  \label{eq:c}
+  \exists c\in\into{a}{b}; f(c)=\lambda
+\end{equation}
+
+Simplifions le problème:
+\begin{enumerate}
+\item On pose $g=f-\lambda$. La fonction $g$ vérifie-t-elle les hypothèses du
+  théorème?
+\item Compléter: $f(c)=\lambda \iff g(\ldots)=\ldots$.
+\item Que peut-on dire des réels $g(a)$ et $g(b)$?
+\item Justifier que le théorème des valeurs intermédiaires équivaut à:
+\begin{theo}
+Soit $h$ une fonction continue sur un intervalle $\intf{a}{b}$ 
+\[h(a)h(b)<0\implies \exists c\in\into{a}{b}; h(c)=0 \]
+\end{theo}
+\end{enumerate}
+\subsection{Démonstration}
+Ce théorème se prouve par dichotomie. On va \og couper l'intervalle
+$\intf{a}{b}$ en deux \fg{}, voir dans quelle moitiée $h$ change de
+signe puis recommencer avec cet intervalle de longueur moitiée,
+jusqu'à isoler la racine cherchée $c$. 
+On définit trois suites $(a_n)$, $(b_n)$ et $(c_n)$ sur $\N$ par:
+
+
+\[ a_0=a\ ; \  b_0=b\ \et{}\ \forall n\in\N,\
+c_{n}=\frac{a_n+b_n}{2}\ \text{puis:}\]
+\begin{list}{$\bullet$}{}
+  \begin{minipage}{0.4\linewidth}
+\item {\bf \text{Si:}} $h(a_n)h(c_n)<0$
+\item {\bf \text{alors:}} $\left( a_{n+1}=a_n\quad \et{}\quad b_{n+1}=c_n \right)$
+\item {\bf \text{sinon:}}$\left( a_{n+1}=c_n\quad \et{}\quad b_{n+1}=b_n \right)$
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\linewidth}
+    \begin{list}{}{}
+    \item {\sl \ie{} $h$ change de signe sur $\into{a_n}{c_n}$}
+    \item {\sl On se place alors sur l'intervalle $\intf{a_n}{c_n}$}
+    \item {\sl On se place alors sur l'intervalle $\intf{c_n}{b_n}$}
+    \end{list}
+  \end{minipage}
+\end{list}
+Alors les deux suites $(a_n)$ et $(b_n)$ sont adjacentes, leur limite
+commune, notons la~$c$ vérifie: $h(c)=0$.\\
+
+Exemple graphique pour la compréhension. Sur ce schéma on a tracé une
+courbe représentant une fonction $h$ continue sur $\into{a}{b}$ et qui
+change de signe sur $\into{a}{b}$.\\
+\noindent
+\begin{minipage}{9.3cm}
+\begin{pspicture}*(-0.2,-4)(9,1.5)
+  \psaxes[Dx=1,Ox=0,yAxis=false,labels=none,tickstyle=below](0,0)(8,0)
+  \pscurve[linewidth=0.5pt,linecolor=gray]%
+  (0,-1)%
+  (1.5,0.6)%
+  (4,-0.6)%
+  (5.6,0)%
+  (7,0.8)%
+  (8,1)%
+\put(-0.1,0.4){$a_0=a$}
+\put(7.9,0.4){$b_0=b$}
+\put(3.9,0.4){$c_0$}
+
+\psline{-}(4,-2)(8,-2)  \put(3.9,-1.7){$a_1$}  \put(7.9,-1.7){$b_1$}
+\psline{-}(4,-3)(6,-3)  \put(3.9,-2.7){$a_2$}  \put(5.9,-2.7){$b_2$}
+\psline{-}(5,-4)(6,-4)  \put(4.9,-3.7){$a_3$}  \put(5.9,-3.7){$b_3$}
+
+
+                    %\psset{xunit=0.5cm,yunit=0.5cm}
+                          
+                          %\psgrid% griddots=1,%
+                          %subgriddiv=2,
+                          %gridlabels=0pt,%
+                          %xunit=1]
+                          %\psaxes{->}(0,0)(0,0)(8,0)
+                           %\psaxes{->}(0,0)(-1.5,-2)(1.5,1.5)
+                          %\psdots*[dotscale=0.7](-1,1)
+                          %\put(-1.5,1){$A$}\put(-0.4,-0.4){$O$}
+                          \end{pspicture}
+\end{minipage}\hfill%
+\begin{minipage}{5cm}
+ On a les valeurs suivantes: 
+\begin{enumerate}
+\item $c_0=\frac{a_0+b_0}{2}$. Bien que $h$ ait des racines sur
+  $\into{a_0}{c_0}$ on a $h(a_0)h(c_0)\geq 0$ donc\\ 
+$a_1=c_0$ et $b_1=b_0$
+\item $c_1=\frac{a_1+b_1}{2}$. Cette fois ci, $h(a_1)h(c_1)< 0$ donc:\\
+  $a_2=a_1$ et $b_2=c_1$
+\end{enumerate}
+\end{minipage}\\
+\begin{proof} \emph{(de la convergence de la méthode)}
+  \begin{enumerate}
+  \item Justifier que $(a_n)$ est croissante et $(b_n)$ est décroissante.
+  \item Que représente $b_n-a_n$ ? Prouver que: $ \forall n\in\N,\ b_n-a_n=\frac{b-a}{2^n}$
+  \item Prouver que $(a_n)$ et $(b_n)$ ont une limite commune que l'on
+    notera~$c$.
+  \item  Justifier que $h(a_n)$ et $h(b_n)$ convergent
+    vers $h(c)$.
+  \item On a par construction: $\forall n\in\N,\
+    h(a_n)h(b_n)<0$. En déduire que $h(c)=0$.
+ 
+  \end{enumerate}
+\end{proof}
+%\newpage
+\subsection{Algorithme et programmation}
+On utilise la démonstration précédente pour déterminer numériquement
+un encadrement d'amplitude $P$ d'une racine d'une fonction. On va
+calculer les différents termes des suites $(a_n)$ et $(b_n)$ jusqu'à ce que la
+différence entre $b_n$ et $a_n$ soit inférieure à~$P$.  On suppose rentrée en $Y_1$ dans le menu graph l'expression  de la fonction dont on  cherche une racine.
+ Voici l'algorithme\footnote{Un algorithme est un nombre fini de règles à appliquer dans un ordre déterminé à un nombre fini de données, pour arriver en un nombre fini d'étapes, à un certain résultat, et cela indépendamment des données.}:
+
+\vspace{0.3cm}
+\noindent
+\begin{minipage}{0.6\linewidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{small}
+\psframebox[linearc=1,cornersize=absolute]{%
+  \begin{psmatrix}[rowsep=0.4,colsep=0.5]
+    \psovalbox[fillstyle=solid,fillcolor=white]{$A=$? $B=$? $P=$?} \\~&&&\\
+    \psframebox{$(A+B)/2\to C$} \\
+    \psdiabox[fillstyle=solid,fillcolor=white]{Si $Y_1(A)\star Y_1(C)<0$} &
+       \psframebox{Sinon: $C\to A$} \\%& \psframebox{Call to SP2} \\
+    \psframebox{Alors: $C\to B$} \\
+    ~&\\
+\psdiabox[fillstyle=solid,fillcolor=white]{Si $|B-A|\leq P$} &
+       \psovalbox{Sinon}& \\ \psovalbox{Alors}\\
+    %\psframebox{Action 2} \\
+    \psovalbox[fillstyle=solid,fillcolor=yellow]{Afficher $A$ et $B$}
+    % Links
+    \ncline{->}{1,1}{3,1}
+    
+    \ncline{->}{3,1}{4,1}
+    \ncline{->}{4,1}{4,2}
+\ncline{-}{4,2}{6,2} \ncline{->}{6,2}{6,1}
+        \ncline{->}{4,1}{5,1}
+    \ncline{->}{5,1}{7,1}
+    \ncline{->}{7,1}{7,2}
+    
+\ncline{-}{7,2}{7,3} 
+    \ncline{->}{7,1}{8,1}
+    \ncline{->}{8,1}{9,1}
+        \ncbar[angleA=90,armB=0,nodesepB=0]{->}{7,3}{2,1}%{2,3}
+    \end{psmatrix}%
+}
+\end{small}
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}{0.32\linewidth}
+\begin{enumerate}
+\item On demande à l'utilisateur les réels: $A$, $B$, et la précision $P$ souhaitée.
+\item On calcule $C$ la moyenne de $A$ et $B$.
+\item On teste pour savoir sur quel intervalle la fonction change de signe.
+\item On en déduit les valeurs de $a_{n+1}$ et $b_{n+1}$ qui sont
+  encore notées $A$ et~$B$.
+\item Si la précision voulue est atteinte, on affiche \og{\sl La racine
+  est encadrée par:}\fg{} et on affiche $A$ et $B$,
+  sinon on recommence.
+\end{enumerate}
+\end{minipage}
+\vspace{0.3cm}\\
+Pour demander les valeurs de $A$, $B$ et $P$ on utilise la commande
+\emph{Input} ou \emph{Prompt} avec une TI et :? avec une Casio.
+Le test \og Si\ldots alors\ldots sinon\fg{} se note:
+If\ldots then\ldots else puis End (IfEnd avec une Casio ou EndIf avec
+une grosse TI) On utilise aussi la fonction \emph{Goto n} qui renvoit
+au label numéroté $n$ (\emph{Lbl n}). Tester et comprendre le programme
+suivant, ensuite taper un programme pour l'algorithme de la dichotomie.\vspace{0.4cm}\\
+%\vspace{0.4cm}
+%%%%%%%%%%%%%%
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$''$ Donne un entier entre 1 et 6$''$\\
+Lbl 1\\
+$''N''?\to N$\\
+If $N=A$ \\
+Then $''$Gagné en:$''$ $I\blacktriangle$\\
+Else $''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+IfEnd\\
+%Stop
+}%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI} \end{center}
+\hrule \vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$Disp\ ''$Donne un entier entre 1 et~6$''$\\
+Lbl 1\\
+$Prompt \ N$\\
+If $N=A$ \\
+Then $Disp\ ''$Gagné en:$''$ $Disp\ I$\\
+Else $Disp\ ''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+End\\
+}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%
+\hrule \vspace{0.3cm} 
+\noindent
+\begin{minipage}{0.45\linewidth}
+On commence toujours par Shift / Var
+\begin{list}{$\bullet$}{}
+  \item (?) se trouve en  F4
+  \item  < se trouve en F6 / F3
+  \item If Then, Else,  IfEnd  dans: COM (F1) 
+  \item Goto, Lbl  dans: Jump (F3)
+  \item $\blacktriangle$ (pour afficher) en: F5
+  \end{list}
+\end{minipage}\hfill
+\begin{minipage}{0.45\linewidth}
+  \begin{list}{$\bullet$}{}
+  \item If Then, Else, Goto, Lbl, End se trouvent dans: Catalogue / Control  
+  \item Disp et Prompt se trouvent dans: Catalogue / $I/O$ (In/Out)
+  \item < se trouve dans: Catalogue / Test
+  \end{list}
+
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$''A''?\to A$\\
+$''B''?\to B$\\
+$''P''?\to P$\\
+Lbl 1\\
+$(A+B)/2\to C$\\
+$A\to X$\\
+$Y1 \to Y$\\
+$C\to X$\\
+$Y1 \to Z$\\
+If $Y\times Z<0$\\
+Then $C\to B$\\
+Else \ldots\\% $C\to A$\\
+IfEnd\\
+If \ldots \\
+Then \\
+$''$LA RACINE EST ENCADREE PAR:$''$\\
+$A\blacktriangle$\\
+ $B\blacktriangle$\\
+Else Goto 1\\
+IfEnd \\
+%Stop
+}
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI} \end{center}
+\hrule \vspace{0.2cm}
+{\small
+Prompt $A$,$B$,$P$\\
+Lbl 1\\
+$(A+B)/2\to C$\\
+If $Y_1(A)\times Y_1(C)<0$\\
+Then $C\to B$\\
+Else \ldots\\% $C\to A$\\
+End\\
+If \ldots \\
+Then \\
+Disp $''$LA RACINE EST ENCADREE PAR:$''$\\
+Disp $A$, $B$\\
+Else Goto 1\\
+End \\
+%Stop
+}
+
+\end{minipage}
+
+
+\section{Applications}
+\subsection{Racine d'un polynôme de degré impair}
+\subsection{Fonctions réciproques} 
+%%%%%%%%%%%%% Mis avec les suites
+\begin{comment}
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+\subsection{\'Etude des suites du type $u_{n+1}=f(u_n)$}
+On se donne une fonction $f$ définie, continue sur un intervalle $I$ de
+$\R$. Soit $u_0\in I$.
+\subsubsection{Intervalle stable}
+\Def{On dit que $I$ est stable par $f$ si $f(I)\subset I$}
+\exemples{
+  \begin{enumerate}
+  \item $f(x)=x(1-x)$ sur $I=\intf{0}{1}$. $I$ est stable par f, mais
+pas par $g=5f$. Il suffit d'étudier $f$.
+\item $f(x)=\frac{1}{x-1}$ et $u_0=\frac32$ Vérifier que la relation
+  $u_{n+1}=f(u_n)$ ne définit pas une suite. 
+  \end{enumerate}
+}
+La condition $I$ stable par $f$ permet de garantir que la suite est
+définie et que tous les termes de la suite sont dans l'intervalle $I$.
+(récurrence immédiate)
+
+\subsubsection{Sens de variation}
+\begin{prop}
+  \begin{enumerate} 
+  \item $ \forall x \in I,\ f(x)-x\geq 0 \implies$ $(u_n)$ croissante
+  \item $\iff \forall x \in I,\ f(x)-x\leq 0 \implies$ $(u_n)$ décroissante 
+  \end{enumerate}
+\end{prop}
+
+\proof{Facile}
+\begin{prop}
+\begin{enumerate} 
+  \item $f$ croissante $\implies$ $(u_n)$ monotone. Le sens de var est
+    donné par le signe de $u_1-u_0$
+  \item $f$ décroissante $\implies$ $(u_{2n})$ et $(u_{2n+1})$ sont
+    monotones de monotonies contraires
+\end{enumerate}
+\end{prop}
+\proof{ Supposons $u_1>u_0$.
+\begin{enumerate} 
+  \item Par récurrence. $\Para (n)$: \og $u_{n+1}-u_n\geq 0$\fg{}
+  \item On pose $p_n=u_{2n}$ et $i_n=u_{2n+1}$. Alors:
+\[p_{n+1}=fof(p_n) \quad \et{}\quad i_{n+1}=fof(i_n)\]
+Or $f$ dec. implique $fof$ croissante donc par le 1. $p$ et $i$ sont
+monotones.
+Supposons $p$ croissante, alors $u_2\geq u_0$ donc, en appliquant $f$
+qui est dec. on a $u_3\leq u_1$ donc $i_1 \leq i_0$ donc $i$ est dec.
+\end{enumerate}
+}
+
+\subsubsection{Convergence}
+\Def{On appelle point fixe d'une fonction $f$ un réel tel que $f(x)=x$}
+\begin{theo}Si $f$ est continue sur $I$ et que $(u_n)$ converge, alors la
+  limite est nécessairement un point fixe de $f$
+\end{theo}
+Attention: L'existence d'un point fixe ne garantit pas la convergence
+de $(u_n)$. Mais l'absence de point fixe suffit à justifier que $(u_n)$
+ne converge pas.
+En pratique: On justifie que $(u_n)$ CV (croissante majorée par
+exemple) puis on détermine la limite en cherchant les points fixes de
+$f$. Si le point fixe est unique, c'est facile, sinon il faut
+raisonner avec le sens de variation de $(u_n)$.
+
+\exemple $u_{n+1}=\frac{u_n}{2-u_n}$ et $u_0 \in \intf{0}{1}$
+
+\end{comment}
+\section{Dérivabilité}
+\subsection{Définition}
+\begin{Def}
+Soit $a\in I$ où $I$ est un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable en $a$
+  si:
+\[\frac{f(a+h)-f(a)}{h}\quad \text{admet une limite finie quand $h$ tend
+  vers 0}\]
+Si cette limite finie existe, on l'appelle le nombre dérivé de $f$ en
+$a$, noté~$f'(a)$
+\end{Def}
+{\sl Remarque:} Cette def signifie que
+$\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)$ où $\varepsilon(h)$ tend vers 0 en~0
+\begin{prop}{\bf Approximation affine} On en déduit que si $f$ est dérivable
+en $a$, et que $h$ est proche de zéro: $f(a+h)\approx f(a)+hf'(a)$
+\end{prop}
+\exemples Pour $x$ proche de 0: $\e^x\approx x+1$ 
+$\sin x \approx x$, $(1+x)^n\approx 1+nx$\\
+
+Cette propriété doit son nom au fait que faire cette approximation
+revient à confondre au point d'abscisse $(a+h)$ la courbe avec sa
+tangente en $a$: 
+\begin{proof} Eq de la tangente. Ordonnée pour $x=a+h$.
+\end{proof}
+\begin{Def} Soit $I$  un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable sur $I$
+  si elle est dérivable en tout en $a$ de $I$.
+\end{Def}
+Pour prouver qu'une fonction est dérivable en un point, il faut donc
+calculer une limite. En particulier lorsque ce point est aux bornes
+d'un intervalle fermé.
+Pour prouver que $f$ est dérivable sur un intervalle ouvert, en
+général on utilise que:
+
+\begin{prop} La composée de fonctions dérivables est dérivable sur tout
+  intervalle ouvert où la fonction est définie.
+\end{prop}
+\begin{proof} Admis \end{proof}
+\subsection{Propriétés}
+\begin{prop} Une fonction dérivable en $a$ est continue en $a$
+\end{prop}
+\begin{proof}
+{\bf \`A connaître!}$f$ dérivable en $a$ signifie que:
+\[\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)\]
+où $\varepsilon(h)$ tend vers 0 en 0. D'où pour $h$ non nul:
+\[ f(a+h)=hf'(a)+h\varepsilon(h)+f(a)\]
+D'où la limite voule, et $f$ est continue en $a$.%
+\end{proof}
+
+
+\subsection{Exemples, contre exemples}
+{\bf Attention!}
+La réciproque de la propriété précédente est fausse:
+Valeur absolue et racine.
+On a même construit des fonctions continues sur [0;1] nulle part
+dérivable.
+
+Soit $f(x)=x\sin(\frac{1}{x})$ pour $x\in\into{0}{+\infty}$ et
+$f(0)=0$
+Prouver que $f$ est continue sur $\R^+$. Est-elle dérivable en 0?
+Même question avec $g(x)=xf(x)$. 
+Retour aux exos de la feuille avec $\e^{-\frac{1}{x}}$
+
+\chapter{Exponentielle}
+
+\section{Méthode d'\textsc{Euler}}
+\subsection{Aspect graphique}
+On utilise la méthode d'Euler pour approximer la courbe d'une fonction $f$ (si elle existe) telle que $f$ est définie et dérivable sur $\R$ et:
+
+\[ \left\{ 
+\begin{array}{ll}
+f'(x)=f(x) \quad \forall x\in\R \\
+f(0)=1\\ 
+\end{array} \right. 
+\]
+Cette méthode utilise l'approximation affine suivante: $f(a+h)\approx f(a)+hf'(a)$ valable pour une fonction dérivable sur un intervalle ouvert $I$, $a$ dans $I$ et $h$ petit (et $a+h$ dans $I$). Graphiquement cela revient à confondre la courbe de la fonction avec sa tangente sur l'intervalle $\intf{a}{a+h}$. J'ai fait les graphiques sur l'intervalle $\intf{0}{1}$. Soit $n\in\N^*$. On pose $h=\frac{1}{n}$ pour le pas de la méthode. On fera ensuite tendre le pas vers zéro en faisant tendre $n$ vers l'infini.
+Comme $f(0)=1$ on place le premier point $A_0$ de coordonnées $A_0(0;1)$.
+Je fais l'explication pour $n=2$ donc $h=\frac12$ (cf. premier graphique). Comme $f'=f$ on a donc $f'(0)=f(0)=1$\\
+\rule{0cm}{3.4cm}
+\begin{minipage}{0.65\textwidth}
+\begin{enumerate}
+  \item On trace donc le segment partant de $A_0$ joignant $A_1$ tel que l'abscisse de $A_1$ soit $0+h=\frac12$ et tel que $(A_0A_1)$ ait pour coefficient directeur 1. Les coordonnées de $A_1$ sont donc $A_1(0,5;1,5)$. Par le calcul: 
+\[f(0+h)\approx f(0)+hf'(0)=(1+h)f(0)=1,5\]
+  \item On a donc $f(0,5)\approx 1,5$. Or $f'=f$ donc 1,5 est aussi une valeur approchée de $f'(0,5)$. On l'utilise pour obtenir le point suivant $A_2$ d'abscisse $0,5+0,5=1$. Et $(A_1A_2)$ a pour coefficient directeur $1,5$. On trouve donc l'ordonnée de $A_2$: $1,5+0,5\times 1,5=2,25$
+  \item Ainsi 2,25 est une valeur approchée de $f(1)$. On pourrait continuer ainsi indéfiniment. Le prochain segment a un coefficient directeur de $2,25$.
+  \end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}{0.32\textwidth}
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.2}
+\end{minipage}\\
+\rule{0cm}{0.5cm}
+  Les deux graphiques suivants s'obtiennent de la même manière mais avec des valeurs de $n$ plus grandes ($n=4$ et $n=8$ et donc des pas de $\frac14$ et $\frac18$). Le dernier est obtenu avec un pas de $\frac15$ et un pas de $-\frac15$ afin d'obtenir la courbe pour des valeurs négatives de $x$. De plus celui-ci est dans un repère orthonormal. Tous les graphiques de cette page comportent aussi en pointillé la \og courbe limite \fg{} recherchée afin que l'on voit mieux la convergence de la méthode.\\
+\rule{0mm}{0.8cm}
+
+\noindent
+\begin{minipage}{0.33\textwidth}
+\centering
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.3}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+\centering
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.4}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+\centering
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.6}
+\end{minipage}
+
+
+
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.6}
+
+
+\subsection{Aspect calculatoire}
+On va d'abord approximer $f$ sur l'intervalle $\intf{0}{1}$.
+\begin{list}{$\bullet$}{}
+\item Soit $n\in\N^*$. On pose $h=\frac{1}{n}$ pour le pas de la méthode. On fera ensuite tendre le pas vers zéro en faisant tendre $n$ vers l'infini.
+\item On définit une suite d'abscisses. On part de $x_0=0$ et $x_{k+1}=x_k+h$ pour tout entier naturel $k$. Cette suite est arithmétique de raison $h=\frac{1}{n}$ donc on a le terme général: 
+\[ \forall k \in \N \quad x_k=\frac{k}{n}\]
+\item On définit maintenant la suite des ordonnées des points que l'on place. On part de $y_0=1$ puisque $f(0)=1$. On applique alors l'approximation affine,  $f(x_{k+1})=f(x_k+h)$ d'où: $f(x_{k+1})=f(x_k+h)\approx f(x_k)+hf'(x_k)$.  Or $f$ vérifie aussi $f=f'$ sur $\R$ donc: $f(x_{k+1})\approx f(x_k)(1+h)$. On veut que $y_{k}$ soit proche de $f(x_{k})$ et donc que $y_{k+1}$ soit proche de $f(x_{k+1})$. On définit donc la suite $(y_k)$ par la relation de récurrence: \[ y_{k+1}=y_k(1+h)\]
+Cette suite est géométrique de raison $(1+h)$ et comme $y_0=0$ et $h=\frac{1}{n}$ on a donc: 
+\[ \forall k \in \N \quad y_k=(1+\frac{1}{n})^k\]
+\end{list}
+
+%\noindent
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.2}
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.3}
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.4}\\
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.5}
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/meth_euler.6}
+
+%\section{Approche Graphique}
+%cf méthode d'Euler.
+%\section{La fonction exponentielle}
+\section{Equation différentielle y'=y}
+\begin{theo}
+Il existe une unique fonction $f$ définie et dérivable sur $\R$ telle que: $f'=f$ et $f(0)=1$.
+\end{theo}
+Existence admise, on va prouver l'unicité.
+\begin{lemme} \label{lemme}
+Si il existe une  fonction $f$ définie et dérivable sur $\R$ telle que $f'=$ et $f(0)=1$ alors elle vérifie:
+$\forall x\in\R \quad f(-x)f(x)=1$ et par conséquent $f$ ne s'annule pas.
+\end{lemme}
+\begin{proof} 
+On pose la fonction $\phi$ définie par: $\forall x\in\R \quad \phi(x)=f(-x)f(x)$. On dérive, $\phi'=0$ et $\phi(0)=1$
+\end{proof}
+On prouve maintenant l'unicité:
+\begin{proof} 
+Supposons qu'il existe deux fonctions $f$ et $g$ qui définies et
+dérivables sur $\R$ telle que: $f'=f$, $g'=g$ et
+$f(0)=g(0)=1$. D'après le lemme, ces fonctions ne s'annulent pas, et
+donc on peut considérer la fonction $\psi$ définie et dérivable sur
+$\R$ par: $\psi=\frac{f}{g}$. On dérive, $\psi'=0$ et
+$\psi(0)=1$. Donc $\psi$ est constante, égale à~1, ainsi $f=g$.
+\end{proof}
+Cette unique fonction s'appelle la fonction exponentielle et on la note $\exp: x\mapsto \exp(x)$
+Pour calculer des valeurs approchées de $\exp(x)$ on peut utiliser la
+méthode d'Euler. On déduit du lemme\ref{lemme} et de la continuité de
+$\exp$ sur~$\R$ la propriété qui sera très utile plus tard pour des
+études de signe:% La fonction $\exp$ est {\bf strictement positive sur $\R$}
+
+\begin{prop} \label{positive}
+La fonction $\exp$ est {\bf strictement positive} sur $\R$
+\[\boxed{ \forall x \in \R,\; \e^x>0}\]
+\end{prop}
+
+\section{Méthode d'Euler-valeur approchée de $\exp(x)$}
+\begin{list}{$\bullet$}{}
+\item Soit $n\in\N^*$. On pose $h=\frac{1}{n}$ pour le pas de la méthode. On fera ensuite tendre le pas vers zéro en faisant tendre $n$ vers l'infini.
+\item On définit une suite d'abscisses. On part de $x_0=0$ et $x_{k+1}=x_k+h$ pour tout entier naturel $k$. Cette suite est arithmétique de raison $h=\frac{1}{n}$ donc on a le terme général: 
+\[ \forall k \in \N \quad x_k=\frac{k}{n}\]
+\item On définit maintenant la suite des ordonnées des points que l'on place. On part de $y_0=1$ puisque $f(0)=1$. On applique alors l'approximation affine,  $f(x_{k+1})=f(x_k+h)$ d'où: $f(x_{k+1})=f(x_k+h)\approx f(x_k)+hf'(x_k)$.  Or $f$ vérifie aussi $f=f'$ sur $\R$ donc: $f(x_{k+1})\approx f(x_k)(1+h)$. On veut que $y_{k}$ soit proche de $f(x_{k})$ et donc que $y_{k+1}$ soit proche de $f(x_{k+1})$. On définit donc la suite $(y_k)$ par la relation de récurrence: \[ y_{k+1}=y_k(1+h)\]
+Cette suite est géométrique de raison $(1+h)$ et comme $y_0=0$ et $h=\frac{1}{n}$ on a donc: 
+\[ \forall k \in \N \quad y_k=(1+\frac{1}{n})^k\]
+\end{list}
+Application: Si on veut une valeur approchée de $\exp(1)$ il faut remarquer que $x_k=\frac{k}{n}=1 \iff k=n$. On a donc:
+$\exp(1)=\lim_{n\to\infty} (1+\frac{1}{n})^n$ (On admet que cette limite existe \ie{} que la méthode d'Euler converge) Pour des grandes valeurs de $n$ on obtient les valeurs approchées suivantes: 
+\[(1+\frac{1}{2})^2=2,25 \quad (1+\frac{1}{10})^{10}\simeq 2,59 \quad
+(1+10^{-3})^{1000} \simeq 2,717 \quad (1+10^{-6})^{10^6} \simeq 2,71828\]
+Cette valeur limite est notée $\e$
+\begin{prop} 
+La valeur de $\exp(1)$ est notée $\e{}$, c'est un réel transcendant (comme $\pi$).
+\[ \exp(1)=\e{}=\lim_{n\to\infty} (1+\frac{1}{n})^n\]
+\end{prop}
+
+\section{Propriétés algébriques}
+
+\begin{prop} 
+Pour tous réels $a$ et $b$ et tout entier relatif $n$, on a les formules:
+\begin{eqnarray}
+\boxed{\exp(-a)=\frac{1}{\exp(a)}}        \label{inv}\\
+\boxed{\exp(a+b)=\exp(a)\times \exp(b)}   \label{som}\\
+\boxed{\exp(a-b)=\frac{\exp(a)}{\exp(b)}} \label{moins}\\
+\boxed{\exp(a\times n)=(\exp(a))^n}       \label{puiss}
+\end{eqnarray}
+% \boxed{\exp(-a)=\frac{1}{\exp(a)}} \quad \boxed{\exp(a+b)=\exp(a)\times \exp(b)} \quad \boxed{\exp(a-b)=\frac{\exp(a)}{\exp(b)}} \quad \boxed{(\exp(a))^n=\exp(a\times n)} 
+\end{prop}
+La relation~\eqref{som} s'appelle la relation fonctionnelle de l'exponentielle.
+\begin{proof} 
+\eqref{inv} découle du Lemme~\ref{lemme}. \eqref{moins} découle de \eqref{som} et \eqref{inv}. \eqref{puiss} se prouve à partir de \eqref{som} par récurrence sur $n$. L'essentiel est de prouver \eqref{som}:\\
+Soit $b\in\R$. On considère la fonction $\chi$ de $x$ où $b$ est un paramètre définie par: $\chi(x)=\dfrac{\exp(x+b)}{\exp(x)}$ On dérive, $\chi'=0$ et $\chi(0)=\exp(b)$. Donc pour tout réel $x$, $\exp(x+b)=\exp(x)\exp(b)$. Ceci pour tout réel $b$. D'où~\eqref{som}\\
+Preuve de \eqref{puiss}: Soit $a$ un réel. Soit $\Para(n)$: \og{}
+$\exp(a\times n)=(\exp(a))^n $ \fg{} Prouvons par récurrence sur $n$ que
+$\Para(n)$ est vraie pour tout $n\in\N$. Ini: Comme $\exp(a)\neq 0$,  $\exp(a)^0=1=\exp(0)$ ok...
+\end{proof}
+\section{Notation exponentielle}
+La formule \eqref{puiss} donne pour $a=1$:  $\exp(n)=(\exp(1))^n=\e^n$ Par analogie, pour tout réel $x$ on note $\exp(x)=\e^x$. On a donc les règles de calcul usuelles avec les puissances pour tous réels $a$ et $b$ et tout $n\in\Z$:
+
+\[ \boxed{\e^a\times \e^b=\e^{a+b}} \qquad \boxed{\frac{\e^a}{\e^b}=\e^{a-b}}
+\qquad \boxed{(\e^a)^n=\e^{a\times n}} \]
+\textbf{Cas particuliers importants:} $\boxed{\e^1=\e} \qquad \boxed{\e^0=1} \qquad \boxed{\e^{-x}=\dfrac{1}{\e^x}} $\\
+
+cf touche de la calculette. Attention selon modèle on tape ou non le chapeau. Attention aux parenthèses.
+Exercices à base de simplification d'expressions.
+\exercice \'Ecrire plus simplement les expressions suivantes en utilisant les règles sur l'exponentielle:
+  \[ A=\e^2\times \e^3\qquad B=\frac{(\e^2)^4}{\e^3}\qquad C=\Big(\frac{1}{\e^x}\Big)^2\qquad 
+D=\frac{(\e^{x})^2\times\e^x}{\e^{-x}} \qquad 
+E=\frac{\e^{3x-1}}{\e^{2-x}}\]
+
+\exercice Prouver les égalités suivantes:
+\[\frac{\e^{2x}-1}{\e^{2x}+1}=\frac{\e^{x}-\e^{-x}}{\e^{x}+\e^{-x}}
+\]
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%%   COURS DE ES ou GC en partant de \ln
+%%%%%%%%%%%%%%%%
+\begin{comment}
+On a déjà résolu des équations de ce type où $y$ est l'inconnue et $n$ un entier. On applique la propriété: \textit{``Si a et b sont deux réels strictement positifs, alors: $\ln a =\ln b \iff a=b$''}
+\exemples 
+\begin{enumerate}
+\item $\ln y =1\iff \ln y=\ln\e \iff y=\e$
+\item $\ln y =2\iff \ln y=2\ln\e \iff \ln y=\ln\e^2 \iff y=\e^2$
+\item $\ln y =-3\iff \ln y=-3\ln\e \iff \ln y=\ln\e^{-3} \iff y=\e^{-3}$
+\end{enumerate}
+Plus généralement, on montre de la même manière que si $n$ est un entier: $\ln y=n \iff y=\e^n$ 
+\subsection{\'Equation $\ln y=x$}
+On reprend la même équation mais où $x$ est un réel. Elle admet une unique solution car la fonction $\ln$ est dérivable et strictement croissante sur $\into{0}{+\infty}$ et admet les limites:
+\[ \lim_{x\to 0^+}{\ln x}=-\infty  \quad \et{} \quad \lim_{x\to +\infty}{\ln x}=+\infty\]
+D'après le théorème des valeurs intermédiaires, il existe un unique réel $y$ tel que $\ln y=x$. Par analogie avec le cas où $x$ est entier, on note ce réel: $y=\e^x$
+\begin{Def}
+La fonction exponentielle--notée \emph{exp}--est la fonction réciproque de la fonction logarithme népérien. À tout nombre réel $x$ elle associe l'unique nombre réel strictement positif $y$ tel que $\ln y=x$
+\end{Def}
+\begin{rem}
+On utilise l'une ou l'autre des notations $\exp(x)$ ou $\e^x$ pour l'exponentielle de $x$.
+\end{rem}
+\exemple $\exp(\sqrt2)=\e^{\sqrt2}$ est le réel (strictement positif) tel que: $\ln(\e^{\sqrt2})=\sqrt2$
+\section{Propriétés}
+\subsection{Conséquences de la définition}
+La fonction logarithme est définie sur $\into{0}{+\infty}$ et prend ses valeurs dans $\R$ donc:
+\begin{prop}\label{positif}
+La fonction exponentielle est définie sur $\R$ et prend ses valeurs dans $\into{0}{+\infty}$
+\[\boxed{ \forall x \in \R,\; \e^x>0}\]
+\end{prop}
+\begin{prop}
+Pour tout réel $x$ et tout réel strictement positif $y$: \dotfill $\boxed{\ln y=x\iff y=\e^x }$
+\end{prop}
+\begin{prop}
+Pour tout réel $x$: \dotfill $\boxed{ \ln(\e^x)=x }$
+\end{prop}
+
+\begin{prop}
+Pour tout réel strictement positif $x$ : \dotfill $\boxed{\e^{\ln x}=x}$
+\end{prop}
+Les deux dernières traduisent que $\ln$ et $\exp$ sont réciproques l'une de l'autre de la même manière que la fonction carré et la fonction racine carrée sont réciproques l'une de l'autre:\\
+Pour tout réel positif $x$: $ (\sqrt x)^2=x $ et $\sqrt{ x^2}=x$\\
+\subsection{Propriétés des puissances}
+\begin{prop}
+Pour tous réels $a$ et $b$ on a les formules usuelles avec les puissances: 
+\end{prop}
+\[ \boxed{\e^a\times \e^b=\e^{a+b}} \qquad \boxed{\frac{\e^a}{\e^b}=\e^{a-b}}
+\qquad \boxed{(\e^a)^b=\e^{a\times b}} \]
+\textbf{Cas particuliers importants:} $\boxed{\e^1=\e} \qquad
+\boxed{\e^0=1} \qquad \boxed{\e^{-x}=\dfrac{1}{\e^x}} $
+\end{comment}
+\section{\'Etude de la fonction exponentielle}
+\subsection{Dérivée et variation}
+\begin{prop}
+La fonction exponentielle est sa propre dérivée: $\boxed{(\e^x)'=\e^x}$
+\end{prop}
+D'après la propriété \ref{positive}, on en déduit:
+\begin{prop}
+La fonction exponentielle est strictement croissante sur $\R$
+\end{prop}
+\begin{prop}[Dérivée d'une fonction composée avec $\e^x$] 
+Si $u$ désigne une fonction dérivable sur $\R$ alors $\exp(u)$ est dérivable et:
+\[ \boxed{[\e^{u(x)}]'=u'(x)\times\e^{u(x)}}\]
+\end{prop}
+\subsection{\'Equations et inéquations}
+\begin{prop}
+  $\forall a, b \in\R,\quad \boxed{\e^a\leq \e^b\iff a\leq b}$
+\end{prop}
+\begin{proof}On prouve chaque sens séparément. Soit $a$ et $b$ deux réels.
+  
+ \Marge{$(\Longleftarrow )$} %% Utiliser \Impli puis \Recip
+$a\leq b\implies\e^a\leq \e^b $ car $\exp$
+ est croissante sur~$\R$.
+\Marge{$(\Longrightarrow )$} Si $\e^a\leq \e^b $. Supposons que $a$
+soit strictement supérieur à $b$, alors comme $\exp$ est strictement
+croissante sur~$\R$ on aurait $\e^a$ strictement supérieur à~$e^b$.
+\end{proof}
+\begin{prop}
+  $\forall a, b \in\R,\quad \boxed{\e^a= \e^b\iff a= b}$
+\end{prop}
+\begin{proof} On prouve chaque sens séparément. Soit $a$ et $b$ deux réels.
+  \Marge{$(\Longleftarrow )$} $a= b\implies\e^a= \e^b $ car $\exp$
+ est une application.
+\Marge{$(\Longrightarrow )$} Si on a $\e^a= \e^b $ on procède par double inéquation:
+\begin{list}{$\bullet$}{}
+\item $\e^a= \e^b\implies \e^a\leq \e^b\implies a\leq b$
+\item $\e^a= \e^b\implies \e^a\leq \e^b\implies  a\geq b$
+\end{list}
+On a donc $a=b$.
+\end{proof}
+\Danger Attention, l'équation: $\e^x=a$ n'a pas de solution si $a\leq
+0$ mais grace au TVI, on peut prouver que:
+\exercice Résoudre dans $\R$:\\\noindent
+\aligneabcd{$\e^{5x-1}=1$}{$\e^{2x-1}=\e^{3x-2}$}{$\e^{5x-1}=-2$}{$\e\e^{x^2}=\left(\e^{2x+1}\right)^2$}
+\exercice p31 \no 17, 18, 24, 25, 26, 27.
+\exercice Résoudre dans $\R$: $\e^x-\frac{1}{\left(\e^x\right)^2}\leq 0$
+\exercice On définit deux fonctions, cosinus hyperbolique et sinus hyperbolique par:
+\[\text{ch}(x)=\frac{\e^{x}+\e^{-x}}{2} \quad \et{} \quad \text{sh}(x)=\frac{\e^{x}-\e^{-x}}{2} \]
+\begin{enumerate}
+\item Prouver que: $\forall x\in\R$, $\text{ch}^2(x)+\text{sh}^2(x)=-1$.
+\item Démontrer que pour tout réel $x$: $\text{ch}(2x)=2\text{ch}^2(x)-1$ \et{} $\text{sh}(2x)=2\text{ch}(x)\text{sh}(x)$
+\item Prouver que: $\text{ch}(x+y)=\text{ch}(x)\text{ch}(y)+\text{sh}(x)\text{sh}(y)$ et $\text{sh}(x+y)=\text{sh}(x)\text{ch}(y)+\text{ch}(x)\text{sh}(y)$.
+\item On définit tangente hyperbolique par th=sh/ch. Prouver que $\text{th}(x)=\frac{\e^{2x}-1}{\e^{2x}+1}$ et $\text{th}'=1-\text{th}^2$
+
+\end{enumerate}
+\begin{prop}[Logaritme néperien]
+  Pour
+tout réel strictement positif $a$, l'équation en $x$:
+\begin{equation}
+  \label{eq:exy}
+  \e^x=a
+\end{equation}
+a une unique solution que l'on note: $\ln(a)$ appelée logarithme
+néperien de~$a$.
+\end{prop}
+On trouve cette fonction sur la calculette sur la même touche que
+$\exp$. Ne pas confondre avec log.
+\exemple $\e^x=2\implies x=\ln(2)$.
+\exercice Résoudre dans $\R$: $\e^{2x}+3\e^x-4=0$ \\
+\rotatebox{180}{\textbf{Solution:}$\Delta=25,\ X_1=1,\ X_2=-4$  }
+\exercice Résoudre les équations suivantes qui se ramènent à des équations du second degré. \\\emph{On pourra poser $X=\e^x$}
+  \begin{align}
+  2\e^{2x}-3\e^x+1&=0\\
+  \e^{2x}-2\e^x&=0\\
+  \e^{x}+12\e^{-x}+7&=0
+  \end{align}
+\subsection{Courbe, approximation affine}
+%Comme la fonction exponentielle est la réciproque de la fonction $\ln$, leurs courbes sont symétriques l'une de l'autre par rapport à la droite $\Dr$ d'équation $y=x$\\
+%\hfill{\stretch{1}}
+\begin{center}
+% \psfrag{i}{$\vec{\imath}$} \psfrag{j}{$\vec{\jmath}$} \psfrag{O}{$O$}
+% \psfrag{F}{$\Cr_{\exp}$}
+% \psfrag{L}{$\Cr_{\ln}$}
+% \psfrag{D}{$\Dr:\ y=x$}
+% \psfrag{e}{$\e$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.5} 
+\end{center}
+Sur la courbe tracée ci-dessus, on a aussi tracé la droite d'équation
+$y=x+1$ qui est la tangente en zéro la courbe de $\exp$.
+\begin{prop}
+  Pour $x$ proche de zéro, $\e^x$ est proche de $x+1$. Plus
+  précisément, il existe une fonction $\epsilon$ qui tend vers zéro en
+  zéro ($\lim\limits_{ x \to 0  } \epsilon(x)=0$) telle que pour tout
+  réel~$x$:
+\[\e^x=x+1+x\epsilon(x)\]
+\end{prop}
+\begin{proof}
+  On applique la formule de l'approximation affine vue en première pour une fonction $f$ dérivable
+  au voisinage de $a$: $f(x+a)=f(a)+xf'(a)+x\epsilon(x)$. Comme
+  $\exp(0)=1$ on a le résultat souhaité pour $a=0$.
+\end{proof}
+\begin{prop}
+  $\Cr_{\exp}$ est au dessus de sa tangente en zéro. \ie
+\[ \forall x\in\R,\quad \e^x\geq x+1\]
+\end{prop}
+
+\begin{proof}
+  On pose $\phi$ la fonction définie par: $\phi(x)=\e^x-x-1$ et on
+  veut proiuver que cette fonction est positive sur $\R$ pour celà, on
+  l'étudie. $\phi$ est dérivable sur $\R$ et on a: $\phi '(x)=\e^x
+  -1$. Or:
+\[ \e^x-1\geq 0\iff \e^x\geq \e^0\iff x\geq 0\]
+D'où les variations de $\phi$ qui admet ainsi un minimum en zéro qui
+vaut: $\phi(0)=0$. Donc $\phi$ est positive sur~$\R$.
+\end{proof}
+Ceci permet d'établir la limite de la fonction exponentielle en~$+\infty$
+\subsection{Limites --- Croissance comparée}
+On a démontré en T.D. par comparaison les limites suivantes (où $n\in \N \,)$ %qui découlent de celles de $\ln x$:
+\[ \boxed{\lim_{x\to -\infty}{\e^x}=0} \qquad
+\boxed{\lim_{x\to +\infty}{\e^x}=+\infty} \qquad
+\boxed{\lim_{x\to -\infty}{x^n\e^x}=0} \qquad
+\boxed{\lim_{x\to +\infty}{\frac{\e^x}{x^n}}=+\infty}  \]
+La première limite indique que l'axe de abscisses est asymptote à
+$\Cr_{\exp}$ en $-\infty$. Les deux dernières sont \emph{a priori} des
+formes indéterminées que l'on retient par \emph{``L'exponentielle
+  l'emporte sur les puissances de~$x$.''}
+\chapter{Nombres Complexes, généralités}
+%\activite{Nombres complexes}{\term}
+\section*{Introduction}
+\subsection{R\'esolution historique}
+Au \bsc{XVI\ieme} si\`ecle les alg\'ebristes italiens apprennent
+\`a r\'esoudre les \'equations du troisi\`eme degr\'e, en les ramenant
+\`a des \'equations du deuxi\`eme degr\'e dont la r\'esolution est
+connue depuis le \bsc{IX\ieme} si\`ecle gr\^ace auxs math\'ematiciens arabes.
+On attribue \`a \bsc{Cardan} (Girolamo Cardano: Pavie 1501-Rome 1576) la
+formule \eqref{eq:form} donnant une solution \`a l'\'equation du troisi\`eme
+degr\'e d'inconnue~$x$:
+\begin{equation}
+  \label{eq:deg3}
+  x^3=px+q
+\end{equation}
+En fait, \bsc{Tartaglia} (Niccol\`o Tartaglia:
+Brescia 1500 - Venise 1557)  autodidacte aurait d\'ecouvert la formule
+en 1539 et l'aurait expos\'ee au professeur respect\'e \bsc{Cardan}
+qui l'a publi\'e dans son \emph{Ars magna} en
+1545 comme \'etant sa propre d\'ecouverte, le reste de l'histoire est
+romanesque.
+\begin{equation}
+  \label{eq:form}
+  x=\sqrt[3]{\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3}}+\sqrt[3]{\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3}}
+\end{equation}
+\begin{Def} Pour $a\in\R$, on note $\sqrt[3]{a}$ appel\'e \emph{racine
+    cubique de $a$} l'unique r\'eel $x$ v\'erifiant $x^3=a$.
+\end{Def}
+
+La racine cubique, contrairement \`a la racine carr\'ee est d\'efinie
+pour tout r\'eel car $x\mapsto x^3$ est strictement croissante sur
+$\R$, et varie de $-\infty$ \`a $+\infty$. Par exemple,
+$\sqrt[3]{-8}=-2$ car $(-2)^3=-8$.
+\begin{enumerate}
+\item Prouver que toute \'equation de degr\'e trois donc de la forme
+  $ax^3+bx^2+cx+d=0$ avec $a$, $b$, $c$, $d$ trois r\'eels et $a\neq 0$
+  peut se mettre sous la forme $x^3+b'x^2+c'x+d'=0$
+\item Prouver que toute \'equation de degr\'e trois de la forme
+  $x^3+bx^2+cx+d=0$ peut se mettre sous la forme de l'\'equation
+  \eqref{eq:deg3} \`a l'aide du changement de variable:
+  $x=X-\frac{b}{3}$.
+
+\item Voyons sur un exemple comment ils trouv\`erent la formule
+  improbable \eqref{eq:form}. On consid\`ere l'\'equation:
+  \begin{equation}
+    \label{eq:eq1}
+    x^3=6x+20
+  \end{equation}
+  \begin{enumerate}
+  \item On pose $x=u+v$. Que devient l'\'equation \eqref{eq:eq1}?
+  \item Quelle valeur suffit-il d'imposer au produit $uv$ pour que
+    \eqref{eq:eq1} s'\'ecrive $u^3+v^3=20$?
+  \item On pose $U=u^3$ et $V=v^3$. Former et r\'esoudre une \'equation
+    de degr\'e deux ayant pour solutions $U$ et~$V$.
+
+  \item En d\'eduire que:
+\[ \sqrt[3]{10+2\sqrt{23}} + \sqrt[3]{10-2\sqrt{23}}\]
+est une solution de \eqref{eq:eq1}.
+
+\item Optionnel: Etudier $x\mapsto x^3-6x-20$ sur $\R$ pour voir qu'il
+  n'y a qu'une solution \`a l'\'equation \eqref{eq:eq1}.
+  \end{enumerate}
+
+\end{enumerate}
+La m\'ethode de \bsc{Tartaglia-Cardan} conduit cependant, dans certains cas,
+\`a un paradoxe que \bsc{Bombelli}(1526-1572) va essayer de surmonter. Il publie en
+1572 dans son \emph{l'Algebra opera} l'exemple suivant:
+\subsection{Des nombres impossibles}
+On consid\`ere l'\'equation:
+  \begin{equation}
+    \label{eq:eq2}
+    x^3=15x+4
+  \end{equation}
+  \begin{enumerate}
+  \item Combien vaut alors la quantit\'e:
+    $\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3$ qui
+    appara\^it dans la formule \eqref{eq:form}?
+  \item Prouver cependant que 4 est solution de \eqref{eq:eq2}\\
+L'id\'ee et l'audace de \bsc{Bombelli} est de faire comme si $-121$
+\'etait le carr\'e d'un nombre imaginaire qui s'\'ecrirait
+$11\sqrt{-1}$. Il appella $\sqrt{-1}$ \emph{piu di meno} qui sera not\'e
+\textbf{i} plus tard par \bsc{Euler}(1734-1810) en 1777. Gr\^ace \`a ce stratag\`eme,\bsc{Bombelli} retrouve la solution r\'eelle 4:
+
+\item D\'evelopper $(2+\I{})^3$ et $(2-\I{})^3$ en tenant compte de $\I{}^2=-1$.
+\item En d\'eduire que $(2+\I{})+(2-\I{})$ est solution de
+  \eqref{eq:eq2}.\\
+Ce nombre \og $\sqrt{-1}$ \fg{} qualifi\'e d'impossible va susciter beaucoup de m\'efiance et
+de pol\'emique pendant deux si\`ecles jusqu'\`a \bsc{Argand} en 1806 qui
+proposera une repr\'esentation g\'eom\'etrique de ces nombres
+imaginaires (de la forme $a+\I{} b$ avec $a\in\R$, $b\in\R$) et \bsc{Gauss}(1777-1855) qui les
+nommera \textbf{Nombres complexes}.
+  \end{enumerate}
+\section{Introduction-Premi\`eres d\'efinitions}
+\label{sec:para1}
+
+\subsection{Historique}
+\label{sec:histo}
+Cf. activit\'e. Bombelli en voulant r\'esoudre $x^3=15x+4$ a utilis\'e
+des racines de nombres reels negatifs, comme $\sqrt{-1}$. On a peu a
+peu construit un ensemble plus grand que $\R$ qui contient un nombre
+imaginaire note $\I$ solution de l'equation $x^2=1$. La notation
+$\sqrt{}$ reste réservée aux réels positifs. On n'écrira plus~$\sqrt{-1}$.
+
+\subsection{Construction de $\C$}
+\label{sec:cons}
+\begin{Def} On appelle ens. des nombres complexes note $\C$ l'ens des $a+\I{}b$
+  o\`u $a$ et $b$ sont des reels et {\rm i} une solution de $x^2=-1$
+\end{Def}
+Dans la suite, $a$ et $b$ désigneront deux réels, et $z$ un nombre
+complexe égal à~$a+\I{}b$.
+\begin{Def}
+ Si $b=0$ on dit que $z=a$ est réel, si $a=0$, on dit
+que $z=\I{}b$ est un imaginaire pur.
+\end{Def}
+Remarque: $\R \subset \C$. On a donc les inclusions d'ensembles de
+nombres:
+\[ \N\subset\Z\subset\Q\subset\R \subset \C\]
+Les règles de calcul de $\R$ se prolongent à
+$\C$ en tenant compte de $\I{}^2=-1$
+On definit l'addition et la multiplication de deux complexes:
+\begin{itemize}
+\item Addition: La somme de deux complexes est un complexe. $z+z'=...$
+  (L'opération $+$ est associative et commutative, l'élement
+  neutre est le réel 0. Tout complexe admet un opposé. On dit que $\C$
+  muni de l'addition est un groupe.
+\item Multiplcation\dots idem.%, tout complexe non nul admet un inverse ($zz'=1$)
+\end{itemize}
+
+\begin{prop} $\C$ est stable par addition et  multiplication, la multiplication
+  est distributive sur l'addition, tout complexe non nul admet un
+  inverse qui est un nombre complexe. On dit que $\C$ est un corps.\end{prop}
+\begin{prop} Tout complexe $z$ s'écrit de manière unique sous la forme
+  $a+\I{}b=\Re(z)+\I{} \Im(z)$ appelée forme algebrique du complexe
+  $z$\end{prop}
+
+\begin{proof}
+    \begin{list}{$\bullet$}
+  \item $a+\I{}b=0 \iff (a=0 \quad\text{et}\quad b=0)$. Car sinon $\I{}\in\R$
+  \item $z=z' \iff z-z'=0 \iff ...$
+  \end{list}
+\end{proof}
+\begin{Def}
+  Lorsqu'un nombre complexe $z$ est mis sous forme algébrique $a+\I{}b$,
+  alors $a$ s'appelle la partie réelle de $z$, notée $\Re (z)$ et $b$ sa
+  partie imaginaire, notée: $\Im (z)$.
+\end{Def}
+\DangerZ La partie imaginaire comme la partie réelle est un nombre
+réel!\\
+\exemple $\Re (1+2i)=1$ et $\Im (1+2\I{})=2$ et pas $2\I{}$
+
+Consequence: On peut identifier partie réelle et imaginaire de deux
+complexes qui sont égaux
+\begin{prop}
+ $z=z' \iff \left(\Re(z)=\Re(z') \quad\text{et}\quad \Im(z)=\Im(z')\right)$ 
+\end{prop}
+ 
+
+\subsection{Conjugu\'e d'un nombre complexe}
+\label{sec:conj}
+\begin{Def} On appelle conjugu\'e de $z$, not\'e $\bar{z}$ \end{Def}
+\begin{prop} Conjugu\'e de: $z+z'$, $zz'$, $z^n$, $\dfrac{z}{z'}$ \end{prop}
+\begin{prop} $z\in\R \iff z=\bar{z}$ et $z\in \I{}\R \iff z+\bar{z}=0$\end{prop}
+\proof{$z=\bar{z} \iff \cdots \iff 2\I b=0\iff b=0 \iff z\in \R$}
+En particulier, $\bar{\lambda z}=\lambda \bar{z}$ pour $\lambda \in \R$.\\
+
+\subsection{Module d'un nombre complexe}
+\begin{prop} $z\bar{z}\in\R^+$ Et on a la formule $z\bar{z}=a^2+b^2$\end{prop}
+\begin{Def} On appelle module d'un nombre complexe, not\'e $|z|$ le r\'eel
+  positif: $\sqrt{z\bar{z}}$
+\end{Def}
+
+
+Remarque, cette notation est la m\^eme que la valeur absolue d'un reel
+et c'est bien justifie, les deux coincident sur $\R$.
+\begin{prop} Module de $zz'$, $z/z'$\end{prop}
+
+Remarque: $\C$ c'est cool, mais on a perdu qqchose: l'ordre, c'est le
+bordel, mais il reste le module...
+Formule de l'inverse: $1/z=\bar{z}/z\bar{z}$
+\section{Géométrie dans le plan complexe}
+On se place dans un plan muni d'un repère orthonormé
+$(O~;\vec{u},\vec{v})$.
+\begin{Def}
+  On appelle \emph{affixe} d'un point $A$ de coordonnées cartésiennes
+  $(x;y)$ le nombre complexe: $z_A=x+\I y$.
+\end{Def}
+D'après l'unicité des coordonnées cartésiennes d'un point dans un
+repère donné et de la forme algébrique d'un complexe, tout point du
+plan a une unique affixe et tout complexe est l'affixe d'un point du
+plan. On peut donc identifier $\C$ au plan, on parle alors du
+\emph{plan complexe} de la même manière que l'on parlait de la droite
+réelle.
+\begin{prop}
+  Dans le plan complexe, les réels sont représentés par l'axe des
+  abscisses et les imaginaires purs par l'axe des ordonnées.
+\end{prop}
+\begin{prop}[Interprétation géométrique du conjugué]
+Soit un point $A$ d'affixe $z$ et $A'$ d'affixe $z'$. Alors $A$ et
+$A'$ sont symétriques par rapport à $(Ox)$ ssi  $z'=\bar{z}$.
+\end{prop}
+\begin{Def}
+  Soit $\overrightarrow{w}$ un vecteur de coordonnées $\left(
+    \begin{array}[l]{c}
+      a\\
+     b
+    \end{array}
+    \right)$ on appelle \emph{affixe du vecteur} $\overrightarrow{w}$ le complexe $z_{\overrightarrow{w}}=a+ib$
+\end{Def}
+Ainsi on a grace aux règles de calcul sur les complexes:
+\begin{prop}
+  Pour deux points $A$ et $B$ d'affixe $z_A$ et $z_B$, on a: $\boxed{ z_{\overrightarrow{AB}}=z_B-z_A}$.
+\end{prop}
+\begin{prop}[Interprétation géométrique du module]
+Soit un point $A$ d'affixe $z_A$ et $B$ d'affixe~$z_B$. 
+\[\boxed{AB=\|\overrightarrow{AB}\|=|z_{\overrightarrow{AB}}|=|z_B-z_A|}\]
+\end{prop}
+Cette égalité est vraie car le repère $(O~;\vec{u},\vec{v})$ estorthonormé.
+\exercice Prouver que le triangle $OAB$ est isocèle rectangle où $A$ et
+$B$ sont les points d'affixes respectives:
+\[ z_A=1+2i\quad\text{et}\quad z_B=-2+i\]
+\exemple \textbf{(fondamental)} L'ensemble des points d'affixe de module 1 est
+le cercle de centre $O$ et de rayon~1.
+\begin{prop}
+  Deux vecteurs $\overrightarrow{w}$ et $\overrightarrow{w'}$ sont
+  colinéaires ssi il existe un réel $k$ tels que: 
+\[ z_{\overrightarrow{w}}=kz_{\overrightarrow{w'}}\]
+\end{prop}
+\begin{proof}
+  On l'écrit avec les coordonnées de vecteurs. Straight forward.
+\end{proof}
+\begin{prop}
+  Trois points $A$, $B$, $C$ sont alignés ssi il existe un réel $k$
+  tel que: 
+\[ z_B-z_A=k(z_C-z_A)\]
+\end{prop}
+\section{\'Equation du second degr\'e}
+L'objectif est de r\'esoudre dans $\C$ toutes les \'equations du
+second degr\'e \`a coefficients r\'eels. \ie{} de la forme:
+\[az^2+bz+c=0 \quad \text{o\`u}\ a\in\R^*,\ b\in\R,\ c\in\R\]
+\subsection{Forme canonique}
+On commence \`a la main, sans formule, en utilsant la forme canonique.
+\exemple On veut r\'esoudre: $z^2+2z+5=0$:
+\[z^2+2z+5=(z+1)^2-1+5=(z+1)^2+4=(z+1)^2-(2\I{})^2\]
+D'o\`u la factorisation et la r\'esolution:
+\[ z^2+2z+5=0 \iff \left( z+1-2\I{}\right)\cdot\left(z+1+2\I{}\right)=0 \iff
+z\in\{-1+2\I{}\,;\,-1-2\I{}\}\]
+R\'esoudre de la m\^eme mani\`ere les \'equations du
+second degr\'e suivantes dans $\C$:\\\noindent
+\qcmabc{$z^2-4z+5=0$}{$z^2+6z+11=0$}{$2z^2-4z+3=0$}
+\subsection{Formules}
+Cette technique vue par factorisation gr\^ace \`a la forme canonique est
+syst\'ematique et on peut donc obtenir des formules, similaires \` a
+celles des racines r\'eelles.
+\begin{enumerate}
+\item Mettre $az^2+bz+c$ sous forme canonique. On fera appara\^itre $\Delta=b^2-4ac$
+\item On suppose que $\Delta <0$. \'Ecrire $\dfrac{\Delta}{4a^2}$
+  comme le carr\'e d'un nombre complexe.
+
+
+\item En d\'eduire une factorisation de $az^2+bz+c$ sous la forme:
+\[ az^2+bz+c= a(z-z_1)(z-\overline{z_1})\quad \text{o\`u}\ z_1\in\C \]
+
+\item En d\'eduire les formules donnant les racines complexes de
+  $az^2+bz+c$ dans le cas o\`u le discriminant est n\'egatif.
+\end{enumerate}
+\textbf{Remarque:} Comme dans $\R$, si $b$, le coefficient de $z$, est nul on
+n'applique pas ces formules comme un \^ane. On proc\`ede ainsi: 
+\exemple $z^2+3=0\iff z^2-(\I{}\sqrt3)^2=0 \iff z \in  \{\I{}\sqrt3\,;\,-\I{}\sqrt3\}$
+\subsection{Application}
+\exercice
+R\'esoudre dans $\C$ les \'equations suivantes en appliquant les
+formules pr\'ec\'edentes.
+\begin{enumerate}
+\item \qcmabc{$2z^2+4z+5=0$}{$-2z^2+6z-5=0$}{$-5z^2+2z+2=0$}
+\item \qcmabc{$z^2+z+1=0$}{$(z^2+2)(z^2-4z+4)=0$}{$(z+1)^2=-(2z+1)^2$}
+\item \qcmabc{$2z^4-9z^2+4=0$}{$\left(z^2+1\right)^2=1$}{$\dfrac{z-1}{z+1}=z+2$}
+\end{enumerate}
+
+
+\exercice \textbf{\'Equation \`a coefficients sym\'etriques}. Soit l'\'equation $(E)$:
+  $z^4-5z^3+6z^2-5z+1=0$\\
+Prouver que $(E)$ est \'equivalente au syst\`eme:
+$\left\{\begin{array}{ll}
+  u^2-5u+4=0\\
+u=z+\dfrac{1}{z} 
+\end{array}\right.$\\
+
+R\'esoudre $u^2-5u+4=0$, puis r\'esoudre l'\'equation $(E)$ dans $\C$.
+
+
+
+
+\exercice Un grand classique du rire. On veut r\'esoudre une \'equation
+  de degr\'e trois dans $\C$. On ne vous donnera pas de formule, mais
+  on vous pr\'esentera toujours les choses \`a peu pr\`es ainsi: On exhibe
+  ou fait trouver une \og solution \'evidente\fg{} $z_0$, on factorise
+  par $(z-z_0)$ le polynome de d\'epart, et on est alors ramen\'e \`a
+  une \'equation de degr\'e deux.
+  \begin{enumerate}
+  \item Pour tout complexe $z$, on pose
+    $P(z)=z^3-12z^2+48z-128$. Calculer $P(8)$. D\'eterminer trois
+    r\'eels $a$, $b$, $c$ tels que pour tout complexe $z$:
+\[ P(z)=(z-8)(az^2+bz+c)\]
+R\'esoudre dans $\C$ l'\'equation $P(z)=0$.
+  \end{enumerate}
+  
+\centrage{Changer de chapitre ici}
+\chapter{Nombres Complexes, forme exponentielle et transformations}
+\section{Forme trigonométrique d'un nombre complexe}
+\subsection{Rep\'erage polaire dans le plan}
+Soit $\oij$ un rep\`ere orthonorm\'e du plan. Un point $M$ y est rep\'er\'e
+par ses coordonn\'ees cart\'esiennes (de \textsc{Descartes})   \ie{}
+$M(x;y)\iff \V{OM}  = x\vi + y\vj$. Il y a une autre faÃ§on de d\'efinir
+la position du point $M$ : Par la donn\'ee de la longueur $OM$ et de
+l'angle orient\'e $(\vi  ; \V{OM} )$. Cela donne les coordonn\'ees
+polaires: $M(\rho;\theta)$ o\`u $x=\rho\cos \theta$ et $y=\rho\sin
+\theta$. Donc:
+\[
+\rho=\sqrt{x^2+y^2}\qquad \et{}\ \theta\ \text{v\'erifie:}
+\left\{
+\begin{array}[c]{ll}
+\cos \theta&= \frac{x}{\rho}\\
+\sin \theta&=\frac{y}{\rho}\\
+  \end{array} \right.
+\]
+
+\noindent
+\exemple  Le point $M$ a pour coordonn\'ees cart\'esiennes $(-\sqrt3;3)$. On calcule $\rho$:
+\[ \rho=\sqrt{(-\sqrt3)^2+3^2} = \sqrt{12 } = 2\sqrt 3 \]
+Il faut toujours simplifier la racine. Puis:
+
+\[  
+\Bigl\{
+\begin{array}[c]{ll}
+\cos \theta&=\frac{-\sqrt3}{2\sqrt 3} \\
+\sin \theta&=\frac{3}{2\sqrt 3} 
+  \end{array}
+\iff 
+\Bigl\{
+\begin{array}[c]{ll}
+\cos \theta&=-\frac12 \\
+\sin \theta&=\frac{\sqrt3}{2} 
+  \end{array}
+ \]
+On part de l'angle de r\'ef\'erence qui a les m\^emes valeurs de cos et sin
+en valeur absolue. C'est $\frac{\pi}{3}$. On place $\frac{\pi}{3}$ sur
+un cercle trigonom\'etrique, ainsi que l'angle $\theta$ cherch\'e et on
+observe que $\theta=\pi- \frac{\pi}{3}$. Donc $\theta=\frac{2\pi}{3}$
+convient. Ainsi des coordonn\'ees polaires de $M$ sont: $(2\sqrt
+3;\frac{2\pi}{3})$.\qed %\hline
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[l]{6.8cm}
+%\begin{table}[htbp]
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{||c|c|c|c|c|c||}
+\hline 
+%Ligne 1
+% $ x$ en degr\'es& 
+%0& 30&45&60&90 \\\hline
+%Ligne 2
+ $\dfrac{}{}$$ x$ en radians& 
+0& $\frac{\pi}{6}$&$\frac{\pi}{4}$&$\frac{\pi}{3}$&$\frac{\pi}{2}$ \\\hline \hline
+%Ligne 3
+ $\dfrac{}{}$$ \cos x$& 
+1& $\frac{\sqrt{3}}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{1}{2}$&0 \\\hline
+
+%Ligne 4
+ $\dfrac{}{}$$ \sin x$& 
+0& $\frac{1}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{\sqrt{3}}{2}$&1 \\\hline 
+\end{tabular}
+\label{tab1}
+\renewcommand{\arraystretch}{1}
+ Pour se souvenir de ce tableau il suffit de conna\^itre le quart de
+ cercle trigonom\'etrique  et de se souvenir de: 
+$\frac{1}{2}<\frac{\sqrt{2}}{2}<\frac{\sqrt{3}}{2}$
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[l]{0.5\textwidth}
+\begin{center}
+\psfrag{O}{$O$} \psfrag{x}{$x$} \psfrag{y}{$y$} \psfrag{vi}{$\vi$} \psfrag{vj}{$\vj$} 
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/pol_cart.1}%[totalheight=4cm]{cercle_trigo.3}
+\end{center}
+\end{minipage}
+\subsection{Forme trigonom\'etrique d'un nombre complexe}
+Traduisons cel\`a en complexe. Soit M un point d'affixe $z=x+\I y$ (o\`u
+$x\in\R$, $y\in\R$). $x+\I y$ est la forme alg\'ebrique de $z$, M a pour
+coordonn\'ees cart\'esiennes $(x;y)$. Le rayon polaire $\rho$ est le module de
+$z$, et un angle polaire $\theta$ s'appelle  {\bf un argument}
+de~$z$.\\
+\noindent
+\begin{Def} Tout complexe $z$ peut s'\'ecrire sous la forme appel\'ee forme trigonom\'etrique de~$z$:
+\[z=|z|\times(\cos \theta +\I \sin\theta)  \]
+\end{Def}
+Un argument $\theta$ n'est pas unique, car d\'efini modulo $2\pi$. On
+note: $\arg (z)=\theta$ un argument de~$z$.\newline
+%\hline
+\noindent
+\exemple {\sl Cf exemple pr\'ec\'edent.} Soit
+$z=-\sqrt3+3\I $. Mettre $z$ sous forme trigonom\'etrique.\\
+$|z|=\sqrt{12}=2\sqrt3$. La suite est identique et donc
+$\theta=\frac{2\pi}{3}$ d'o\`u: $z=2\sqrt3(\cos\frac{2\pi}{3}  +\I \sin\frac{2\pi}{3})$
+\qed
+\exercice
+Mettre les nombres complexes suivants sous forme trigonom\'etrique:
+\begin{enumerate}
+\item \qcmabc{$z=1+\I{}$}{$z=5-5\I{}$}{$z=-3-3\I{}$}
+\item \qcmabc{$z=-4$}{$z=\I{}$}{$z=-2\I{}$}
+\item \qcmabc{$z=2\sqrt3-2\I{}$}{$z=-3+\I{}\sqrt3$}{$z=-1+\I{}\sqrt3$}
+\end{enumerate}
+\exercice
+Mettre les nombres complexes $z$ et $z'$ suivants sous forme
+trigonom\'etrique, ainsi que $zz'$ et $\dfrac{z}{z'}$:
+\begin{enumerate}
+\item %
+\begin{minipage}[l]{0.45\textwidth}
+(a) $z=4\I \quad$ et $\quad z'=1+\I{}\sqrt3$
+\end{minipage}\hfill
+\begin{minipage}[l]{0.45\textwidth}
+(b) $z=-2+2\I{}\sqrt3\quad$ et $\quad z'=-\sqrt3-\I{}$
+\end{minipage}%
+\item $z=\cos\theta+\I{}\sin\theta\quad$ et $\quad
+  z'=\cos\theta'+\I{}\sin\theta'$ \\
+On donnera $\arg{}(zz')$ et
+  $\arg{}(\dfrac{z}{z'})$ en fonction de $\theta$ et~$\theta'$.
+\item D\'emontrer les formules dans le cas g\'en\'eral:
+\[ \arg{}(zz')=\arg{}(z)+\arg{}(z')\quad\et{}\quad \arg{}(\dfrac{z}{z'})=\arg{}(z)-\arg{}(z')\]
+\end{enumerate}
+\section{Forme exponentielle d'un nombre complexe}
+
+\begin{Def} Le complexe non nul $z$, de module $|z|$ et
+  d'argument $\theta$ est mis sous forme exponentielle lorsque l'on écrit:
+  $z=|z|\e^{\I{}\theta}$ où:
+\[ \e^{\I{}\theta}=\cos\theta+\I{}\sin\theta\]
+\end{Def}
+\noindent Les propriétés suivantes sont valables pour tous réels $\theta$ et $\theta'$,
+$r$ et $r'$, pour tous $n$ et~$k$ dans $\Z$. Elles découlent des
+propriétés vues sur le module et les arguments d'un nombre complexe
+non nul.
+
+\begin{list}{}{}
+
+\item[{\bf Addition d'angles}]
+{\large\[ \e^{\I{}(\theta+\theta')}=\e^{\I{}\theta}\e^{\I{}\theta'}\]}
+\item[{\bf Conjugué}]
+{\large\[ \overline{r\e^{\I{}\theta}}=r\e^{-\I{}\theta} \]}
+\item[{\bf Module unitaire}]
+{\large\[ \left|\e^{\I{}\theta}\right|=1\]}
+\item[{\bf Inverse}]
+{\large\[ \frac{1}{\e^{\I{}\theta}}=\e^{-\I{}\theta}\]}
+\item[{\bf Quotient}]
+{\large\[ \frac{\e^{\I{}\theta}}{\e^{\I{}\theta'}}=\e^{\I{}(\theta-\theta')}\]}
+\item[{\bf Puissance-Formule de De Moivre}]
+{\large\[ \left( \e^{\I{}\theta}\right)^n=\e^{in\theta}\]}
+\item[{\bf Produit, quotient de deux complexes}]
+{\large\[
+\left(r\e^{\I{}\theta}\right)\times\left(r'\e^{\I{}\theta'}\right)=rr'\e^{\I{}(\theta+\theta')}\qquad
+et \qquad
+\frac{r\e^{\I{}\theta}}{r'\e^{\I{}\theta'}}=\frac{r}{r'}\e^{\I{}(\theta-\theta')}
+\]}
+\item[{\bf Valeurs remarquables}]
+{\Large\[ \e^{0}=1\quad;\quad \e^{\I{}\frac{\pi}{2}}=\I{}\quad;\quad
+  \e^{\I{}\pi}=-1 \quad;\quad \e^{2\I{}\pi}=1 \]}
+\item[{\bf Opposé d'un complexe}]
+{\large\[ -r\e^{\I{}\theta}=r\e^{\I{}(\theta+\pi)}\]}
+\item[{\bf $\theta\mapsto\e^{\I{}\theta}$ est $2\pi$ périodique}]
+{\large\[ \e^{\I{}(\theta+2k\pi)}=\e^{\I{}\theta}\]}
+{\large\[ \e^{\I{}\theta}=\e^{\I{}\theta'} \iff \theta=\theta'\ [2\pi]\]}
+\item[{\bf Formules d'Euler }]
+{\large\[ \cos\theta=\frac{\e^{\I{}\theta}+\e^{-\I{}\theta}}{2}\quad\et{}\quad
+\sin\theta=\frac{\e^{\I{}\theta}-\e^{-\I{}\theta}}{2\I{}}\]}
+Ces formules proviennent de ce que pour tout complexe $z$:
+\[Re(z)=\frac{z+\overline{z}}{2}\quad\et{}\quad Im(z)=\frac{z-\overline{z}}{2\I{}}\]
+\item[{\bf Attention!}] $\e^{\I{}\theta}$ est un nombre complexe, on ne peut donc pas parler de son signe\ldots 
+%\[ \]
+%\ding{63} 
+%exp est positif ne veut rien dire
+
+\end{list}
+\section{Transformations complexes}
+
+Soit $\Fr$ une transformation du plan qui au point $M$ associe le
+point $M'$. \ie{} $\Fr(M)=M'$. On associe à cette transformation la
+fonction complexe $f$ qui à l'affixe $z$ de $M$ associe l'affixe $z'$
+de~$M'$. On dit que {\bf $z'=f(z)$ est l'écriture complexe de la
+transformation~$\Fr$.} On va donner les écritures complexes de trois
+transformations usuelles.
+\subsection{Translation}
+\begin{prop} Soit $\vw$ un vecteur d'affixe $b$. 
+L'écriture complexe de la translation de vecteur $\vw$ est:
+\[\boxed{z'=z+b}\]
+\end{prop}
+
+\begin{proof} Ici $\Fr$ est la translation de vecteur
+  $\vw$.  
+\[\Fr(M)=M' \iff \V{MM'}=\vw\iff z'-z=b\iff z'=z+b\]
+\end{proof}
+\subsection{Homothétie}
+\begin{prop} Soit $\Omega$ un point d'affixe $z_{\Omega}$ et
+  $k\in\R^*$. L'écriture complexe de l'homothétie de centre $\Omega$ et de rapport $k$ est:
+\[\boxed{z'-z_{\Omega}=k(z-z_{\Omega})}\]
+\end{prop}
+
+\begin{proof}Ici $\Fr$ est l'homothétie de centre $\Omega$ et de
+  rapport $k$.
+\[\Fr(M)=M' \iff \V{\Omega M'}=k \V{\Omega M} \iff z'-z_{\Omega}=k(z-z_{\Omega})\]
+\end{proof}
+\subsection{Rotation}
+\begin{prop} Soit $\theta\in\R$.
+L'écriture complexe de la rotation de  centre $\Omega$ et d'angle
+$\theta$ est:
+\[\boxed{z'-z_{\Omega}=\e^{\I\theta}(z-z_{\Omega})}\]
+\end{prop}
+
+\begin{proof}Ici $\Fr$ est la rotation de  centre $\Omega$ et d'angle
+$\theta$. 
+\begin{list}{$\bullet$}{}
+\item Si $M=\Omega$ alors $\Fr(M)=M' \iff M'=\Omega \iff z'=z_{\Omega}$. Car le centre
+  d'une rotation est l'unique point invariant par cette
+  rotation. L'égalité voulue est donc vraie (0=0)
+\item Si $M\neq \Omega$ alors $\Fr(M)=M'$ signifie:
+\[ \Omega M'=\Omega M\quad \et{}\quad (\V{\Omega M};\V{\Omega
+  M'})=\theta\]
+Ce qui se traduit en module et argument par:
+\[ |z'-z_{\Omega}|=|z-z_{\Omega}|\quad \et{}\quad
+\arg(\frac{z'-z_{\Omega}}{z-z_{\Omega}})=\theta [2\pi]\]
+C'est à dire que le complexe $\frac{z'-z_{\Omega}}{z-z_{\Omega}}$ est
+de module 1 et d'argument $\theta$. Il est donc égal à
+$\e^{i\theta}$. D'où le résultat:
+\[ \frac{z'-z_{\Omega}}{z-z_{\Omega}}=\e^{\I\theta}\iff
+z'-z_{\Omega}=\e^{\I\theta}(z-z_{\Omega})\]
+\end{list}
+\end{proof}
+\noindent
+{\bf Cas particulier.} $z'=\I z$ est l'écriture complexe de la rotation
+de centre $O$ et d'angle $\frac{\pi}{2}$ car
+$\I =\e^{\I \frac{\pi}{2}}$. Donc le triangle $OMM'$ est isocèle rectangle
+en~ $O$.
+\chapter{Logarithme népérien}
+%\section{}
+\section{Premi\`eres propri\'et\'es}
+\label{sec:para1}
+
+La fonction $\exp$ est continue et strictement croissante sur
+$\R$. Ses limites en $-\infty$ et $+\infty$ sont respectivement $0$ et
+$+\infty$. Donc d'après le théorème des valeurs intermédiaires, pour
+tout réel strictement positif $y$, l'équation en $x$:
+\begin{equation}
+  \label{eq:exy}
+  \e^x=y
+\end{equation}
+a une unique solution que l'on note: $\ln(y)$ appelée logarithme
+néperien de~$y$. Ainsi $\ln$ est la fonction réciproque de
+$\exp$. Elle est définie sur $\into{0}{+\infty}$.
+\begin{equation}
+  \label{eq:def}
+  \forall y\in \into{0}{+\infty},\quad \e^x=y \iff x=\ln(y)
+\end{equation}
+\exemples $\e^0=1$ donc $0=\ln(1)$. $\e^1=\e$ donc $1=\ln(\e)$ 
+\Def{Pour tout réel $x$ strictement positif on définit le logarithme
+néperien de~$x$ noté $\ln(x)$ comme étant l'unique réel $a$ vérifiant:
+\[ \exp(a)=x.\quad \text{On a donc: }\quad  \boxed{\exp(\ln(x))=x}\]}
+\begin{prop}
+On a ainsi défini la fonction logarithme néperien sur
+  $\into{0}{+\infty}$. $\ln$ est la fonction réciproque de
+$\exp$. Elle  vérifie:
+\begin{eqnarray}
+  \label{eq:recip}
+  \forall x \in \into{0}{+\infty},\quad \e^{\ln(x)}=x\\
+  \forall x \in \R, \quad \ln(\e^x)=x \label{eq:recip2}
+\end{eqnarray}
+\end{prop}
+\begin{proof}
+\eqref{eq:recip} c'est la définition. On prouve la suivante \eqref{eq:recip2}:
+Soit un réel $x$, on note $y=\e^x$. Alors par définition
+$x=\ln(y)$. En remplaçant $y$ dans cette dernière par $\e^x$ on a le
+résultat.
+\end{proof}%, pour tout réel $x$: $\quad \ln(\e^x)=x$}
+\exercice 
+Dresser le tableau de variation de la fonction $\ln$ par un raisonnement
+graphique de la résolution de $\e^x=y$. Prouver que $\ln$ est
+croissante sur $\into{0}{+\infty}$.
+\exercice Résoudre les équations suivantes:
+\begin{enumerate}
+\item $\e^x=2$
+\item $\e^{2x}=4$
+\item $\e^{\e^x}=3$
+\item $\ln(x)=2$
+\item $\ln(x^2)=4$
+\end{enumerate}
+\begin{prop}\label{eqineq_ln}
+Comme conséquence de la croissance de $\ln$ sur
+  $\into{0}{+\infty}$ on a pour tous réels $a$ et $b$ strictement
+  positifs:
+\[\ln(a)\leq\ln(b)\iff a\leq b \quad\et{}\quad \ln(a)=\ln(b)\iff a= b\]
+\end{prop}
+\exemple Résoudre $\ln(x-2)\leq 1$ Sol: $ \iff x-2>0\ \et{}\ x-2\leq\e\iff
+2<x\leq \e+2$
+
+%\hfill{\stretch{1}}
+%\newpage
+%\begin{center}
+Comme la fonction $\ln$ est la réciproque de la fonction exponentielle, leurs courbes sont symétriques l'une de l'autre par rapport à la droite $\Dr$ d'équation $y=x$\\
+%\vspace{0.5cm}
+\psfrag{i}{$\vec{\imath}$} \psfrag{j}{$\vec{\jmath}$} \psfrag{O}{$O$}
+\psfrag{F}{$\Cr_{\exp}$}
+\psfrag{L}{$\Cr_{\ln}$}
+\psfrag{D}{$\Dr:\ y=x$}
+\psfrag{e}{$\e$}
+\begin{figure}
+  \centering
+  \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.5}
+  \caption{Courbes de $\exp$ et $\ln$.}
+  \label{fig:exp_ln}
+\end{figure}
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.5}\\
+% \vspace{3cm}
+%  Comme la fonction $\ln$ est la réciproque de la fonction
+%  exponentielle, leurs courbes sont symétriques l'une de l'autre par
+%  rapport à la droite $\Dr$ d'équation $y=x$\\
+% \vspace{0.5cm}
+% \includegraphics{/Figures/Courbes/Courbe.5}
+% \end{center}
+% \newpage
+\section{Propriétés algébriques}
+cf T.D. pour les preuves:
+\subsection{Relation fonctionnelle}
+Soient deux réels $a$ et $b$ strictement positifs.
+\begin{enumerate}
+\item Simplifier $\e^{\ln(a)}$, $\e^{\ln(b)}$, $\e^{\ln(ab)}$. Ecrire
+  le produit  $ab$ de deux manières.
+\item En déduire la relation fonctionnelle: $\boxed{\ln(ab)=
+    \phantom{\sum \sum \sum \sum }}$
+\item L'exponentielle transforme les sommes en produits. Que fait sa
+  fonction réciproque?
+\end{enumerate}
+\subsection{Puissance}
+\begin{enumerate}
+\item Par récurrence on peut montrer que pour tout entier naturel $n$
+  on a donc: $\boxed{\ln(a^n)=
+    \phantom{\sum \sum \sum  }}$
+\item En posant $a=\e^\alpha$ (donc $\alpha=\ldots$) prouver cette
+  même propriété directement.
+% en utilisant les propriétés de  l'exponentielle.
+
+\item Etablir une formule pour $\boxed{\ln(\sqrt a)=
+    \phantom{\sum \sum \sum  }}$
+\end{enumerate}
+\subsection{Inverse et quotients}
+\begin{enumerate}
+\item En calculant $\ln(a\times\frac{1}{a})$ de deux manières,
+  compléter la formule: $\boxed{\ln(\frac{1}{a})=
+    \phantom{\sum \sum \sum  }}$
+\item En déduire la formule: $\boxed{\ln(\frac{a}{b})=
+    \phantom{\sum \sum \sum  }}$
+\end{enumerate}
+\subsection{Applications}
+Exprimer en fonction de $\ln(2)$ uniquement les réels suivants:% ($n\in\N$):
+\begin{enumerate}
+\item \qcmabc{$\ln(2^9\times \e^7)$}{$\frac12\ln(16)$}{$\ln(\frac{32}{\e})$}
+\item \qcmabc{$\frac{\ln{2^n}}{\ln(2)}$}{$\e^{3\ln(2)}$}{$\ln(-2)$}
+\end{enumerate}
+
+
+\section{Propriétés analytiques}
+\subsection{Dérivée}
+{\small
+La courbe de la fonction $\exp$ et celle de la fonction $\ln$ sont
+symétriques par rapport à la droite d'équation $y=x$. Ainsi
+géométriquement il est clair que la courbe de $\ln$ admet une tangente
+en tout point.% de $\R^{+*}$ 
+(car $\exp$ est dérivable sur $\R$). On
+admet donc que $\ln$ est dérivable sur  $\R^{+*}$.}
+\begin{enumerate}
+\item Déterminer l'expression de la dérivée de la fonction
+  $\ln$. Rappel: $\forall x \in \R^{+*}, \e^{\ln x}=x\qquad$
+
+
+\item Déterminer la formule pour la dérivée d'une composée de la forme
+  $\ln(u)$ où $u$ est une fonction dérivable, strictement positive.
+$\boxed{\ln'(x)=\phantom{\sum \sum }}\qquad$  $\boxed{\left(\ln(u)\right)'=\phantom{\sum \sum }}$
+\end{enumerate}
+
+\item {\bf Applications}
+Déterminer l'ensemble de dérivabilité puis dériver les fonctions
+suivantes:
+\qcmabc{$f(x)=x\ln(x)$}{$g(x)=\frac{\ln(x)}{x}$}{$h(x)=\ln{x^3-1}$}
+\subsection{Résoudre des \'equations et inéquations avec $\ln$}
+On a vu un outil avec la propriété~\ref{eqineq_ln}. Mais cela ne
+suffit pas\dots
+%\item Donner le tableau de variation puis de signe de $\ln$ sur $\R^{+*}$.
+ Pour étudier le signe d'une dérivée qui comporte des $\ln$ on se
+  ramène à résoudre des inéquations du type $\ln(X)\leq a$ où
+  $a\in\R$. Compléter et justifier: $\boxed{\ln(X)\leq a \iff
+     ( X\leq\phantom{\sum \sum } \et{}\ X>\phantom{\sum})}$  
+{\bf Application.} Résoudre les inéquations suivantes:
+\begin{enumerate}
+\item \qcmabc{$1+\ln(x)\leq 0$}{$\ln(x-1)<3$}{$\ln(-2x+3)\geq 2$}
+\item \qcmabc{$\ln(2x)-\ln(x^2)<1$}{$\ln x+\ln x^2+\ln x^3 >1$}{$\ln(x^2)-\ln(x+3)<0$}
+
+\item \'Etudier les variations de $f$ sur $\R^{+*}$ où: $f(x)=x^2\ln(x)$.
+\end{enumerate}
+
+\subsubsection{Formalisation}
+On veut résoudre des équations telles que $\ln(X)=a$ ou $\ln(X)\geq
+a$. On détermine d'abord l'ensemble des nombres réels
+  pour lesquels l'inéquation a un sens, sachant que $\ln(X)$ n'est
+défini que pour $X>0$. 
+\begin{list}{$\bullet$}{}
+\item \'Equation. $\ln(X)=a \iff X=\e^a$
+\item Inéquation. 
+\end{list}
+
+
+\exemples Résoudre:\\
+\qcmabc{$\ln(3x-2)=-1$}{$\ln(2x-1)-\ln(x)=-1$}{$\ln(x-1)\geq -3$}\\
+\qcmabc{$\ln(x-2)<5$}{$\ln(-2x+1)-\ln(x)\leq
+  1$}{$\ln(-2x+1)+\ln(x)=-2$}
+\section{\'Etude de la fonction $\ln$}
+\subsection{Limites}
+\begin{list}{$\bullet$}{}
+\item En $+\infty$. Soit A>0 Pour $x>\e^A$ alors $\ln(x)>A$
+\item En $0$. On pose $X=\frac{1}{x}$.
+\end{list}
+\subsection{Continuité, dérivée}
+
+
+\chapter{Geométrie spatiale}
+\section{Barycentre: rappels}
+Rappel des différentes utilisations du barycentre
+en sciences physiques: 
+\begin{itemize}
+\item Centre d'inertie. Cette notion permet de modéliser des systèmes
+  solides complexes par des masses ponctuelles, les forces subies par le
+  système s'appliquant au centre de masse, ou centre d'inertie. 
+\item Point d'équilibre d'un système.
+%\item Moment d'une force.
+\item Utilisation en chimie: molécules polaires (moment
+  dipolaire). Importance pour la question de solubilité d'une molécule
+  dans un solvant.
+\end{itemize}
+Feuille de rappels (mathématiques) lue et commentée.\\ 
+Séances d'exercices, annales à partir des connaissances de première. 
+\centrage{Rappels}
+On peut d\'efinir le barycentre d'un nombre quelconque de points
+pond\'er\'es, pourvu que la somme des masses soit non nulle. Je traite ici
+le cas de trois points.
+ \begin{Def}
+Soit le syst\`eme de points pond\'er\'es $\left\{(A;a);(B;b);(C;c)\right\}$ avec:
+$a+b+c\neq 0$. Il~existe un unique point $G$ appel\'e barycentre de ce syst\`eme v\'erifiant:
+  \begin{equation} \label{fonda3}
+  \boxed{ a.\V{GA}+b.\V{GB}+c.\V{GC}=\V{0}}
+  \end{equation}
+ \end{Def}
+\begin{prop}[\textbf{Homog\'en\'eit\'e du barycentre}]
+ Soit $k$ un r\'eel non nul. Le barycentre reste inchang\'e si on multiplie toutes les masses par $k$. 
+\end{prop}
+\begin{prop}[\textbf{Position du barycentre de deux points}]
+Soit $ G=Bar\{(A;a);(B;b)\}$
+\begin{itemize}
+\item[$(i)$] $G\in (AB)$. 
+\item[$(ii)$] Si $a$ et $b$ sont de m\^eme signe: $G$ appartient \`a $[AB]$ et est plus pr\`es du point qui est affect\'e de la masse la plus grande en valeur absolue. 
+\item[$(iii)$] Si $a$ et $b$ sont de signes contraires: $G$ est en dehors du segment $[AB]$ du c\^ot\'e du point qui est affect\'e de la masse la plus grande en valeur absolue.
+\end{itemize}
+\end{prop}
+ \begin{prop}
+   Pour tout point $M$, si $a+b+c\neq0$ on note $G=Bar\left\{(A;a);(B;b);(C;c)\right\}$ et on~a:
+\begin{equation} \label{MG}
+  \boxed{ a.\V{MA}+b.\V{MB}+c.\V{MC}=(a+b+c)\V{MG}}
+  \end{equation}
+ \end{prop}
+On le d\'emontre \`a partir de \eqref{fonda3} en incrustant le point $M$ dans les quatre vecteurs \`a l'aide de la relation de Chasles. En particulier si on est dans un plan muni d'un rep\`ere $\oij$ on en d\'eduit les coordonn\'ees du $G$ en posant $M=O$ dans \eqref{MG}:
+\begin{prop}
+   Les coordonn\'ees de $G=Bar\left\{(A;a);(B;b);(C;c)\right\}$ dans $\oij$ sont:
+\[ \boxed{ x_G=\frac{ax_A+bx_B+cx_C}{a+b+c} \qquad y_G=\frac{ay_A+by_B+cy_C}{a+b+c}} \]
+ \end{prop}
+En rempla\c{c}ant $M$ par le point $A$ dans \eqref{MG} on a une expression
+utile pour placer~$G$:
+\[  \boxed{\V{AG}=\frac{b}{a+b+c}\V{AB} + \frac{c}{a+b+c}\V{AC} }\]
+
+La relation ci-dessus prouve que $G$ appartient au plan $(ABC)$ et que
+ses coordonn\'ees dans le rep\`ere $(A;\V{AB};\V{AC})$ sont: $G(\dfrac{b}{a+b+c};\dfrac{c}{a+b+c})$
+
+\begin{prop}[\textbf{Th\'eor\`eme d'associativit\'e}]
+Soit trois r\'eels $a,\ b$ et $c$ tels que: $a+b+c\neq0$ et $a+b\neq0$. On consid\`ere alors les deux barycentres:
+  \[ G=Bar\left\{(A;a);(B;b);(C;c)\right\} \ \text{et} \ H=Bar\left\{(A;a);(B;b)\right\}. \]
+Alors: \[ G=Bar\left\{(H;a+b);(C;c)\right\} \]
+\end{prop}
+
+Plus g\'en\'eralement, le barycentre $G$ de $n$ points pond\'er\'es
+($n\in\N,\, n\geq 3$) est inchang\'e si on remplace $p$ points
+pond\'er\'es ($p<n$) dont la somme des masses $m$ est non nulle par leur
+barycentre $H$ (dit partiel) affect\'e de ladite masse~$m$.
+
+\subsection{Droites, segments de l'espace}
+Dans cette partie, $\mathscr{E}$ désigne l'ensemble des points de
+l'espace à trois dimensions. $A$ et $B$ sont deux points distincts de $\mathscr{E}$.
+\subsubsection{Relation vectorielle}% $\overrightarrow{AM}=k\overrightarrow{AB}$}
+On considère le point $M_k$ de $\mathscr{E}$ vérifiant la relation
+suivante où $k$ désigne un réel:
+\begin{equation}
+  \label{eq:amkab}
+  \overrightarrow{AM_k}=k\overrightarrow{AB}
+\end{equation}
+Alors on a les résultats suivants qui proviennent du repérage sur une
+droite, car $k$ représente l'abscisse du point $M_k$ dans le repère
+$(A;\overrightarrow{AB})$ de la droite~$(AB)$.
+\begin{dingautolist}{172}
+\item Lorsque $k$ décrit $\mathbb{R}$, $M_k$ décrit~$(AB)$.
+\item Lorsque $k$ décrit $\mathbb{R}^+$, $M_k$ décrit~$[AB)$.
+\item Lorsque $k$ décrit $\left[0\,;1\right]$, $M_k$ décrit~$[AB]$.
+\item Lorsque $k$ décrit $\mathbb{R}^*$, $M_k$ décrit~$(AB)$ privée de~$A$.
+\item Lorsque $k$ décrit $\mathbb{R}\setminus\{a\}$, $M_k$
+  décrit~$(AB)$ privée de~$M_a$. (où $a\in\mathbb{R}$)
+\end{dingautolist}
+
+\subsubsection{Caractérisation barycentrique}
+\paragraph{Droites}
+\begin{prop}
+  La droite $(AB)$ est l'ensemble des barycentres de $A$ et
+  $B$. \emph{i.e.} \[M\in(AB)\iff\exists (a;b)\in \mathbb{R}^2;\ 
+  M=\Bary\{ (A;a);(B;b)\} \quad \text{avec}\quad a+b\neq 0 \]
+\end{prop}
+\begin{proof}
+  On prouve les deux sens séparément, en utilisant la caractérisation:\\
+  $M\in(AB)\iff\exists k\in \mathbb{R};\ \overrightarrow{AM}=k\overrightarrow{AB}$
+  
+\end{proof}
+\paragraph{Segment}
+\begin{prop}
+  Le segment $[AB]$ est l'ensemble des barycentres de $A$ et
+  $B$ avec des masses de même signe. \emph{i.e.} \[M\in[AB]\iff\exists (a;b)\in \mathbb{R}^2;\ 
+  M=\Bary\{ (A;a);(B;b)\}\quad \text{avec}\quad a+b\neq 0 \quad\text{et}\quad ab\geq 0\]
+\end{prop}
+\begin{proof}
+  cf Première, et feuille de rappels pour la position du
+  barycentres (plus près de quel point?). Rappels à l'oral sur le cas où les masses sont de  signes contraires.   
+\end{proof}
+
+\subsection{Plans et triangles}
+\subsubsection{Caractérisation barycentrique}
+\paragraph{Plan}
+\begin{prop}
+  Le plan $(ABC)$ est l'ensemble des barycentres de $A$, $B$ et
+  $C$. \emph{i.e.} \[M\in(ABC)\iff\exists (a;b;c)\in \mathbb{R}^3;\ 
+  M=\Bary\{ (A;a);(B;b);(C;c)\}\ \text{avec}\ a+b+c\neq 0 \]
+\end{prop}
+\begin{proof}
+  On prouve les deux sens séparément, en utilisant la caractérisation:\\
+  $M\in(ABC)\iff\exists (x;y)\in \mathbb{R}^2;\ \overrightarrow{AM}=x\overrightarrow{AB}+y\overrightarrow{AC}$
+  \end{proof}
+\paragraph{Intérieur d'un triangle}
+\begin{prop}
+  L'intérieur du triangle $ABC$ est l'ensemble des barycentres de $A$, $B$ et
+  $C$ avec des masses strictement positives. 
+\end{prop}
+\begin{proof}
+  On prouve les deux sens séparément, géométriquement, par le théorème
+  d'associativité. 
+  \begin{dingautolist}{172}
+  \item Soit $a$, $b$, $c$ trois réels strictement positifs. On considère
+    $M=\Bary\{ (A;a);(B;b);(C;c)\}$. Comme $b+c>0$ on peut considérer
+    $H=\Bary\{(B;b);(C;c)\}$ qui appartient à $[BC]$, alors par associativité du barycentre:
+\[ M=\Bary\{ (A;a);(H;b+c)\} \]
+Comme $a$ et $b+c$ sont du même signe, non nuls,
+$M\in[AH]$ différent de $A$ et $H$. Figure. \og Donc \fg{} $M$ est à l'intérieur du triangle $ABC$.
+\item Réciproque, on refait la construction dans l'autre sens. On
+  appelle $H$ l'intersection de $[AM]$ et $[BC]$. Comme $H\in[BC]$
+  (différent de $B$ et $C$) alors il existe $b$
+  et $c$ strictement positifs tels que: $H=\Bary\{(B;b);(C;c)\}$. De
+  même il existe $a'$ et $k$ strictement positifs tels que:
+  $M=\Bary\{(A;a');(H;k)\}$. Par homogénéité en multipliant les masses
+  par $\frac{b+c}{k}$ (strictement positif), on obtient, en notant
+  $a=a' \times \dfrac{b+c}{k}$:
+\[ M=\Bary\{(A;a);(H;b+c)\} \quad\text{donc}\quad M=\Bary\{
+(A;a);(B;b);(C;c)\}\]
+
+  \end{dingautolist}
+  
+  \end{proof}
+  \begin{rem}
+    La preuve peut être refaite avec des masses strictement
+    négatives. Par conséquent, on retiendra qu'un point appartient à
+    l'intérieur du triangle $ABC$ ssi il est barycentre de $A$, $B$ et
+    $C$ affectés de masses non nulles, de même signe.
+  \end{rem}
+  \begin{rem}
+    Si une des masse $a$, $b$ ou $c$ est nulle, le point appartient à un côté du
+    triangle, et si deux masses sont nulles, le point est un sommet du triangle.
+  \end{rem}
+\medskip Exercice d'application: cf Poly \texttt{Barycentres fp3}
+\section{Représentations paramétriques d'une droite de l'espace}
+\subsection{T.P. sur GeoGebra (cas des droites du plan) }
+Compte rendu sur feuille par binôme, puis oral en classe. Ramasser quelques
+comptes rendus.\\
+Questions complémentaires pour faire le point sur leurs connaissances
+et leur compréhension de la problématique soulevée par le TP (à l'oral): 
+\begin{dingautolist}{172}
+\item Une représentation paramétrique d'une droite est elle unique?
+  (Bah non! observer (1) et (2) qui définissent toutes deux~$\Delta$)
+\item Mais alors, quel lien y a-t-il entre ces deux représentations
+  paramétriques?
+\item Quel nom donne-t-on aux vecteurs $\vec{u}\,$ et $\vec{v}\,$ dont
+  on a trouvé les coordonnées au \textbf{6.c.} et \textbf{6.d.}?
+\item Que peut-on dire de ces deux vecteurs (directeurs de $\Delta$) ?
+
+\item Cette condition de colinéarité est elle suffisante pour établir
+  que les deux systèmes représentent la même droite?
+\item Comment caractériser une droite? (Deux points, oui\dots{} mais
+  encore\dots{} barycentres\dots{} vecteur directeur et un point.)
+\end{dingautolist}
+
+\subsection{Caractérisation analytique d'une droite de l'espace}
+\subsubsection*{Introduction}
+\textsl{En T.P. on a étudié le problème physique de la trajectoire rectiligne de deux
+points mobiles dans le plan. On a vu qu'il fallait distinguer point
+d'intersection des trajectoires et \og collision \fg{} des deux
+points mobiles. Dans le plan, pour savoir si des trajectoires
+rectilignes sont sécantes, il suffit de savoir si les droites sont parallèles, ce qui
+est simple.\\
+Que donne le même problème dans l'espace? L'objectif est de savoir
+déterminer par le calcul si deux droites sont sécantes, et le cas
+échéant savoir calculer les coordonnées de ce point
+d'intersection. Pour celà il nous faut une caractérisation analytique
+d'une droite de l'espace. Malheureusement, il n'y a pas d'équation de
+droite dans l'espace\dots{} On verra ensuite qu'une équation de la
+forme $ax+by+cz+d=0$ est en fait celle d'un plan. \\}
+
+\hrule
+\medskip
+
+
+Une droite~$\mathscr{D}$ de~$\mathscr{E}$ est définie:
+\begin{itemize}
+\item Soit par deux points distincts $A$ et $B$ de~$\mathscr{D}$. (Alors  $\mathscr{D}=(AB)$)
+\item Soit par un point $A$ et un vecteur directeur
+  $\vec{u}\,$. (Alors  $(A;\vec{u}\,)$ est un repère de~$\mathscr{D}$)
+\end{itemize}
+\textsl{(Rappels oraux sur les vecteurs directeurs.)}
+\begin{Def}
+ Soit $\vec{u}\,$ un vecteur non nul et $A$ un point
+de~$\mathscr{E}$. La droite passant par~$A$ et de vecteur
+directeur~$\vec{u}\,$ est l'ensemble des points $M$ de~$\mathscr{E}$ tels que
+$\overrightarrow{AM}=t\vec{u}\,$ où $t$ décrit~$\mathbb{R}$.
+\end{Def}
+
+On veut traduire celà avec des coordonnées. Dans la suite, l'espace est rapporté à un repère~$(O~;\vec{\imath},\vec{\jmath},\vec{k})$. 
+\begin{prop}[Représentation paramétrique de droite] Soit $\mathscr{D}$
+  une droite de l'espace. On note $A(x_A;y_A;z_A)$ un point
+  de~$\mathscr{D}$ et $\vec{u}\,(a;b;c)$%
+% \left(
+%     \begin{array}[l]{c}
+%       a\\
+%       b \\
+%       c
+%     \end{array}
+%   \right)$%
+ un vecteur directeur de~$\mathscr{D}$. ($x_A,\,y_A,\,z_A,\,a,\,b,\,c$
+sont des réels avec $a,\,b,\,c$ non tous nuls).\\
+ La droite~$\mathscr{D}$ est l'ensemble des points $M(x;y;z)$
+ de~$\mathscr{E}$ pour lesquels il existe un réel~$t$ tel
+ que~\mbox{$\overrightarrow{AM}=t\vec{u}\,$}. $\mathscr{D}$ est donc caractérisée
+ par le système:
+ \begin{equation}
+   \label{eq:represparadroite}
+\left\{
+\begin{array}{ll}
+x=x_A+ta\\
+y=y_A+tb\\
+z=z_A+tc
+\end{array}
+\right.\quad ,\text{où:}\ t\in\R
+ \end{equation}
+\end{prop}
+\begin{proof} Straight forward.
+Deux vecteurs sont égaux ssi ils ont les mêmes coordonnées. Or:
+\[ \overrightarrow{AM}\left(
+     \begin{array}[l]{c}
+       x-x_A\\
+       y-y_A \\
+       z-z_A
+     \end{array}
+   \right) \quad\text{et}\quad
+ \vec{u}\, \left(
+     \begin{array}[l]{c}
+       a\\
+       b \\
+       c
+    \end{array}
+   \right)\quad\text{donc}\quad %
+t\vec{u}\, \left(
+     \begin{array}[l]{c}
+       ta\\
+       tb \\
+       tc
+    \end{array}
+   \right)
+\]
+$M\in\mathscr{D}\iff \exists t\in\mathbb{R};\ \overrightarrow{AM}=t\vec{u}\,$. En identifiant les trois coordonnées, on obtient le résultat.
+\end{proof}
+Un système comme~\eqref{eq:represparadroite} s'appelle une
+représentation paramétrique de~$\mathscr{D}$. Le paramètre est~$t$. On
+peut mettre n'importe quelle lettre à la place de~$t$. Il peut être
+utile de se représenter~$t$ comme le temps (variant dans $\mathbb{R}$)
+et le point~$M$ comme un point mobile dans l'espace en fonction du
+temps dont les coordonnées vérifient le
+système~\eqref{eq:represparadroite}.
+ \begin{rem}
+  Une représentation paramétrique comme~\eqref{eq:represparadroite}
+  caractérise la droite passant par $A(x_A;y_A;z_A)$ et de vecteur
+  directeur~$\vec{u}\,(a;b;c)$. On peut déterminer
+  $x_A,\,y_A,\,z_A,\,a,\,b,\,c$ à partir du système que constitue~\eqref{eq:represparadroite}.
+  \end{rem}
+\begin{exercice}
+  \begin{enumerate}
+  \item Donner une représentation paramétrique de la droite~$(IJ)$ où
+  $I(-1;\,0;\,2 )$ et $J(3;-2;\,1)$.\\
+Une fois fait: Tout le monde a-t-il la même représentation
+paramétrique? En donner une autre.
+\item Le point $A(3;0,1)$ appartient-il à $(IJ)$? Et $B(3;-2;1)$? Et $C(4;4;4)$?
+\item Donner une représentation paramétrique de la droite parallèle à
+  $(IJ)$ passant par~$A$.
+\item Déterminer l'intersection de $(IJ)$ avec le plan~$(xOy)$.
+
+  \end{enumerate}
+ 
+
+\rotatebox{180}{{\bf Solution:} On choisit un vecteur directeur, par
+  exemple $\overrightarrow{IJ}(4;-2;-1)$ et un point, $I$ ou~$J$\dots}\\
+\end{exercice}
+ 
+Une fois fait: Tout le monde a-t-il la même représentation
+paramétrique? En donner une autre.
+\begin{rem}
+Une droite n'a pas une unique représentation paramétrique. On a le
+choix pour le vecteur directeur et pour le point. Alors comment savoir
+si deux représentations différentes caractérisent la même droite?
+\end{rem}
+
+\centrage{Exercices}
+cf. Représentations paramétriques de droites. fp.1 (fichier \texttt{Exos\_Repres\_par\_droites\_fp1.tex})
+\centrage{Compétences à avoir.}
+\begin{dingautolist}{172}
+\item Savoir vérifier si un point appartient à une droite dont on
+  donne une représentation paramétrique.
+\item Savoir déterminer les coordonnées de deux (ou plus) points sur une droite dont on donne une représentation paramétrique.
+\item Savoir déterminer une représentation paramétrique d'une droite
+  $\mathscr{D}$ connaissant:
+  \begin{itemize}
+  \item Un point et un vecteur directeur de $\mathscr{D}$.
+  \item Deux points distincts de $\mathscr{D}$.
+  \item Un point et sachant que $\mathscr{D}$ est  parallèle à une droite $\mathscr{D}'$ dont on a une représentation paramétrique.
+  %\item 
+  \end{itemize}
+
+\item Savoir décider si deux droites dont on donne des représentations
+  paramétriques sont:
+\begin{itemize}
+  \item Parallèles.
+  \item Confondues.
+  \item Sécantes, et dans ce cas savoir déterminer les coordonnées du point d'intersection.
+  \end{itemize}
+\item Savoir déterminer les coordonnées du point d'intersection (si il
+  existe) d'une
+  droite avec un plan (parallèle à un plan de coordonnées d'abord).
+\end{dingautolist}
+
+
+
+\section{\'Equation cartésienne de plan}
+\newsavebox{\fmbox}
+\newenvironment{fmpage}[1]
+     {\begin{lrbox}{\fmbox}\begin{minipage}{#1}}
+     {\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}}
+
+% Utilisation :
+% \begin{fmpage}{3cm}
+%    Texte à encadrer dans une boîte ne dépassant pas 3
+%    centimètres de large.
+% \end{fmpage}
+%%%% fin exemple %%%%
+%\newcommand{\vn}{\vec{n}\,}% mis dans pan_pan.sty
+On se place dans un repère orthonormal $\oijk$ de l'espace.
+%\section{}
+%\label{sec:para1}
+Soit  $\Para$ le plan passant par $A(x_A;y_A;z_A)$ et de vecteur
+normal~$\vn(a;\,b;\,\,c)$. 
+\[ M\in\Para\iff\V{AM}\cdot\vn =0 \]
+D'où une équation cartésienne de $\Para$:
+$a(x-x_A)+b(y-y_A)+c(z-z_A)=0$.
+%\begin{prop}%\end{prop}
+%\\
+%\shadowbox{
+%\hrule
+%\vspace{0.1cm}
+\\
+\noindent
+\begin{fmpage}{14.8cm}
+{\it
+Tout plan admettant $\vn(a;\,b\,;\,c)$ comme vecteur normal a une
+équation cartésienne de la forme \[\boxed{ax+by+cz+d=0}\]
+Réciproquement toute équation cartésienne de la forme $ax+by+cz+d=0$
+ (avec $a$, $b$, $c$ non tous nuls) est celle d'un plan de vecteur
+ normal $\vn(a;\,b\,;\,c)$.
+}
+\end{fmpage}
+\vspace{0.2cm}
+%}
+%\end{prop}
+
+\noindent
+{\bf En pratique: } Pour trouver une équation d'un plan $\Para$ passant par un
+point $A(x_A;y_A;z_A)$, on cherche un
+vecteur normal (ce qui donne $a$, $b$ et $c$), puis on trouve $d$ en
+utilisant que: 
+\[A\in\Para\iff ax_A+by_A+cz_A+d=0\]
+\exercice
+Soit $\Para$ le plan d'équation: $x+2y-3z+7=0$
+\begin{enumerate}
+\item Donner un vecteur normal à $\Para$ ainsi qu'un point appartenant
+  à $\Para$.
+\item Déterminer l'équation du plan $\mathscr{Q}$ parallèle à $\Para$,
+  passant par $I(1;2;3)$.
+\item Soit $\Para'$ et $\mathscr{Q}'$ d'équations respectives : $5x-y+z+4=0\quad\et{}\quad-2x-4y+6z-1=0$
+Prouver que: $\Para\bot\Para'$ et $\Para\parallele\mathscr{Q}'$
+\item Déterminer une équation du plan médiateur du segment $[AB]$ où:
+  $A(0;-1;2)$ et $B(-2;3;4)$.
+\end{enumerate}
+\hrule
+\vspace{0.2cm}
+{\bf Distance d'un point à un plan.} La distance d'un point
+$A(x_A;y_A;z_A)$ au plan $\Para$
+d'équation cartésienne $ax+by+cz+d=0$ est notée $d(A;\Para)$. Elle
+vaut:
+\[\boxed{d(A;\Para)=\frac{|ax_A+by_A+cz_A+d|}{\sqrt{a^2+b^2+c^2} }}\]
+\begin{proof} $d(A;\Para)=AH$ où $H$ est le projeté orthogonal de $A$
+  sur $\Para$. Soit $B$ un point de~$\Para$. 
+  %\begin{enumerate}
+  %\item 
+Justifier que: $\V{AB}\cdot\vn=\V{AH}\cdot\vn$ puis que:
+    \[\boxed{AH=\frac{|\V{AB}\cdot\vn|}{\|\vn\|}}\]
+%
+%  \item 
+Enfin, justifier que: $d=-(ax_B+by_B+cz_B)$ puis conclure. \end{proof}
+%  \end{enumerate}\end{proof}
+% $H$ est le point de $\Para$ tel que $\V{AH}$ et $\vn$  sont colinéaires. 
+%
+% \begin{rem}%\end{rem}
+% Le dénominateur est la norme du vecteur normal $\vn(a;\,b;\,c)$ au
+% plan $\Para$.
+% \end{rem}
+\noindent
+{\bf Demi-espace.} Toute inéquation de la forme $ax+by+cz+d\geq 0$ ou
+$ax+by+cz+d\leq 0$ définit un demi-espace fermé de frontière le plan
+$\Para$ d'équation $ax+by+cz+d=0$.
+\exercice
+On considère le plan $\Para$ d'équation: $x-2y+3z-2=0$ et le point $A(1;3;1)$
+\begin{enumerate}
+\item Le point $A$ appartient-il à $\Para$? Calculer la distance $d(A;\Para)$.
+\item Le plan $\Para$ est la frontière de deux demi-espaces. Donner
+  une inéquation du demi-espace contenant le point~$A$.
+\end{enumerate}
+%\section{Angles et distances}
+%\subsection{distance entre deux points}
+%\subsection{distance d'un point à un plan}
+%{\bf Distance d'un point à un plan.} 
+%\begin{prop}%\end{prop}
+
+\hrule
+\vspace{0.2cm}
+\noindent
+{\bf Sphère.}
+%\section{\'Equation cartésienne de sphère}
+ La sphère $\mathscr{S}$ de centre $\Omega(x_\Omega;\,y_\Omega;\,z_\Omega)$ et de
+rayon $R$ ($R\in\R^+$) a pour équation cartésienne:\\
+$\circ$\hspace{\stretch{1}}
+$\boxed{(x-x_\Omega)^2+(y-y_\Omega)^2+(z-z_\Omega)^2=R^2}$ \hspace{\stretch{1}}$\circ$
+\begin{proof}
+$M\in\mathscr{S}\iff \Omega M=R\iff \Omega M^2=R^2 \iff \V{\Omega M}\cdot\V{\Omega M}=R^2$
+\end{proof}
+\noindent
+L'ensemble des points $M$ de l'espace tels que $\V{MA}\cdot\V{MB}=0$
+est la sphère de diamètre $[AB]$.
+
+\chapter{\'Equations différentielles}
+\section{Définition, exemples d'équations différentielles}
+On en a déjà vu lors de la définition de l'exponentielle: $y'=y$. 
+\section{\'Equation linéaire du premier ordre sans second menmbre}
+\section{\'Equation linéaire du premier ordre avec second menmbre}
+
+\chapter{Probabilités et dénombrement}
+
+\section{Probabilités conditionnelles}
+\section{Combinatoire}
+\subsection{Dénombrer des listes}
+Dans ce paragraphe, $E$ désigne un ensemble à $n$ éléments ($n\in
+\N^*$). On imagine l'existence d'une urne $U$ contenant $n$ jetons sur
+lequels sont inscrits les $n$ éléments de $E$. 
+\begin{Def} On appelle \emph{liste} de $p$ éléments de $E$ une énumération
+  {\bf ordonnée} de ces $p$ éléments. On la note comme des coordonnées
+  de points.
+\end{Def}
+\exemple Si $a$, $b$, $c$ sont trois éléments de $E$, $(a\,;b\,;c)$ et
+$(a\,;c\,;b)$ sont deux listes distinctes avec les trois éléments $a$,
+$b$ et $c$.
+Dans ce paragraphe on s'intéresse donc à dénombrer dans des situations
+où l'{\bf ordre} des éléments compte.
+\subsubsection{Permutations d'un ensemble}
+% On veut répondre aux questions du type:
+% \begin{list}{$\bullet$}{}
+% \item Combien peut-on écrire de mots distincts avec les lettres A, B, C?
+% \item Combien y a-t-il de quintés avec les chevaux 1, 2, 3, 4, 5?
+% \item Combien y a-t-il de listes des $n$ éléments de $E$?
+% \end{list}
+Le modèle est celui du tirage aléatoire dans l'urne $U$ des $n$
+jetons, sans remise, et en notant l'ordre de sortie.
+\begin{Def} On
+  appelle \emph{permutation} de $E$ une liste de ses $n$ éléments.
+\end{Def}
+\exemple Si $E=\left\{A,\,B,\, C\right\}$ il y a six permutations de
+$E$ et donc six mots distincts avec les trois lettres $A$, $B$ et $C$. On les
+trouve avec un arbre en distinguant les choix pour le 1\ier{}, le 2\ieme{} et
+le 3\ieme{} élément: ABC, ACB, BAC, BCA, CAB, CBA.
+\begin{Def} Soit $n\in\N^*$. On note $n!$ l'entier appellé
+  \emph{factorielle $n$} défini par: $n!=1\times 2\times\cdots\times
+  n$.
+Par convention on pose $0!=1$
+\end{Def}
+\begin{prop}
+Il y a $n!$ \emph{permutations} des $n$ éléments de $E$.
+\end{prop}
+\begin{proof} On le prouve avec un arbre ou en imaginant remplir des
+  cases: Il il a $n$ choix pour le 1\ier{} élément, et pour chacun de
+  ces choix il y a $n-1$ choix pour le 2\ieme{} élément \ldots \emph{etc}
+  puis plus qu'un choix pour le dernier élément. On trouve donc:
+  $n\times(n-1)\times\cdots\times 1=n!$
+\end{proof}
+\exemple Cinq chevaux font la course. Combien y a-t-il d'arrivées
+possibles (on suppose qu'il ne peut pas y avoir
+d'\emph{ex-\ae{}quo}). Une arrivée est une permutation de l'ensemble
+des cinq chevaux. Il y a donc $5!=120$ quintés possibles avec 5 chevaux donnés.
+
+ 
+\subsubsection{Liste sans répétition de $p$ éléments parmi $n$}
+Le modèle est celui du tirage aléatoire dans l'urne $U$ de $p$
+jetons, {\bf sans remise}, et en notant l'ordre de sortie. Où $p$ est entier,
+$1\leq p\leq n$.
+\begin{Def} Une \emph{liste sans répétition} de $p$ éléments de $E$ est une
+  liste où les $p$ éléments sont deux à deux distincts.
+\end{Def}
+\begin{prop}
+Il y a $\dfrac{n!}{(n-p)!}=n\times(n-1)\times\cdots\times (n-(p-1))$  listes sans répétition de $p$ éléments de $E$.
+\end{prop}
+\begin{proof} On le prouve avec un arbre ou en imaginant remplir des
+  cases: Il il a $n$ choix pour le 1\ier{} élément, et pour chacun de
+  ces choix il y a $n-1$ choix pour le 2\ieme{} élément \ldots \emph{etc}
+  puis $(n-(p-1))$ choix pour le $p$\ieme{} et dernier élément.
+\end{proof}
+\exemple Combien y a-t-il de tiercés possibles avec $10$ chevaux au
+départ? Ici $E$ est l'esemble des 10 chevaux. Un tiercé est une liste
+sans répétition de trois de ces chevaux. Il y a donc: $\dfrac{10!}{7!}=10\times 9\times 8=720$ tiercés
+possibles avec $10$ chevaux au départ.
+\subsubsection{Liste avec répétition de $p$ éléments parmi $n$}
+Le modèle est celui du tirage aléatoire dans l'urne $U$ de $p$
+jetons, {\bf avec remise}, et en notant l'ordre de sortie. Ici
+$p\in\N$. On peut donc avoir $p\geq n$.
+\begin{Def} Une \emph{liste avec répétition} de $p$ éléments de $E$ est une
+  liste où les $p$ éléments ne sont pas nécessairement deux à deux distincts.
+\end{Def}
+\og{} Avec répétition \fg{} est donc à comprendre au sens où \og il peut y
+avoir répétiton\fg{}. Remarquez que si $p>n$ il y a nécéssairement
+répétition. (C'est le principe des tiroirs: Si il y a plus de
+chaussettes que de tiroirs, il y a au moins un tiroir qui comporte au
+moins deux chaussettes.)
+\begin{prop}
+Il y a $n^p$ listes avec répétition de $p$ éléments de $E$.
+\end{prop}
+\exemple Combien y a-t-il de points de l'espace dont les coordonnées sont $-1$
+ou $1$? Ici $p=3$ et $n=2$ car $E=\{-1;\,1\}$. Il y a deux choix pour
+l'abscisse, deux pour l'ordonnée et deux aussi pour la cote. Soit
+$2^3=8$ points en tout. Ce sont les coordonnées des sommets d'un cube. 
+
+\subsection{Combinaisons}
+Maintenant on ne dénombrera plus des listes mais des sous ensembles de
+$E$, l'ordre des éléments ne comptera pas. $E$ désigne encore un ensemble à $n$ éléments ($n\in
+\N^*$) et $p$ désigne un entier compris entre $0$ et $n$.\\
+\noindent Le modèle est celui du tirage aléatoire dans l'urne $U$ de $p$
+jetons, {\bf sans remise}, et sans tenir compte de l'ordre de sortie.
+\subsubsection{Choisir $p$ éléments parmi $n$}
+\begin{Def} Une \emph{combinaison} de $p$ éléments de $E$ est un sous
+  ensemble (ou partie) de $E$ qui comporte $p$ éléments.
+\end{Def}
+\begin{Def} Le nombre de combinaisons de $p$ éléments d'un  ensemble à
+  $n$ éléments est noté:$\binom{n}{p}$ et se lit \og{}$p$ parmi $n$\fg{}. (En France
+  on le  notait autrefois $\mathrm{C}_n^p$)
+\end{Def}
+
+\exemple Si $E=\left\{a\,;\,b\,;\,c\right\}$, alors:
+  \begin{list}{$\bullet$}{}
+  \item $\binom{3}{3}=1$. Il y a une combinaison de  trois éléments de $E$, c'est $E$ lui même.
+  \item $\binom{3}{2}=3$. Il y a trois combinaisons de deux éléments de $E$:
+    $\left\{a\,;\,b\right\}$; $\left\{a\,;\,c\right\}$; $\left\{b\,;\,c\right\}$
+  \item $\binom{3}{1}=3$. Il y a trois combinaisons d'un élément de $E$:
+    $\left\{a\right\}$; $\left\{b\right\}$; $\left\{c\right\}$
+
+  \item $\binom{3}{0}=1$. Il y a une combinaison de 0 élément de $E$ c'est l'ensemble vide: $\emptyset$
+  \end{list}
+{\bf Calculette.} Pour calculer $\binom{5}{3}$ à la calculette, utiliser la fonction notée nCr (5 nCr 3 {\sc Exe}). Menu Proba (TI:
+Math/Prb, Casio: Optn/Prob). 
+\subsubsection{Nombre de combinaisons}
+
+\begin{prop}
+$\displaystyle \boxed{\binom{n}{p}=\frac{n!}{p!(n-p)!}}$
+\end{prop}
+\begin{proof} On sait qu'il y a  $\frac{n!}{(n-p)!}$ listes sans
+  répétition de $p$ éléments de $E$. Quand on a un ensemble à $p$
+  éléments il y a $p!$ permutations, soit $p!$ listes sans répétition
+  avec ces $p$ éléments. C'est pourquoi pour obtenir le nombre de
+  parties (\ie{} de combinaisons) de $E$ à $p$ éléments on doit
+  diviser $\frac{n!}{(n-p)!}$ par $p!$
+\end{proof}
+\exemple Combien y a-t-il de mains différentes au bridge? (On joue à
+quatre au bridge avec un jeu de 52 cartes que l'on distribue
+entièrement). On doit donc compter le nombre de façons de choisir 13
+cartes parmi 52, soit $\binom{52}{13}=\frac{52!}{13!(39)!}=1905040678800\approx 1,9.10^{12}$
+%%%
+\section{Loi de probabilités discrètes}
+\subsection{Définitions}
+Soit $\Omega$ un univers fini à $n$ éléments ($n\in\N$). On note
+$(\omega_i)_{1\leq i\leq n}$ les $n$ événements élémentaires qui
+constituent $\Omega$. Donc $\Omega=\{\omega_1;\,\omega_2;\ldots ;\omega_n\,\}$
+\begin{Def}
+  On appelle \emph{variable aléatoire} sur $\Omega$ toute fonction $X$ qui va de
+  $\Omega$ dans $\R$. Pour chaque $i=1,2,\ldots, n$ on note
+  $x_i=X(\omega_i)$.
+  \begin{eqnarray}
+    X:&&\Omega \to \R\notag\\
+       &&\omega_i \mapsto X(\omega_i)=x_i \notag
+  \end{eqnarray}
+\end{Def}
+L'ensemble des $x_i$ est donc l'ensemble des valeurs possibles pour
+$X$. 
+\exemple {\sl Une urne contient 3 jetons noirs et 2 jetons blancs. On tire
+sans remise deux jetons dans une urne. On note $X$ le nombre de jetons
+noirs tirés.}\\
+On peut choisir: $\Omega=\{ \{N;N \};\{N;B \};\{B;B \} \}$\\
+ Alors:
+$X\left(\{N;N \}\right)=2$ ; $X(\{N;B \})=1$ ; $X(\{B;B\})=0$. \\
+On peut aussi choisir: $\Omega'=\{ (N;N);(N;B);(B;N);(B;B) \}$. On
+aurait alors: \\
+ $X((N;B))=X((B;N))=1$\ldots
+
+\begin{Def} On appelle \emph{loi de probabilité} d'une variable aléatoire $X$
+  la donnée pour chaque valeur $x_i$ possible pour $X$ de
+  $p_i=P(X=x_i)$. On la présente en général sous forme de tableau.
+ 
+\end{Def}
+ Ce tableau est à rapprocher de ceux qu'on peut dresser en
+ statistiques lorsqu'on a une série de valeurs et leur fréquence
+ d'aparition.
+ \begin{prop}
+   La somme des $p_i=P(X=x_i)$ vaut 1.
+ \end{prop}
+Cela vient de ce que les \og$X=x_i$\fg{} forment une partition de $\Omega$.
+\exemple On reprend l'exemple précédent. On dresse un arbre 
+\verb#(Revoir le code pstricks)#
+
+% \psset{radius=6pt,dotsize=4pt,treefit=loose}
+% \begin{center}
+% \pstree[treemode=R]
+%     {\Tcircle{0}}
+%     {\pstree{\Tcircle{N}^{$\frac{3}{5}$}}%_{$\frac{1}{2}$}}
+%             {\pstree{\Tcircle[name=XU2,linestyle=dashed]{N}}%^{U}}
+%                     {\Tdot~{(N,N)}^{L}
+%                      \Tdot~{(4,1)}_{R}}
+% \pstree{\Tcircle[name=XD2,linestyle=dashed]{B}}
+%                     {\Tdot~{(3,0)}^{L}
+%                      \Tdot~{(1,1)}_{R}}}
+%     \pstree{\Tcircle{B}_{$\frac{1}{2}$}}%_{Y}}
+%            {\pstree{\Tcircle[name=YU2,linestyle=dashed]{N}}
+%                     {\Tdot~{(1,2)}^{L}
+%                     \Tdot~{(2,0)}_{R}}
+%             \pstree{\Tcircle[name=YD2,linestyle=dashed]{B}}
+%                     {\Tdot~{(3,3)}^{L}
+%                     \Tdot~{(0,1)}_{R}}}}
+% \end{center}
+\vspace{4cm}
+On trouve
+$P({N;N})=0,3$; $P({N;B})=0,6$; $P({B;B})=0,1$. D'où la loi de $X$.
+\[
+\begin{array}{|c|c|c|c|}
+\hline
+  x_i&0&1&2 \\ \hline
+P(X=x_i)&0,1&0,6&0,3 \\
+\hline
+\end{array}
+\]
+\begin{Def} On appelle \emph{fonction de répartition} d'une variable aléatoire $X$
+  la fonction $F$ définie sur $R$ par:  $F(x)=P(X\leq x)$. 
+\end{Def}
+Cette fonction est croissante sur $\R$, varie de 0 à 1 mais n'est
+\emph{a priori} pas continue. En effet dans notre cas présent, $X$ ne prend qu'un nombre
+fini de valeurs. En chacune de ces valeurs $x_i$, $F$ présente une
+discontinuité et même plus précisément un saut de hauteur $P(X=x_i)$. Entre deux
+valeurs consécutives, $F$ est constante.
+\exemple On reprend notre exemple. Pour $x<0$, $P(X<x)=0$ et
+$P(X=0)=0,1$ donc $P(X\leq 0)=0,1$. Soit $F(0)=0,1$ etc \ldots
+
+La connaissance de $F$ permet de rouver la loi de probabilité de
+$X$. Plus tard, on définira des variables aléatoires continues, par leur fonction de répartition.
+\subsection{Espérance mathématique, variance}
+
+\begin{Def} $E(X)=\sum \ldots$
+\end{Def}
+Linéarité 
+
+\begin{prop}
+  $ E(X+Y)=E(X)+E(Y)$
+ \end{prop}
+\begin{prop}
+$   E(aX+b)=aE(X)+b$
+ \end{prop}
+
+\begin{Def} $V(X)=E\left(\left(X-E(X)\right)^2\right)$
+\end{Def}
+\begin{prop}
+$V(X)=E(X^2)-E(X)^2$
+ \end{prop}
+\section{Lois continues}
+
+\chapter{Intégration}
+\section{Aire sous une courbe}
+\subsection{Aire sous la parabole}
+\begin{minipage}{9cm}
+On considère dans un repère orthonormé la courbe de la fonction carré,
+sur l'intervalle $I=\intf{0}{1}$. On veut calculer l'aire du domaine
+entre la courbe et l'axe des abscisses, pour $x$ variant de $0$
+à~$1$. Le principe de la méthode exposée était déja connu d'Archimède,
+et a donné lieu bien plus tard (Newton, Leibniz puis Riemann) à la
+théorie de l'intégration.\\
+  \noindent
+{\bf Principe:} On se donne un $n\in\N^*$. On découpe l'intervalle $I$ avec une
+\emph{subdivision} de $I$ en $n$ intervalles de longueur
+$\frac{1}{n}$. On considère alors (cf figure pour n=?) les aires de
+deux suites de rectangles, de manière à obtenir un encadrement de
+l'aire cherchée. On calcule les deux aires, puis on fait tendre $n$
+vers l'infini.
+\end{minipage}\hfill%
+\begin{minipage}{5.5cm}
+  \begin{center}
+\includegraphics[width=5cm]{/home/pan/Desktop/TeX_MiX/Figures/Courbes/integrale_carre}    
+  \end{center}
+\end{minipage}
+\vspace{0.0cm}
+\\
+\noindent
+Compléter la figure en notant les abscisses des sommets des rectangles
+qui sont sur l'axe des abscisses.
+On note $a_n$ l'aire des rectangles qui sont sous la courbe et
+  $A_n$ celle des rectangles qui vont de l'axe des abscisses jusqu'au
+  dessus de la courbe. 
+\begin{enumerate}
+\item Calcul de $a_n$:%
+  \begin{enumerate}
+  \item L'aire du premier rectangle sous la courbe est nulle, celle du second est
+    $\frac{1}{n}\times
+    \left(\frac{1}{n}\right)^2=\frac{1}{n^3}$. Combien y a-t-il de
+      rectangles sous la courbe?
+    \item \'Ecrire sans, puis avec symbole sigma l'expression de $a_n$.
+  \end{enumerate}
+\item Procéder de même pour donner l'expression de $A_n$ en fonction
+  d'une somme de carrés d'entiers.
+
+\item Calculer et donner la limite de $A_n-a_n$.
+\item En utilisant la formule: $\displaystyle
+  \sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}$ prouver que $a_n$ et $A_n$
+  ont une limite commune, et en déduire l'aire cherchée que l'on note:
+\[\int_0^1 x^2 {\rm d}x\]
+\end{enumerate}
+
+
+
+\subsection{Fonction aire}
+\begin{minipage}{6.5cm}
+  On étudie un cas un peu plus général. On considère une
+  fonction $f$ décroissante et continue sur un intervalle. On note
+  $C_f$ sa courbe. Sur la
+  figure, $f$ est décroissante sur $\R^+$. On appelle $A(x)$ l'aire entre la
+  courbe et l'axe des abscisses pour les abscisses variant de 0 à
+  $x$. C'est le domaine grisé. 
+\end{minipage}\hfill%
+\begin{minipage}{7.3cm}
+  \begin{center}
+    %\includegraphics[width=7.1cm]{/home/pan/Desktop/TeX_MiX/Figures/Courbes/courbe_integrale} %[width=]
+\includegraphics[width=7.1cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.1} %
+  \end{center}
+\end{minipage}\\
+\begin{enumerate}
+\item Donner en utilisant les rectangles
+  tracés un encadrement pour $h>0$ de la différence: 
+\[A(x+h)-A(x)\]
+en fonction de $f$.
+\item En déduire que la fonction $A$ est dérivable en $x$, et donner
+  l'expression de sa dérivée.
+
+\item Combien vaut $A(0)$?
+\item Peut-on obtenir le même résultat si $f$ est croissante?
+\item {\bf Application} 
+  \begin{enumerate}
+  \item Vérifier le calcul de la première
+  partie: Trouver une fonction $A$ dont la dérivée a pour expression:
+  $x^2$ et telle que $A(0)=0$
+\item Déterminer l'aire sous la parabole de la fonction carré mais pour $x$
+variant entre $-1$ et~$2$.
+\item Vérifier qu'avec cette méthode on retrouve bien l'aire du
+  rectangle de côtés $a$ et $b$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Primitive}
+Déterminer l'aire sous la parabole de la fonction carré mais pour $x$
+variant entre $-1$ et~$2$. 
+
+\section{Notion d'intégrale et aire}
+Repère orthogonal, $\oij$ unité d'aire petit dessin.\\
+
+
+{\bf Aire et intégrale d'une fct cont positive.}\\
+
+\begin{Def} Soit $f$ cont positive sur un intervalle $[a;b]$ et $\Cr$ sa
+  courbe dans
+$\oij$. l'intégrale ... est l'aire du domaine délimité par $\Cr$,
+$(Ox)$ et les droites $x=a$ et $x=b$
+\end{Def}
+\begin{rem} La variable est muette, on met ce qu'on veut.
+\end{rem}
+\begin{rem} On lit intégrale de \dots ou somme de\dots
+\end{rem}
+\begin{rem} $a$ et $b$ sont les bornes de l'intégrale.
+\end{rem}
+
+On a vu que l'aire s'obtient comme somme d'aires de rectangles de
+largeur infinitésimale $\ud x$ et de hauteur $f(x)$ ce qui explique la
+notation due à Leibniz (1646-1716)
+\exemple $\int_{-2}^{0}3 \ud x=6$ (rectangle) et $\int_{1}^{3} t \ud
+t=4$ (trapèze)
+\item Valeur approchée d'intégrale.\\
+Il suffit de décomposer l'aire cherchée en rectangles, triangles et ou
+trapèzes pour obtenir une valeur approchée voire un encadrement de
+l'intégrale cherchée. 
+La calculatrice permet d'obtenir graphiquement une valeur approchée de
+l'intégrale et un joli coloriage.
+L'unité est unité d'aire (u.a.) Si on veut l'aire en ${\rm cm^2}$ il
+faut calculer combien de ${\rm cm^2}$ mesure 1 u.a.
+
+
+
+\section{Intégrale et primitive}
+On a établi le lien entre primitive et intégrale hier.
+
+\subsection{Primitive d'une fonction continue}
+\begin{Def} Soit $f$ une fonction continue sur un intervalle $I$. On appelle
+  primitive de $f$ sur $I$ une fonction $F$ dérivable sur $I$ telle
+  que: $F'=f$
+\end{Def}
+\exemple $(x^3)'=3x^2$ donc une primitive de $3x^2$ est $x^3$.
+\begin{prop}
+  Si F et G sont deux primitives de $f$ alors elles diffèrent d'une constante.
+\end{prop}
+
+\begin{proof}
+  $(F-G)'=0$
+\end{proof}
+
+\begin{prop}
+  Unicité. Soit $f$  continue positive sur un intervalle $\intf{a}{b}$
+  alors $f$ admet une unique primitive qui s'annule en $a$:
+\[  F(x)=\int_a^x f(t)\ud t\]
+\end{prop}
+\begin{proof}
+ On l'a prouvé dans le cas d'une fonction monotone en TD. On l'admet
+ dans le cas général.
+\end{proof}
+\begin{rem} La condition de continuité est suffisante mais pas
+  nécessaire \dots
+\end{rem}
+\subsection{Généralisation de l'intégrale à l'aide de primitive}
+Ici on se débarrasse de la condition de positivité et de l'ordre de
+$a$ et $b$:
+\begin{Def} $f$ cont sur $I$ contenant $a$ et $b$, $F$ une prim de $f$ alors:
+\[ \int_a^b f(x)\ud x=F(b)-F(a)\]
+\end{Def}
+
+
+%%-----------------------
+
+%\printindex
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%-----------------------------------------%%%
+%%%  Ci dessous un modèle de fiche  d'exos  %%%
+%%%-----------------------------------------%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan} 
+\usepackage[marginratio=1:1,textwidth=15cm,lines=59,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\begin{document}
+\fexos{Complexes}{\term}
+%\Titre{}
+\lfoot{} % si commenté donne \footnotesize{Prof. \bsc{Pantaloni} \copyright }
+\cfoot{} % si commenté donne page n° x/ nb_de_pages
+\input{Exos/exo-7_1/texte.tex}
+\input{Exos/exo-7_2/texte.tex}
+\end{document}
+%%%-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-o0o-
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%-----------------------------------------%%%
+%%%  Ci dessous Le fichier pan_pan.sty      %%%
+%%%-----------------------------------------%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Il est recopié ci dessous (je sais c'est trop long...)
+% Uncomment (just once) à partir de la ligne ci_dessous
+

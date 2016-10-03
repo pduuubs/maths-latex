@@ -1,0 +1,360 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan}
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\begin{document}
+\fcours{Fonctions continues}
+\section{Continuité}
+\subsection{Définitions, exemples et contre exemples}
+La continuité est une notion de \emph{régularité} des fonctions. En
+voici une définition heuristique:
+\begin{Def}
+On dit qu'une fonction $f$ est continue sur un intervalle $I$ lorsque
+$f$ est définie sur $I$ et que sa courbe sur $I$ peut se tracer \og sans lever le crayon \fg{}.
+\end{Def}
+
+\begin{rem}
+Cette définition est évidement uniquement intuitive, une \emph{vraie}
+définition utilise les limites en un point (cf définition suivante).
+\end{rem}
+
+\begin{Def}
+On dit qu'une fonction $f$ est continue en $a$ ($a\in\R$) si les trois
+conditions suivantes sont vérifiées:
+\begin{dingautolist}{172}
+\item $f$ est définie en $a$.
+\item $f(x)$ admet une limite quand $x$ tend vers $a$.
+\item $\displaystyle \lim_{x\to a}f(x)=f(a)$
+\end{dingautolist}
+\end{Def}
+\noindent Si l'une quelconque de ces trois conditions n'est pas vérifiée, on dit
+que $f$ n'est pas continue en $a$, ou qu'elle présente une
+discontinuité en~$a$. 
+\begin{rem}
+Parfois le comportement d'une fonction $f$ est différent à gauche et à
+droite d'un réel $a$. Il pourra alors être utile pour étudier
+l'existence d'une limite en $a$ d'étudier les éventuelles limites à
+gauche et à droite de $a$, \emph{i.e.}:
+\[ \lim\limits_{ x \to a \atop x < a } f(x) \quad\text{et}\quad
+\lim\limits_{ x \to a \atop x > a } f(x)\]
+Si ces limites existent, alors, dire que  $f$ est continue en $a$
+revient à dire que ces deux limites sont égales à $f(a)$.
+\end{rem}
+\noindent Les quatre fonctions $f$ représentées ci--dessous présentent
+une discontinuité en~$1$. Dire lequel des trois points de la
+définition est mis en défaut et pourquoi.\\\noindent
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.20}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.21}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.22}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.23}%
+\\\noindent
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\] \end{minipage}}%
+
+\begin{Def}
+On dit qu'une fonction $f$ est continue sur un intervalle $I$ lorsque
+$f$ est continue en tout réel $a$ de~$I$.
+\end{Def}
+{\bf Convention} Dans un tableau de variation, lorsqu'on note une
+flèche pour une fonction croissante (ou décroissante) sur un
+intervalle, cette flèche signifie aussi la continuité de la fonction
+sur l'intervalle. On mettrait une double barre en un point de discontinuité.
+\begin{prop}
+  Une fonction dérivable sur un intervalle est continue sur cet intervalle.
+\end{prop}
+\Danger La réciproque est fausse. Contre--exemple: La fonction valeur
+absolue. Elle est continue sur~$\mathbb{R}$ mais non dérivable en~0.
+La dérivabilité est donc une notion de régularité plus forte que
+la continuité.
+\begin{proof}(Du contre--exemple)
+  $|x|= 
+\begin{cases} x & \text{if $x\geq 0$,}
+\\
+-x &\text{if $x\leq 0$.}
+\end{cases}\implies%
+\frac{|x|}{x}= 
+\begin{cases} 1 & \text{if $x> 0$,}
+\\
+-1 &\text{if $x< 0$.}
+\end{cases}$\\
+Le taux de variation de la valeur absolue en 0 a une limite à gauche
+qui vaut -1, et une limite à droite qui vaut 1. Donc la limite en 0
+n'existe pas.
+
+\end{proof}
+\begin{proof}
+  On écrit l'approximation affine avec une fonction $\epsilon$ telle
+  que: $\lim\limits_{ x \to a } \epsilon(x) =0$:
+\[f(x)=f(a)+(x-a)f'(a)+\epsilon(x)\]
+\end{proof}
+\begin{prop} (Admise)
+Les fonctions usuelles: polynômes, racine carrée, valeur absolue,
+fractions rationnelles, $\sin$, $\cos$,(bientôt  $\exp$ et $\ln$) et leurs composées sont continues sur les intervalles où elles sont définies.
+\end{prop}
+Cette propriété permet de justifier la continuité d'une fonction en un
+point ou sur un intervalle.
+\exemple Soit $f$ définie par: $f(x)=\sqrt{x^2-1}$. $f$ est définie
+dès que $x^2-1$ est positif donc sur les intervalles
+$\intof{-\infty}{-1}$ et $\intfo{1}{+\infty}$. Sur chacun de ces
+intervalles, $f$ est la composée de la fonction racine (continue sur
+$\R^+$) et d'un polynôme (donc continu sur $\R$). Ainsi $f$ est
+continue sur les intervalles $\intof{-\infty}{-1}$ et
+$\intfo{1}{+\infty}$. La phrase \og{\sl $f$ est continue sur les intervalles $\intof{-\infty}{-1}$ et
+$\intfo{1}{+\infty}$ comme composée  de fonctions continues}\fg{} est plus
+vague mais suffira.\\
+
+Cependant il existe des fonctions qui ne sont pas continues:
+
+\subsection{La fonction partie entière}
+\begin{Def}
+On appelle partie entière d'un réel $x$, notée $E(x)$, le plus grand entier inférieur ou égal à $x$. \ie{} $E(x)$ est l'entier $n$ tel que: $n\leq x < n+1$
+ \end{Def}
+\exemples $E(2,36)=2$;  $E(2)=2$; $E(\pi)=3$; $E(-2,36)=-3$
+\begin{prop}
+Pour tout entier $n$, sur l'intervalle $\intfo{n}{n+1}$, la fonction partie entière est constante égale à~$n$. Elle n'est pas continue sur $\R$, elle admet une discontinuité pour chaque entier.%\ie{} $\forall x \in \intfo{n}{n+1},\ E(x)=n$
+\end{prop}
+\begin{proof} Soit $n\in\Z$. Par définition de $E$, pour
+  $x\in\intfo{n}{n+1}$ on a $E(x)=n$. Prouvons la discontinuité de $E$
+  en~$n+1$. Par passage à la limite (en restant dans l'intervalle
+  $\intfo{n}{n+1}$): 
+\[ %\displaystyle 
+\lim_{x\rightarrow n+1\atop x<n+1}  E(x)=n\neq E(n+1)=n+1 \]
+
+\end{proof}
+On en déduit la courbe de la fonction partie entière, on dit que c'est une fonction en escalier.
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.9} %\hfill  \includegraphics{courbe.8}
+\end{center}
+\subsection{Prolongement par continuité}
+\exemple La fonction $f$ définie sur $\R\setminus \{3\}$ par:
+\[f(x)=\frac{x^2-9}{x-3}\] n'est pas continue sur $\R$ car non définie
+en $3$, mais:
+\[ x\neq 3\implies f(x)=\frac{(x-3)(x+3)}{x-3}=x+3\]
+Ainsi la courbe de $f$ est la droite d'équation: $y=x+3$ à laquelle il
+manque le point d'abscisse~3. On pose alors la fonction $\widetilde{f}$ définie sur
+$\R$:
+\[ \widetilde{f}(x)=x+3.\quad \text{donc}\quad \widetilde{f}(x)=
+\begin{cases} f(x) & \text{si $x\neq 3$,}
+\\
+6 &\text{si $x=3$.}
+\end{cases}
+\]
+La fonction $\widetilde{f}$ est alors continue sur $\R$, on dit que
+c'est un prolongement de $f$ par continuité en~3.
+\exemple La fonction $f$ définie sur $\R^*$ par $f(x)=\dfrac{\e^x-1}{x}$ n'est pas définie en zéro, mais on a vu que sa limite en zéro
+existe et vaut 1. On peut \og prolonger la fonction $f$ par
+continuité\fg{} en~0, en posant la fonction $\tilde f$ définie sur
+$\R$ par:
+$\tilde f(x)=f(x)$ si $x\in\R^*$ et $\tilde f(0)=1$
+\section{Théorème des valeurs intermédiaires}
+
+\begin{theo}{\bf Théorème des valeurs intermédiaires.}
+Soit $f$ une fonction continue sur un intervalle $\intf{a}{b}$. Soit $\lambda$ un réel compris strictement entre $f(a)$ et $f(b)$. Alors l'équation $f(x)=\lambda$ admet au moins une solution dans l'intervalle ouvert $\into{a}{b}$.
+\end{theo}
+
+\begin{rem}
+Si la fonction n'est pas continue, cette propriété n'est pas nécessairement vérifiée. La fontion partie entière fournit un contre exemple: $E(0)=0$ et $E(1)=1$ mais l'équation $E(x)=0,5$ n'a pas de solution dans $\into{0}{1}$ (ni ailleurs).
+\end{rem}
+
+\begin{prop}[Cas particulier important: $\lambda=0$]
+Soit $f$ une fonction continue sur un intervalle $\intf{a}{b}$ avec $f(a)$ et $f(b)$ de signes contraires, alors l'équation $f(x)=0$ admet au moins une solution dans l'intervalle ouvert $\into{a}{b}$
+\end{prop}
+C'est un cas particulier, mais en fait cette propriété est équivalente
+au théorème des valeurs intermédiaires, et on la démontre par
+dichotomie en utilisant des suites adjacentes qui convergent vers une
+racine de $f$. (cf TD)\\
+Ces propriétés nous garantissent l'existence de solutions pour des
+équations mais ne nous fournissent pas les solutions, ni leur unicité, juste des intervalles où elles se trouvent. On peut donc avec la calculatrice trouver des encadrements à la précision souhaitée des solutions cherchées.
+
+\exemple
+Sur le graphique ci-dessous, on a une courbe $\Cr$ représentant une fonction continue $f$ sur l'intervalle $\intf{-3}{2}$. On a $f(-3)=-1$ et $f(2)=$1,5. Comme la valeur $\lambda=1$ est comprise entre $-1$ et 1,5  le théorème des valeurs intermédiaires nous assure que l'équation $f(x)=1$ admet au moins une solution (ici il y en a trois) sur l'intervalle $\into{-3}{2}$. Autrement dit, la courbe $\Cr$ coupe la droite d'équation $y=1$ sur cet intervalle.
+
+\begin{center}
+\psfrag{C}{$\Cr$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.10} 
+\end{center}
+
+En pratique, la simple lecture d'un tableau de variation permet de
+répondre aux questions du type: ``Combien l'équation $f(x)=\lambda$
+admet elle de solutions? Donner des encadrements de ces solutions.''
+Rappel: on admet qu'une flèche dans un tableau de variation traduit
+aussi la continuité de la fonction sur l'intervalle en question. La
+version suivante du théorème des valeurs intermédiares permet de
+garantir l'unicité de la solution:
+
+\begin{theo}[Utile en pratique\footnote{On dit dans ce cas que $f$ réalise une \emph{bijection}
+croissante de $\intf{a}{b}$ dans $\intf{f(a)}{f(b)}$. C'est pourquoi
+cette propriété est parfois appellée \og théorème de la bijection\fg{}.}]
+Soit $f$ une fonction continue et strictement croissante sur un
+intervalle $\intf{a}{b}$. Soit $\lambda$ un réel tel que: $f(a)<
+\lambda < f(b)$.  Alors l'équation $f(x)=\lambda$ admet une {\bf unique} solution dans l'intervalle ouvert $\into{a}{b}$.
+\end{theo}
+\begin{proof}   Laissé en exercice: 
+On sait qu'il existe une solution $\alpha$ par le TVI. Prouvons
+qu'elle est unique: Comme $f$ est strictement croissante
+sur~$\intf{a}{b}$, pour $x$ de cet intervalle on a:
+\[ x < \alpha \implies  f(x)<0\quad\text{et}\quad x>\alpha \implies  f(x)>0\]
+\end{proof}
+\begin{rem}
+Il existe évidemment un énoncé similaire pour une fonction strictement décroissante...
+\end{rem}
+\exemple Soit $f$ définie sur $\R$ par $f(x)=x^5+x+7$. Justifier que $f(x)=0$ admet une unique solution dans l'intervalle $\intf{-2}{1}$. Réponse d'un bon élève: \\
+$f$ est continue sur $\R$ (c'est un polynôme). Or $f'(x)=5x^4+1$ et $x^4$ est positif donc la dérivée de $f$ est strictement positive, donc $f$ est strictement croissante sur $\intf{-2}{1}$. De plus $f(-2)=-33<0 $ et $f(1)=9>0$. Donc $f(x)=0$ admet une unique solution dans l'intervalle $\intf{-2}{1}$.
+D'après le tableau de variation de $f$ et ses limites en $-\infty$ et $+\infty$ on en déduit aussi que $f(x)=0$ admet en fait une unique solution dans $\R$.
+\\ Il est par contre imposible de résoudre par le calcul cette
+équation, mais pouvez vous à l'aide de la calculette déterminer un
+encadrement d'amplitude $10^{-2}$ du réel $\alpha$ vérifiant
+$f(\alpha)=0$. Trois méthodes:\\
+
+{\bf Méthodes de résolution approchée de $f(x)=\lambda$}
+{\small
+\begin{list}{$\bullet$}{}
+\item Graphiquement, en zoomant de plus en plus sur le point
+  d'intersection de la courbe avec l'axe des abscisses (pour $\lambda=0$) ou avec la droite d'équation $y=\lambda$.
+\item Mieux encore, certaines calculettes disposent d'un outil de
+  résolution graphique (G-solv pour Casio, CALC quand on est dans
+  l'interface graphique avec une Texas Instruments) il faut choisir {\sl isect} pour
+  l'intersection de deux courbes que l'on doit sélectionner (la courbe
+  de $f$ et la droite d'équation $y=\lambda$ si on veut résoudre
+  $f(x)=\lambda$) ou {\sl Root} si on cherche une racine.
+\item En utilisant le tableau de valeurs que l'on doit paramétrer
+  correctement. $pitch$ (Casio) ou $\Delta Tbl$ (TI) donne le pas de
+  la variation de $X$,  donc la précision voulue. Mais il faut d'abord
+  connaitre un vague encadrement de la solution (par une méthode
+  graphique par exemple)
+\item \`A l'aide d'un programme adapté, comme celui que nous allons
+  établir qui fonctionne par dichotomie. On peut utiliser la méthode
+  de Newton-Raphson ou méthode de la tangente\footnote{$x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)}$. Cette suite converge vers une
+  racine si elle existe, prendre $x_0$ assez près de la racine.} (plus rapide)
+  
+\end{list}
+}
+
+{\bf Cas des fonctions définies sur des intervalles non bornés.} On a
+raisonné sur des intervalles fermés bornés, on peut ensuite étendre
+les résultats à des intervalles non bornés, en utilisant les limites
+de $f$ aux bornes de son intervalle de définition à la place de $f(a)$
+ou $f(b)$.
+\exemple \\
+\begin{minipage}{0.48\linewidth}
+  Combien l'équation $f$ a--t--elle de racines sur $\mathbb{R}$ et
+  préciser dans quels intevalles. On note $\alpha$ et $\beta$ ces deux
+  racines avec $\alpha < \beta$. Donner le tableau de signes de $f$
+  sur~$\mathbb{R}$.
+\end{minipage}\hfill
+\begin{minipage}{0.48\linewidth}
+  
+\begin{center}
+  \begin{variations}
+    x       &\mI&   &  0  &   & 4 &   &\pI    \\
+    \filet
+    f'(x)   &   & + &  0  & - & 0 & + &       \\
+    \filet
+    \m{f(x)}&\mI&\c &\h{5}&\d &-3 &\c &\h{-1}\\%\h{\pI}\\
+  \end{variations}
+\end{center}
+\end{minipage}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+On a déjà résolu des équations de ce type où $y$ est l'inconnue et $n$ un entier. On applique la propriété: \textit{``Si a et b sont deux réels strictement positifs, alors: $\ln a =\ln b \iff a=b$''}
+\exemples 
+\begin{enumerate}
+\item $\ln y =1\iff \ln y=\ln\e \iff y=\e$
+\item $\ln y =2\iff \ln y=2\ln\e \iff \ln y=\ln\e^2 \iff y=\e^2$
+\item $\ln y =-3\iff \ln y=-3\ln\e \iff \ln y=\ln\e^{-3} \iff y=\e^{-3}$
+\end{enumerate}
+Plus généralement, on montre de la même manière que si $n$ est un entier: $\ln y=n \iff y=\e^n$ 
+\subsection{\'Equation $\ln y=x$}
+On reprend la même équation mais où $x$ est un réel. Elle admet une unique solution car la fonction $\ln$ est dérivable et strictement croissante sur $\into{0}{+\infty}$ et admet les limites:
+\[ \lim_{x\to 0^+}{\ln x}=-\infty  \quad \et{} \quad \lim_{x\to +\infty}{\ln x}=+\infty\]
+D'après le théorème des valeurs intermédiaires, il existe un unique réel $y$ tel que $\ln y=x$. Par analogie avec le cas où $x$ est entier, on note ce réel: $y=\e^x$
+\begin{Def}
+La fonction exponentielle--notée \emph{exp}--est la fonction réciproque de la fonction logarithme népérien. À tout nombre réel $x$ elle associe l'unique nombre réel strictement positif $y$ tel que $\ln y=x$
+\end{Def}
+\begin{rem}
+On utilise l'une ou l'autre des notations $\exp(x)$ ou $\e^x$ pour l'exponentielle de $x$.
+\end{rem}
+\exemple $\exp(\sqrt2)=\e^{\sqrt2}$ est le réel (strictement positif) tel que: $\ln(\e^{\sqrt2})=\sqrt2$
+\section{Propriétés}
+\subsection{Conséquences de la définition}
+La fonction logarithme est définie sur $\into{0}{+\infty}$ et prend ses valeurs dans $\R$ donc:
+\begin{prop}\label{positif}
+La fonction exponentielle est définie sur $\R$ et prend ses valeurs dans $\into{0}{+\infty}$
+\[\boxed{ \forall x \in \R,\; \e^x>0}\]
+\end{prop}
+\begin{prop}
+Pour tout réel $x$ et tout réel strictement positif $y$: \dotfill $\boxed{\ln y=x\iff y=\e^x }$
+\end{prop}
+\begin{prop}
+Pour tout réel $x$: \dotfill $\boxed{ \ln(\e^x)=x }$
+\end{prop}
+
+\begin{prop}
+Pour tout réel strictement positif $x$ : \dotfill $\boxed{\e^{\ln x}=x}$
+\end{prop}
+Les deux dernières traduisent que $\ln$ et $\exp$ sont réciproques l'une de l'autre de la même manière que la fonction carré et la fonction racine carrée sont réciproques l'une de l'autre:\\
+Pour tout réel positif $x$: $ (\sqrt x)^2=x $ et $\sqrt{ x^2}=x$\\
+\subsection{Propriétés des puissances}
+\begin{prop}
+Pour tous réels $a$ et $b$ on a les formules usuelles avec les puissances: 
+\end{prop}
+\[ \boxed{\e^a\times \e^b=\e^{a+b}} \qquad \boxed{\frac{\e^a}{\e^b}=\e^{a-b}}
+\qquad \boxed{(\e^a)^b=\e^{a\times b}} \]
+\textbf{Cas particuliers importants:} $\boxed{\e^1=\e} \qquad \boxed{\e^0=1} \qquad \boxed{\e^{-x}=\dfrac{1}{\e^x}} $
+\section{\'Etude de la fonction exponentielle}
+\subsection{Dérivée et variation}
+\begin{prop}
+La fonction exponentielle est sa propre dérivée: $\boxed{(\e^x)'=\e^x}$
+\end{prop}
+D'après la propriété \ref{positif}, on en déduit:
+\begin{prop}
+La fonction exponentielle est strictement croissante sur $\R$
+\end{prop}
+\begin{prop}[Dérivée d'une fonction composée avec $\e^x$] 
+Si $u$ désigne une fonction dérivable sur $\R$ alors $\exp(u)$ est dérivable et:
+\[ \boxed{[\e^{u(x)}]'=u'(x)\times\e^{u(x)}}\]
+\end{prop}
+\subsection{Limites}
+On admet les limites suivantes (où $n\in \N \,)$ qui découlent de celles de $\ln x$:
+\[ \boxed{\lim_{x\to -\infty}{\e^x}=0} \qquad
+\boxed{\lim_{x\to +\infty}{\e^x}=+\infty} \qquad
+\boxed{\lim_{x\to -\infty}{x^n\e^x}=0} \qquad
+\boxed{\lim_{x\to +\infty}{\frac{\e^x}{x^n}}=+\infty}  \]
+La première limite indique que l'axe de abscisses est asymptote à $\Cr_{\exp}$ en $-\infty$. Les deux dernières sont \emph{a priori} des formes indéterminées que l'on retient par \emph{``L'exponentielle l'emporte sur les puissances de~$x$.''}
+\subsection{Courbe}
+Comme la fonction exponentielle est la réciproque de la fonction $\ln$, leurs courbes sont symétriques l'une de l'autre par rapport à la droite $\Dr$ d'équation $y=x$\\
+%\hfill{\stretch{1}}
+\begin{center}
+\psfrag{i}{$\vec{\imath}$} \psfrag{j}{$\vec{\jmath}$} \psfrag{O}{$O$}
+\psfrag{F}{$\Cr_{\exp}$}
+\psfrag{L}{$\Cr_{\ln}$}
+\psfrag{D}{$\Dr:\ y=x$}
+\psfrag{e}{$\e$}
+\includegraphics{Courbe.5} 
+\end{center}
+%\hfill{\stretch{1}}
+
+\end{document}

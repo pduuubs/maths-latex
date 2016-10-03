@@ -1,0 +1,19 @@
+\begin{exercice}
+  \begin{enumerate}
+  \item Montrer\footnote{On pourra montrer par récurrence que $u_n>-1$ pour
+tout $n\in\N$ en étudiant une fonction bien choisie.} qu'il existe une
+suite $(u_n)_{n\in\mathbb{N}}$ telle que:
+\[ u_0=32\quad\text{et}\quad \forall n\in\mathbb{N}\ \
+u_{n+1}=\frac{2u_n-1}{u_n+4}.\] 
+
+\item Montrer que l'équation $ x=\frac{2x-1}{x+4}$ admet une seule solution
+  que l'on notera $\alpha$. 
+\item  Montrer que $u_n\neq\alpha$ pour tout $n\in\mathbb{N}$. 
+\item Pour
+$n\in\mathbb{N}$, on pose \[ v_n=\frac{1}{u_n-\alpha}.\]  la suite
+$(v_n)$ est arithmétique. 
+\item Exprimer $u_n$ en fonction de $n$
+pour tout $n\in\mathbb{N}$. 
+\item \'Etudier la convergence de la suite $(u_n)$.
+  \end{enumerate}
+ \end{exercice}

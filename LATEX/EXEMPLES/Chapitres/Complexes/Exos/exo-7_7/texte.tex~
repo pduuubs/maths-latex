@@ -1,0 +1,7 @@
+\begin{exercice}
+On pose $z=2-3i$ et $z'=-1+5i$. Mettre les complexes suivants
+  sous forme alg\'ebrique ($a+ib$):
+\alignequatre{$z+z'$}{$2z-z'$}{$zz'$}{$\dfrac{2z}{i}$}
+\alignequatre{$z^2$}{$z'^2$}{$\dfrac{z}{z'}$}{$\dfrac{z'}{1-z}$}
+ 
+\end{exercice}

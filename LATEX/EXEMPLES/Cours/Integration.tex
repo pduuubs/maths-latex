@@ -1,0 +1,444 @@
+\chapter{Intégration.}
+\section{Aire sous une courbe.}
+\subsection{Aire sous la parabole.}
+\begin{minipage}{9cm}
+On considère dans un repère orthonormé la courbe de la fonction carré,
+sur l'intervalle $I=\intf{0}{1}$. On veut calculer l'aire du domaine
+entre la courbe et l'axe des abscisses, pour $x$ variant de $0$
+à~$1$. Le principe de la méthode exposée était déja connu d'Archimède,
+et a donné lieu bien plus tard (Newton, Leibniz puis Riemann) à la
+théorie de l'intégration.\\
+  \noindent
+{\bf Principe:} On se donne un $n\in\N^*$. On découpe l'intervalle $I$ avec une
+\emph{subdivision} de $I$ en $n$ intervalles de longueur
+$\frac{1}{n}$. On considère alors (cf figure pour n=?) les aires de
+deux suites de rectangles, de manière à obtenir un encadrement de
+l'aire cherchée. On calcule les deux aires, puis on fait tendre $n$
+vers l'infini.
+\end{minipage}\hfill%
+\begin{minipage}{5.5cm}
+  \begin{center}
+\includegraphics[width=5cm]{/home/pan/Desktop/TeX_MiX/Figures/Courbes/integrale_carre}    
+  \end{center}
+\end{minipage}
+\vspace{0.3cm}
+\\
+\noindent
+Compléter la figure en notant les abscisses des sommets des rectangles
+qui sont sur l'axe des abscisses.
+On note $a_n$ l'aire des rectangles qui sont sous la courbe et
+  $A_n$ celle des rectangles qui vont de l'axe des abscisses jusqu'au
+  dessus de la courbe. 
+\begin{enumerate}
+\item Calcul de $a_n$:%
+  \begin{enumerate}
+  \item L'aire du premier rectangle sous la courbe est nulle, celle du second est
+    $\frac{1}{n}\times
+    \left(\frac{1}{n}\right)^2=\frac{1}{n^3}$. 
+%Combien y a-t-il de   rectangles sous la courbe?
+    \item \'Ecrire sans, puis avec symbole sigma l'expression de $a_n$.
+  \end{enumerate}
+\item Procéder de même pour donner l'expression de $A_n$ en fonction
+  d'une somme de carrés d'entiers.
+
+\item Calculer et donner la limite de $A_n-a_n$.
+\item En utilisant la formule: $\displaystyle
+  \sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}$ prouver que $A_n$ et $a_n$
+  ont une limite commune, et en déduire l'aire cherchée que l'on note:
+\[\int_0^1 x^2 {\rm d}x\]
+\end{enumerate}
+
+
+
+\subsection{Fonction aire.}
+\begin{minipage}{6.5cm}
+  On étudie un cas un peu plus général. On considère une
+  fonction $f$ décroissante et continue sur un intervalle . On note
+  $C_f$ sa courbe. Sur la
+  figure, $f$ est décroissante sur $\R^+$. On appelle $A(x)$ l'aire entre la
+  courbe et l'axe des abscisses pour les abscisses variant de 0 à
+  $x$. C'est le domaine grisé. 
+\end{minipage}\hfill%
+\begin{minipage}{7.3cm}
+  \begin{center}
+    %\includegraphics[width=7.1cm]{/home/pan/Desktop/TeX_MiX/Figures/Courbes/courbe_integrale} %[width=]
+\includegraphics[width=7.1cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.1} %
+  \end{center}
+\end{minipage}\\
+\begin{enumerate}
+\item Donner en utilisant les rectangles
+  tracés un encadrement pour $h>0$ de la différence: 
+\[A(x+h)-A(x)\]
+en fonction de $f$.
+\item En déduire que la fonction $A$ est dérivable en $x$, et donner
+  l'expression de sa dérivée.
+
+\item Combien vaut $A(0)$?
+\item Peut-on obtenir le même résultat si $f$ est croissante?
+\item {\bf Application} 
+  \begin{enumerate}
+  \item Vérifier le calcul de la première
+  partie: Trouver une fonction $A$ dont la dérivée a pour expression:
+  $x^2$ et telle que $A(0)=0$
+\item Déterminer l'aire sous la parabole de la fonction carré mais pour $x$
+variant entre $0$ et~$2$.
+\item Vérifier qu'avec cette méthode on retrouve bien l'aire du
+  rectangle de côtés $a$ et $b$.
+  \end{enumerate}
+\end{enumerate}
+
+%\subsection{Primitive}
+%Déterminer l'aire sous la parabole de la fonction carré mais pour $x$
+%variant entre $-1$ et~$2$. 
+
+\section{Intégrale d'une fonction continue et positive.} %et positive}
+Dans cette partie, $f$ est une fonction continue \textbf{positive} sur un
+intervalle~$\left[a\,;b\right]$. On se place dans un repère orthogonal
+$\oij$, on note $\mathscr{C}$ la courbe de~$f$ dans ce repère.
+\paragraph{Unité d'aire.}
+ On appelle unité d'aire
+(u.a.) l'aire d'un rectangle $ABCD$ où $\overrightarrow{AB}=\vi$ et
+$\overrightarrow{AD}=\vj$. Par exemple si les unités choisies sont de
+2~cm en abscisse et 3~cm en ordonnée pour une unité, alors: $1\text{u.a.}=6~\text{cm}^2$ (car $=2\times 3=6$).% petit dessin.\\
+
+
+\subsection{Intégrale vue comme une aire.}
+
+%\paragraph{ Intégrale d'une fct cont positive.}
+
+\begin{Def} 
+%Soit $f$ continue et positive sur un intervalle $[a;b]$ et $\Cr$ sa courbe dans $\oij$. 
+L'intégrale $\int_a^b f(x) {\rm d}x$ est l'aire
+  du domaine délimité par $\Cr$, $(Ox)$ et les droites d'équations $x=a$ et $x=b$.
+\end{Def}
+\begin{rem} On a vu que l'aire s'obtient comme somme d'aires de rectangles de
+largeur infinitésimale $\ud x$ et de hauteur $f(x)$ ce qui explique la
+notation due à Leibniz (1646-1716). Un peu de vocabulaire:
+  \begin{dingautolist}{172}
+    \item  $\int$ comme somme. 
+    \item La variable $x$ est muette, on met ce qu'on veut: $\int_a^b f(x) {\rm d}x=\int_a^b f(t) {\rm d}t$
+    \item On lit intégrale (ou somme) de $a$ à $b$ de $f(x)$ d$x$.
+    \item $a$ et $b$ sont les \emph{bornes} de l'intégrale. (\textsl{Lower
+      bound et upper bound in english})
+       \end{dingautolist}
+    
+\end{rem}
+
+\exemple $\int_{-2}^{0}3 \ud x=6$ (rectangle) et $\int_{1}^{3} t \ud
+t=4$ (trapèze)
+
+\paragraph{Valeur approchée d'intégrale.}
+
+Il suffit de décomposer l'aire cherchée en rectangles, triangles et ou
+trapèzes pour obtenir une valeur approchée voire un encadrement de
+l'intégrale cherchée. 
+La calculatrice en mode \texttt{G-solve} permet d'obtenir
+graphiquement une valeur approchée de l'intégrale et un joli coloriage.
+L'unité est l'unité d'aire (u.a.) Si on veut l'aire en ${\rm cm^2}$ il
+faut calculer combien de ${\rm cm^2}$ mesure~1~u.a.
+
+
+
+\subsection{Fonction aire, primitives.}
+On a vu en activité que si $f$ est continue, positive et monotone sur
+un intervalle $\left[a\,;b \right]$, alors la fonction:
+  \begin{equation}
+    \label{eq:fctaire}
+    F:\ x \longmapsto \int_{a}^{x} f(t) \ud t
+  \end{equation}
+
+est une fonction dérivable sur $\left[a\,;b\right]$ telle que: $F'=f$
+et $F(a)=0$. $F(x)$ est l'aire (en u.a.) du domaine compris entre
+$\Cr$ et $(Ox)$ pour les abscisses allant de $a$ à~$x$. $F$ est une
+fonction croissante (puisque ici $f$ est positive) et postive.
+
+\begin{Def} Soit $f$ une fonction continue sur un intervalle $I$. On appelle
+  primitive de $f$ sur $I$ une fonction $F$ dérivable sur $I$ telle
+  que: $F'=f$
+\end{Def}
+Une fonction n'a pas une unique primitive, on dira bien \og \emph{une}
+primitive de~$f$\fg{}. Cependant:
+\begin{prop}\label{prop:primetcst}
+  Si $F$ et $G$ sont deux primitives de $f$ alors elles diffèrent d'une constante.
+\end{prop}
+
+\begin{proof}
+  $(F-G)'=f-f=0$ donc $(F-G)$ est une constante.
+\end{proof}
+Ainsi on pourra dire \og \emph{la} primitive de $f$ qui vaut \dots{} en
+\dots{}~\fg{}. Par exemple:
+\begin{prop}
+  [Unicité] Soit $f$  continue positive sur un intervalle $\intf{a}{b}$
+  alors $f$ admet une unique primitive qui s'annule en $a$, c'est la
+  fonction \og aire\fg{} définie en~\eqref{eq:fctaire}.
+%\[  F(x)=\int_a^x f(t)\ud t\]
+\end{prop}
+\begin{proof}
+ On a prouvé l'existence dans le cas d'une fonction monotone en TD. On l'admet
+ dans le cas général. La propriété~\ref{prop:primetcst} nous garantit l'unicité.
+\end{proof}
+%Ainsi, la fonction \og aire\fg{} définie par~\eqref{eq:fctaire} est la primitive de $f$ s'annulant en $a$.
+\begin{rem} La condition de continuité est suffisante mais pas
+  nécessaire pour assurer l'existence d'une primitive. Penser à la
+  fonction partie entière. On peut facilement calculer l'aire sous sa
+  courbe, en additionnant des aires de rectangles, et pourtant elle
+  n'est pas continue.% \dots
+\end{rem}
+
+
+
+\subsection{Calcul d'une intégrale à l'aide d'une primitive.}
+\begin{prop}\label{prop:intetprim}
+  Soit $f$  continue positive sur un intervalle $\intf{a}{b}$ et $F$
+  une primitive de $f$ sur $\left[a\,;b\right]$.
+  alors:  
+\[\int_a^b f(x)\ud x=F(b)-F(a)\]
+\end{prop}
+\begin{proof}
+  Soit $F$  la primitive qui s'annule en $a$, alors le résultat est immédiat. Il faut
+  voir que ce calcul ne dépend pas de la primitive choisie
+  pour~$f$:\\
+ Si $G$ est une primitive de $f$, alors il existe une
+  constante réelle~$k$ telle que $G=F+k$. Alors
+  $G(b)-G(a)=(F(b)+k)-(F(a)+k)=F(b)-F(a).$ 
+\end{proof}
+\noindent\textbf{Notation: } On note dans les calculs $\left[F(x)\right]_a^b$ pour $F(b)-F(a)$.
+\paragraph{Relation de Chasles.}
+D'après la notion intuitive d'aire et les découpages que l'on peut
+faire d'une surface, on a: 
+\begin{prop}[Relation de Chasles]
+  Soit $c$ un réel compris entre $a$ et $b$. \end{prop}
+
+\noindent%
+\begin{minipage}{1.0\linewidth - 7cm}
+\[\int_a^b f(x) {\rm d}x=\int_a^c f(x) {\rm d}x+\int_c^b f(x) {\rm d}x\]
+  \begin{proof}
+    Soit $F$ une primitive de~$f$. 
+\[ (F(c)-F(a))+(F(b)-F(c))=F(b)-F(a) \qedhere\]
+  \end{proof}
+%On remarque que ce calcul est encore valable si
+\end{minipage}\hfill
+\begin{minipage}{7cm}
+
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.2}  
+\end{center}
+\end{minipage}
+\subsection{Calcul de primitives.}
+On calcule des primitives de $f$ en reconnaissant en $f$ l'expression d'une
+dérivée (facile à dire!). On s'aide des propriétés de linéarité de la dérivée pour
+obtenir les bons coefficients. En effet:
+\begin{prop}[Linéarité]\label{prop:linprim}
+  Si $f$ et $g$ sont deux fonctions admettant $F$ et $G$
+  respectivement comme primitives sur un intervalle, alors pour tous
+  réels~$\lambda$ et $\mu$, on a: $(\lambda F+\mu G)$ qui est une
+  primitive de $(\lambda f+\mu g)$.
+\end{prop}
+\begin{proof}
+  $(\lambda F+\mu G)'=(\lambda F)'+(\mu G)'=\lambda F'+\mu G'=\lambda f+\mu g$
+\end{proof}
+\exemple On cherche une primitive sur $\mathbb{R}$ de $f$ où
+$f(x)=\sin(2x)+x^3$\\
+On remarque que: $f(x)=-\frac12 \times (-2\sin(2x))+\frac14 \times (4
+x^3)$\\
+Donc une primitive de $f$ a pour expression: $F(x)=-\frac12
+\cos(2x)+\frac14 x^4$.\\
+Si on demande \emph{la} primitive de $f$ s'annulant en~0, alors on
+écrit:\\
+Les primitives de $f$ ont pour expression: $F(x)=-\frac12
+\cos(2x)+\frac14 x^4+k$ où $k$ est une constante. Alors
+$F(0)=-\frac12+k$, ainsi \emph{la} primitive de $f$ s'annulant en~0 a
+pour expression: $F(x)=-\frac12
+\cos(2x)+\frac14 x^4+\frac12$
+
+\subsection{Existence du logarithme népérien.}
+\label{sec:existln}
+
+La fonction inverse est continue et positive sur
+$\left]0\,;+\infty\right[$, elle admet donc une unique primitive
+s'annulant en~1 qui a pour expression: $\int_1^x \frac{1}{t} {\rm d}t$
+ceci pour tout~$x$ de~$\left]0\,;+\infty\right[$. Cela prouve
+l'existence du logarithme népérien, donc de sa fonction réciproque, la
+fonction exponentielle. L'existence de exp avait admise en début d'année.
+\section{Généralisation de l'intégrale à l'aide d'une primitive.}
+
+\subsection{Intégrale d'une fonction de signe quelconque.}
+
+On admet que toute fonction continue sur un intervalle admet une
+primitive, et on définit la notion d'intégrale de~$f$ à partir de:
+\begin{Def}
+ Soit $f$  continue sur un intervalle $\left[a\,;b\right]$ et $F$
+  une primitive de $f$ sur $\left[a\,;b\right]$.
+  alors:  
+\[\boxed{\int_a^b f(x)\ud x= \left[F(x)\right]_a^b= F(b)-F(a)}\] 
+\end{Def}
+\begin{rem}
+  C'est la même chose que ce qu'on a énoncé pour la
+  propriété~\ref{prop:intetprim}, mais on a oté la condition de
+  positivité de~$f$. C'est maintenant notre définition de
+  l'intégrale d'une fonction. \'Evidemment, les deux définitions
+  coïncident lorsque $f$ est positive.
+\end{rem}
+
+\paragraph{Linéarité de l'intégrale.}
+D'après la propriété~\ref{prop:linprim} on en déduit:
+\begin{prop} Si $f$ et $g$ sont deux fonctions continues sur
+  $\left[a\,;b\right]$ et $\lambda$, $\mu$ deux réels, alors:
+\[ \int_a^b \lambda f(x)+\mu g(x)\ud x=\lambda \int_a^b  f(x)\ud x + \mu \int_a^b  g(x)\ud x\]  
+\end{prop}
+
+\subsection{Intégrale et signes.}
+$\int_a^b f$ et $\int_b^a f$ est-ce la même chose? Et bien non, en
+observant la définition, on voit qu'échanger les bornes revient à
+changer le signe de l'intégrale.
+\[ \int_b^a f(x)\ud x=-\int_a^b f(x)\ud x\]
+%La relation de Chasles est encore valable quelque soit l'ordre. On en déduit que
+ Si $f$ est négative, qu'est-ce que cela change? Par linéarité on a en
+ particulier:
+\[ \int_a^b -f(x)\ud x=-\int_a^b f(x)\ud x\]
+Donc si $f$ est positive sur $\left[a\,;b\right]$, alors $-f$ est
+négative et son intégrale est l'opposée de l'intégrale de~$f$. 
+\begin{prop}[Aire algébrique] Pour une fonction $f$ continue, de signe
+  quelconque sur $\left[a\,;b\right]$, $\displaystyle \int_a^b f(x)\ud
+  x$ représente \emph{l'aire algébrique} du domaine compris entre
+  $\Cr$, $(Ox)$ et les droites d'équations $x=a$ et $x=b$. On compte
+  positivement l'aire lorsque $f$ est positive et négativement lorsque
+  $f$ est négative.
+  
+\end{prop}
+\exemple Calculer $\int_0^{2\pi} \sin(x)\ud x$, interpréter
+géométriquement. Quelle est réellement l'aire du domaine grisé? 
+ 
+\begin{prop}[Intégrer une inégalité] Si $f$ et $g$ sont deux fonctions continues
+  sur $\left[a\,;b\right]$, telles que: \\
+$ \forall x \in\left[a\,;b\right],
+  f(x)\geq g(x)$ alors:
+\[\int_a^b f(x)\ud x\geq \int_a^b g(x)\ud x\]
+  
+\end{prop}
+\begin{proof}
+  Par hypothèse, la fonction $f-g$ est positive, donc son intégrale
+  (vue comme une aire est positive, puis par linéarité de l'intégrale,
+  on a le résultat. 
+\end{proof}
+\subsection{Formule de la moyenne}
+\begin{Def}
+  On appelle moyenne de la fonction $f$ sur $\left[a\,;b\right]$ le
+  réel:
+$\displaystyle \bar{f}=\frac{1}{b-a}\int_a^b f(x) \ud x$
+\end{Def}
+\noindent
+\begin{minipage}{1.0\linewidth - 7cm}
+Pour faire une moyenne de $n$ réels, on fait leur somme, et on divise
+par le nombre $n$ de réels. Ici pour faire la moyenne des $f(x)$, on
+fait leur \og somme\fg{} et on divise par la longueur de l'intervalle
+dans lequel varie~$x$. La figure donne une interprétation graphique
+dans le cas où $f$ est positive: l'aire du rectangle gris est la même que
+l'intégrale de $f$ de $a$ à~$b$. 
+\end{minipage}\hfill
+\begin{minipage}{7cm}
+
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.3}  
+\end{center}
+\end{minipage}
+\begin{prop}[Inégalités de la moyenne] Si $f$ admet un minimum $m$ et
+  un maximum $M$ sur $\left[a\,;b\right]$, alors on a l'encadrement:
+\[ m(b-a) \leq \int_a^b f(x) \ud x\leq M(b-a)\]
+Autrement dit la moyenne est comprise entre le minimum et le maximum
+de~$f$:\quad $m\leq\bar{f}\leq M$
+
+  
+\end{prop}
+\subsection{Intégration par parties.}
+\label{sec:IPP}
+\begin{prop}[I.P.P.] Si $u$ et $v$ sont deux fonctions dérivables sur
+  un intervalle $\left[a\,;b\right]$, alors la fonction $u'v$ est
+  intégrable sur $\left[a\,;b\right]$ et on a la formule:
+\[\int_a^b u'(x)v(x) \ud x=\]
+  
+\end{prop}
+\subsection{Aire entre deux courbes}
+\noindent Un exemple: Déterminer l'aire en cm$^2$ du domaine grisé
+entre les deux paraboles dont l'équation est donnée. Les unités choisies ont été: 1~cm
+en abscisse et 0,8~cm en ordonnée.
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.4}\\
+
+\end{center}
+\newpage
+\noindent%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.2}\\
+Relation de Chasles pour les intégrales.  
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.3}\\
+Moyenne d'une fonction sur un intervalle~$\left[a\,;b\right]$.  
+\end{center}
+\end{minipage}\\[2.5cm]
+\noindent%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.2}\\
+Relation de Chasles pour les intégrales.  
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.3}\\
+Moyenne d'une fonction sur un intervalle~$\left[a\,;b\right]$.  
+\end{center}
+\end{minipage}\\[2.5cm]
+\noindent%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.2}\\
+Relation de Chasles pour les intégrales.  
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.3}\\
+Moyenne d'une fonction sur un intervalle~$\left[a\,;b\right]$.  
+\end{center}
+\end{minipage}\\[2.5cm]
+\noindent%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.2}\\
+Relation de Chasles pour les intégrales.  
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}[t]{7cm}
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Integrale.3}\\
+Moyenne d'une fonction sur un intervalle~$\left[a\,;b\right]$.  
+\end{center}
+\end{minipage}
+
+
+
+% \section{Extension à une fonction continue de signe quelconque }
+% Par convention, si f est négative...
+
+
+
+% \subsection{Primitive d'une fonction continue}
+% \begin{Def} Soit $f$ une fonction continue sur un intervalle $I$. On appelle
+%   primitive de $f$ sur $I$ une fonction $F$ dérivable sur $I$ telle
+%   que: $F'=f$
+% \end{Def}
+% \exemple $(x^3)'=3x^2$ donc une primitive de $3x^2$ est $x^3$.
+
+
+
+% \subsection{Généralisation de l'intégrale à l'aide de primitive}
+% Ici on se débarrasse de la condition de positivité et de l'ordre de
+% $a$ et $b$:
+% \begin{Def} $f$ cont sur $I$ contenant $a$ et $b$, $F$ une prim de $f$ alors:
+% \[ \int_a^b f(x)\ud x=F(b)-F(a)\]
+% \end{Def}

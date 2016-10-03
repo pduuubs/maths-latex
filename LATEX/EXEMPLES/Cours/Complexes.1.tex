@@ -1,0 +1,306 @@
+\chapter{Nombres Complexes, généralités}
+%\activite{Nombres complexes}{\term}
+\section*{Introduction}
+\subsection{R\'esolution historique}
+Au \bsc{XVI\ieme} si\`ecle les alg\'ebristes italiens apprennent
+\`a r\'esoudre les \'equations du troisi\`eme degr\'e, en les ramenant
+\`a des \'equations du deuxi\`eme degr\'e dont la r\'esolution est
+connue depuis le \bsc{IX\ieme} si\`ecle gr\^ace auxs math\'ematiciens arabes.
+On attribue \`a \bsc{Cardan} (Girolamo Cardano: Pavie 1501-Rome 1576) la
+formule \eqref{eq:form} donnant une solution \`a l'\'equation du troisi\`eme
+degr\'e d'inconnue~$x$:
+\begin{equation}
+  \label{eq:deg3}
+  x^3=px+q
+\end{equation}
+En fait, \bsc{Tartaglia} (Niccol\`o Tartaglia:
+Brescia 1500 - Venise 1557)  autodidacte aurait d\'ecouvert la formule
+en 1539 et l'aurait expos\'ee au professeur respect\'e \bsc{Cardan}
+qui l'a publi\'e dans son \emph{Ars magna} en
+1545 comme \'etant sa propre d\'ecouverte, le reste de l'histoire est
+romanesque.
+\begin{equation}
+  \label{eq:form}
+  x=\sqrt[3]{\frac{q}{2}+\sqrt{\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3}}+\sqrt[3]{\frac{q}{2}-\sqrt{\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3}}
+\end{equation}
+\begin{Def} Pour $a\in\R$, on note $\sqrt[3]{a}$ appel\'e \emph{racine
+    cubique de $a$} l'unique r\'eel $x$ v\'erifiant $x^3=a$.
+\end{Def}
+
+La racine cubique, contrairement \`a la racine carr\'ee est d\'efinie
+pour tout r\'eel car $x\mapsto x^3$ est strictement croissante sur
+$\R$, et varie de $-\infty$ \`a $+\infty$. Par exemple,
+$\sqrt[3]{-8}=-2$ car $(-2)^3=-8$.
+\begin{enumerate}
+\item Prouver que toute \'equation de degr\'e trois donc de la forme
+  $ax^3+bx^2+cx+d=0$ avec $a$, $b$, $c$, $d$ trois r\'eels et $a\neq 0$
+  peut se mettre sous la forme $x^3+b'x^2+c'x+d'=0$
+\item Prouver que toute \'equation de degr\'e trois de la forme
+  $x^3+bx^2+cx+d=0$ peut se mettre sous la forme de l'\'equation
+  \eqref{eq:deg3} \`a l'aide du changement de variable:
+  $x=X-\frac{b}{3}$.
+
+\item Voyons sur un exemple comment ils trouv\`erent la formule
+  improbable \eqref{eq:form}. On consid\`ere l'\'equation:
+  \begin{equation}
+    \label{eq:eq1}
+    x^3=6x+20
+  \end{equation}
+  \begin{enumerate}
+  \item On pose $x=u+v$. Que devient l'\'equation \eqref{eq:eq1}?
+  \item Quelle valeur suffit-il d'imposer au produit $uv$ pour que
+    \eqref{eq:eq1} s'\'ecrive $u^3+v^3=20$?
+  \item On pose $U=u^3$ et $V=v^3$. Former et r\'esoudre une \'equation
+    de degr\'e deux ayant pour solutions $U$ et~$V$.
+
+  \item En d\'eduire que:
+\[ \sqrt[3]{10+2\sqrt{23}} + \sqrt[3]{10-2\sqrt{23}}\]
+est une solution de \eqref{eq:eq1}.
+
+\item Optionnel: Etudier $x\mapsto x^3-6x-20$ sur $\R$ pour voir qu'il
+  n'y a qu'une solution \`a l'\'equation \eqref{eq:eq1}.
+  \end{enumerate}
+
+\end{enumerate}
+La m\'ethode de \bsc{Tartaglia-Cardan} conduit cependant, dans certains cas,
+\`a un paradoxe que \bsc{Bombelli}(1526-1572) va essayer de surmonter. Il publie en
+1572 dans son \emph{l'Algebra opera} l'exemple suivant:
+\subsection{Des nombres impossibles}
+On consid\`ere l'\'equation:
+  \begin{equation}
+    \label{eq:eq2}
+    x^3=15x+4
+  \end{equation}
+  \begin{enumerate}
+  \item Combien vaut alors la quantit\'e:
+    $\left(\frac{q}{2}\right)^2-\left(\frac{p}{3}\right)^3$ qui
+    appara\^it dans la formule \eqref{eq:form}?
+  \item Prouver cependant que 4 est solution de \eqref{eq:eq2}\\
+L'id\'ee et l'audace de \bsc{Bombelli} est de faire comme si $-121$
+\'etait le carr\'e d'un nombre imaginaire qui s'\'ecrirait
+$11\sqrt{-1}$. Il appella $\sqrt{-1}$ \emph{piu di meno} qui sera not\'e
+\textbf{i} plus tard par \bsc{Euler}(1734-1810) en 1777. Gr\^ace \`a ce stratag\`eme,\bsc{Bombelli} retrouve la solution r\'eelle 4:
+
+\item D\'evelopper $(2+\I{})^3$ et $(2-\I{})^3$ en tenant compte de $\I{}^2=-1$.
+\item En d\'eduire que $(2+\I{})+(2-\I{})$ est solution de
+  \eqref{eq:eq2}.\\
+Ce nombre \og $\sqrt{-1}$ \fg{} qualifi\'e d'impossible va susciter beaucoup de m\'efiance et
+de pol\'emique pendant deux si\`ecles jusqu'\`a \bsc{Argand} en 1806 qui
+proposera une repr\'esentation g\'eom\'etrique de ces nombres
+imaginaires (de la forme $a+\I{} b$ avec $a\in\R$, $b\in\R$) et \bsc{Gauss}(1777-1855) qui les
+nommera \textbf{Nombres complexes}.
+  \end{enumerate}
+\section{Introduction-Premi\`eres d\'efinitions}
+\label{sec:para1}
+
+\subsection{Historique}
+\label{sec:histo}
+Cf. activit\'e. Bombelli en voulant r\'esoudre $x^3=15x+4$ a utilis\'e
+des racines de nombres reels negatifs, comme $\sqrt{-1}$. On a peu a
+peu construit un ensemble plus grand que $\R$ qui contient un nombre
+imaginaire note $\I$ solution de l'equation $x^2=1$. La notation
+$\sqrt{}$ reste réservée aux réels positifs. On n'écrira plus~$\sqrt{-1}$.
+
+\subsection{Construction de $\C$}
+\label{sec:cons}
+\begin{Def} On appelle ens. des nombres complexes note $\C$ l'ens des $a+\I{}b$
+  o\`u $a$ et $b$ sont des reels et {\rm i} une solution de $x^2=-1$
+\end{Def}
+Dans la suite, $a$ et $b$ désigneront deux réels, et $z$ un nombre
+complexe égal à~$a+\I{}b$.
+\begin{Def}
+ Si $b=0$ on dit que $z=a$ est réel, si $a=0$, on dit
+que $z=\I{}b$ est un imaginaire pur.
+\end{Def}
+Remarque: $\R \subset \C$. On a donc les inclusions d'ensembles de
+nombres:
+\[ \N\subset\Z\subset\Q\subset\R \subset \C\]
+Les règles de calcul de $\R$ se prolongent à
+$\C$ en tenant compte de $\I{}^2=-1$
+On definit l'addition et la multiplication de deux complexes:
+\begin{itemize}
+\item Addition: La somme de deux complexes est un complexe. $z+z'=...$
+  (L'opération $+$ est associative et commutative, l'élement
+  neutre est le réel 0. Tout complexe admet un opposé. On dit que $\C$
+  muni de l'addition est un groupe.
+\item Multiplcation\dots idem.%, tout complexe non nul admet un inverse ($zz'=1$)
+\end{itemize}
+
+\begin{prop} $\C$ est stable par addition et  multiplication, la multiplication
+  est distributive sur l'addition, tout complexe non nul admet un
+  inverse qui est un nombre complexe. On dit que $\C$ est un corps.\end{prop}
+\begin{prop} Tout complexe $z$ s'écrit de manière unique sous la forme
+  $a+\I{}b=\Re(z)+\I{} \Im(z)$ appelée forme algebrique du complexe
+  $z$\end{prop}
+
+\begin{proof}
+    \begin{list}{$\bullet$}
+  \item $a+\I{}b=0 \iff (a=0 \quad\text{et}\quad b=0)$. Car sinon $\I{}\in\R$
+  \item $z=z' \iff z-z'=0 \iff ...$
+  \end{list}
+\end{proof}
+\begin{Def}
+  Lorsqu'un nombre complexe $z$ est mis sous forme algébrique $a+\I{}b$,
+  alors $a$ s'appelle la partie réelle de $z$, notée $\Re (z)$ et $b$ sa
+  partie imaginaire, notée: $\Im (z)$.
+\end{Def}
+\DangerZ La partie imaginaire comme la partie réelle est un nombre
+réel!\\
+\exemple $\Re (1+2i)=1$ et $\Im (1+2\I{})=2$ et pas $2\I{}$
+
+Consequence: On peut identifier partie réelle et imaginaire de deux
+complexes qui sont égaux
+\begin{prop}
+ $z=z' \iff \left(\Re(z)=\Re(z') \quad\text{et}\quad \Im(z)=\Im(z')\right)$ 
+\end{prop}
+ 
+
+\subsection{Conjugu\'e d'un nombre complexe}
+\label{sec:conj}
+\begin{Def} On appelle conjugu\'e de $z$, not\'e $\bar{z}$ \end{Def}
+\begin{prop} Conjugu\'e de: $z+z'$, $zz'$, $z^n$, $\dfrac{z}{z'}$ \end{prop}
+\begin{prop} $z\in\R \iff z=\bar{z}$ et $z\in \I{}\R \iff z+\bar{z}=0$\end{prop}
+\proof{$z=\bar{z} \iff \cdots \iff 2\I b=0\iff b=0 \iff z\in \R$}
+En particulier, $\bar{\lambda z}=\lambda \bar{z}$ pour $\lambda \in \R$.\\
+
+\subsection{Module d'un nombre complexe}
+\begin{prop} $z\bar{z}\in\R^+$ Et on a la formule $z\bar{z}=a^2+b^2$\end{prop}
+\begin{Def} On appelle module d'un nombre complexe, not\'e $|z|$ le r\'eel
+  positif: $\sqrt{z\bar{z}}$
+\end{Def}
+
+
+Remarque, cette notation est la m\^eme que la valeur absolue d'un reel
+et c'est bien justifie, les deux coincident sur $\R$.
+\begin{prop} Module de $zz'$, $z/z'$\end{prop}
+
+Remarque: $\C$ c'est cool, mais on a perdu qqchose: l'ordre, c'est le
+bordel, mais il reste le module...
+Formule de l'inverse: $1/z=\bar{z}/z\bar{z}$
+\section{Géométrie dans le plan complexe}
+On se place dans un plan muni d'un repère orthonormé
+$(O~;\vec{u},\vec{v})$.
+\begin{Def}
+  On appelle \emph{affixe} d'un point $A$ de coordonnées cartésiennes
+  $(x;y)$ le nombre complexe: $z_A=x+\I y$.
+\end{Def}
+D'après l'unicité des coordonnées cartésiennes d'un point dans un
+repère donné et de la forme algébrique d'un complexe, tout point du
+plan a une unique affixe et tout complexe est l'affixe d'un point du
+plan. On peut donc identifier $\C$ au plan, on parle alors du
+\emph{plan complexe} de la même manière que l'on parlait de la droite
+réelle.
+\begin{prop}
+  Dans le plan complexe, les réels sont représentés par l'axe des
+  abscisses et les imaginaires purs par l'axe des ordonnées.
+\end{prop}
+\begin{prop}[Interprétation géométrique du conjugué]
+Soit un point $A$ d'affixe $z$ et $A'$ d'affixe $z'$. Alors $A$ et
+$A'$ sont symétriques par rapport à $(Ox)$ ssi  $z'=\bar{z}$.
+\end{prop}
+\begin{Def}
+  Soit $\overrightarrow{w}$ un vecteur de coordonnées $\left(
+    \begin{array}[l]{c}
+      a\\
+     b
+    \end{array}
+    \right)$ on appelle \emph{affixe du vecteur} $\overrightarrow{w}$ le complexe $z_{\overrightarrow{w}}=a+ib$
+\end{Def}
+Ainsi on a grace aux règles de calcul sur les complexes:
+\begin{prop}
+  Pour deux points $A$ et $B$ d'affixe $z_A$ et $z_B$, on a: $\boxed{ z_{\overrightarrow{AB}}=z_B-z_A}$.
+\end{prop}
+\begin{prop}[Interprétation géométrique du module]
+Soit un point $A$ d'affixe $z_A$ et $B$ d'affixe~$z_B$. 
+\[\boxed{AB=\|\overrightarrow{AB}\|=|z_{\overrightarrow{AB}}|=|z_B-z_A|}\]
+\end{prop}
+Cette égalité est vraie car le repère $(O~;\vec{u},\vec{v})$ estorthonormé.
+\exercice Prouver que le triangle $OAB$ est isocèle rectangle où $A$ et
+$B$ sont les points d'affixes respectives:
+\[ z_A=1+2i\quad\text{et}\quad z_B=-2+i\]
+\exemple \textbf{(fondamental)} L'ensemble des points d'affixe de module 1 est
+le cercle de centre $O$ et de rayon~1.
+\begin{prop}
+  Deux vecteurs $\overrightarrow{w}$ et $\overrightarrow{w'}$ sont
+  colinéaires ssi il existe un réel $k$ tels que: 
+\[ z_{\overrightarrow{w}}=kz_{\overrightarrow{w'}}\]
+\end{prop}
+\begin{proof}
+  On l'écrit avec les coordonnées de vecteurs. Straight forward.
+\end{proof}
+\begin{prop}
+  Trois points $A$, $B$, $C$ sont alignés ssi il existe un réel $k$
+  tel que: 
+\[ z_B-z_A=k(z_C-z_A)\]
+\end{prop}
+\section{\'Equation du second degr\'e}
+L'objectif est de r\'esoudre dans $\C$ toutes les \'equations du
+second degr\'e \`a coefficients r\'eels. \ie{} de la forme:
+\[az^2+bz+c=0 \quad \text{o\`u}\ a\in\R^*,\ b\in\R,\ c\in\R\]
+\subsection{Forme canonique}
+On commence \`a la main, sans formule, en utilsant la forme canonique.
+\exemple On veut r\'esoudre: $z^2+2z+5=0$:
+\[z^2+2z+5=(z+1)^2-1+5=(z+1)^2+4=(z+1)^2-(2\I{})^2\]
+D'o\`u la factorisation et la r\'esolution:
+\[ z^2+2z+5=0 \iff \left( z+1-2\I{}\right)\cdot\left(z+1+2\I{}\right)=0 \iff
+z\in\{-1+2\I{}\,;\,-1-2\I{}\}\]
+R\'esoudre de la m\^eme mani\`ere les \'equations du
+second degr\'e suivantes dans $\C$:\\\noindent
+\qcmabc{$z^2-4z+5=0$}{$z^2+6z+11=0$}{$2z^2-4z+3=0$}
+\subsection{Formules}
+Cette technique vue par factorisation gr\^ace \`a la forme canonique est
+syst\'ematique et on peut donc obtenir des formules, similaires \` a
+celles des racines r\'eelles.
+\begin{enumerate}
+\item Mettre $az^2+bz+c$ sous forme canonique. On fera appara\^itre $\Delta=b^2-4ac$
+\item On suppose que $\Delta <0$. \'Ecrire $\dfrac{\Delta}{4a^2}$
+  comme le carr\'e d'un nombre complexe.
+
+
+\item En d\'eduire une factorisation de $az^2+bz+c$ sous la forme:
+\[ az^2+bz+c= a(z-z_1)(z-\overline{z_1})\quad \text{o\`u}\ z_1\in\C \]
+
+\item En d\'eduire les formules donnant les racines complexes de
+  $az^2+bz+c$ dans le cas o\`u le discriminant est n\'egatif.
+\end{enumerate}
+\textbf{Remarque:} Comme dans $\R$, si $b$, le coefficient de $z$, est nul on
+n'applique pas ces formules comme un \^ane. On proc\`ede ainsi: 
+\exemple $z^2+3=0\iff z^2-(\I{}\sqrt3)^2=0 \iff z \in  \{\I{}\sqrt3\,;\,-\I{}\sqrt3\}$
+\subsection{Application}
+\exercice
+R\'esoudre dans $\C$ les \'equations suivantes en appliquant les
+formules pr\'ec\'edentes.
+\begin{enumerate}
+\item \qcmabc{$2z^2+4z+5=0$}{$-2z^2+6z-5=0$}{$-5z^2+2z+2=0$}
+\item \qcmabc{$z^2+z+1=0$}{$(z^2+2)(z^2-4z+4)=0$}{$(z+1)^2=-(2z+1)^2$}
+\item \qcmabc{$2z^4-9z^2+4=0$}{$\left(z^2+1\right)^2=1$}{$\dfrac{z-1}{z+1}=z+2$}
+\end{enumerate}
+
+
+\exercice \textbf{\'Equation \`a coefficients sym\'etriques}. Soit l'\'equation $(E)$:
+  $z^4-5z^3+6z^2-5z+1=0$\\
+Prouver que $(E)$ est \'equivalente au syst\`eme:
+$\left\{\begin{array}{ll}
+  u^2-5u+4=0\\
+u=z+\dfrac{1}{z} 
+\end{array}\right.$\\
+
+R\'esoudre $u^2-5u+4=0$, puis r\'esoudre l'\'equation $(E)$ dans $\C$.
+
+
+
+
+\exercice Un grand classique du rire. On veut r\'esoudre une \'equation
+  de degr\'e trois dans $\C$. On ne vous donnera pas de formule, mais
+  on vous pr\'esentera toujours les choses \`a peu pr\`es ainsi: On exhibe
+  ou fait trouver une \og solution \'evidente\fg{} $z_0$, on factorise
+  par $(z-z_0)$ le polynome de d\'epart, et on est alors ramen\'e \`a
+  une \'equation de degr\'e deux.
+  \begin{enumerate}
+  \item Pour tout complexe $z$, on pose
+    $P(z)=z^3-12z^2+48z-128$. Calculer $P(8)$. D\'eterminer trois
+    r\'eels $a$, $b$, $c$ tels que pour tout complexe $z$:
+\[ P(z)=(z-8)(az^2+bz+c)\]
+R\'esoudre dans $\C$ l'\'equation $P(z)=0$.
+  \end{enumerate}
+  

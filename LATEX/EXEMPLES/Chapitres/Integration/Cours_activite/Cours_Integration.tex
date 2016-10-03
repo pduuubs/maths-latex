@@ -1,0 +1,72 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Intégration}%{\term}
+
+%%-----------------------
+
+\section{Notion d'intégrale et aire}
+Repère orthogonal, $\oij$ unité d'aire petit dessin.
+\begin{enumerate}
+\item Aire et intégrale d'une fct cont positive.\\
+\Def{Soit $f$ cont positive sur un intervalle $[a;b]$ et $\Cr$ sa
+  courbe dans
+$\oij$. l'intégrale ... est l'aire du domaine délimité par $\Cr$,
+$(Ox)$ et les droites $x=a$ et $x=b$}
+\rem La variable est muette, on met ce qu'on veut.
+\rem On lit intégrale de... ou somme de...
+\rem a et b sont les bornes de l'intégrale.
+On a vu que l'aire s'obtient comme somme d'aires de rectangles de
+largeur infinitésimale $\ud x$ et de hauteur $f(x)$ ce qui explique la
+notation due à Leibniz (1646-1716)
+\exemple $\int_{-2}^{0}3 \ud x=6$ (rectangle) et $\int_{1}^{3} t \ud
+t=4$ (trapèze)
+\item Valeur approchée d'intégrale.\\
+Il suffit de décomposer l'aire cherchée en rectangles, triangles et ou
+trapèzes pour obtenir une valeur approchée voire un encadrement de
+l'intégrale cherchée. 
+La calculatrice permet d'obtenir graphiquement une valeur approchée de
+l'intégrale et un joli coloriage.
+L'unité est unité d'aire (u.a.) Si on veut l'aire en ${\rm cm^2}$ il
+faut calculer combien de ${\rm cm^2}$ mesure 1 u.a.
+
+
+\end{enumerate}
+\section{Intégrale et primitive}
+On a établi le lien entre primitive et intégrale hier.
+\begin{enumerate}
+\item Primitive d'une fonction continue.\\
+\Def{Soit $f$ une fonction continue sur un intervalle $I$. On appelle
+  primitive de $f$ sur $I$ une fonction $F$ dérivable sur $I$ telle
+  que: $F'=f$}
+\exemple $(x^3)'=3x^2$ donc une primitive de $3x^2$ est $x^3$.
+\begin{prop}
+  Si F et G sont deux prim de $f$ alors elles diffèrent d'une constante.
+\end{prop}
+
+\begin{proof}
+  $(F-G)'=0$
+\end{proof}
+
+\begin{prop}
+  Unicité. Soit $f$  continue positive sur un intervalle $\intf{a}{b}$
+  alors $f$ admet une unique primitive qui s'annule en $a$:
+\[  F(x)=\int_a^x f(t)\ud t\]
+\end{prop}
+\begin{proof}
+ On l'a prouvé dans le cas d'une fonction monotone en TD. On l'admet
+ dans le cas général.
+\end{proof}
+\rem La condition de continuité est suffisante mais pas nécessaire...
+\item Généralisation de l'intégrale à l'aide de primitive\\
+Ici on se débarrasse de la condition de positivité et de l'ordre de
+$a$ et $b$:
+\Def{$f$ cont sur $I$ contenant $a$ et $b$, $F$ une prim de $f$ alors:
+\[ \int_a^b f(x)\ud x=F(b)-F(a)\]}
+\end{enumerate}
+%%-----------------------
+\end{document}

@@ -1,0 +1,600 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[]{paul}
+
+\usepackage{eso-pic} %pour filigrane
+\usepackage{minitoc}
+
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=12pt,headheight=3cm]{geometry}
+
+\usepackage[dvips,ps2pdf,colorlinks=false]{hyperref} %gestions des hyperliens dans un document .dvi
+
+\pagestyle{fancy}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\Alph{section}}
+
+\newcommand{\coordp}[2]{%
+	\left(\begin{array}{c}
+	#1 \\ #2
+	\end{array}\right)%
+}
+\newsavebox{\fmbox}
+\newenvironment{encadrer}{%
+\smallskip \par \noindent
+    \begin{lrbox}{\fmbox}\begin{minipage}{.98\linewidth}}
+    {%\vspace{1em}
+    \end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}
+	\vspace{0.2em}
+	%\vspace{1em minus .5em }
+	}
+	\renewcommand{\sectionmark}[1]%
+	   {\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+	\renewcommand{\sectionmark}[1]%
+	   {\markright{\MakeUppercase{\thesection.\ #1}}}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\newcommand{\Police}{%
+	   \fontfamily{%
+	pag%style des hauts de page en avant garde small caps
+	}\fontseries{m}\fontshape{sc}\fontsize{9}{11}\selectfont}
+	\fancyhf{}
+	\fancyhead[LE,RO]{\Police \thepage}
+	\fancyhead[LO]{\Police \rightmark}
+	\fancyhead[RE]{\Police \leftmark}
+\usepackage{epstopdf}
+
+	\title{%
+	{\bf Cours de Mathematiques en \term}}
+	\author{Paul PLANCHON}
+	\date{{\small {\Police Version du \today}}}
+	\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 				          DEBUT DU DOCUMENT                       %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\lfoot{\Pdpweblink}
+	\rfoot{{\small {\Police Version du \today}}}
+
+	\maketitle
+	\tableofcontents
+	\mainmatter
+
+	\chapter{Les Suites, revisions de Premiere}% suites adjacentes}
+	\section{Les suites et raisonnement par recurrence}
+
+	\begin{Def}
+On appelle suite numerique ou suite une fonction definie sur $\mathbb{N}$ vers $\mathbb{R}$ (ou d'une partie de $\mathbb{N}$ vers $\mathbb{R}$).\\
+On ecrit : $U : \mathbb{N} \rightarrow \mathbb{R}$ et $n \rightarrow U(n)$ note $U_n$.
+	\end{Def}
+
+	\exemple
+		\begin{enumerate}
+			\item $U_n = n^2 - 2n + 5$ est une suite definie de maniere explicite.
+			\item $U_m = \dfrac{2U_{n}+1}{U_{n}+1}$ et $U_{0} = 1$ est une suite definie de maniere recurente.
+		\end{enumerate}
+		\begin{description}
+			\item Dans le premier cas, on ecrit : "$U_n = f(n)$"
+			\item Dnas le second cas, on ecrit : "$U_n+1 = g(U_n)$"
+		\end{description}
+
+	\subsection{Raisonnement par recurence}
+	\begin{prop}
+		Un raisonnement par recurrence ne s'applique que pour une proposition construite sur $\mathbb{N}$.
+		Elle se passe en 2 etapes :
+		\begin{enumerate}
+			\item L'initialisation : On verifie que la proposition est vraie pour la premiere valeur de l'entier naturel. (en general, $n=0$, parfois $n=1$ ou $n=2$).
+			\item L'heredite : cette etape se coupe en 2 etapes :
+				\begin{enumerate}
+					\item L'hypothese de recurence : On suppose que la proposition est vraie pour $k$.
+					\item On demontre que la proposition est vraie pour le successeur de $k$, $k+1$.
+				\end{enumerate}
+		\end{enumerate}
+	\end{prop}
+
+	\exemple On pose : $S_{n} = \sum_{k=0}^{n}k = 0 + 1+ 2 + ... + n  $, montrer que $S_{n} = \frac{n(n+1)}{2}$ :
+		\begin{itemize}
+			\item Initialisation : pour $n=0$, $S_{0} = 0$ et $\frac{n(n+1)}{2} = \frac{0(0+1)}{2} = 0$, donc $S_{0} = 0$.
+			\item Heredite : On suppose qu'il existe un entier nature $p$ / $S_{p} = \frac{p(p+1)}{2}$, alors :
+
+				\begin{itemize}
+				\item $S_{p+1} = 0 + 1 + 2 + ... + (p - 1) + p + (p + 1)$
+				\item $S_{p+1} =          S_{p}                + (p + 1)$
+				\item $S_{p+1} = \frac{p(p+1)}{2} + (p+1)$
+				\item $S_{p+1} = (p+1)[\frac{p}{2} +1]$
+				\item $S_{p+1} = (p+1)[\frac{p+2}{2}]$
+				\item $S_{p+1} = \frac{(p+1)[(p+1)+1]}{2}$
+		\end{itemize}
+		\end{itemize}
+
+		Conclusion : $\forall n \in \mathbb{N}, S_{n} = \frac{n(n+1)}{2}$
+
+	\subsection{Suites bornees}
+	\begin{Def}
+		Soit ($U_{n}$) une suite.\\
+			\begin{enumerate}
+  			\item On dit que la suite ($U_{n}$) est majoree s'il existe un reel $M$ tel que $\forall n \in \mathbb{N}, (U_{n}) \leq M$
+  			\item On dit que la suite ($U_{n}$) est minoree s'il existe un reel $m$ tel que $\forall n \in \mathbb{N}, (U_{n}) \geq m$
+  			\item On dit que la suite est bornee si elle est majoree et minoree.
+			\end{enumerate}
+	\end{Def}
+	\smallskip
+	\textbf{IMPORTANT :}\\
+
+	\fbox{
+	\parbox{0.9\linewidth}{
+	\begin{itemize}
+	\item $\exists M \in \mathbb{R} / \forall n \in \mathbb{N} , U_n \leq M$
+	\item $\exists m \in \mathbb{R} / \forall n \in \mathbb{N} , U_n \geq m$
+	\item $\exists (m;M) \in \mathbb{R}^2 / \forall n \in \mathbb{N} , m \leq U_n \leq M$
+	\end{itemize}
+	}}\medskip\\
+
+	\begin{rem}
+		$(m;M) \in \mathbb{R}^2$ signifie que $m \in \mathbb{R}$ et $M \in \mathbb{R}$\\
+	\end{rem}
+
+	\exemple
+	Ces trois suites sont bornees par $-1$ et $1$.
+		\begin{itemize}
+  	\item $U_{n} = \sin(n)$
+  	\item $V_{n} = \cos(n)$
+  	\item $W_{n} = (-1)^n$
+		\end{itemize}
+			Preuve :\\
+		\begin{enumerate}
+		\item [$\Rightarrow$] $\forall n \in \mathbb{N}$, $-1 \leq \sin(n) \leq 1$
+		\item [$\Rightarrow$] $\forall n \in \mathbb{N}$, $-1 \leq \cos(n) \leq 1$
+		\item [$\Rightarrow$] $\forall n \in \mathbb{N}$, $\begin{cases}(-1)^n = 1 \text{ si n est pair}\\(-1)^n = -1 \text{ si n est impair}\end{cases}$\\donc $\forall n \in \mathbb{N}, -1 \leq (-1)^n \leq 1$\\
+		\end{enumerate}
+
+	\exemple
+	$U_{n} = \frac{2U_{n}+1}{U_{n}+2}$ et $U_{0} = 0$,\\
+	Montrer que la suite est bornee par 0 et 1.
+	\begin{description}
+	\item [$\Rightarrow$] Raissonement par recurrence :
+	\end{description}
+	\begin{description}
+	\item [   $\hookrightarrow$] Methode 1:
+	\end{description}
+		\begin{description}
+			\item [*] On part de $0 \leq 0 \leq 1$ et $U_{0} = 0$ donc, $0 \leq U_{0} \leq 1$, donc vrai pour $n = 0$
+			\item [*] On suppose qu'il existe un naturel $k$ tel que $0 \leq U_{k} \leq 1$.
+		\end{description}
+		Montrons qu'alors on a : $0 \leq U_n+1 \leq 1$
+		\begin{description}
+			\item [*] $U_{k+1} - 0 = U_k+1 = \frac{2U_k+1}{U_k + 2} \geq 0$ car $U_k \geq 0$, donc $2U_k \geq 0$ puis $2U_k + 1 \geq 1 > 0$. D'apres la regle des signes, $\frac{2U_k+1}{U_k + 2} > 0$. Donc $U_{k+1} > 0$.
+			\item [*] $U_{k+1} - 1 = \frac{2U_k+1}{U_k + 2} - 1 = \frac{2U_k+1 - (U_k + 2)}{U_k + 2} = \frac{U_k - 1}{U_k + 2} \leq 0$ car $U_k \leq 1$ donc $U_k - 1 \leq 0$ et $U_k + 2 \geq 0$, RDS $\Rightarrow$ $U_{k+1} - 1\leq 0$.
+		\end{description}
+		Conclusion : $U_k \leq 1$ donc $U_{k+1} \leq 0$ et $U_{k+2} > 0$, donc on a bien $0 \leq U_{k+1} \leq 1$.
+		\smallskip
+		\begin{description}
+		\item [   $\hookrightarrow$] Methode 2:
+		\end{description}
+		\begin{description}
+			\item[$\Rightarrow$] meme initialisation que pour la methode 1.
+			\item[$\Rightarrow$] Dans cette methode, on introduit une fonction generatrice :
+		\end{description}
+		On pose alors $f(x) = \frac{2x+1}{x+2}$, alors, $U_{n+1} = f(U_n)$,\\
+		puis $f'(x)=\frac{2(x+2)-(1)(2x+1)}{(x+2)^2}=\frac{3}{(x+2)^2} > 0$ car $3>0$ et $(x+2)^2 > 0$ donc $f$ est croissante sur $]-\infty;-2[\cup]-2;+\infty[.$, donc a fortiori, sur $[0;1]$.\\
+		Or, $0 \leq U_k \leq 1$\\
+		alors, $f(0) \leq f(U_k) \leq f(1)$ car $f$ croissante sur $[0;1]$.\\
+		or, $f(0) = \frac{1}{2},f(1) = \frac{2*1 + 1}{1 + 2} = 1$
+		donc, $\frac{1}{2} \leq f(U_k) \leq 1$ donc $\frac{1}{2} \leq U_{k+1} \leq 1$.\\
+		or, $\frac{1}{2} > 0$ donc, $0 \leq U_{k+1} \leq 1$.
+
+		\newpage
+
+		\begin{rem} Faire attention : \\
+			\begin{itemize}
+			\item $\exists M \in \mathbb{R} / \forall n \in \mathbb{N} , U_n \leq M$
+			\item $\forall m \in \mathbb{R} / \exists n \in \mathbb{N} , U_n \geq m$
+			\end{itemize}
+			\begin{description}
+				\item Dans la ligne 1, $M$ ne depend pas de $n$
+				\item Dans la ligne 2, $M$ depend de ce qu'il y a apres.
+			\end{description}
+
+			\smallskip
+
+			Une erreur "classique" :\\
+			par exemple, nous arrivons a : $\forall n \in \mathbb{N}, n-1 \leq U_n \leq 2n+3$.\\
+			Ici, on ne peut pas dire que $(U_n)$ est bornee par $n-1$ et $2n+3$. En effet, les minorants et majorants doivent etre des nombres ne dependants pas de $n$. Cependant, on peut dire que $(U_n)$ est dominee par $2n+3$.
+		\end{rem}
+
+		\subsection{Monotomie d'une suite}
+		\begin{Def}
+			Soit $(U_n)$ une suite,\\
+			\begin{enumerate}
+				\item On dit que $(U_n)$ est croissante ssi $\forall n \in \mathbb{N}, U_{n+1} - U_n \geq 0$
+				\item On dit que $(U_n)$ est decroissante ssi $\forall n \in \mathbb{N}, U_{n+1} - U_n \leq 0$
+			\end{enumerate}
+			(Si les inegalites sont strictes, on dit que la suite sera, respectivement, strictement croissante et strictement decroissante).
+		\end{Def}
+
+		\exemple $U_{n+1} = \frac{2U_n + 1}{U_n +2}$ et $U_0 = 0$.
+			$\Rightarrow$ : etudier la monotomie de la suite.\\
+			\smallskip
+			\begin{description}
+				\item $U_{n+1} - U_n =  \frac{2U_n + 1}{U_n +2} - U_n = \frac{(2U_n + 1)- U_n(U_n +2)}{U_n +2}$
+				\item $\frac{ 2U_n + 1 - U_n^2 +2U_n)}{U_n +2} = \frac{(1 - U_n^2}{U_n +2} = \frac{(1-U_n)(1+U_n)}{U_n +2}$\\
+			\end{description}
+			Or, on a vu que $\forall n \in \mathbb{N}, 0 \leq U_n \leq 1$.
+			donc,\\
+			\begin{description}
+				\item $1 - U_n \geq 0$
+				\item $1 + U_n \geq 1 > 0$
+				\item $0 \leq U_n \leq 1$ donc $2 \leq U_{n+1} \leq 3$ donc, $U_{n+1} > 0$.\\
+				D'apres la regle des signes,\\
+				$U_{n+1} - U_n \geq 0$ donc $(U_n)$ est croissante sur $\mathbb{N}$
+			\end{description}
+			\smallskip
+			\textbf{IMPORTANT :}\\
+
+			\fbox{
+			\parbox{0.9\linewidth}{
+			Si tous les termes de la suite sont strictement positifs, alors :\\
+			\begin{enumerate}
+				\item $\frac{U_{n+1}}{U_n} \geq 1$, alors la suite est croissante
+				\item $\frac{U_{n+1}}{U_n} \leq 1$, alors la suite est decroissante
+			\end{enumerate}
+			}}\medskip\\
+
+			\begin{proof}
+					$U_{n+1} - U_n = U_n(\frac{U_{n+1}}{U_n} - 1)$, donc le signe de $UI_{n+1} - U_n$ est alors le signe de $\frac{U_{n+1}}{U_n} - 1$ :
+					\begin{enumerate}
+						\item si on a : $\frac{U_{n+1}}{U_n} - 1 \geq 0$, la suite est alors croissante
+						\item si on a : $\frac{U_{n+1}}{U_n} - 1 \leq 0$, la suite est alors decroissante
+					\end{enumerate}
+			\end{proof}
+
+			\newpage
+
+			\exemple $V_n = \frac{2^n}{n^2}, n \geq 1$, il est evident que $V_n = \frac{2^n}{n^2} \geq 0$ car $2^n > 0$ et $n^2 > 0$ (RDS).\\
+			Donc, on pose : $U_n = \frac{2^n}{n^2}$,
+			\begin{description}
+				\item $U_n = \frac{\frac{2^{n+1}}{(n+1)^2}}{\frac{2^n}{n^2}} =  \frac{2^{n+1}*n^2}{2^n * (n+1)^2} = \frac{2*2^n*n^2}{2^n(n+1)^2} = \frac{2n^2}{(n+1)^2}$
+				\item Ensuite, $\frac{U_{n+1}}{U_n} - 1 = \frac{2n^2}{(n+1)^2} - 1 = \frac{2n^2-(n+1)^2}{(n+1)^2} = \frac{2n^2 - n^2 - 2n - 1}{(n+1)^2} = \frac{n^2-2n-1}{(n+1^2)}$, ici $(n+1)^2 > 0$.
+			\end{description}
+			$\Rightarrow$ Cherchons $n^2 - 2n - 1, \Delta = 4 + 4 = 8 > 0$, donc,
+			\begin{description}
+				\item $n_1 = \frac{2 - \sqrt{8}}{2} = \frac{2 - 2\sqrt{2}}{2} = \frac{2(1 - \sqrt{2})}{2} = 1 - \sqrt{2}$
+				\item $n_2 = \frac{2 + \sqrt{8}}{2} = 1 + \sqrt{2}$.
+			\end{description}
+			Ensuite, d'apres le tableau de signe,\\
+			$\forall n \geq 3, \frac{U_{n+1}}{U_n} - 1 > 0$ donc la suite est strictement croissante a partir de $n=3$,\\
+			puis, $U_1 = \frac{2^1}{1^2} = 2, U_2 = \frac{2^2}{1^2} = 1, U_1 = \frac{2^3}{3^2} = \frac{8}{9}$.\\
+			Comme $U_3 < U_2$, la suite n'est croissante qu'a partir de $n=3$. Cependant, si on avait trouve $U_3 = 1,2$, on aurrait put dire que $(U_n)$ etait croissante a partir de $n=2$.
+
+			\subsection{Representation graphique des termes d'une suite recurrente}
+			Soit $U_{n+1} = \frac{2U_n + 1}{U_n +2}$\\
+			\smallskip
+			\textit{Introduction:}\\
+			On introduit $f(x) = \frac{2x+1}{x+2}$, on sait que $f$ est croissante sur $]-\infty;-2[\cup]-2;+\infty[$.
+			\begin{center}
+					\includegraphics[totalheight=12cm]{Metapost_fig/Suites-rec.2}
+			\end{center}
+
+			\begin{enumerate}
+				\item Conjecture 1 : la suite est bornee entre 0 et 1.
+				\item Conjecture 2 : la suite est croissance
+				\item Conjecture 3 : la suite converge vers 1. (c'est a dire l'abscisse du point d'intersection de $f$ avec $\Delta : y = x$, support).
+			\end{enumerate}
+			\newpage
+			\textbf{D'autres dessins :}
+			\begin{center}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.1}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.3}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.4}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.5}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.6}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.14}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.15}
+					\includegraphics[totalheight=5cm]{Metapost_fig/Suites-rec.9}
+			\end{center}
+
+			\newpage
+
+			\subsection{Representation graphique d'une suite explicite}
+
+			\begin{Def}
+				Une suite est definie de maniere explicite si $(U_n)$ s'exprime directement en fonction de $n$, cad, $U_n = f(n)$.
+			\end{Def}
+
+			On construit la courbe representative de $f$ puis tous les points de cette courbe dont les abscisses sont des entiers naturels. Tous ces points vont constituer un nuage de points et leurs ordonnees seront les termes $U_0$, $U_1$, $U_2$ ... $U_n$.\\
+			Pour construire les termes de la suite sur l'axe des abscisses, on utilise la droite d'equation $y = x$.
+
+			\subsection{Theoremes divers}
+
+			\begin{prop}
+				On considere une suite $(U_n)$ qui est definie de maniere explicite, cad $U_n = f(n)$, alors :
+				\begin{description}
+					\item si $f$ est croissante alors $(U_n)$ aussi.
+					\item si $f$ est decroissante alors $(U_n)$ aussi.
+					\item si $f$ est constante alors $(U_n)$ aussi.
+				\end{description}
+			\end{prop}
+			\textbf{ATTENTION, LES RECIPROQUES SONT FAUSSES}
+
+			\smallskip
+
+			\begin{proof}
+				On part de $\forall n \in \mathbb{N}$ et $U_n \in Df \subset \mathbb{R}^+, n \leq n+1$,
+				\begin{enumerate}
+					\item alors $f(n) \leq f(n+1)$ car $f$ est croissante sur $\mathbb{R}^+$. ($\mathbb{R}^+ \subset \mathbb{N}$), donc $U_n \leq U_{n+1}$ donc la suite est croissante.
+					\item alors $f(n) \geq f(n+1)$ car $f$ est decroissante sur $\mathbb{R}^+$. ($\mathbb{R}^+ \subset \mathbb{N}$), donc $U_n \geq U_{n+1}$ donc la suite est decroissante.
+				\end{enumerate}
+			\end{proof}
+
+			\begin{rem}
+				En effet, $\mathbb{N} \subset \mathbb{R}^+$, il faut que $f$ soit definie sur $\mathbb{R}^+$ afin de calculer $f(n)$ cad ($U_n$).
+			\end{rem}
+
+			\exemple Une suite $U_n = f(n)$ qui est croissante sans pour cela avoir $f$ croissant \\prendre $f(x) = \sin{(2\pi x)} + x$
+
+			\begin{prop}
+				\begin{description}
+					\item Toute suite croissante est minoree par son premier terme.
+					\item Toute suite decroissante est majoree par son premier terme.
+				\end{description}
+			\end{prop}
+
+			\begin{proof}
+				\begin{enumerate}
+					\item Prendre $U_0 \leq U_1 \leq U_2 \leq U_3 \leq ... \leq U_n$, donc $\forall n \in \mathbb{N}, U_n \geq U_0$.
+					\item Prendre $U_0 \geq U_1 \geq U_2 \geq U_3 \geq ... \geq U_n$, donc $\forall n \in \mathbb{N}, U_n \leq U_0$.
+				\end{enumerate}
+			\end{proof}
+
+			\section{Suites arithmetiques et geometriques}
+				\subsection{Definitions de la suite arithmetique}
+
+			\begin{Def}
+				On considere une suite $(U_n)$, s'il existe un reel $r$ tel que pour tout naturel, on sait que $U_{n+1} = U_n + r$ alors ($U_n$) sera dite arithmetique de raison $r$ et de premier terme $U_0$.
+			\end{Def}
+
+			\medskip
+
+			\textbf{IMPORTANT :\\}
+
+			\fbox{
+			\parbox{0.9\linewidth}{
+				$\exists n \in \mathbb{R} / \forall n \in \mathbb{N}, U_{n+1} = U_n + r$
+			}}\medskip\\
+
+			\begin{rem}
+				de part cette ecriture, $r$ est independant de $n$.\\
+				$U_{n+1} = U_n + 2n - 3,$ ici on ne dit pas que la suite a une raison de $2n-3$, ici, \\il est dependant de $n$! Il doit etre constant.
+			\end{rem}
+
+			\exemple
+				\begin{description}
+					\item La liste des nombres entiers est une suite arithmetique avec, $r=1$ et $U_0 = 0$.
+					\item En prenant, $U_0 = 0$ et $r = 2$, on obtient les nombres pairs.
+					\item En prenant, $U_0 = 1$ et $r = 2$, on obtient les nombres impairs.
+					\item Pour $r = 0$, la suite est constante car $U_{n+1} = U_n + 0 = U_n$, par recurence, on montre que $\forall n \in \mathbb{N}n, U_n = U_0$
+				\end{description}
+
+			\subsection{Theoreme}
+
+			\begin{prop}
+				Soit ($U_n$) une suite de raison $r$ et de premier terme $U_0$.
+				\begin{enumerate}
+					\item $\forall n \in \mathbb{N}, U_n = U_0 + nr$
+					\item $\sum_{k = 0}^{n} U_k = U_0 + U_1 + U_2 + ... + U_n = \frac{(n+1)(U_0 + U_n)}{2} = \frac{(\text{nombre de terme})(\text{premier terme + dernier terme})}{2}$
+				\end{enumerate}
+			\end{prop}
+
+			\newpage
+
+			\begin{proof}
+				(par recurrence)\\
+				\begin{enumerate}
+					\item Methode 1 :
+					\begin{enumerate}
+						\item Initialisation : \\pour $n=0, U_n + nr = U_0 + 0r = U_0$ donc vrai pour $U_0$.
+						\item Heredite :
+							\begin{description}
+								\item On suppose qu'il $\forall k \in \mathbb{N}, U_k = U_0 +kr$ (HR).
+								\item $U_{n+1} = U_k + r$
+								\item $U_{n+1} = (U_0 + kr) + r$
+								\item $U_{n+1} = U_0 + (k+1)r$
+							\end{description}
+						\item donc vrai pour $n+1$.
+					\end{enumerate}
+					\item Methode 2 :
+					\begin{enumerate}
+						\item Initialisation : \\pour $\sum_{k=0}^{0} U_k = U_0$, et le terme de droite prend $\frac{(0+1)(U_0 + U_0)}{2} = \frac{2U_0}{2} = U_0$. Donc vrai pour n = 0.
+						\item Heredite :
+							\begin{description}
+								\item On suppose qu'il $\forall p \in \mathbb{N}, \sum_{p=0}^{0} U_p = \frac{(p+1)(U_0 + U_p)}{2}$ (HR).
+								\item $S_n = U_0 + U_1 + ... + U_p + U_{p+1}$
+								\item $S_n = \frac{(p+1)(U_0 + U_p)}{2} + U_{p+1}$
+								\item $S_n = \frac{(p+1)(U_0 + U_{p+1} - r)}{2} + U_{p+1}$
+								\item $S_n = \frac{(p+1)(U_0 + U_{p+1} - r)(2)(U_{p+1})}{2}$
+								\item $S_n = \frac{(p+1)U_0 + (p+3)(U_{p+1} -(p+1))}{2}$
+								\item $S_n = \frac{(p+2)U_0 - U_0 + (p+2)U_{p+1} -(p+1) + U_{p+1}}{2}$
+								\item $S_n = \frac{(p+2)U_0 + (p+2)U_{p+1} + U_{p+1} - U_0 -(p+1)}{2}$
+								\item $S_n = \frac{(p+2)(U_0 + U_p+1)}{2}$
+							\end{description}
+						\item donc vrai pour $n+1$.
+					\end{enumerate}
+				\end{enumerate}
+				\end{proof}
+
+			\begin{prop}
+				Soit $(U_n)$ une suite s.a. de raison $r$ et de premier terme $U_a$ alors,
+					\begin{enumerate}
+						\item $U_n = U_0 + (n-a)r$
+						\item $U_a + U_{a+1} + ... + U_n = \frac{(n-a+1)(U_a+U_n)}{2}$
+					\end{enumerate}
+			\end{prop}
+
+			\begin{proof}
+				admise.
+			\end{proof}
+
+		\subsection{Definition de la suite geometrique}
+			\begin{Def}
+				Soit $U_n$ une suite s'il existe un reel $q$ tel que pour tout entier naturel $n$ on ait,\\
+				$U_{n+1} = q * U_n$, la suite est dite geometrique de raison $q$ (et $U_0$ est donné).\\
+			\end{Def}
+
+			\fbox{
+			\parbox{0.9\linewidth}{
+				$\exists n \in \mathbb{R} / \forall n \in \mathbb{N}, U_{n+1} = q * U_n$
+			}}\medskip\\
+
+			\begin{rem}
+				\textit{Cas particuliers:}
+				\begin{enumerate}
+					\item $q = 0$ : la suite est constante à partir du second terme. $U_0$ puis $\forall n \in \mathbb{N}, U_n = 0$
+					\item $q=1, \forall n \in \mathbb{N}, U_n = U_0$
+				\end{enumerate}
+			\end{rem}
+
+			\newpage
+
+			\begin{prop}
+				Soit $U_n$ une suite geo. de raison $q$ ($q \neq 1 \text{ et } q \neq 0$) et de premier terme $U_0$.
+				\begin{enumerate}
+					\item $U_n = U_0 * q^n$
+					\item $\sum_{k = 0}^{n}U_n = U_0 + U_1 + ... + U_n = U_0 * \frac{1-q^{n+1}}{1 - q}$\\
+				\end{enumerate}
+
+				Cas particuliers :
+				\begin{enumerate}
+					\item pour $q=1$, $U_n = U_0$, donc, $U_0 + U_1 + U_2 + ... + U_n = (n+1)U_0$.
+					\item pour $q=0$, $U_n = 0$ avec $n \geq 1$, $U_0 + U_1 + ... U_n = U_0$\\
+				\end{enumerate}
+			\end{prop}
+
+			\begin{proof}
+				\textit{(par recurrence):}\\
+				\begin{enumerate}
+					\item Methode A:
+						\begin{enumerate}
+							\item Init : pour $n=0$, $U_0 * q^n = U_0 * q^0 = U_0 * 1 = U_0$, donc vrai pour $n=0$.
+							\item Heredite :
+								\begin{description}
+									\item On suppose que $\forall p \in \mathbb{N} / U_p = U_0 * q^p$
+									\item alors, $U_{p+1} = q * U_p = q * U_0 * q^p = U_0 * q^{p+1}$, vrai pour $p+1$.
+								\end{description}
+						\end{enumerate}
+					\item Methode B:
+						\begin{enumerate}
+							\item Initialisation : pour $k=0, \sum_{k=0}^{p} U_k = U_0 * \frac{1-q^{p+1}}{1-q} = U_0 * 1 = U_0$ donc vrai pour $k=0$
+							\item Heredite :
+								\begin{description}
+									\item On suppose $\forall p \in \mathbb{N}, \sum_{k=0}^{p} = U_0 * \frac{1-q^{p+1}}{1-q}$
+									\item or, $U_0 + U_1 + ... U_n + U_{n+1}$
+									\item $ = U_0 * \frac{1-q^{p+1}}{1-q} + U_{p+1}$
+									\item $ = U_0 * (\frac{1-q^{p+1}}{1-q}) + U_0 * q^{p+1}$
+									\item $ = U_0[\frac{1-q^{p+1}}{1-q} + q^{p+1}]$
+									\item $ = U_0[\frac{1-q^{p+1} + (1-q)(q^{p+1})}{1-q}]$
+									\item $ = U_0[\frac{1-q^{p+1} + q^{p+1} + q^{p+2}}{1-q}]$
+									\item $ = U_0[\frac{1-q^{p+2}}{1-q}]$
+									\item $ = U_0[\frac{1-q^{(p+1)+1}}{1-q}]$
+									\item donc vrai pour $p+1$.
+								\end{description}
+						\end{enumerate}
+					\end{enumerate}
+			\end{proof}
+
+			\subsection{Formule importante a savoir}
+			\begin{prop}
+				Soit $q \in \mathbb{R} \setminus \big\{1\big\} $ alors $1+q+q^2+q^3+...+q^n = \frac{1-q^{n+1}}{1-q}$
+			\end{prop}
+
+			\begin{proof}
+				Prenons $(U_n)$, une suite geo. avec $U_0 = 1$ et de raison $q$ alors
+				\begin{description}
+					\item $\forall k \in \mathbb{N}, U_k = U_0 * q^k = q^k$
+					\item $U_0 + U_1 + U_2 + ... U_n = 1 + q + q^2 + ... + q^{n-1} + q^n$
+					\item $ = U_0 * (\frac{1-q^{n+1}}{1-q})$
+					\item $1*(\frac{1-q^{n+1}}{1-q}) = \frac{1-q^{n+1}}{1-q}$
+				\end{description}
+			\end{proof}
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                  FIN DU CHAPITRE 1                        %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+		\chapter{Convergence (et divergence) des suites}
+			\section{Convergence d'une suite}
+			\label{sec:Convergence d'une suite}
+				\subsubsection{Partie entiere d'une suite}
+				\label{subs:Partie entiere d'une suite}
+
+			\begin{prop}
+				Soit $x \in \mathbb{R}$. On appelle partie entiere de $x$, notee, $E(x)$, l'unique entier verifiant :\\
+
+					\fbox{
+					\parbox{0.9\linewidth}{
+									$E(x) \leq x < 1+E(x)$
+					}}\medskip\\
+			\end{prop}
+
+		\exemple
+			\begin{description}
+				\item $E(\sqrt{2}) = 1$
+				\item $E(-3\pi) = -10$
+				\item $E(-1.6) = -2$
+				\item $E(4) = 4$
+				\item $E(0) = 0$
+				\item $E(-2\sqrt{3}) = -4$
+			\end{description}
+
+			\subsection{Definition de la convergence}
+			\label{subs:Definition de la convergence}
+
+			\begin{Def}
+				Soit $(U_n)$ une suite numerique.\\
+				On dit que ($U_n$) converge vers le reel $l$ si tout interval ouvert contenant $l$ contient tous les termes de la suite à partir d'un certain rang. On ecrit alors :
+				\begin{center}
+					$ \lim_{n \rightarrow \infty} (U_n) = l$
+				\end{center}
+			\end{Def}
+
+			\begin{rem}
+				Dessin explicatif dans le cahier de cours, flemme quoi.
+			\end{rem}
+
+			\subsection{Autre traduction de la def.}
+			\label{subs:Autre traduction de la def.}
+			\begin{center}
+					$(\forall \varepsilon > 0)(\exists n_0 \in \mathbb{N})$ / $(\forall n \in \mathbb{N})$, $n \geq n_0)$  $\left| U_n - l \right| < \varepsilon$
+			\end{center}
+
+			\exemple
+				$U_n = \frac{2n+1}{n-1}$ avec $n \neq 1$\\
+				Montrer que ($U_n$) converge vers 2\\
+				On prend $\varepsilon$ positif (au hasard). On cherche $n_0 \in \mathbb{N}$ / $n \geq n_0$,\\
+				la distance entre $U_n$ et $l$ ne depasse pas $\varepsilon$.\\
+				$|U_n - 2| \leq \varepsilon$ $ \Leftrightarrow $ $|\frac{2n+1}{n-1} - 2| \leq \varepsilon$ $ \Leftrightarrow $ $|\frac{2n+1 -2(n-1)}{n-1} -2|\leq \varepsilon$$ \Leftrightarrow $ $|\frac{3}{n-1}|\leq \varepsilon$  $ \Leftrightarrow $ $\frac{|3|}{|n-1|}\leq \varepsilon$$ \Leftrightarrow $ $3 \leq \varepsilon|n-1|$ (car $|n-1| \geq 0$)
+				$3 \leq |n-1|$, or par necessite, $n \geq 2$\\
+				donc, $n-1 \geq 1 > 0$\\
+				d'ou, $\frac{3}{\varepsilon} < n-1$\\
+				d'ou, $n>\frac{3}{\varepsilon} + 1$\\
+
+				$|U_n - 2| < \varepsilon \Leftrightarrow n > 1 + \frac{3}{\varepsilon}$\\
+
+				Comme $\varepsilon$ est quelquonque, a priori, $1+\frac{3}{\varepsilon}$ n'a pas de chance d'etre entier.\\
+				C'est la qu'intervient la partie entiere.\\
+
+				$E(1 + \frac{3}{\varepsilon}) \leq 1 + \frac{3}{\varepsilon} \leq 1 + E(1 + \frac{3}{\varepsilon})$\\
+
+				Reprise de la demonstration :\\
+
+				Prenons le nombre $n_0 = E(1 + \frac{3}{\varepsilon}) + 1 \in \mathbb{N}$\\
+				alors des que $n \geq E(1 + \frac{3}{\varepsilon}) + 1$, on est assure d'avoir $n \geq 1 + \frac{3}{\varepsilon}$ (car $1 + \frac{3}{\varepsilon} \leq 1 + E(1 + \frac{3}{\varepsilon})$).\\
+				Donc grace au travail precedent, $|U_n - 2| < \varepsilon$\\
+
+				\textit{Application numerique:\\}
+
+				$\varepsilon = 0.00037$\\
+				alors $1 + \frac{3}{\varepsilon} = 8109.1...$\\
+				donc, $1 + \frac{3}{\varepsilon} = 1+ 8109 = 8110$, alors $n \geq 8110$ on aura : $|U_n - 2| = |\frac{2n+1}{n-1} - 2| = \frac{|3|}{|n-1|} = \frac{3}{|n-1|}$, or $n \geq 8110$ alors, $n-1 \geq 8109$.\\
+				$0 < \frac{1}{n-1} \leq \frac{1}{8109} \Leftrightarrow \frac{3}{n-1} \leq \frac{3}{8109} \Leftrightarrow \frac{3}{|n-1|} \leq 3.6995 * 10^-4$\\
+				$\frac{3}{|n+1|} < 0.00036995 < 0.00037$
+
+	\end{document}

@@ -1,0 +1,43 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -11 6 11 54 
+%%Creator: MetaPost
+%%CreationDate: 2007.09.18:1203
+%%Pages: 1
+%%DocumentFonts: CMMI10 CMR10
+ /cmmi10 /CMMI10 def
+ /cmr10 /CMR10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+-10.84851 6.71469 moveto
+(i) cmmi10 9.96265 fshow
+-4.64891 6.71469 moveto
+(=) cmr10 9.96265 fshow
+5.86719 6.71469 moveto
+(1) cmr10 9.96265 fshow
+-10.84851 16.71469 moveto
+(i) cmmi10 9.96265 fshow
+-4.64891 16.71469 moveto
+(=) cmr10 9.96265 fshow
+5.86719 16.71469 moveto
+(2) cmr10 9.96265 fshow
+-10.84851 26.71469 moveto
+(i) cmmi10 9.96265 fshow
+-4.64891 26.71469 moveto
+(=) cmr10 9.96265 fshow
+5.86719 26.71469 moveto
+(3) cmr10 9.96265 fshow
+-10.84851 36.71469 moveto
+(i) cmmi10 9.96265 fshow
+-4.64891 36.71469 moveto
+(=) cmr10 9.96265 fshow
+5.86719 36.71469 moveto
+(4) cmr10 9.96265 fshow
+-10.84851 46.71469 moveto
+(i) cmmi10 9.96265 fshow
+-4.64891 46.71469 moveto
+(=) cmr10 9.96265 fshow
+5.86719 46.71469 moveto
+(5) cmr10 9.96265 fshow
+showpage
+%%EOF

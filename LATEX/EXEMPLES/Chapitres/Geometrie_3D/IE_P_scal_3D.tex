@@ -1,0 +1,111 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{dcolumn}
+\usepackage{textcomp}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree}
+\newcommand{\vect}[1]{\mathchoice%
+{\overrightarrow{\displaystyle\mathstrut#1\,\,}}%
+{\overrightarrow{\textstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptscriptstyle\mathstrut#1\,\,}}}
+\begin{document}
+\ds{\term S}
+\lhead{\textbf{Nom:}}
+
+%\textbf{\textsc{Exercice 3} \hfill 4 points}\\
+%\textbf{Commun \`a tous les candidats}\\
+Ce devoir comporte deux exercices. Dans le premier  une r\'eponse par
+\og VRAI \fg{} ou \og FAUX \fg{}, sans justification, est demand\'ee
+au candidat en regard d'une liste d'affirmations. Toute r\'eponse
+conforme \`a la r\'ealit\'e math\'ematique donne 1,5 points. Toute
+r\'eponse erron\'ee enl\`eve 0,5 point. Dans le deuxième exercice, on
+demande d'inscrire la réponse sur les pointillés. Une réponse correcte
+rapporte alors 2,5 points et une réponse incorrecte enlève 0,5
+point. Dans les deux exercices, l'absence de r\'eponse n'est pas
+comptabilis\'ee. Le total des points à ce devoir ne saurait  \^etre n\'egatif.
+
+\vspace{0,5cm}
+
+\noindent\parbox{0,5\textwidth}{On donne le cube ABCDEFGH, d'ar\^ete de longueur 1, et les milieux I et J des ar\^etes [AB] et [CG]. Les \'el\'ements utiles de la figure sont donn\'es ci-contre.
+ } \hfill
+\parbox{0,45\textwidth}{\begin{pspicture}(4.5,5)
+\pspolygon(0.4,1.05)(2.7,0.4)(4.4,2.2)(2,2.8)%ABCD
+\pspolygon(0,3.2)(2.4,2.6)(4,4.4)(1.7,5)%EFGH
+\pspolygon(0,3.2)(1.55,0.725)(4.2,3.3)%EIJ
+\psline(0.4,1.05)(0,3.2) \psline(2.7,0.4)(2.4,2.6) \psline(4.4,2.2)(4,4.4)
+\psline(2,2.8)(1.7,5)
+
+\put(0.2,0.8){A}  
+\put(2.5,0.05){B}  
+\put(4.5,2.2){C}  
+\put(1.65,2.8){D}  
+\put(-0.3,3){E}  
+\put(2.1,2.25){F}  
+\put(4,4.5){G}  
+\put(1.7,5.15){H}  
+\put(1.35,0.375){I}  
+\put(4.35,3.3){J}  
+\end{pspicture} }
+
+%\vspace{0,5cm}
+\exods{}{7,5}
+%\noindent \textbf{On utilisera pour r\'epondre la feuille annexe, qui sera rendue avec la copie.}
+\begin{center}\begin{tabularx}{\linewidth}{|c|X|c|}\hline
+&Affirmation&	VRAI ou FAUX\\\hline\hline
+\textbf{1.}&$\vect{\text{AC}}\cdot \vect{\text{AI}} = \dfrac{1}{2}$&\rule[-3mm]{0mm}{8mm} \\ \hline
+\textbf{2.}&$\vect{\text{AC}}\cdot \vect{\text{AI}} = \vect{\text{AI}}\cdot \vect{\text{AB}}$&\rule[-3mm]{0mm}{8mm}\\ \hline
+\textbf{3.}&$\vect{\text{AB}}\cdot \vect{\text{IJ}} = \vect{\text{AB}}\cdot \vect{\text{IC}}$&\rule[-3mm]{0mm}{8mm} \\ \hline
+\textbf{4.}&$\vect{\text{AB}}\cdot \vect{\text{IJ}} = \text{AB} \times
+\text{IC} \times \cos \dfrac{\pi}{3}$\hspace{4,3cm}
+&\rule[-3mm]{0mm}{8mm} \\ \hline
+\textbf{5.}&(HI)$\bot$(AB)\hspace{4,3cm} &\rule[-3mm]{0mm}{8mm} \\ \hline
+\end{tabularx}
+%\vspace{0,5cm}
+\exods{}{12,5}
+\noindent On utilise \`a pr\'esent le rep\`ere orthonormal $\left(\text{A}~;~\vect{\text{AB}},~\vect{\text{AD}},~\vect{\text{AE}}\right)$.
+
+\begin{tabularx}{\linewidth}{|c|X|}\hline
+&Réponse à compléter\\\hline\hline
+\textbf{6.}&\rule[-6.5mm]{0mm}{15mm}Donner une repr\'esentation param\'etrique de la droite (IJ).
+$\left\{\begin{array}{l c l}
+x&=&\qquad\qquad\\
+y& =& \\
+z&=&\\
+\end{array}\right. \qquad ,t\in\R$ \\ \hline
+\textbf{7.}& \rule[-3mm]{0mm}{8mm}Les plans d'équation $z=1$ et $x=0$ sont sécants selon la droite$\phantom{\displaystyle \sum}$\dotfill \\\hline
+\textbf{8.}&\rule[-3mm]{0mm}{8mm}Donner une \'equation cart\'esienne du plan passant par F
+et dont $\vect{\text{EI}}$ est un vecteur normal.\\
+&\rule[-3mm]{0mm}{8mm}\dotfill \\ 
+ \hline
+\textbf{9.}&\rule[-3mm]{0mm}{8mm} 
+%L'intersection des plans (FIJ) et (ABC) est elle la droite   passant
+%par I et par le milieu de l'ar\^ete [DC]? 
+Parmi les droites (AC), (BD), (AG) et (EC) laquelle est parrallèle au
+plan d'équation: $\ x+y+z-2=0$ \dotfill\\ \hline
+\textbf{10.}&\rule[-6.5mm]{0mm}{15mm}Le vecteur de coordonn\'ees
+$\left(\begin{array}{l}-4\\ 1\\2\\ \end{array}\right)$ 	est-il un vecteur 
+ normal  au plan (FIJ)? \dotfill \\ \hline
+%\textbf{11.}&	 \\ \hline
+\end{tabularx}
+\end{center}
+
+
+\end{document}
+
+% Pour mettre un filigrane Obligatoire
+
+% \begin{center}
+% Session 2007\\
+% \raisebox{-6cm}{{\LARGE Mathematiques}}\\
+% {\Large Série: S}\\
+% \end{center}
+% \fontsize{100}{100pt}\selectfont
+% \framebox[1cm][l]{
+% \rotatebox{30}{\makebox[1.1\textwidth][s]{{\bf{\gray O
+%           b l i g a t o i r e}}}}%
+% }

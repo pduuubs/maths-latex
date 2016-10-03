@@ -1,0 +1,18 @@
+\begin{exercice}
+  \begin{enumerate}
+
+  \item Tracer (unité 2cm) sur $\left[-2\,;4\right]$ la courbe de la fonction \og partie fractionnaire \fg{}
+notée~$f$, définie à partir de la fonction partie entière~$E$ par:
+\[ f(x)=x-E(x)\]
+\item Cette fonction est-elle continue sur~$\mathbb{R}$? Justifier.
+\item On note $d$ la fonction définie sur~$\mathbb{R}$ par:
+\[ d(x)=|f(x)-\frac12| \]
+Tracer la courbe de cette fonction sur $\left[-2\,;4\right]$. Vu le
+graphique, cette fonction est-elle continue sur~$\mathbb{R}$? 
+
+\item Si je vous dis que  la distance d'un réel $x$ à l'entier le plus
+  proche est égale à  $d(x)$, êtes vous d'accord?
+  \end{enumerate}
+
+
+\end{exercice}

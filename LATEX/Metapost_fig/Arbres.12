@@ -1,0 +1,711 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -59 -3 80 116 
+%%Creator: MetaPost
+%%CreationDate: 2008.02.13:0024
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 5.66928 0 dtransform exch truncate exch idtransform pop setlinewidth
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+-3.92221 9.1155 -4.4269 19.49062 0 28.34645 curveto stroke
+ 0 3.96848 dtransform truncate idtransform setlinewidth pop
+newpath 0 28.34645 moveto
+6.58478 32.2119 11.88608 37.82208 16.519 43.88309 curveto stroke
+ 0 2.77792 dtransform truncate idtransform setlinewidth pop
+newpath 16.519 43.88309 moveto
+18.73242 50.02328 26.51122 50.10585 32.76085 51.96591 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath 32.76085 51.96591 moveto
+37.57866 51.49686 42.43361 51.70274 47.26248 51.37651 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 47.26248 51.37651 moveto
+50.7682 49.45346 55.58635 49.38174 57.3895 45.69705 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 57.3895 45.69705 moveto
+61.64224 44.31403 65.94348 42.17337 64.07329 39.24654 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 64.07329 39.24654 moveto
+61.91212 37.47598 65.22206 35.12053 69.20474 33.8717 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 69.20474 33.8717 moveto
+70.94862 32.79315 71.26767 30.53366 72.32413 28.811 curveto stroke
+newpath 69.20474 33.8717 moveto
+71.19188 33.59874 72.77657 32.15251 74.68681 31.57213 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 64.07329 39.24654 moveto
+66.54659 39.4013 68.99217 39.86247 71.46727 39.9882 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 71.46727 39.9882 moveto
+73.44597 39.74603 75.45656 39.53474 77.2713 38.70164 curveto stroke
+newpath 71.46727 39.9882 moveto
+68.08345 41.1525 73.41447 41.85214 76.90509 42.39064 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 57.3895 45.69705 moveto
+60.30945 44.62091 63.44391 44.40431 66.53172 44.05411 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 66.53172 44.05411 moveto
+64.35751 42.3003 67.63472 39.91045 71.5725 38.59433 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 71.5725 38.59433 moveto
+69.72467 36.88437 79.28035 35.11829 74.4109 33.37096 curveto stroke
+newpath 71.5725 38.59433 moveto
+72.34813 36.42474 76.17099 38.19661 76.91347 35.98393 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 66.53172 44.05411 moveto
+70.43124 43.64618 80.06471 44.54945 73.91975 43.25658 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 73.91975 43.25658 moveto
+76.92479 41.63068 80.69426 39.75934 77.99425 38.92775 curveto stroke
+newpath 73.91975 43.25658 moveto
+75.87459 43.87093 76.62006 46.37254 78.60677 46.9134 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 47.26248 51.37651 moveto
+51.18604 53.59912 56.691 54.96822 55.8044 59.24097 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 55.8044 59.24097 moveto
+58.34686 61.33636 61.87233 59.67024 65.07387 59.83942 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 65.07387 59.83942 moveto
+64.89355 56.6963 70.1712 57.58878 70.66989 54.9501 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 70.66989 54.9501 moveto
+68.03876 53.41408 78.26021 50.69772 73.08502 49.51785 curveto stroke
+newpath 70.66989 54.9501 moveto
+66.25021 54.10202 73.09584 53.80003 76.41965 53.43939 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 65.07387 59.83942 moveto
+66.8187 61.68723 69.40955 62.25345 71.88214 62.81746 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 71.88214 62.81746 moveto
+73.8231 63.24901 75.84639 63.38336 77.66438 64.19858 curveto stroke
+newpath 71.88214 62.81746 moveto
+73.12819 64.37245 73.91869 66.2202 74.71373 68.04468 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 55.8044 59.24097 moveto
+54.18025 62.28998 57.74701 64.86235 59.35425 67.82475 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 59.35425 67.82475 moveto
+61.55817 69.15735 62.74461 71.58022 63.34836 74.09116 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 63.34836 74.09116 moveto
+66.22694 75.07672 74.45749 75.20107 69.15392 75.37068 curveto stroke
+newpath 63.34836 74.09116 moveto
+62.59619 76.20343 63.75774 78.48207 65.8156 79.49983 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 59.35425 67.82475 moveto
+60.90074 70.0981 60.58476 73.12823 58.77968 75.23366 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 58.77968 75.23366 moveto
+56.21854 77.53874 70.55597 77.63777 62.93558 79.48459 curveto stroke
+newpath 58.77968 75.23366 moveto
+60.3311 76.9306 57.2266 78.16165 53.96779 78.72481 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath 32.76085 51.96591 moveto
+33.89555 56.83395 41.34512 58.77911 40.58728 64.1884 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 40.58728 64.1884 moveto
+44.88734 65.19948 54.67325 59.2326 52.08453 65.8084 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 52.08453 65.8084 moveto
+49.06451 60.09363 60.30957 64.37477 59.96967 60.89877 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 59.96967 60.89877 moveto
+61.56056 58.99179 63.07445 57.01096 64.23639 54.81482 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 64.23639 54.81482 moveto
+67.09288 53.68578 68.03845 50.50386 66.12222 49.17705 curveto stroke
+newpath 64.23639 54.81482 moveto
+66.2289 54.7266 68.21432 54.41656 70.07484 53.69528 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 59.96967 60.89877 moveto
+50.81703 55.44402 71.08353 62.70818 66.69295 57.73372 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 66.69295 57.73372 moveto
+68.91588 55.94815 71.88293 54.16035 69.93695 52.75203 curveto stroke
+newpath 66.69295 57.73372 moveto
+61.5324 57.8102 69.41376 58.0114 72.62581 58.1119 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 52.08453 65.8084 moveto
+56.54613 67.358 61.7576 68.91801 59.25522 71.71281 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 59.25522 71.71281 moveto
+55.16396 73.65228 62.0616 73.71187 66.18224 74.40303 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 66.18224 74.40303 moveto
+69.27917 74.97455 77.24269 75.04866 72.06427 75.26529 curveto stroke
+newpath 66.18224 74.40303 moveto
+68.17848 74.69353 69.62105 76.42499 71.56224 76.93228 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 59.25522 71.71281 moveto
+62.73329 72.66855 65.93532 74.6429 64.50075 76.97633 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 64.50075 76.97633 moveto
+47.35506 82.15152 85.97191 73.37532 70.04709 79.11638 curveto stroke
+newpath 64.50075 76.97633 moveto
+63.51712 79.32451 62.20505 82.00253 64.24524 82.91568 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 40.58728 64.1884 moveto
+37.92686 67.6625 35.09355 71.67957 37.1987 75.29375 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 37.1987 75.29375 moveto
+39.94383 77.14935 39.43799 80.95335 39.42216 84.31238 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 39.42216 84.31238 moveto
+39.73082 87.00241 41.02612 89.60744 43.52747 90.50645 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 43.52747 90.50645 moveto
+23.13728 95.21162 71.04497 89.30614 48.95677 92.92784 curveto stroke
+newpath 43.52747 90.50645 moveto
+44.68129 92.17857 45.08876 94.22362 45.04451 96.2545 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 39.42216 84.31238 moveto
+38.20227 86.55017 40.17305 89.97356 37.83986 91.57292 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 37.83986 91.57292 moveto
+41.58578 93.12904 42.123 96.7166 40.03784 97.09645 curveto stroke
+newpath 37.83986 91.57292 moveto
+36.18771 92.80394 37.16603 96.09683 34.95816 96.77254 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 37.1987 75.29375 moveto
+41.11722 78.33813 33.41278 78.28311 29.1618 79.95079 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 29.1618 79.95079 moveto
+26.71996 80.81628 25.2318 83.12566 24.27449 85.54843 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 24.27449 85.54843 moveto
+26.32274 87.88443 26.93549 90.90425 24.83954 91.46634 curveto stroke
+newpath 24.27449 85.54843 moveto
+21.53313 85.9811 16.37451 84.22688 18.49585 86.94398 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 29.1618 79.95079 moveto
+57.56635 88.70824 -7.07195 73.83304 21.79445 80.92111 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 21.79445 80.92111 moveto
+22.24417 83.08101 19.9825 84.63841 17.48889 85.0202 curveto stroke
+newpath 21.79445 80.92111 moveto
+20.21065 79.7062 18.81454 78.18199 16.92813 77.50647 curveto stroke
+ 0 2.77792 dtransform truncate idtransform setlinewidth pop
+newpath 16.519 43.88309 moveto
+21.20427 48.57967 23.2885 55.42783 20.82074 61.50775 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath 20.82074 61.50775 moveto
+22.2848 66.23824 22.23528 71.73453 25.9586 75.08154 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 25.9586 75.08154 moveto
+28.43886 78.12326 30.82133 81.41493 34.40265 83.0509 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 34.40265 83.0509 moveto
+37.4673 83.50935 40.46503 84.38017 43.55402 84.64232 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 43.55402 84.64232 moveto
+41.08603 81.24733 47.2606 83.50862 50.8551 83.25893 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 50.8551 83.25893 moveto
+48.39844 80.07796 64.1148 83.73146 55.98949 80.2624 curveto stroke
+newpath 50.8551 83.25893 moveto
+53.53873 84.73186 62.62726 83.44186 56.78194 83.72115 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 43.55402 84.64232 moveto
+45.95857 85.40652 48.24458 86.59428 49.9106 88.49112 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 49.9106 88.49112 moveto
+53.01636 89.29683 60.07925 89.82208 55.51892 90.4627 curveto stroke
+newpath 49.9106 88.49112 moveto
+52.44026 89.68254 54.53964 91.74179 53.1817 93.45502 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 34.40265 83.0509 moveto
+36.29042 85.52013 37.28322 88.58952 39.36784 90.90125 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 39.36784 90.90125 moveto
+40.72156 93.34903 44.02956 91.85481 46.6986 92.11775 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 46.6986 92.11775 moveto
+49.02661 91.96046 52.06107 93.09639 52.4928 90.78802 curveto stroke
+newpath 46.6986 92.11775 moveto
+43.27145 94.20883 49.60556 93.33931 52.22942 94.29733 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 39.36784 90.90125 moveto
+37.41475 92.93279 38.82349 96.25992 41.6595 97.97008 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 41.6595 97.97008 moveto
+38.84512 100.34622 44.84647 100.25194 46.15477 101.86028 curveto stroke
+newpath 41.6595 97.97008 moveto
+43.65048 98.86932 42.7783 102.0215 39.86366 103.63719 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 25.9586 75.08154 moveto
+25.3173 78.99916 26.80345 83.43484 24.21577 86.56087 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 24.21577 86.56087 moveto
+23.60117 89.66794 24.36565 92.82645 25.58374 95.74828 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 25.58374 95.74828 moveto
+25.63878 98.39528 25.56264 101.32408 27.6714 102.87994 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 27.6714 102.87994 moveto
+29.6733 103.33876 30.72581 105.33823 32.16469 106.7724 curveto stroke
+newpath 27.6714 102.87994 moveto
+28.98201 104.78038 26.20087 106.23155 24.60802 107.97466 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 25.58374 95.74828 moveto
+24.43188 97.95163 23.10497 100.06763 21.44588 101.92065 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 21.44588 101.92065 moveto
+24.50856 103.31256 24.23428 107.28319 21.65085 107.86195 curveto stroke
+newpath 21.44588 101.92065 moveto
+26.09354 102.97354 18.7516 102.65872 15.63336 103.16786 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 24.21577 86.56087 moveto
+26.81137 89.4856 21.71094 92.51378 22.19518 95.62718 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 22.19518 95.62718 moveto
+24.48312 96.86386 24.12387 100.63913 26.63779 101.58392 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 26.63779 101.58392 moveto
+18.17517 104.87216 39.68007 101.55836 31.54973 104.93253 curveto stroke
+newpath 26.63779 101.58392 moveto
+26.54361 103.64418 27.91345 105.36227 29.2952 106.90176 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 22.19518 95.62718 moveto
+19.61026 96.58029 20.67268 100.83788 18.15613 101.86462 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 18.15613 101.86462 moveto
+16.35835 103.02254 18.33952 106.60422 16.02141 107.41292 curveto stroke
+newpath 18.15613 101.86462 moveto
+16.23009 102.43886 14.89348 104.30476 12.89684 104.63605 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath 20.82074 61.50775 moveto
+24.03532 66.35703 15.55504 70.79086 17.52353 75.64194 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 17.52353 75.64194 moveto
+18.22377 79.5761 13.83803 84.33553 17.39479 87.25229 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 17.39479 87.25229 moveto
+17.45828 90.599 20.24663 93.06221 23.46005 94.28763 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 23.46005 94.28763 moveto
+26.44788 95.32036 29.65793 96.80933 28.83195 99.42224 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 28.83195 99.42224 moveto
+30.01515 101.35027 41.64511 100.93874 34.40985 101.47871 curveto stroke
+newpath 28.83195 99.42224 moveto
+27.94595 101.23212 33.51866 102.96886 30.88588 105.00105 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 23.46005 94.28763 moveto
+19.56888 96.5494 26.60489 99.17393 25.90001 101.30675 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 25.90001 101.30675 moveto
+28.72896 101.72653 32.13138 101.88045 31.17293 104.05243 curveto stroke
+newpath 25.90001 101.30675 moveto
+26.98315 103.52483 26.32552 106.22311 24.16338 106.9924 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 17.39479 87.25229 moveto
+14.57446 88.84842 14.77948 93.22456 11.89131 94.73526 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 11.89131 94.73526 moveto
+14.68623 96.27463 10.97438 100.24187 12.90134 102.09738 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 12.90134 102.09738 moveto
+13.57262 104.07172 15.98056 104.5243 17.45761 105.91605 curveto stroke
+newpath 12.90134 102.09738 moveto
+11.56393 103.65242 10.74461 105.60844 10.79793 107.6577 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 11.89131 94.73526 moveto
+9.50021 95.78108 9.5613 99.49757 7.06189 100.3831 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 7.06189 100.3831 moveto
+9.03752 101.48534 6.72002 103.76991 4.04468 105.5055 curveto stroke
+newpath 7.06189 100.3831 moveto
+9.07765 103.98158 2.75197 101.55525 1.64867 102.84045 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 17.52353 75.64194 moveto
+17.95639 79.8213 13.43845 82.03104 9.5334 84.0665 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 9.5334 84.0665 moveto
+7.26779 86.64592 8.10992 90.52985 10.42567 93.31244 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 10.42567 93.31244 moveto
+12.5396 94.64543 14.13417 96.80536 16.54393 97.53009 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 16.54393 97.53009 moveto
+18.9352 97.7892 22.05473 97.05423 22.19368 99.37999 curveto stroke
+newpath 16.54393 97.53009 moveto
+17.67195 99.51476 21.64227 100.99246 19.46169 102.70972 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 10.42567 93.31244 moveto
+8.88037 95.36359 9.8871 98.31456 8.65529 100.52963 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 8.65529 100.52963 moveto
+6.2017 101.42834 9.71521 105.38382 7.40865 106.3424 curveto stroke
+newpath 8.65529 100.52963 moveto
+8.78195 102.79208 8.48753 105.27563 6.49228 106.0671 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 9.5334 84.0665 moveto
+6.78297 85.6248 2.94943 84.99236 0.91403 87.52914 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 0.91403 87.52914 moveto
+-3.17014 88.47903 -7.27724 90.01799 -5.02324 91.99803 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -5.02324 91.99803 moveto
+-7.06029 92.39554 -7.88805 94.7243 -9.61758 95.77084 curveto stroke
+newpath -5.02324 91.99803 moveto
+-0.63264 93.04721 -7.56636 93.03885 -10.75334 93.5819 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 0.91403 87.52914 moveto
+-1.4913 86.403 -5.15315 86.97943 -5.74034 84.2213 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -5.74034 84.2213 moveto
+-7.66057 84.74234 -9.65355 84.89287 -11.64146 84.94217 curveto stroke
+newpath -5.74034 84.2213 moveto
+-6.40593 82.20676 -6.99213 79.9184 -8.9779 79.23521 curveto stroke
+ 0 3.96848 dtransform truncate idtransform setlinewidth pop
+newpath 0 28.34645 moveto
+0.32715 36.05122 -0.77402 43.85887 -4.61877 50.54826 curveto stroke
+ 0 2.77792 dtransform truncate idtransform setlinewidth pop
+newpath -4.61877 50.54826 moveto
+-1.95963 56.01564 -0.71838 62.01236 0.40115 67.98184 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath 0.40115 67.98184 moveto
+2.93633 72.27971 11.85304 70.12065 12.46489 76.05086 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 12.46489 76.05086 moveto
+4.84589 71.03293 18.23615 76.02 24.07568 76.06056 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 24.07568 76.06056 moveto
+26.95708 74.8003 28.90657 72.20384 31.0139 69.88463 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 31.0139 69.88463 moveto
+29.03593 67.89694 31.95251 65.45831 34.44781 63.29463 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 34.44781 63.29463 moveto
+36.17554 60.89456 38.82074 58.28574 36.3744 57.67064 curveto stroke
+newpath 34.44781 63.29463 moveto
+38.01538 62.59389 41.38632 61.10307 39.25192 59.79308 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 31.0139 69.88463 moveto
+30.61127 67.13797 34.17784 66.48444 37.11848 65.6474 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 37.11848 65.6474 moveto
+38.6139 64.3048 40.79727 63.73032 41.76491 61.93898 curveto stroke
+newpath 37.11848 65.6474 moveto
+39.20715 65.47562 41.57515 65.7623 42.8593 64.10321 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 24.07568 76.06056 moveto
+25.53352 78.03087 41.6272 74.30635 32.79759 79.25545 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 32.79759 79.25545 moveto
+34.94292 77.96799 37.07031 76.52794 39.55171 76.1569 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 39.55171 76.1569 moveto
+32.96193 73.29738 51.55156 75.00049 44.10164 72.33084 curveto stroke
+newpath 39.55171 76.1569 moveto
+41.81732 75.60265 45.01672 76.23592 45.043 73.87961 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 32.79759 79.25545 moveto
+32.08397 81.87752 34.7308 83.86269 37.5161 84.99606 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 37.5161 84.99606 moveto
+41.26202 85.69186 45.99687 87.58293 42.594 88.08727 curveto stroke
+newpath 37.5161 84.99606 moveto
+34.51817 86.92346 41.33109 88.75336 39.64114 90.54808 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath 12.46489 76.05086 moveto
+11.8778 80.305 17.69499 82.17142 18.13794 86.18134 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 18.13794 86.18134 moveto
+19.05682 89.3193 20.24536 92.62459 23.20029 93.9693 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 23.20029 93.9693 moveto
+24.04271 96.21413 30.82684 97.14326 27.62894 99.93645 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 27.62894 99.93645 moveto
+21.80423 102.23302 36.47797 101.89223 31.65915 104.30661 curveto stroke
+newpath 27.62894 99.93645 moveto
+29.75275 101.65103 29.33348 104.9451 26.9163 105.83835 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 23.20029 93.9693 moveto
+21.90099 96.51326 20.35823 99.39761 22.23595 101.33745 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 22.23595 101.33745 moveto
+22.68962 103.52641 24.48238 105.9435 22.6368 107.26878 curveto stroke
+newpath 22.23595 101.33745 moveto
+23.10635 103.2015 18.57729 105.17213 20.72804 107.08784 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath 18.13794 86.18134 moveto
+14.95164 88.42728 15.31117 93.2983 18.7875 95.44728 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 18.7875 95.44728 moveto
+15.60341 97.65509 21.3158 99.93578 21.53241 102.35272 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 21.53241 102.35272 moveto
+22.30634 104.53584 26.95528 107.03514 23.76059 107.86418 curveto stroke
+newpath 21.53241 102.35272 moveto
+23.93484 103.41318 20.5979 106.98145 22.53485 108.21242 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 18.7875 95.44728 moveto
+18.08122 97.53186 10.12817 97.97687 13.90182 101.04637 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 13.90182 101.04637 moveto
+15.28938 103.05586 14.57675 105.82915 12.37465 106.79172 curveto stroke
+newpath 13.90182 101.04637 moveto
+16.90445 102.55 11.74783 103.0172 8.83893 104.16217 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath 0.40115 67.98184 moveto
+4.13058 73.08702 -5.74068 76.85703 -4.21045 81.7434 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath -4.21045 81.7434 moveto
+-7.19238 85.03632 -5.79346 90.21797 -1.98093 93.13834 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -1.98093 93.13834 moveto
+2.14885 95.10565 8.14894 96.34772 5.12263 99.12347 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 5.12263 99.12347 moveto
+7.34921 100.35562 10.6177 99.50592 12.07214 101.75522 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 12.07214 101.75522 moveto
+15.27834 101.80334 23.20311 101.92252 18.0168 101.81396 curveto stroke
+newpath 12.07214 101.75522 moveto
+12.3133 103.88757 12.74304 106.19482 14.63441 107.1197 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath 5.12263 99.12347 moveto
+2.60458 100.6048 5.75027 103.33061 8.33513 105.82433 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 8.33513 105.82433 moveto
+-2.73325 110.62517 29.56071 106.34804 13.58435 108.61493 curveto stroke
+newpath 8.33513 105.82433 moveto
+6.04619 107.51447 4.51906 110.05064 6.24504 111.38968 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -1.98093 93.13834 moveto
+0.03166 95.71632 -5.28375 100.20781 -1.79857 102.42537 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -1.79857 102.42537 moveto
+-4.89984 104.7823 1.0519 106.40614 2.00482 108.80934 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 2.00482 108.80934 moveto
+5.31459 109.5494 8.64296 110.77507 6.79085 112.33583 curveto stroke
+newpath 2.00482 108.80934 moveto
+2.9749 110.83801 -0.763 112.48799 0.38147 114.52827 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -1.79857 102.42537 moveto
+-5.73448 103.89874 -7.21857 107.77922 -4.86247 109.19539 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -4.86247 109.19539 moveto
+-3.75526 111.40999 -4.5518 114.11374 -6.76823 114.82648 curveto stroke
+newpath -4.86247 109.19539 moveto
+-6.74237 109.85255 -8.33803 111.1999 -10.28973 111.62154 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath -4.21045 81.7434 moveto
+-4.88844 85.7495 -5.68048 90.04677 -9.03838 92.3031 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -9.03838 92.3031 moveto
+-10.56404 95.50352 -9.04936 99.28694 -5.87393 101.03644 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -5.87393 101.03644 moveto
+-2.51604 102.19524 2.61008 102.23769 0.4824 104.88608 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath 0.4824 104.88608 moveto
+-15.42793 112.95563 29.82697 104.72214 6.13239 106.73557 curveto stroke
+newpath 0.4824 104.88608 moveto
+-0.02475 107.19432 4.8725 107.15868 4.09976 109.60391 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -5.87393 101.03644 moveto
+-6.68524 103.43208 -5.67906 105.95647 -5.59723 108.46243 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -5.59723 108.46243 moveto
+-8.35957 109.776 -1.92265 113.03409 -4.72353 114.34282 curveto stroke
+newpath -5.59723 108.46243 moveto
+-7.01419 110.02419 -3.38708 113.08801 -5.80038 114.40392 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -9.03838 92.3031 moveto
+-11.83253 93.7436 -13.61592 96.45526 -15.59523 98.88264 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -15.59523 98.88264 moveto
+-18.02966 100.11325 -17.1876 103.50688 -18.39151 105.76761 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -18.39151 105.76761 moveto
+-21.09694 107.44035 -13.02766 109.67387 -16.31995 111.3399 curveto stroke
+newpath -18.39151 105.76761 moveto
+-20.40948 106.11519 -21.49748 108.46321 -23.53116 108.75526 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -15.59523 98.88264 moveto
+-18.05672 98.6005 -20.52872 98.42546 -23.00221 98.28432 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -23.00221 98.28432 moveto
+-24.97964 98.54257 -26.74336 99.71007 -28.7351 99.8577 curveto stroke
+newpath -23.00221 98.28432 moveto
+-25.26543 97.77472 -27.63107 96.77217 -27.67915 94.61441 curveto stroke
+ 0 2.77792 dtransform truncate idtransform setlinewidth pop
+newpath -4.61877 50.54826 moveto
+-4.85649 56.97566 -10.66158 61.14917 -16.39705 64.34668 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath -16.39705 64.34668 moveto
+-19.18709 68.80562 -23.69757 73.13576 -21.55934 77.911 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath -21.55934 77.911 moveto
+-24.55399 80.92342 -22.23444 85.61107 -19.2402 89.28784 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -19.2402 89.28784 moveto
+-20.37047 92.45679 -17.11873 94.904 -15.14659 97.62585 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -15.14659 97.62585 moveto
+-12.51355 99.44035 -7.85008 100.2926 -9.82956 102.8171 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -9.82956 102.8171 moveto
+-6.26456 103.88487 -1.98059 105.75365 -5.07272 106.38264 curveto stroke
+newpath -9.82956 102.8171 moveto
+-10.48187 104.7103 -5.96402 106.51666 -8.08536 108.50027 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -15.14659 97.62585 moveto
+-12.9688 99.82042 -18.67386 102.76907 -16.33408 104.96135 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -16.33408 104.96135 moveto
+-13.28618 106.78499 -13.41031 110.43047 -15.66045 110.86783 curveto stroke
+newpath -16.33408 104.96135 moveto
+-16.13081 106.83495 -21.09789 108.22847 -18.78838 110.37592 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -19.2402 89.28784 moveto
+-21.29965 92.0449 -17.94095 95.57726 -19.11627 98.57565 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -19.11627 98.57565 moveto
+-16.51065 100.08842 -19.30109 103.87611 -17.63939 105.85838 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -17.63939 105.85838 moveto
+-14.51912 107.7067 -14.2507 111.18422 -16.37726 111.66768 curveto stroke
+newpath -17.63939 105.85838 moveto
+-19.21916 107.16827 -19.63641 109.29976 -19.9754 111.32501 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -19.11627 98.57565 moveto
+-16.96333 100.72406 -24.64038 103.51093 -21.1497 105.723 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -21.1497 105.723 moveto
+-23.48311 106.70103 -18.98256 110.83063 -21.86478 111.62465 curveto stroke
+newpath -21.1497 105.723 moveto
+-23.41592 106.62782 -20.56558 110.52483 -22.85466 111.41809 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath -21.55934 77.911 moveto
+-25.10698 79.46437 -28.82748 80.61685 -32.26826 82.39761 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -32.26826 82.39761 moveto
+-33.52931 85.14159 -42.05867 85.85426 -38.22452 89.52513 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -38.22452 89.52513 moveto
+-36.69528 91.69153 -41.82619 94.86488 -39.03444 96.91177 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -39.03444 96.91177 moveto
+-34.95078 98.08672 -33.6048 101.43617 -35.73734 101.8584 curveto stroke
+newpath -39.03444 96.91177 moveto
+-37.55867 99.35918 -43.55443 99.50769 -42.3722 101.83102 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -38.22452 89.52513 moveto
+-40.01158 91.03534 -49.65495 88.31664 -45.10808 92.32443 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -45.10808 92.32443 moveto
+-44.64879 94.61554 -46.30565 96.78072 -48.65625 97.09422 curveto stroke
+newpath -45.10808 92.32443 moveto
+-47.08345 92.07811 -48.88063 91.04778 -50.85776 90.81381 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -32.26826 82.39761 moveto
+-35.36118 82.87424 -37.88156 85.19234 -40.9868 85.60178 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -40.9868 85.60178 moveto
+-43.29929 86.49832 -45.48727 87.71916 -47.88199 88.37236 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -47.88199 88.37236 moveto
+-46.00554 89.53067 -48.49605 91.8534 -52.38564 92.25284 curveto stroke
+newpath -47.88199 88.37236 moveto
+-51.10457 88.2021 -58.77534 88.29184 -53.79027 87.71457 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -40.9868 85.60178 moveto
+-45.25548 84.95879 -51.6076 84.52365 -47.81332 82.66615 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -47.81332 82.66615 moveto
+-42.93132 81.8656 -50.58345 82.02484 -53.60918 81.34373 curveto stroke
+newpath -47.81332 82.66615 moveto
+-45.85649 81.74625 -46.94087 78.45094 -50.42668 77.32654 curveto stroke
+ 0 1.94453 dtransform truncate idtransform setlinewidth pop
+newpath -16.39705 64.34668 moveto
+-14.71223 69.97977 -22.92412 71.02032 -26.28966 74.96623 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath -26.28966 74.96623 moveto
+-29.86913 76.89243 -31.68929 80.80582 -32.41 84.83289 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -32.41 84.83289 moveto
+-36.35121 86.78189 -37.9539 91.31728 -35.23941 93.6801 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -35.23941 93.6801 moveto
+-33.88185 95.83662 -34.04642 99.0239 -31.68283 100.20464 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -31.68283 100.20464 moveto
+-38.63132 103.30798 -26.43298 101.90967 -26.74168 103.51007 curveto stroke
+newpath -31.68283 100.20464 moveto
+-35.05934 101.58984 -29.13922 104.53903 -30.59074 106.04822 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -35.23941 93.6801 moveto
+-37.68794 94.4229 -40.40756 94.90877 -41.88272 97.00954 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -41.88272 97.00954 moveto
+-43.6352 98.19234 -40.56735 102.06693 -43.30128 102.78255 curveto stroke
+newpath -41.88272 97.00954 moveto
+-18.49918 92.69063 -70.49762 101.21576 -47.51581 95.10992 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -32.41 84.83289 moveto
+-30.40596 91.08229 -40.02998 85.63974 -41.11032 88.08609 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -41.11032 88.08609 moveto
+-43.59142 88.41417 -45.69466 89.92288 -47.98415 90.90923 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -47.98415 90.90923 moveto
+-48.69025 92.9507 -47.62373 96.08704 -49.96571 96.51404 curveto stroke
+newpath -47.98415 90.90923 moveto
+-49.97336 90.59898 -51.49435 89.1099 -53.27707 88.20267 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -41.11032 88.08609 moveto
+-11.39053 87.60776 -78.25117 88.37456 -48.53395 87.75725 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -48.53395 87.75725 moveto
+-50.3893 88.53918 -51.6146 90.55177 -53.64822 90.78783 curveto stroke
+newpath -48.53395 87.75725 moveto
+-50.19202 86.65292 -51.66515 85.22443 -53.55486 84.57436 curveto stroke
+ 0 1.36118 dtransform truncate idtransform setlinewidth pop
+newpath -26.28966 74.96623 moveto
+-28.56221 78.26581 -32.97577 78.70297 -36.50926 80.47696 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -36.50926 80.47696 moveto
+-41.04398 81.94363 -44.90138 84.82854 -42.67375 87.42506 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -42.67375 87.42506 moveto
+-45.14247 88.99959 -42.79341 92.35184 -43.52211 94.80737 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -43.52211 94.80737 moveto
+-42.27403 96.85864 -41.96605 99.4718 -43.7545 100.74754 curveto stroke
+newpath -43.52211 94.80737 moveto
+-41.37932 95.71254 -43.9529 98.07143 -47.68736 99.04889 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -42.67375 87.42506 moveto
+-36.30199 88.0504 -46.07932 87.71176 -50.0987 87.72197 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -50.0987 87.72197 moveto
+-52.1048 88.20416 -52.83232 90.94693 -54.92676 91.19034 curveto stroke
+newpath -50.0987 87.72197 moveto
+-52.76959 86.34172 -57.43059 85.60472 -54.78046 84.0586 curveto stroke
+ 0 0.95282 dtransform truncate idtransform setlinewidth pop
+newpath -36.50926 80.47696 moveto
+-35.9891 76.55383 -41.5387 78.22997 -45.3285 77.56146 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -45.3285 77.56146 moveto
+-49.2475 77.1487 -58.54295 78.04832 -52.68445 76.50844 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -52.68445 76.50844 moveto
+-53.5663 78.42986 -55.06541 80.09645 -57.12991 80.45535 curveto stroke
+newpath -52.68445 76.50844 moveto
+-55.33527 75.63641 -60.48509 76.40761 -58.11644 74.09314 curveto stroke
+ 0 0.66698 dtransform truncate idtransform setlinewidth pop
+newpath -45.3285 77.56146 moveto
+-48.26942 76.1547 -49.85753 72.9221 -48.114 70.67236 curveto stroke
+ 0 0.46689 dtransform truncate idtransform setlinewidth pop
+newpath -48.114 70.67236 moveto
+-46.55188 68.98744 -48.16457 66.16145 -51.15356 65.56342 curveto stroke
+newpath -48.114 70.67236 moveto
+-50.9161 69.42801 -46.927 66.54192 -47.56116 64.75334 curveto stroke
+showpage
+%%EOF

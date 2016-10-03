@@ -1,0 +1,317 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pst-plot}
+\usepackage{pstricks-add}
+\usepackage{pst-tree}
+\usepackage{pst-node}
+\begin{document}
+\activite{T.V.I. et  dichotomie}{\term}
+
+\section{\'Enoncés équivalents au T.V.I.}
+Soit $f$ une fonction continue sur un intervalle contenant deux réels
+$a$ et $b$ avec $a<b$. Soit $\lambda$ compris entre $f(a)$ et
+$f(b)$. Le théorème des valeurs intermédiaires nous dit qu'il existe (au moins) un réel $c$ dans $\into{a}{b}$ tel que
+$f(c)=\lambda$. \ie{}
+\begin{equation}
+  \label{eq:c}
+  \exists c\in\into{a}{b}; f(c)=\lambda
+\end{equation}
+
+Simplifions le problème:
+\begin{enumerate}
+\item On pose $g=f-\lambda$. La fonction $g$ vérifie-t-elle les hypothèses du
+  théorème?
+\item Compléter: $f(c)=\lambda \iff g(\ldots)=\ldots$.
+\item Que peut-on dire des réels $g(a)$ et $g(b)$?
+\item Justifier que le théorème des valeurs intermédiaires équivaut à:
+\begin{theo}
+Soit $h$ une fonction continue sur un intervalle $\intf{a}{b}$ 
+\[h(a)h(b)<0\implies \exists c\in\into{a}{b}; h(c)=0 \]
+\end{theo}
+\end{enumerate}
+\section{Démonstration}
+Ce théorème se prouve par dichotomie. On va \og couper l'intervalle
+$\intf{a}{b}$ en deux \fg{}, voir dans quelle moitiée $h$ change de
+signe puis recommencer avec cet intervalle de longueur moitiée,
+jusqu'à isoler la racine cherchée $c$. 
+On définit trois suites $(a_n)$, $(b_n)$ et $(c_n)$ sur $\N$ par:
+
+
+\[ a_0=a\ ; \  b_0=b\ \et{}\ \forall n\in\N,\
+c_{n}=\frac{a_n+b_n}{2}\ \text{puis:}\]
+\begin{list}{$\bullet$}{}
+  \begin{minipage}{0.4\linewidth}
+\item {\bf \text{Si:}} $h(a_n)h(c_n)<0$
+\item {\bf \text{alors:}} $\left( a_{n+1}=a_n\quad \et{}\quad b_{n+1}=c_n \right)$
+\item {\bf \text{sinon:}}$\left( a_{n+1}=c_n\quad \et{}\quad b_{n+1}=b_n \right)$
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\linewidth}
+    \begin{list}{}{}
+    \item {\sl \ie{} $h$ change de signe sur $\into{a_n}{c_n}$}
+    \item {\sl On se place alors sur l'intervalle $\intf{a_n}{c_n}$}
+    \item {\sl On se place alors sur l'intervalle $\intf{c_n}{b_n}$}
+    \end{list}
+  \end{minipage}
+\end{list}
+Alors les deux suites $(a_n)$ et $(b_n)$ sont adjacentes, leur limite
+commune, notons la~$c$ vérifie: $h(c)=0$.\\
+
+Exemple graphique pour la compréhension. Sur ce schéma on a tracé une
+courbe représentant une fonction $h$ continue sur $\into{a}{b}$ et qui
+change de signe sur $\into{a}{b}$.\\
+\noindent
+\begin{minipage}{9.3cm}
+\begin{pspicture}*(-0.2,-4)(9,1.5)
+  \psaxes[Dx=1,Ox=0,yAxis=false,labels=none,tickstyle=below](0,0)(8,0)
+  \pscurve[linewidth=0.5pt,linecolor=gray]%
+  (0,-1)%
+  (1.5,0.6)%
+  (4,-0.6)%
+  (5.6,0)%
+  (7,0.8)%
+  (8,1)%
+\put(-0.1,0.4){$a_0=a$}
+\put(7.9,0.4){$b_0=b$}
+\put(3.9,0.4){$c_0$}
+
+\psline{-}(4,-2)(8,-2)  \put(3.9,-1.7){$a_1$}  \put(7.9,-1.7){$b_1$}
+\psline{-}(4,-3)(6,-3)  \put(3.9,-2.7){$a_2$}  \put(5.9,-2.7){$b_2$}
+\psline{-}(5,-4)(6,-4)  \put(4.9,-3.7){$a_3$}  \put(5.9,-3.7){$b_3$}
+
+
+                    %\psset{xunit=0.5cm,yunit=0.5cm}
+                          
+                          %\psgrid% griddots=1,%
+                          %subgriddiv=2,
+                          %gridlabels=0pt,%
+                          %xunit=1]
+                          %\psaxes{->}(0,0)(0,0)(8,0)
+                           %\psaxes{->}(0,0)(-1.5,-2)(1.5,1.5)
+                          %\psdots*[dotscale=0.7](-1,1)
+                          %\put(-1.5,1){$A$}\put(-0.4,-0.4){$O$}
+                          \end{pspicture}
+\end{minipage}\hfill%
+\begin{minipage}{5cm}
+ On a les valeurs suivantes: 
+\begin{enumerate}
+\item $c_0=\frac{a_0+b_0}{2}$. Bien que $h$ ait des racines sur
+  $\into{a_0}{c_0}$ on a $h(a_0)h(c_0)\geq 0$ donc\\ 
+$a_1=c_0$ et $b_1=b_0$
+\item $c_1=\frac{a_1+b_1}{2}$. Cette fois ci, $h(a_1)h(c_1)< 0$ donc:\\
+  $a_2=a_1$ et $b_2=c_1$
+\end{enumerate}
+\end{minipage}\\
+\begin{proof} \emph{(de la convergence de la méthode)}
+  \begin{enumerate}
+  \item Justifier que $(a_n)$ est croissante et $(b_n)$ est décroissante.
+  \item Que représente $b_n-a_n$ ? Prouver que: $ \forall n\in\N,\ b_n-a_n=\frac{b-a}{2^n}$
+  \item Prouver que $(a_n)$ et $(b_n)$ ont une limite commune que l'on
+    notera~$c$.
+  \item  Justifier que $h(a_n)$ et $h(b_n)$ convergent
+    vers $h(c)$.
+  \item On a par construction: $\forall n\in\N,\
+    h(a_n)h(b_n)<0$. En déduire que $h(c)=0$.
+ 
+  \end{enumerate}
+\end{proof}
+\newpage
+\section{Algorithme}
+On utilise la démonstration précédente pour déterminer numériquement
+un encadrement d'amplitude $P$ d'une racine d'une fonction. On va
+calculer les différents termes des suites $(a_n)$ et $(b_n)$ jusqu'à ce que la
+différence entre $b_n$ et $a_n$ soit inférieure à~$P$.  On suppose rentrée en $Y_1$ dans le menu graph l'expression  de la fonction dont on  cherche une racine.
+ Voici l'algorithme\footnote{Un algorithme est un nombre fini de règles à appliquer dans un ordre déterminé à un nombre fini de données, pour arriver en un nombre fini d'étapes, à un certain résultat, et cela indépendamment des données.}:
+
+\vspace{0.3cm}
+\noindent
+\begin{minipage}{0.6\linewidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{small}
+\psframebox[linearc=1,cornersize=absolute]{%
+  \begin{psmatrix}[rowsep=0.4,colsep=0.5]
+    \psovalbox[fillstyle=solid,fillcolor=white]{$A=$? $B=$? $P=$?} \\~&&&\\
+    \psframebox{$(A+B)/2\to C$} \\
+    \psdiabox[fillstyle=solid,fillcolor=white]{Si $Y_1(A)\star Y_1(C)<0$} &
+       \psframebox{Sinon: $C\to A$} \\%& \psframebox{Call to SP2} \\
+    \psframebox{Alors: $C\to B$} \\
+    ~&\\
+\psdiabox[fillstyle=solid,fillcolor=white]{Si $|B-A|\leq P$} &
+       \psovalbox{Sinon}& \\ \psovalbox{Alors}\\
+    %\psframebox{Action 2} \\
+    \psovalbox[fillstyle=solid,fillcolor=yellow]{Afficher $A$ et $B$}
+    % Links
+    \ncline{->}{1,1}{3,1}
+    
+    \ncline{->}{3,1}{4,1}
+    \ncline{->}{4,1}{4,2}
+\ncline{-}{4,2}{6,2} \ncline{->}{6,2}{6,1}
+        \ncline{->}{4,1}{5,1}
+    \ncline{->}{5,1}{7,1}
+    \ncline{->}{7,1}{7,2}
+    
+\ncline{-}{7,2}{7,3} 
+    \ncline{->}{7,1}{8,1}
+    \ncline{->}{8,1}{9,1}
+        \ncbar[angleA=90,armB=0,nodesepB=0]{->}{7,3}{2,1}%{2,3}
+    \end{psmatrix}%
+}
+\end{small}
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}{0.32\linewidth}
+\begin{enumerate}
+\item On demande à l'utilisateur les réels: $A$, $B$, et la précision $P$ souhaitée.
+\item On calcule $C$ la moyenne de $A$ et $B$.
+\item On teste pour savoir sur quel intervalle la fonction change de signe.
+\item On en déduit les valeurs de $a_{n+1}$ et $b_{n+1}$ qui sont
+  encore notées $A$ et~$B$.
+\item Si la précision voulue est atteinte, on affiche \og{\sl La racine
+  est encadrée par:}\fg{} et on affiche $A$ et $B$,
+  sinon on recommence.
+\end{enumerate}
+\end{minipage}
+\vspace{0.3cm}\\
+Pour demander les valeurs de $A$, $B$ et $P$ on utilise la commande
+\emph{Input} ou \emph{Prompt} avec une TI et :? avec une Casio.
+Le test \og Si\ldots alors\ldots sinon\fg{} se note:
+If\ldots then\ldots else puis End (IfEnd avec une Casio ou EndIf avec
+une grosse TI) On utilise aussi la fonction \emph{Goto n} qui renvoit
+au label numéroté $n$ (\emph{Lbl n}). Tester et comprendre le programme
+suivant, ensuite taper un programme pour l'algorithme de la dichotomie.\vspace{0.4cm}\\
+%\vspace{0.4cm}
+%%%%%%%%%%%%%%
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$''$ Donne un entier entre 1 et 6$''$\\
+Lbl 1\\
+$''N''?\to N$\\
+If $N=A$ \\
+Then $''$Gagné en:$''$ $I\blacktriangle$\\
+Else $''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+IfEnd\\
+%Stop
+}%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI} \end{center}
+\hrule \vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$Disp\ ''$Donne un entier entre 1 et~6$''$\\
+Lbl 1\\
+$Prompt \ N$\\
+If $N=A$ \\
+Then $Disp\ ''$Gagné en:$''$ $Disp\ I$\\
+Else $Disp\ ''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+End\\
+}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%
+\hrule \vspace{0.3cm} 
+\noindent
+\begin{minipage}{0.45\linewidth}
+On commence toujours par Shift / Var
+\begin{list}{$\bullet$}{}
+  \item (?) se trouve en  F4
+  \item  < se trouve en F6 / F3
+  \item If Then, Else,  IfEnd  dans: COM (F1) 
+  \item Goto, Lbl  dans: Jump (F3)
+  \item $\blacktriangle$ (pour afficher) en: F5
+  \end{list}
+\end{minipage}\hfill
+\begin{minipage}{0.45\linewidth}
+  \begin{list}{$\bullet$}{}
+  \item If Then, Else, Goto, Lbl, End se trouvent dans: Catalogue / Control  
+  \item Disp et Prompt se trouvent dans: Catalogue / $I/O$ (In/Out)
+  \item < se trouve dans: Catalogue / Test
+  \end{list}
+
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$''A''?\to A$\\
+$''B''?\to B$\\
+$''P''?\to P$\\
+Lbl 1\\
+$(A+B)/2\to C$\\
+$A\to X$\\
+$Y1 \to Y$\\
+$C\to X$\\
+$Y1 \to Z$\\
+If $Y\times Z<0$\\
+Then $C\to B$\\
+Else \ldots\\% $C\to A$\\
+IfEnd\\
+If \ldots \\
+Then \\
+$''$LA RACINE EST ENCADREE PAR:$''$\\
+$A\blacktriangle$\\
+ $B\blacktriangle$\\
+Else Goto 1\\
+IfEnd \\
+%Stop
+}
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI} \end{center}
+\hrule \vspace{0.2cm}
+{\small
+Prompt $A$,$B$,$P$\\
+Lbl 1\\
+$(A+B)/2\to C$\\
+If $Y_1(A)\times Y_1(C)<0$\\
+Then $C\to B$\\
+Else \ldots\\% $C\to A$\\
+End\\
+If \ldots \\
+Then \\
+Disp $''$LA RACINE EST ENCADREE PAR:$''$\\
+Disp $A$, $B$\\
+Else Goto 1\\
+End \\
+%Stop
+}
+
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+\pstree{\Tr{\psframebox{Test: si $h(a)h(b)<0$}}}  %{\Tcircle{A}}
+       {\pstree{\Tr{\psframebox{Oui, alors $b$ devient:\\ $\frac{a+b}{2}$}}  %{\Tr{\psframebox{#1}}}
+               {\Tcircle{D}
+                \Tcircle{E}}
+        \pstree{\Tcircle{Non}}
+               {\Tcircle{F}
+                \Tcircle{G}}}
+
+\end{document}
+
+\pstree{\Tcircle{Test: si $h(a)h(b)<0$}}
+       \pstree{\Tcircle{Oui, alors $b$ devient $\frac{a+b}{2}$}}
+                            
+        \pstree{\Tcircle{Non, alors $a$ devient $\frac{a+b}{2}$}}
+
+

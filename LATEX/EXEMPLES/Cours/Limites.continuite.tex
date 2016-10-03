@@ -1,0 +1,494 @@
+\chapter{Limites et continuité}
+\section{Rappels: Limites de référence}
+\noindent Voici les courbes des fonctions carré, cube et inverse. Leurs limites sont à connaître. \\\rule{0cm}{0.3cm}\\
+\psfrag{O}{$O$} \psfrag{i}{$\vi$}   \psfrag{j}{$\vj$}
+\resizebox{4cm}{!}{\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.2} }%\includegraphics[totalheight=6cm]{Courbe.2} %Para
+\hfill \resizebox{2.8cm}{!}{\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.6} }%\includegraphics[totalheight=6cm]{Courbe.6} %Cube
+\hfill \resizebox{6cm}{!}{\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.3} }
+%\includegraphics[totalheight=6cm]{Courbe.3} %Hyper
+
+
+\begin{minipage}{0.22\textwidth}
+\begin{align*}
+ \lim_{x\to +\infty}\,x^2&=+\infty\\
+\lim_{x\to -\infty}\,x^2&=+\infty
+\end{align*}
+\end{minipage} \hfill
+\begin{minipage}{0.32\textwidth}
+\begin{align*}
+ \lim_{x\to +\infty}\,x^3&=+\infty\\
+\lim_{x\to -\infty}\,x^3&=-\infty
+\end{align*}
+\end{minipage} \hfill
+\begin{minipage}{0.18\textwidth}
+\begin{align*}
+\lim_{x\to +\infty}\,\frac{1}{x}&=0\\ 
+\lim_{x\to -\infty}\,\frac{1}{x}&=0
+\end{align*}
+\end{minipage}\hfill 
+\begin{minipage}{0.18\textwidth}
+\begin{align*}
+\lim_{x\to 0^+}\,\frac{1}{x}&=+\infty\\ 
+\lim_{x\to 0^-}\,\frac{1}{x}&=-\infty
+%\lim_{\stackrel{x \to 0}{x<0}}\frac{1}{x}&=-\infty
+\end{align*}
+\end{minipage} 
+%\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.2} %Para
+%\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.6} %Cube
+%\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.3}
+% Hyper
+%\section{Fonctions continues}
+
+%\section{Limites, par la définition}
+\section{Rappels sur la dérivation, notation différentielle}
+\begin{Def}
+ 
+Soit $a\in I$ où $I$ est un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable en $a$
+  si le taux de variation de $f$ entre $a$ et $a+h$:
+\[\frac{f(a+h)-f(a)}{h}\]
+admet une limite finie quand $h$ tend  vers~0.
+Si cette limite finie existe, on l'appelle le nombre dérivé de $f$ en
+$a$, noté~$f'(a)$.
+   \end{Def}
+\begin{rem}
+En posant $x=a+h$, cette définition équivaut à: $ \boxed{\lim\limits_{ x \to a } \frac{f(x)-f(a)}{x-a}=f'(a)}$
+\end{rem}
+
+\centrage{Interprétation graphique}
+\begin{multicols}{2}
+  
+  Avec les notations du graphique, on a: 
+\[\frac{\Delta y}{\Delta x}=\frac{f(a+h)-f(a)}{h}\]
+Quand  $h$ tend vers zéro  le point $M_h$ se rapproche du point
+$A$. Dire que $f$ est dérivable en $a$ signifie que la sécante
+$(AM_h)$ admet une position limite. On appelle alors tangente  à la courbe de~$f$ au point d'abscisse~$a$,
+la droite~$T_a$ passant par~$A$ et de coefficient directeur~$f'(a)$.
+Ainsi l'équation réduite de $T_a$ est: 
+\[ \boxed{y=f'(a)(x-a)+f(a)}\]
+
+  \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.18}
+\end{multicols}
+  Autour du point $A$, la courbe de $f$ et sa tangente $T_a$ sont \og
+  très proches \fg{}. D'où la propriété:%Cette constatation donne lieu à:
+\begin{prop}[Approximation affine] Si $f$ est dérivable
+en $a$, et que $h$ est proche de zéro: \\
+$\boxed{f(a+h)\approx f(a)+hf'(a)}$. Ou encore, si $x$ est proche de $a$, on a: $\boxed{f(x)\approx f(a)+(x-a)f'(a)}$
+\end{prop}
+\begin{proof}
+  La définition 1 signifie que $\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)$
+où $\varepsilon$ est une fonction qui tend vers 0 en~0. D'où le
+résultat, qui consiste à négliger le terme $h\varepsilon(h)$. L'autre
+expression vient en posant $x=a+h$.
+\end{proof}
+%\exemples Pour $x$ proche de 0: %$\e^x\approx x+1$ 
+%$\sin x \approx x$, $(1+x)^n\approx 1+nx$\\
+
+\centrage{Notation différentielle et sciences physiques}
+\begin{multicols}{2}
+Soit $f$ une fonction dérivable sur un intervalle $I$, c'est à dire
+dérivable en tout réel $a$ à l'intérieur de $I$. Alors en
+mathématiques, on note $f'$ la fonction dérivée de $f$, mais pas en
+physique\dots{} Comme:
+\[ f'(a)=\lim\limits_{\Delta x \to 0 } \frac{\Delta y}{\Delta x}\]
+Lorsque le $\Delta x$ est infiniment petit, on le note ${\rm d}x$.  De
+même le $\Delta y$ devient ${\rm d}y$. En physique, au lieu de noter
+$f'$ on notera alors $\frac{{\rm d}y}{{\rm d}x}$ ou $\frac{{\rm
+    d}f}{{\rm d}x}$. De plus, en physique, la variable est souvent le
+temps, donc noté $t$ au lieu de $x$. On a donc: $f:\ t \longmapsto
+f(t)$. Si on dérive à nouveau $f'$ on obtient la dérivée
+\emph{seconde} de $f$ notée $f''$. Si on redérive cette dernière on
+obtient $f'''$ que l'on note aussi $f^{(3)}$, ainsi de suite,
+$f^{(4)}$ désigne la dérivée quatrième de~$f$. Avec la notation
+différentielle utilisée en physique, celà donne:
+\[ f'=\frac{{\rm d}f}{{\rm d}t}\qquad f''=(f')'=\frac{{\rm d}}{{\rm d}t}\left(\frac{{\rm d}f}{{\rm d}t}\right)=\frac{{\rm d}^2f}{{\rm d}t^2}\]
+Remarquez comme l'opération \og dériver par rapport à $t$\fg{} se
+comporte avec cette notation comme si on multipliait par l'opérateur:
+$\frac{{\rm d}}{{\rm d}t}$.
+\par Pour embrouiller un peut plus, la fonction
+en physique est souvent notée $x$. $x(t)$ représente typiquement
+l'abscisse d'un point mobile en fonction du temps~$t$. La vitesse
+moyenne du point entre les temps $t_1$ et $t_2$ est alors:
+\[\frac{\Delta x}{\Delta t}=\frac{x(t_2)-x(t_1)}{t_2-t_1}\]
+ La vitesse
+instantanée est alors la limite de $\frac{\Delta x}{\Delta t}$ quand
+$\Delta t$ tend vers zéro, c'est donc: $x'(t)$, euh\ldots pardon
+$\frac{{\rm d}x}{{\rm d}t}$. Mais les physiciens aussi feignants que les mathématiciens
+on trouvé une notation plus courte~$\dot{x}$ qui désigne donc la
+vitesse $v$. De même vous savez (ou apprendrez) que l'accélération est la dérivée
+de la vitesse. On a alors:
+\[\dot{x}=\frac{{\rm d}x}{{\rm d}t}=x'\quad\text{et}\quad
+\ddot{x}=\frac{{\rm d}^2x}{{\rm d}t^2}\]
+Comment note--t--on alors la vitesse instantanée au temps~$t_1$? En
+maths ce serait $x'(t_1)$, en physique il y a trois notations
+possibles:
+
+\[\dot{x}(t_1)=\left(\frac{{\rm d}x}{{\rm d}t}\right)(t_1)=\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t=t_1}\]
+\end{multicols}
+\section{Continuité}
+\subsection{Définitions, exemples et contre exemples}
+La continuité est une notion de \emph{régularité} des fonctions. En
+voici une définition heuristique:
+\begin{Def}
+On dit qu'une fonction $f$ est continue sur un intervalle $I$ lorsque
+$f$ est définie sur $I$ et que sa courbe sur $I$ peut se tracer \og sans lever le crayon \fg{}.
+\end{Def}
+
+\begin{rem}
+Cette définition est évidement uniquement intuitive, une \emph{vraie}
+définition utilise les limites en un point (cf définition suivante).
+\end{rem}
+
+\begin{Def}
+On dit qu'une fonction $f$ est continue en $a$ ($a\in\R$) si les trois
+conditions suivantes sont vérifiées:
+\begin{dingautolist}{172}
+\item $f$ est définie en $a$.
+\item $f(x)$ admet une limite quand $x$ tend vers $a$.
+\item $\displaystyle \lim_{x\to a}f(x)=f(a)$
+\end{dingautolist}
+\end{Def}
+\noindent Si l'une quelconque de ces trois conditions n'est pas vérifiée, on dit
+que $f$ n'est pas continue en $a$, ou qu'elle présente une
+discontinuité en~$a$. 
+\begin{rem}
+Parfois le comportement d'une fonction $f$ est différent à gauche et à
+droite d'un réel $a$. Il pourra alors être utile pour étudier
+l'existence d'une limite en $a$ d'étudier les éventuelles limites à
+gauche et à droite de $a$, \emph{i.e.}:
+\[ \lim\limits_{ x \to a \atop x < a } f(x) \quad\text{et}\quad
+\lim\limits_{ x \to a \atop x > a } f(x)\]
+Si ces limites existent, alors, dire que  $f$ est continue en $a$
+revient à dire que ces deux limites sont égales à $f(a)$.
+\end{rem}
+\noindent Les quatre fonctions $f$ représentées ci--dessous présentent
+une discontinuité en~$1$. Dire lequel des trois points de la
+définition est mis en défaut et pourquoi.\\\noindent
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.20}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.21}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.22}%
+\hspace{\stretch{1}}%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.23}%
+\\\noindent
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\]
+  \end{minipage}}\hspace{\stretch{1}}%
+\fbox{\begin{minipage}{3.3cm}\[\]\[\]\[\] \end{minipage}}%
+
+\begin{Def}
+On dit qu'une fonction $f$ est continue sur un intervalle $I$ lorsque
+$f$ est continue en tout réel $a$ de~$I$.
+\end{Def}
+{\bf Convention} Dans un tableau de variation, lorsqu'on note une
+flèche pour une fonction croissante (ou décroissante) sur un
+intervalle, cette flèche signifie aussi la continuité de la fonction
+sur l'intervalle. On mettrait une double barre en un point de discontinuité.
+\begin{prop}
+  Une fonction dérivable sur un intervalle est continue sur cet intervalle.
+\end{prop}
+\Danger La réciproque est fausse. Contre--exemple: La fonction valeur
+absolue. Elle est continue sur~$\mathbb{R}$ mais non dérivable en~0.
+La dérivabilité est donc une notion de régularité plus forte que
+la continuité.
+\begin{proof}(Du contre--exemple)
+  $|x|= 
+\begin{cases} x & \text{if $x\geq 0$,}
+\\
+-x &\text{if $x\leq 0$.}
+\end{cases}\implies%
+\frac{|x|}{x}= 
+\begin{cases} 1 & \text{if $x> 0$,}
+\\
+-1 &\text{if $x< 0$.}
+\end{cases}$\\
+Le taux de variation de la valeur absolue en 0 a une limite à gauche
+qui vaut -1, et une limite à droite qui vaut 1. Donc la limite en 0
+n'existe pas.
+
+\end{proof}
+\begin{proof}
+  On écrit l'approximation affine avec une fonction $\epsilon$ telle
+  que: $\lim\limits_{ x \to a } \epsilon(x) =0$:
+\[f(x)=f(a)+(x-a)f'(a)+\epsilon(x)\]
+\end{proof}
+\begin{prop} (Admise)
+Les fonctions usuelles: polynômes, racine carrée, valeur absolue,
+fractions rationnelles, $\sin$, $\cos$,(bientôt  $\exp$ et $\ln$) et leurs composées sont continues sur les intervalles où elles sont définies.
+\end{prop}
+Cette propriété permet de justifier la continuité d'une fonction en un
+point ou sur un intervalle.
+\exemple Soit $f$ définie par: $f(x)=\sqrt{x^2-1}$. $f$ est définie
+dès que $x^2-1$ est positif donc sur les intervalles
+$\intof{-\infty}{-1}$ et $\intfo{1}{+\infty}$. Sur chacun de ces
+intervalles, $f$ est la composée de la fonction racine (continue sur
+$\R^+$) et d'un polynôme (donc continu sur $\R$). Ainsi $f$ est
+continue sur les intervalles $\intof{-\infty}{-1}$ et
+$\intfo{1}{+\infty}$. La phrase \og{\sl $f$ est continue sur les intervalles $\intof{-\infty}{-1}$ et
+$\intfo{1}{+\infty}$ comme composée  de fonctions continues}\fg{} est plus
+vague mais suffira.\\
+
+Cependant il existe des fonctions qui ne sont pas continues:
+
+\subsection{La fonction partie entière}
+\begin{Def}
+On appelle partie entière d'un réel $x$, notée $E(x)$, le plus grand entier inférieur ou égal à $x$. \ie{} $E(x)$ est l'entier $n$ tel que: $n\leq x < n+1$
+ \end{Def}
+\exemples $E(2,36)=2$;  $E(2)=2$; $E(\pi)=3$; $E(-2,36)=-3$
+\begin{prop}
+Pour tout entier $n$, sur l'intervalle $\intfo{n}{n+1}$, la fonction partie entière est constante égale à~$n$. Elle n'est pas continue sur $\R$, elle admet une discontinuité pour chaque entier.%\ie{} $\forall x \in \intfo{n}{n+1},\ E(x)=n$
+\end{prop}
+\begin{proof} Soit $n\in\Z$. Par définition de $E$, pour
+  $x\in\intfo{n}{n+1}$ on a $E(x)=n$. Prouvons la discontinuité de $E$
+  en~$n+1$. Par passage à la limite (en restant dans l'intervalle
+  $\intfo{n}{n+1}$): 
+\[ %\displaystyle 
+\lim_{x\rightarrow n+1\atop x<n+1}  E(x)=n\neq E(n+1)=n+1 \]
+
+\end{proof}
+On en déduit la courbe de la fonction partie entière, on dit que c'est une fonction en escalier.
+\begin{center}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.9} %\hfill  \includegraphics{courbe.8}
+\end{center}
+\subsection{Prolongement par continuité}
+\exemple La fonction $f$ définie sur $\R\setminus \{3\}$ par:
+\[f(x)=\frac{x^2-9}{x-3}\] n'est pas continue sur $\R$ car non définie
+en $3$, mais:
+\[ x\neq 3\implies f(x)=\frac{(x-3)(x+3)}{x-3}=x+3\]
+Ainsi la courbe de $f$ est la droite d'équation: $y=x+3$ à laquelle il
+manque le point d'abscisse~3. On pose alors la fonction $\widetilde{f}$ définie sur
+$\R$:
+\[ \widetilde{f}(x)=x+3.\quad \text{donc}\quad \widetilde{f}(x)=
+\begin{cases} f(x) & \text{si $x\neq 3$,}
+\\
+6 &\text{si $x=3$.}
+\end{cases}
+\]
+La fonction $\widetilde{f}$ est alors continue sur $\R$, on dit que
+c'est un prolongement de $f$ par continuité en~3.
+\exemple La fonction $f$ définie sur $\R^*$ par $f(x)=\dfrac{\e^x-1}{x}$ n'est pas définie en zéro, mais on a vu que sa limite en zéro
+existe et vaut 1. On peut \og prolonger la fonction $f$ par
+continuité\fg{} en~0, en posant la fonction $\tilde f$ définie sur
+$\R$ par:
+$\tilde f(x)=f(x)$ si $x\in\R^*$ et $\tilde f(0)=1$
+\section{Théorème des valeurs intermédiaires}
+
+\begin{theo}{\bf Théorème des valeurs intermédiaires.}
+Soit $f$ une fonction continue sur un intervalle $\intf{a}{b}$. Soit $\lambda$ un réel compris strictement entre $f(a)$ et $f(b)$. Alors l'équation $f(x)=\lambda$ admet au moins une solution dans l'intervalle ouvert $\into{a}{b}$.
+\end{theo}
+
+\begin{rem}
+Si la fonction n'est pas continue, cette propriété n'est pas nécessairement vérifiée. La fontion partie entière fournit un contre exemple: $E(0)=0$ et $E(1)=1$ mais l'équation $E(x)=0,5$ n'a pas de solution dans $\into{0}{1}$ (ni ailleurs).
+\end{rem}
+
+\begin{prop}[Cas particulier important: $\lambda=0$]
+Soit $f$ une fonction continue sur un intervalle $\intf{a}{b}$ avec $f(a)$ et $f(b)$ de signes contraires, alors l'équation $f(x)=0$ admet au moins une solution dans l'intervalle ouvert $\into{a}{b}$
+\end{prop}
+C'est un cas particulier, mais en fait cette propriété est équivalente
+au théorème des valeurs intermédiaires, et on la démontre par
+dichotomie en utilisant des suites adjacentes qui convergent vers une
+racine de $f$. (cf TD)\\
+Ces propriétés nous garantissent l'existence de solutions pour des
+équations mais ne nous fournissent pas les solutions, ni leur unicité, juste des intervalles où elles se trouvent. On peut donc avec la calculatrice trouver des encadrements à la précision souhaitée des solutions cherchées.
+
+\exemple
+Sur le graphique ci-dessous, on a une courbe $\Cr$ représentant une fonction continue $f$ sur l'intervalle $\intf{-3}{2}$. On a $f(-3)=-1$ et $f(2)=$1,5. Comme la valeur $\lambda=1$ est comprise entre $-1$ et 1,5  le théorème des valeurs intermédiaires nous assure que l'équation $f(x)=1$ admet au moins une solution (ici il y en a trois) sur l'intervalle $\into{-3}{2}$. Autrement dit, la courbe $\Cr$ coupe la droite d'équation $y=1$ sur cet intervalle.
+
+\begin{center}
+\psfrag{C}{$\Cr$}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.10} 
+\end{center}
+
+En pratique, la simple lecture d'un tableau de variation permet de
+répondre aux questions du type: ``Combien l'équation $f(x)=\lambda$
+admet elle de solutions? Donner des encadrements de ces solutions.''
+Rappel: on admet qu'une flèche dans un tableau de variation traduit
+aussi la continuité de la fonction sur l'intervalle en question. La
+version suivante du théorème des valeurs intermédiares permet de
+garantir l'unicité de la solution:
+
+\begin{theo}[Utile en pratique\footnote{On dit dans ce cas que $f$ réalise une \emph{bijection}
+croissante de $\intf{a}{b}$ dans $\intf{f(a)}{f(b)}$. C'est pourquoi
+cette propriété est parfois appellée \og théorème de la bijection\fg{}.}]
+Soit $f$ une fonction continue et strictement croissante sur un
+intervalle $\intf{a}{b}$. Soit $\lambda$ un réel tel que: $f(a)<
+\lambda < f(b)$.  Alors l'équation $f(x)=\lambda$ admet une {\bf unique} solution dans l'intervalle ouvert $\into{a}{b}$.
+\end{theo}
+\begin{proof}   Laissé en exercice.
+\end{proof}
+\begin{rem}
+Il existe évidemment un énoncé similaire pour une fonction strictement décroissante...
+\end{rem}
+\exemple Soit $f$ définie sur $\R$ par $f(x)=x^5+x+7$. Justifier que $f(x)=0$ admet une unique solution dans l'intervalle $\intf{-2}{1}$. Réponse d'un bon élève: \\
+$f$ est continue sur $\R$ (c'est un polynôme). Or $f'(x)=5x^4+1$ et $x^4$ est positif donc la dérivée de $f$ est strictement positive, donc $f$ est strictement croissante sur $\intf{-2}{1}$. De plus $f(-2)=-33<0 $ et $f(1)=9>0$. Donc $f(x)=0$ admet une unique solution dans l'intervalle $\intf{-2}{1}$.
+D'après le tableau de variation de $f$ et ses limites en $-\infty$ et $+\infty$ on en déduit aussi que $f(x)=0$ admet en fait une unique solution dans $\R$.
+\\ Il est par contre imposible de résoudre par le calcul cette
+équation, mais pouvez vous à l'aide de la calculette déterminer un
+encadrement d'amplitude $10^{-2}$ du réel $\alpha$ vérifiant
+$f(\alpha)=0$. Trois méthodes:\\
+
+{\bf Méthodes de résolution approchée de $f(x)=\lambda$}
+{\small
+\begin{list}{$\bullet$}{}
+\item Graphiquement, en zoomant de plus en plus sur le point
+  d'intersection de la courbe avec l'axe des abscisses (pour $\lambda=0$) ou avec la droite d'équation $y=\lambda$.
+\item Mieux encore, certaines calculettes disposent d'un outil de
+  résolution graphique (G-solv) il faut choisir {\sl isect} pour
+  l'intersection de deux courbes que l'on doit sélectionner (la courbe
+  de $f$ et la droite d'équation $y=\lambda$ si on veut résoudre
+  $f(x)=\lambda$) ou {\sl Root} si on cherche une racine.
+\item En utilisant le tableau de valeurs que l'on doit paramétrer
+  correctement. $pitch$ (Casio) ou $\Delta Tbl$ (TI) donne le pas de
+  la variation de $X$,  donc la précision voulue. Mais il faut d'abord
+  connaitre un vague encadrement de la solution (par une méthode
+  graphique par exemple)
+\item \`A l'aide d'un programme adapté, comme celui que nous allons
+  établir qui fonctionne par dichotomie. On peut utiliser la méthode
+  de Newton-Raphson ou méthode de la tangente\footnote{$x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)}$. Cette suite converge vers une
+  racine si elle existe, prendre $x_0$ assez près de la racine.} (plus rapide)
+  
+\end{list}
+}
+
+%%%
+
+\section{Preuve du T.V.I. par dichotomie}
+cf chapitre Suites adjacentes.~\ref{sect:preuve.TVI}
+
+
+\section{Applications}
+\subsection{Racine d'un polynôme de degré impair}
+\subsection{Fonctions réciproques} 
+%%%%%%%%%%%%% Mis avec les suites
+\begin{comment}
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+\subsection{\'Etude des suites du type $u_{n+1}=f(u_n)$}
+On se donne une fonction $f$ définie, continue sur un intervalle $I$ de
+$\R$. Soit $u_0\in I$.
+\subsubsection{Intervalle stable}
+\Def{On dit que $I$ est stable par $f$ si $f(I)\subset I$}
+\exemples{
+  \begin{enumerate}
+  \item $f(x)=x(1-x)$ sur $I=\intf{0}{1}$. $I$ est stable par f, mais
+pas par $g=5f$. Il suffit d'étudier $f$.
+\item $f(x)=\frac{1}{x-1}$ et $u_0=\frac32$ Vérifier que la relation
+  $u_{n+1}=f(u_n)$ ne définit pas une suite. 
+  \end{enumerate}
+}
+La condition $I$ stable par $f$ permet de garantir que la suite est
+définie et que tous les termes de la suite sont dans l'intervalle $I$.
+(récurrence immédiate)
+
+\subsubsection{Sens de variation}
+\begin{prop}
+  \begin{enumerate} 
+  \item $ \forall x \in I,\ f(x)-x\geq 0 \implies$ $(u_n)$ croissante
+  \item $\iff \forall x \in I,\ f(x)-x\leq 0 \implies$ $(u_n)$ décroissante 
+  \end{enumerate}
+\end{prop}
+
+\proof{Facile}
+\begin{prop}
+\begin{enumerate} 
+  \item $f$ croissante $\implies$ $(u_n)$ monotone. Le sens de var est
+    donné par le signe de $u_1-u_0$
+  \item $f$ décroissante $\implies$ $(u_{2n})$ et $(u_{2n+1})$ sont
+    monotones de monotonies contraires
+\end{enumerate}
+\end{prop}
+\proof{ Supposons $u_1>u_0$.
+\begin{enumerate} 
+  \item Par récurrence. $\Para (n)$: \og $u_{n+1}-u_n\geq 0$\fg{}
+  \item On pose $p_n=u_{2n}$ et $i_n=u_{2n+1}$. Alors:
+\[p_{n+1}=fof(p_n) \quad \et{}\quad i_{n+1}=fof(i_n)\]
+Or $f$ dec. implique $fof$ croissante donc par le 1. $p$ et $i$ sont
+monotones.
+Supposons $p$ croissante, alors $u_2\geq u_0$ donc, en appliquant $f$
+qui est dec. on a $u_3\leq u_1$ donc $i_1 \leq i_0$ donc $i$ est dec.
+\end{enumerate}
+}
+
+\subsubsection{Convergence}
+\Def{On appelle point fixe d'une fonction $f$ un réel tel que $f(x)=x$}
+\begin{theo}Si $f$ est continue sur $I$ et que $(u_n)$ converge, alors la
+  limite est nécessairement un point fixe de $f$
+\end{theo}
+Attention: L'existence d'un point fixe ne garantit pas la convergence
+de $(u_n)$. Mais l'absence de point fixe suffit à justifier que $(u_n)$
+ne converge pas.
+En pratique: On justifie que $(u_n)$ CV (croissante majorée par
+exemple) puis on détermine la limite en cherchant les points fixes de
+$f$. Si le point fixe est unique, c'est facile, sinon il faut
+raisonner avec le sens de variation de $(u_n)$.
+
+\exemple $u_{n+1}=\frac{u_n}{2-u_n}$ et $u_0 \in \intf{0}{1}$
+
+\end{comment}
+\section{Dérivabilité}
+\subsection{Définition}
+\begin{Def}
+Soit $a\in I$ où $I$ est un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable en $a$
+  si:
+\[\frac{f(a+h)-f(a)}{h}\quad \text{admet une limite finie quand $h$ tend
+  vers 0}\]
+Si cette limite finie existe, on l'appelle le nombre dérivé de $f$ en
+$a$, noté~$f'(a)$
+\end{Def}
+{\sl Remarque:} Cette def signifie que
+$\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)$ où $\varepsilon(h)$ tend vers 0 en~0
+\begin{prop}{\bf Approximation affine} On en déduit que si $f$ est dérivable
+en $a$, et que $h$ est proche de zéro: $f(a+h)\approx f(a)+hf'(a)$
+\end{prop}
+\exemples Pour $x$ proche de 0: $\e^x\approx x+1$ 
+$\sin x \approx x$, $(1+x)^n\approx 1+nx$\\
+
+Cette propriété doit son nom au fait que faire cette approximation
+revient à confondre au point d'abscisse $(a+h)$ la courbe avec sa
+tangente en $a$: 
+\begin{proof} Eq de la tangente. Ordonnée pour $x=a+h$.
+\end{proof}
+\begin{Def} Soit $I$  un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable sur $I$
+  si elle est dérivable en tout en $a$ de $I$.
+\end{Def}
+Pour prouver qu'une fonction est dérivable en un point, il faut donc
+calculer une limite. En particulier lorsque ce point est aux bornes
+d'un intervalle fermé.
+Pour prouver que $f$ est dérivable sur un intervalle ouvert, en
+général on utilise que:
+
+\begin{prop} La composée de fonctions dérivables est dérivable sur tout
+  intervalle ouvert où la fonction est définie.
+\end{prop}
+\begin{proof} Admis \end{proof}
+\subsection{Propriétés}
+\begin{prop} Une fonction dérivable en $a$ est continue en $a$
+\end{prop}
+\begin{proof}
+{\bf \`A connaître!}$f$ dérivable en $a$ signifie que:
+\[\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)\]
+où $\varepsilon(h)$ tend vers 0 en 0. D'où pour $h$ non nul:
+\[ f(a+h)=hf'(a)+h\varepsilon(h)+f(a)\]
+D'où la limite voule, et $f$ est continue en $a$.%
+\end{proof}
+
+
+\subsection{Exemples, contre exemples}
+{\bf Attention!}
+La réciproque de la propriété précédente est fausse:
+Valeur absolue et racine.
+On a même construit des fonctions continues sur [0;1] nulle part
+dérivable.
+
+Soit $f(x)=x\sin(\frac{1}{x})$ pour $x\in\into{0}{+\infty}$ et
+$f(0)=0$
+Prouver que $f$ est continue sur $\R^+$. Est-elle dérivable en 0?
+Même question avec $g(x)=xf(x)$. 
+Retour aux exos de la feuille avec $\e^{-\frac{1}{x}}$

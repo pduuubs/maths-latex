@@ -1,0 +1,63 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pifont}
+\begin{document}
+\newcommand{\T}{\theta}
+\fcours{Exponentielle complexe $\e^{i\T}$}%{\term}
+\rhead{}
+%%-----------------------
+\begin{list}{}{}
+\item[{\bf Définition.}] Le complexe non nul $z$, de module $|z|$ et
+  d'argument $\T$ est mis sous forme exponentielle lorsque l'on écrit:
+  $z=|z|\e^{i\T}$ où:
+\[ \e^{i\T}=\cos\T+i\sin\T\]
+\end{list}
+\noindent Les propriétés suivantes sont valables pour tous réels $\T$ et $\T'$,
+$r$ et $r'$, pour tous $n$ et~$k$ dans $\Z$
+\begin{list}{}{}
+
+\item[{\bf Addition d'angles}]
+{\large\[ \e^{i(\T+\T')}=\e^{i\T}\e^{i\T'}\]}
+\item[{\bf Conjugué}]
+{\large\[ \overline{r\e^{i\T}}=r\e^{-i\T} \]}
+\item[{\bf Module unitaire}]
+{\large\[ \left|\e^{i\T}\right|=1\]}
+\item[{\bf Inverse}]
+{\large\[ \frac{1}{\e^{i\T}}=\e^{-i\T}\]}
+\item[{\bf Quotient}]
+{\large\[ \frac{\e^{i\T}}{\e^{i\T'}}=\e^{i(\T-\T')}\]}
+\item[{\bf Puissance-Formule de De Moivre}]
+{\large\[ \left( \e^{i\T}\right)^n=\e^{in\T}\]}
+\item[{\bf Produit, quotient de deux complexes}]
+{\large\[
+\left(r\e^{i\T}\right)\times\left(r'\e^{i\T'}\right)=rr'\e^{i(\T+\T')}\qquad
+et \qquad
+\frac{r\e^{i\T}}{r'\e^{i\T'}}=\frac{r}{r'}\e^{i(\T-\T')}
+\]}
+\item[{\bf Valeurs remarquables}]
+{\Large\[ \e^{0}=1\quad;\quad \e^{i\frac{\pi}{2}}=i\quad;\quad
+  \e^{i\pi}=-1 \quad;\quad \e^{2i\pi}=1 \]}
+\item[{\bf Opposé d'un complexe}]
+{\large\[ -r\e^{i\T}=r\e^{i(\T+\pi)}\]}
+\item[{\bf $\T\mapsto\e^{i\T}$ est $2\pi$ périodique}]
+{\large\[ \e^{i(\T+2k\pi)}=\e^{i\T}\]}
+{\large\[ \e^{i\T}=\e^{i\T'} \iff \T=\T'\ [2\pi]\]}
+\item[{\bf Formules d'Euler }]
+{\large\[ \cos\T=\frac{\e^{i\T}+\e^{-i\T}}{2}\quad\et{}\quad
+\sin\T=\frac{\e^{i\T}-\e^{-i\T}}{2i}\]}
+Ces formules proviennent de ce que pour tout complexe $z$:
+\[Re(z)=\frac{z+\overline{z}}{2}\quad\et{}\quad Im(z)=\frac{z-\overline{z}}{2i}\]
+\item[{\bf Attention!}] $\e^{i\T}$ est un nombre complexe, on ne peut donc pas parler de son signe\ldots 
+%\[ \]
+%\ding{63} 
+%exp est positif ne veut rien dire
+
+\end{list}
+
+
+
+
+%%-----------------------
+\end{document}

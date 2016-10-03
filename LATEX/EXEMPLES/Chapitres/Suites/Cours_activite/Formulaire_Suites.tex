@@ -1,0 +1,43 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{panpan}
+\newcommand{\arc}[1]{\stackrel{\LARGE{\frown}}{#1}}
+
+\begin{document}
+\setcounter{Aff}{1}
+\thispagestyle{fancy}
+%\fcours{Formulaire sur les suites}
+\chead{ \begin{LARGE} \textbf{Formulaire sur les suites} \end{LARGE}}
+\lhead{}
+\rhead{}
+\cfoot{}
+%\setlength{footrule=0pt}
+
+
+\par \noindent
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{||c|p{5.45cm}|p{5.5cm}||}
+\hline 
+%Ligne 1
+  Suite $(u_n)$, $n\in \N$ & \hspace{\stretch{1}} Suite \textbf{arithmétique} de raison $r$  \hspace{\stretch{1}} & \hspace{\stretch{1}}  Suite \textbf{géométrique} de raison $q$ \hspace{\stretch{1}} \\\hline \hline
+%Ligne 2
+Définition & On passe de chaque terme au suivant en ajoutant le même réel $r$ \[u_{n+1}=u_n+r \] & On passe de chaque terme au suivant en multipliant par le même réel $q$ \[u_{n+1}=q\times u_n \]\\ \hline
+%Ligne 3
+ Terme général& \[u_n=u_0+nr\]\[u_n=u_1+(n-1)r\] & \[u_n=u_0\times q^n\]\[u_n=u_1\times q^{n-1}\] \\\hline
+%Ligne 4 
+Somme de termes & ``Nombre de termes''$\times$ ``Moyenne du premier et dernier terme'' 
+\[ \sum_{k=0}^{n}u_k=(n+1)\times \frac{u_0+u_n}{2}\]& ``Premier terme''$\times \dfrac{1-q^{\text{nb de termes}}}{1-q}$ \[ \sum_{k=0}^{n}u_k=u_0\times \frac{1-q^{n+1}}{1-q}\] 
+\\\hline
+
+ Cas particuliers& \[1+2+\cdots+n=\dfrac{n(n+1)}{2}\]& \[1+q+q^2+\cdots+q^n=\frac{1-q^{n+1}}{1-q}\]\\\hline
+\end{tabular}
+\section*{Exercices corrigés}
+\Exo[C'est une somme géométrique du type $1+q+q^2+\cdots+q^n $ avec $q=x^2$. D'où: $S=\dfrac{1-(x^2)^{n+1}}{1-x^2}$ si $x^2\neq1$. Si $x=1$ alors $S=1+1+\cdots+1=n+1$]{Calculer $S = 1 + x^2 + x^4 +\cdots + x^{2n}$}
+\Exo[On a $u_n=u_0+nr$. En remplaçant $n$ par 34, on détermine $r$. Puis on calcule $u_{100}$]{Soit $(u_n)$ une suite arithmétique de raison $r$. On donne: $u_0=3$ et $u_{34}=321$. Déterminer $u_{100}$.}
+\Exo[C'est la somme des termes de la suite $(u_n)$ géométrique de raison 2 et de premier terme 5. Il reste à déterminer le nombre de termes de la somme. $u_n=5\times 2^n \implies 5\times 2^n =5120 \implies 2^n=1024 \implies n=10$. Donc $S=u_0+\cdots+u_{10}$ qui comporte 11 termes. D'où: $S=5\times \dfrac{1-2^{11}}{1-2}=5(2^{11}-1)=10235$ ]{Calculer la somme: $S=5+10+20+40+\cdots+5120$}
+\Exo[$v_{n+1}=u_{n+1}-1=-2u_n+3-1=-2(u_n-1)$. Donc $v_{n+1}=-2v_n$, $(v_n)$ est géométrique de raison -2 et de premier terme $v_0=u_0-1=4$. D'où $v_n=4\times (-2)^n$. Ainsi $u_n=4\times (-2)^n+1$ ]{Soit la suite définie par $\forall n \in \N, u_{n+1}=-2u_n+3$ et $u_0=5$. On pose aussi $v_n=u_n-1$. Montrer que $(v_n)$ est géométrique, déterminer le terme général de $(u_n)$.}
+
+ \end{document}  
+
+

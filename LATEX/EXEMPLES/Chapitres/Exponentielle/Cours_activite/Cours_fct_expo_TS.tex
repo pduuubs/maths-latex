@@ -1,0 +1,186 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{panpan}
+%\begin{} \end{}
+\begin{document}
+\fcours{La fonction exponentielle}
+\section{Approche Graphique}
+cf méthode d'Euler.
+%\section{La fonction exponentielle}
+\section{Equation différentielle y'=y}
+\begin{theo}
+Il existe une unique fonction $f$ définie et dérivable sur $\R$ telle que: $f'=f$ et $f(0)=1$.
+\end{theo}
+Existence admise, on va prouver l'unicité.
+\begin{lemme}
+Si il existe une  fonction $f$ définie et dérivable sur $\R$ telle que $f'=$ et $f(0)=1$ alors elle vérifie:
+$\forall x\in\R \quad f(-x)f(x)=1$ et par conséquent $f$ ne s'annule pas.
+\end{lemme}
+\begin{proof} 
+On pose la fonction $\phi$ définie par: $\forall x\in\R \quad \phi(x)=f(-x)f(x)$. On dérive, $\phi'=0$ et $\phi(0)=1$
+\end{proof}
+On prouve maintenant l'unicité:
+\begin{proof} 
+Supposons qu'il existe deux fonctions $f$ et $g$ qui définies et dérivables sur $\R$ telle que: $f'=f$, $g'=g$ et $f(0)=g(0)=1$. D'après le lemme, ces fonctions ne s'annulent pas, et donc on peut considérer la fonction $\psi$ définie et dérivable sur $\R$ par: $\psi=\frac{f}{g}$. On dérive, $\psi'=0$ et $\psi(0)=1$
+\end{proof}
+Cette unique fonction s'appelle la fonction exponentielle et on la note $\exp: x\mapsto \exp(x)$
+Pour calculer des valeurs approchées de $\exp(x)$ on peut utiliser la méthode d'Euler. 
+
+\section{Méthode d'Euler-valeur approchée de $\exp(x)$}
+\begin{list}{$\bullet$}{}
+\item Soit $n\in\N^*$. On pose $h=\frac{1}{n}$ pour le pas de la méthode. On fera ensuite tendre le pas vers zéro en faisant tendre $n$ vers l'infini.
+\item On définit une suite d'abscisses. On part de $x_0=0$ et $x_{k+1}=x_k+h$ pour tout entier naturel $k$. Cette suite est arithmétique de raison $h=\frac{1}{n}$ donc on a le terme général: 
+\[ \forall k \in \N \quad x_k=\frac{k}{n}\]
+\item On définit maintenant la suite des ordonnées des points que l'on place. On part de $y_0=1$ puisque $f(0)=1$. On applique alors l'approximation affine,  $f(x_{k+1})=f(x_k+h)$ d'où: $f(x_{k+1})=f(x_k+h)\approx f(x_k)+hf'(x_k)$.  Or $f$ vérifie aussi $f=f'$ sur $\R$ donc: $f(x_{k+1})\approx f(x_k)(1+h)$. On veut que $y_{k}$ soit proche de $f(x_{k})$ et donc que $y_{k+1}$ soit proche de $f(x_{k+1})$. On définit donc la suite $(y_k)$ par la relation de récurrence: \[ y_{k+1}=y_k(1+h)\]
+Cette suite est géométrique de raison $(1+h)$ et comme $y_0=0$ et $h=\frac{1}{n}$ on a donc: 
+\[ \forall k \in \N \quad y_k=(1+\frac{1}{n})^k\]
+\end{list}
+Application: Si on veut une valeur approchée de $\exp(1)$ il faut remarquer que $x_k=\frac{k}{n}=1 \iff k=n$. On a donc:
+$\exp(1)=\lim_{n\to\infty} (1+\frac{1}{n})^n$ (On admet que cette limite existe \ie{} que la méthode d'Euler converge) Pour des grandes valeurs de $n$ on obtient les valeurs approchées suivantes: 
+\[(1+\frac{1}{2})^2=2,25 \quad (1+\frac{1}{10})^{10}=2,59 \quad (1+10^{-3})^{1000}=2,717 \quad (1+10^{-6})^{10^6}=2,71828\]
+Cette valeur limite est notée $\e$
+\begin{prop} 
+La valeur de $\exp(1)$ est notée $\e{}$, c'est un réel transcendant (comme $\pi$).
+\[ \exp(1)=\e{}=\lim_{n\to\infty} (1+\frac{1}{n})^n\]
+\end{prop}
+
+\section{Propriétés algébriques}
+
+\begin{prop} 
+Pour tous réels $a$ et $b$ et tout entier relatif $n$, on a les formules:
+\begin{eqnarray}
+\boxed{\exp(-a)=\frac{1}{\exp(a)}}        \label{inv}\\
+\boxed{\exp(a+b)=\exp(a)\times \exp(b)}   \label{som}\\
+\boxed{\exp(a-b)=\frac{\exp(a)}{\exp(b)}} \label{moins}\\
+\boxed{\exp(a\times n)=(\exp(a))^n}       \label{puiss}
+\end{eqnarray}
+% \boxed{\exp(-a)=\frac{1}{\exp(a)}} \quad \boxed{\exp(a+b)=\exp(a)\times \exp(b)} \quad \boxed{\exp(a-b)=\frac{\exp(a)}{\exp(b)}} \quad \boxed{(\exp(a))^n=\exp(a\times n)} 
+\end{prop}
+\begin{proof} 
+\eqref{inv} découle du Lemme. \eqref{moins} découle de \eqref{som} et \eqref{inv}. \eqref{puiss} se prouve à partir de \eqref{som} par récurrence sur $n$. L'essentiel est de prouver \eqref{som}:\\
+Soit $b\in\R$. On considère la fonction $\chi$ de $x$ où $b$ est un paramètre définie par: $\chi(x)=\dfrac{\exp(x+b)}{\exp(x)}$ On dérive, $\chi'=0$ et $\chi(0)=\exp(b)$. Donc pour tout réel $x$, $\exp(x+b)=\exp(x)\exp(b)$. Ceci pour tout réel $b$. D'où~\eqref{som}\\
+Preuve de \eqref{puiss}: Soit $a$ un réel. Soit $\Para(n)$: \og $\exp(a\times n)=(\exp(a))^n $ \fg Prouvons par récurrence sur $n$ que $\Para(n)$ est vraie pour tout $n\in\N$. Ini: Comme $\exp(a)<>0$,  $\exp(a)^0=1=\exp(0)$ ok...
+\end{proof}
+\section{Notation exponentielle}
+La formule \eqref{puiss} donne pour $a=1$:  $\exp(n)=(\exp(1))^n=\e^n$ Par analogie, pour tout réel $x$ on note $\exp(x)=\e^x$. On a donc les règles de calcul usuelles avec les puissances pour tous réels $a$ et $b$ et tout $n\in\Z$:
+
+\[ \boxed{\e^a\times \e^b=\e^{a+b}} \qquad \boxed{\frac{\e^a}{\e^b}=\e^{a-b}}
+\qquad \boxed{(\e^a)^n=\e^{a\times n}} \]
+\textbf{Cas particuliers importants:} $\boxed{\e^1=\e} \qquad \boxed{\e^0=1} \qquad \boxed{\e^{-x}=\dfrac{1}{\e^x}} $\\
+
+cf touche de la calculette. Attention selon modèle on tape ou non le chapeau. Attention aux parenthèses.
+Exercices à base de simplification d'expressions.
+\Exo[]{\'Ecrire plus simplement les expressions suivantes en utilisant les règles sur l'exponentielle:
+  \[ A=\e^2\times \e^3\qquad B=\frac{(\e^2)^4}{\e^3}\qquad C=\Big(\frac{1}{\e^x}\Big)^2\qquad 
+D=\frac{(\e^{x})^2\times\e^x}{\e^{-x}} \qquad 
+E=\frac{\e^{3x-1}}{\e^{2-x}}\]
+}
+%\Exo[]{Prouver les égalités suivantes:
+%\[\frac{\e^{2x}-1}{\e^{2x}+1}=\frac{\e^{x}-\e^{-x}}{\e^{x}+\e^{-x}}
+%\]
+%}
+\Exo[]{ On définit deux fonctions, cosinus hyperbolique et sinus hyperbolique par:
+\[\text{ch}(x)=\frac{\e^{x}+\e^{-x}}{2} \quad \et{} \quad \text{sh}(x)=\frac{\e^{x}-\e^{-x}}{2} \]
+\begin{enumerate}
+\item Prouver que: $\forall x\in\R$, $\text{ch}^2(x)+\text{sh}^2(x)=-1$.
+\item Démontrer que pour tout réel $x$: $\text{ch}(2x)=2\text{ch}^2(x)-1$ \et{} $\text{sh}(2x)=2\text{ch}(x)\text{sh}(x)$
+\item Prouver que: $\text{ch}(x+y)=\text{ch}(x)\text{ch}(y)+\text{sh}(x)\text{sh}(y)$ et $\text{sh}(x+y)=\text{sh}(x)\text{ch}(y)+\text{ch}(x)\text{sh}(y)$.
+\item On définit tangente hyperbolique par th=sh/ch. Prouver que $\text{th}(x)=\frac{\e^{2x}-1}{\e^{2x}+1}$ et $\text{th}'=1-\text{th}^2$
+
+\end{enumerate}
+}
+\end{document}
+\Exo[]{Résoudre les équations suivantes qui se ramènent à des équations du second degré. \\\emph{On pourra poser $X=\e^x$}
+  \begin{align}
+  2\e^{2x}-3\e^x+1&=0\\
+  \e^{2x}-2\e^x&=0\\
+  \e^{x}+12\e^{-x}+7&=0
+  \end{align}
+}
+
+%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+On a déjà résolu des équations de ce type où $y$ est l'inconnue et $n$ un entier. On applique la propriété: \textit{``Si a et b sont deux réels strictement positifs, alors: $\ln a =\ln b \iff a=b$''}
+\exemples 
+\begin{enumerate}
+\item $\ln y =1\iff \ln y=\ln\e \iff y=\e$
+\item $\ln y =2\iff \ln y=2\ln\e \iff \ln y=\ln\e^2 \iff y=\e^2$
+\item $\ln y =-3\iff \ln y=-3\ln\e \iff \ln y=\ln\e^{-3} \iff y=\e^{-3}$
+\end{enumerate}
+Plus généralement, on montre de la même manière que si $n$ est un entier: $\ln y=n \iff y=\e^n$ 
+\subsection{\'Equation $\ln y=x$}
+On reprend la même équation mais où $x$ est un réel. Elle admet une unique solution car la fonction $\ln$ est dérivable et strictement croissante sur $\into{0}{+\infty}$ et admet les limites:
+\[ \lim_{x\to 0^+}{\ln x}=-\infty  \quad \et{} \quad \lim_{x\to +\infty}{\ln x}=+\infty\]
+D'après le théorème des valeurs intermédiaires, il existe un unique réel $y$ tel que $\ln y=x$. Par analogie avec le cas où $x$ est entier, on note ce réel: $y=\e^x$
+\begin{Def}
+La fonction exponentielle--notée \emph{exp}--est la fonction réciproque de la fonction logarithme népérien. À tout nombre réel $x$ elle associe l'unique nombre réel strictement positif $y$ tel que $\ln y=x$
+\end{Def}
+\begin{rem}
+On utilise l'une ou l'autre des notations $\exp(x)$ ou $\e^x$ pour l'exponentielle de $x$.
+\end{rem}
+\exemple $\exp(\sqrt2)=\e^{\sqrt2}$ est le réel (strictement positif) tel que: $\ln(\e^{\sqrt2})=\sqrt2$
+\section{Propriétés}
+\subsection{Conséquences de la définition}
+La fonction logarithme est définie sur $\into{0}{+\infty}$ et prend ses valeurs dans $\R$ donc:
+\begin{prop}\label{positif}
+La fonction exponentielle est définie sur $\R$ et prend ses valeurs dans $\into{0}{+\infty}$
+\[\boxed{ \forall x \in \R,\; \e^x>0}\]
+\end{prop}
+\begin{prop}
+Pour tout réel $x$ et tout réel strictement positif $y$: \dotfill $\boxed{\ln y=x\iff y=\e^x }$
+\end{prop}
+\begin{prop}
+Pour tout réel $x$: \dotfill $\boxed{ \ln(\e^x)=x }$
+\end{prop}
+
+\begin{prop}
+Pour tout réel strictement positif $x$ : \dotfill $\boxed{\e^{\ln x}=x}$
+\end{prop}
+Les deux dernières traduisent que $\ln$ et $\exp$ sont réciproques l'une de l'autre de la même manière que la fonction carré et la fonction racine carrée sont réciproques l'une de l'autre:\\
+Pour tout réel positif $x$: $ (\sqrt x)^2=x $ et $\sqrt{ x^2}=x$\\
+\subsection{Propriétés des puissances}
+\begin{prop}
+Pour tous réels $a$ et $b$ on a les formules usuelles avec les puissances: 
+\end{prop}
+\[ \boxed{\e^a\times \e^b=\e^{a+b}} \qquad \boxed{\frac{\e^a}{\e^b}=\e^{a-b}}
+\qquad \boxed{(\e^a)^b=\e^{a\times b}} \]
+\textbf{Cas particuliers importants:} $\boxed{\e^1=\e} \qquad \boxed{\e^0=1} \qquad \boxed{\e^{-x}=\dfrac{1}{\e^x}} $
+\section{\'Etude de la fonction exponentielle}
+\subsection{Dérivée et variation}
+\begin{prop}
+La fonction exponentielle est sa propre dérivée: $\boxed{(\e^x)'=\e^x}$
+\end{prop}
+D'après la propriété \ref{positif}, on en déduit:
+\begin{prop}
+La fonction exponentielle est strictement croissante sur $\R$
+\end{prop}
+\begin{prop}[Dérivée d'une fonction composée avec $\e^x$] 
+Si $u$ désigne une fonction dérivable sur $\R$ alors $\exp(u)$ est dérivable et:
+\[ \boxed{[\e^{u(x)}]'=u'(x)\times\e^{u(x)}}\]
+\end{prop}
+\subsection{Limites}
+On admet les limites suivantes (où $n\in \N \,)$ qui découlent de celles de $\ln x$:
+\[ \boxed{\lim_{x\to -\infty}{\e^x}=0} \qquad
+\boxed{\lim_{x\to +\infty}{\e^x}=+\infty} \qquad
+\boxed{\lim_{x\to -\infty}{x^n\e^x}=0} \qquad
+\boxed{\lim_{x\to +\infty}{\frac{\e^x}{x^n}}=+\infty}  \]
+La première limite indique que l'axe de abscisses est asymptote à $\Cr_{\exp}$ en $-\infty$. Les deux dernières sont \emph{a priori} des formes indéterminées que l'on retient par \emph{``L'exponentielle l'emporte sur les puissances de~$x$.''}
+\subsection{Courbe}
+Comme la fonction exponentielle est la réciproque de la fonction $\ln$, leurs courbes sont symétriques l'une de l'autre par rapport à la droite $\Dr$ d'équation $y=x$\\
+%\hfill{\stretch{1}}
+\begin{center}
+\psfrag{i}{$\vec{\imath}$} \psfrag{j}{$\vec{\jmath}$} \psfrag{O}{$O$}
+\psfrag{F}{$\Cr_{\exp}$}
+\psfrag{L}{$\Cr_{\ln}$}
+\psfrag{D}{$\Dr:\ y=x$}
+\psfrag{e}{$\e$}
+\includegraphics{Courbe.5} 
+\end{center}
+%\hfill{\stretch{1}}
+
+\end{document}

@@ -1,0 +1,27 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -1 -1 72 43 
+%%Creator: MetaPost
+%%CreationDate: 2007.09.29:1445
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 0 0.59776 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath 0 42.51968 moveto
+0 0 lineto
+42.51968 0 lineto
+42.51968 42.51968 lineto
+ closepath stroke
+ 1 setlinecap
+newpath 42.51968 0 moveto
+70.86636 0 lineto stroke
+newpath 70.86636 0 moveto
+70.86636 42.51968 lineto
+42.51968 42.51968 lineto stroke
+newpath 42.51968 14.173 moveto
+70.86636 14.173 lineto stroke
+ 0.59776 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 56.69334 0 moveto
+56.69334 14.173 lineto stroke
+showpage
+%%EOF

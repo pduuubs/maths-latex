@@ -1,0 +1,650 @@
+prologues:=2;
+verbatimtex
+etex
+input constantes;
+input papiers;
+%% MACROS
+%% define draw_mark (crossmarks on lines) and similar angle marking operations
+%%
+%% These macros are stolen from mpman.ps and manfig.mp
+marksize:=4pt; % how big the tics on lines are
+ % how big the arc in an angle is. We define it using := rather than = so that
+% it can easily be overridden later if desired.
+default_angle_radius:=28pt;
+angle_radius:=default_angle_radius ;
+
+% don't use this; it is used by draw_marked. Use that instead.
+def draw_mark(expr p, a) =
+  begingroup
+  save t, dm; pair dm;
+  t = arctime a of p;
+  dm = marksize*unitvector direction t of p
+    rotated 90;
+  draw (-.5dm.. .5dm) shifted point t of p;
+  endgroup
+enddef;
+
+% draws n tics in the middle of path p
+def draw_marked(expr p, n) =
+  begingroup
+  save amid;
+  amid = .5*arclength p;
+  for i=-(n-1)/2 upto (n-1)/2:
+    draw_mark(p, amid+.6marksize*i);
+  endfor
+  draw p;
+  endgroup
+enddef;
+%idem mais ne trace pas le chemin.
+def marked(expr p, n) =
+  begingroup
+  save amid;
+  amid = .5*arclength p;
+  for i=-(n-1)/2 upto (n-1)/2:
+    draw_mark(p, amid+.6marksize*i);
+  endfor
+  %draw p;
+  endgroup
+enddef;
+
+% draw an angle arc and label it with n tics.
+def mark_angle(expr a, b, c, n) =
+  begingroup
+  save s, p; path p;
+  p = unitvector(a-b){(a-b)rotated 90}..unitvector(c-b);
+  s = .9marksize/length(point 1 of p - point 0 of p);
+  if s<angle_radius: s:=angle_radius; fi
+ draw_marked(p scaled s shifted b, n);
+  endgroup
+enddef;
+
+% written by DJCM mar 2003
+% just like mark_angle but in addition to the n tics also add the
+%   label "texts" which is typically           something like    btex $\alpha$ etex
+%   at a sensible location near the arc.
+default_label_distance_factor := 2.3 ;
+label_distance_factor := default_label_distance_factor ;
+def label_angle(expr a, b, c, n, texts ) =
+  begingroup
+  save s, p; path p;
+  p = unitvector(a-b){(a-b)rotated 90}..unitvector(c-b);
+  % the clever notation (x){y}..(z) forces the curve x..z to have tangent y at x.
+  % (x)..(z) would make the simplest curve from x to z, namely a straight line.
+  s = .9marksize/length(point 1 of p - point 0 of p);
+  if s<angle_radius: s:=angle_radius; fi
+  draw_marked(p scaled s shifted b, n);
+
+  save lc ; pair lc ; % label coordinates added by DJCM
+  ldfs := label_distance_factor*s ;
+  lc = point 0.5 of ( p scaled ldfs shifted b ) ;
+  label ( texts , lc );
+  %label (btex texts etex , lc ); %marche pas...
+
+  endgroup
+enddef;
+
+def mark_rt_angle(expr a, b, c) =
+  draw ((1,0)--(1,1)--(0,1))
+         zscaled (angle_radius*unitvector(a-b)) shifted b
+  % not sure what zscaled means
+       enddef;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+       
+beginfig(1)  %%%% Carré ABCD
+  u:=3cm; %phi=(1+sqrt5)/2;
+  pair A,B,C,D,E,F;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(1,0)*u; D:=(1,1)*u;% E:=(1,0)*u; F:=(1,1)*u;
+    %pickup pencircle scaled 0.5bp;
+  draw A--B--C--D--cycle;
+  %draw E--F;
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  %label.bot(btex $E$ etex, E);
+  %label.top(btex $F$ etex, F);
+endfig;
+beginfig(2)  %%%% Fig exo Carré et 2 tri eq
+  u:=3cm; 
+  pair A,B,C,D,E,F;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(1,0)*u; D:=(1,1)*u; E:=(0.5,0.5*sqrt 3)*u; F:=(1+0.5*sqrt 3,0.5)*u;
+    
+  %draw A--B--C--D--cycle;
+  %draw B--E--C;  draw D--F--C;
+  
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.urt(btex $E$ etex, E);
+  label.rt(btex $F$ etex, F);
+  draw_marked(A--B,2);
+  draw_marked(C--B,2);
+  draw_marked(A--D,2);
+   draw_marked(D--C,2);
+  draw_marked(E--B,2);
+  draw_marked(E--C,2);
+   draw_marked(D--F,2);
+  draw_marked(F--C,2);
+%  draw_marked(A--B,2);
+ % mark_rt_angle(A,D,C) 
+%draw A--B--C  scaled 0.1 shifted D;
+ draw (0.93,1)*u--(0.93,0.93)*u--(1,0.93)*u;
+endfig;
+beginfig(3)  %%%% Fig exo Carré et 2 tri eq Version avec une rotation (pt G)
+  u:=3cm; 
+  pair A,B,C,D,E,F,G;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(1,0)*u; D:=(1,1)*u; E:=(0.5,0.5*sqrt 3)*u; F:=(1+0.5*sqrt 3,0.5)*u;
+    %pickup pencircle scaled 0.5bp;
+  draw A--B--C--D--cycle;
+  draw B--E--C;  draw D--F--C;
+  
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.urt(btex $E$ etex, E);
+  label.rt(btex $F$ etex, F);
+  marked(A--B,2);
+  marked(C--B,2);
+  marked(A--D,2);
+   marked(D--C,2);
+  marked(E--B,2);
+  marked(E--C,2);
+   marked(D--F,2);
+  marked(F--C,2);
+%  marked(A--B,2);
+ % mark_rt_angle(A,D,C) 
+%draw A--B--C  scaled 0.1 shifted D;
+  draw (0.93,1)*u--(0.93,0.93)*u--(1,0.93)*u;
+  G=A rotatedaround(C,60);
+  draw A--C--G--A dashed evenly scaled 0.5; %withdots scaled 0.2;
+  label.ulft(btex $G$ etex, G);
+  marked(A--C,3);
+  marked(A--G,3);
+  marked(G--C,3);
+  
+endfig;
+beginfig(4)  %%%% Triangle qq angles marques
+  u:=2cm;
+ angle_radius:=0.25default_angle_radius ;
+pair A,B,C,D,E,F,I,J,K;
+path p,q,r;
+transform T;
+B:=(0.3,1)*u; A:=(0,0)*u; C:=(1,0)*u;
+p=A--B--C--cycle;
+draw p;
+label.lft(btex $A$ etex, A);
+  label.top(btex $B$ etex, B);
+  label.rt(btex $C$ etex, C);
+  mark_angle(C,A,B,1);
+  mark_angle(A,B,C,2);
+  mark_angle(B,C,A,0);
+ % T=identity
+endfig;
+
+beginfig(5)  %%%% On se ramène à une configuration de Thales (Triso semblables)
+  u:=2cm;
+ angle_radius:=0.25default_angle_radius ;
+pair A,B,C,D,E,F,I,J,K;
+path p,q,r;
+transform T, TT;
+B:=(0.3,1)*u; A:=(0,0)*u; C:=(0.9,0)*u;
+p=A--B--C--cycle;
+draw p;
+label.lft(btex $A$ etex, A);
+  label.top(btex $B$ etex, B);
+  label.rt(btex $C$ etex, C);
+  mark_angle(C,A,B,1);
+  mark_angle(A,B,C,2);
+  mark_angle(B,C,A,0);
+  T=identity scaled 1.5 rotated 70 shifted (2*u,0.1*u) ;
+  TT=identity rotated 70 shifted (2*u,0.1*u) ;
+  q=p transformed T;
+  r=p transformed TT;
+  draw q;
+  draw r;
+   I=A transformed T; label.rt(btex $I$ etex, I);
+   J=B transformed T; label.top(btex $J$ etex, J);
+   K=C transformed T; label.top(btex $K$ etex, K);
+   D=A transformed TT; label.llft(btex $A'$ etex, D);
+   E=B transformed TT; label.llft(btex $B'$ etex, E);
+   F=C transformed TT; label.rt(btex $C'$ etex, F);
+
+   mark_angle(K,I,J,1);
+  mark_angle(I,J,K,2);
+  mark_angle(J,K,I,0);
+
+ % mark_angle(F,D,E,1);
+  mark_angle(D,E,F,2);
+  mark_angle(E,F,D,0);
+  
+endfig;
+beginfig(6)  %%%Deux angles qui interceptent le meme arc
+  u:=2cm;
+  pair O,A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  p=fullcircle scaled u;
+  draw p;
+  O:=(0,0);
+  dotlabel.bot(btex $O$ etex, O);
+  A:=point 3.2 of p; label.ulft(btex $A$ etex, A);
+  B:=point 5 of p; label.llft(btex $B$ etex, B);
+  C:=point 7.5 of p; label.lrt(btex $C$ etex, C);
+  D:=point 1.7 of p; label.ulft(btex $D$ etex, D);
+  draw A--B--C--D--B--C--A;
+
+  mark_angle(B,A,C,0);
+  mark_angle(B,D,C,0);
+endfig;
+beginfig(7)  %%% Angle au sommet et angle au centre
+  u:=3cm;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+   u:=2cm;
+  pair O,A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  p=fullcircle scaled u;
+  draw p;
+  O:=(0,0);
+  label.top(btex $O$ etex, O);
+  A:=point 2.6 of p; label.ulft(btex $A$ etex, A);
+  B:=point 5 of p; label.llft(btex $B$ etex, B);
+  C:=point 7.5 of p; label.lrt(btex $C$ etex, C);
+  %D:=point 1.7 of p; label.ulft(btex $D$ etex, D);
+  draw C--A--B--C--O--B;
+
+  %mark_angle(B,A,C,1);
+  %mark_angle(B,O,C,2);
+  label_angle(B,O,C,2, btex $\beta$ etex);
+  label_angle(B,A,C,1, btex $\alpha$ etex);
+endfig;
+beginfig(8)  %%% Triangle rect inscrit dans cercle
+   u:=3cm;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+   u:=2cm;
+  pair O,A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  p=fullcircle scaled u;
+  draw p;
+  O:=(0,0);
+  dotlabel.bot(btex $O$ etex, O);
+  A:=point 2 of p; label.top(btex $A$ etex, A);
+  B:=point 3.5 of p; label.lft(btex $B$ etex, B);
+  C:=point 7.5 of p; label.lrt(btex $C$ etex, C);
+  %D:=point 1.7 of p; label.ulft(btex $D$ etex, D);
+  draw C--A--B--cycle;
+
+  mark_rt_angle(B,A,C);
+  %mark_angle(B,O,C,2);
+endfig;
+beginfig(9)  %%% Paralleles angles correspondants
+  u:=2cm; angle_radius:=0.4default_angle_radius ;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  A:=(-1,0)*u; B:=(1,0)*u;
+  C:=(-1,0.5)*u; D:=(1,0.5)*u;
+  %p=(-1.2,0.5)*u--(1.2,0.5)*u rotated 60;
+  E:=(-0.5,0)*u; F:=(0.5,0.5)*u;
+  I:=(-1,-0.25)*u; J:=(1,0.75)*u;
+  draw A--B;
+  draw C--D;
+  draw I--J;
+  mark_angle(B,E,J,0);
+  mark_angle(D,F,J,0);
+endfig;
+beginfig(10)  %%% Paralleles angles alt-int
+  u:=2cm;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  A:=(-1,0)*u; B:=(1,0)*u;
+  C:=(-1,0.5)*u; D:=(1,0.5)*u;
+  %p=(-1.2,0.5)*u--(1.2,0.5)*u rotated 60;
+  E:=(-0.5,0)*u; F:=(0.5,0.5)*u;
+  I:=(-1,-0.25)*u; J:=(1,0.75)*u;
+  draw A--B;
+  draw C--D;
+  draw I--J;
+  mark_angle(B,E,J,0);
+  mark_angle(C,F,E,0);
+endfig;
+
+beginfig(11)  %%% Opposé par le sommet
+  u:=2cm;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  A:=(0.1,-0.6)*u; B:=(-0.1,0.6)*u;
+  C:=(-1,0.5)*u; D:=(1,-0.5)*u;
+  O:=(0,0);
+  draw A--B;
+  draw C--D;
+   mark_angle(A,O,D,0);
+  mark_angle(B,O,C,0);
+endfig;
+beginfig(12)  %%% Parallélogramme angles codés
+  u:=2cm;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  A:=(-1,0)*u; B:=(0.5,0)*u;
+  C:=(1,1)*u; D:=(-0.5,1)*u;
+  O:=(0,0); I:=(-0.8,1)*u;
+  draw A--B--C--D--cycle;
+  %label.bot(btex $A$ etex, A);
+  %label.bot(btex $B$ etex, B);
+  %label.top(btex $C$ etex, C);
+  %label.top(btex $D$ etex, D);
+  mark_angle(C,B,A,2);
+  mark_angle(B,A,D,0);
+
+  mark_angle(A,D,C,2);
+  mark_angle(D,C,B,0);
+  angle_radius:=0.3default_angle_radius ;
+  draw I--D dashed evenly scaled 0.5;
+  mark_angle(I,D,A,0);
+endfig;
+
+beginfig(13)  %%% Parallélogramme ABCD
+  u:=2cm;
+  pair A,B,C,D,E,F,I,J,K;
+  path p,q,r;
+  A:=(-1,0)*u; B:=(0.5,0)*u;
+  C:=(1,1)*u; D:=(-0.5,1)*u;
+  O:=(0,0);
+  draw A--B--C--D--cycle;
+  label.bot(btex $A$ etex, A);
+  label.bot(btex $B$ etex, B);
+  label.top(btex $C$ etex, C);
+  label.top(btex $D$ etex, D);
+
+endfig;
+beginfig(14)  %%% Triangle isocèle ABC angles codés
+  u:=1cm;
+  pair A,B,C,D,E,F,I,J,K;
+  
+  A:=(-1,0)*u; B:=(1,0)*u; C:=(0,2)*u;
+  %D:=(-0.5,1)*u;
+  %O:=(0,0);
+  draw A--B;
+  label.bot(btex $A$ etex, A);
+  label.bot(btex $B$ etex, B);
+  label.top(btex $C$ etex, C);
+  %label.top(btex $D$ etex, D);
+  draw_marked(C--A,2); draw_marked(C--B,2);
+mark_angle(B,A,C,0); mark_angle(C,B,A,0);
+endfig;
+
+beginfig(15)  %%% Triangle rect hauteur tracée
+   u:=3cm;
+  pair A,B,C,D,E,F,H,J,K;
+  path p,q,r;
+   u:=3cm;
+ 
+  p=fullcircle scaled u;
+  %draw p;
+  %O:=(0,0);
+  %dotlabel.bot(btex $O$ etex, O);
+  C:=point 0 of p; label.bot(btex $C$ etex, C);
+  B:=point 4 of p; label.bot(btex $B$ etex, B);
+  A:=point 1.5 of p; label.top(btex $A$ etex, A);
+  H:=(xpart A, 0) ; label.bot(btex $H$ etex, H);
+  %D:=point 1.7 of p; label.ulft(btex $D$ etex, D);
+  draw C--A--B--cycle;
+  draw A--H;
+angle_radius:=0.2default_angle_radius ;
+  mark_rt_angle(B,A,C);  mark_rt_angle(C,H,A);
+  %mark_angle(B,O,C,2);
+endfig;
+
+beginfig(16)  %%% Puissance d'un point (intérieur)
+   
+  pair A,B,C,D,E,F,H,J,K;
+  path p,q,r;
+   u:=3cm;
+ 
+  p=fullcircle scaled u;
+  draw p;
+  O:=(0,0);
+  %dotlabel.bot(btex $O$ etex, O);
+  A:=point 1.5 of p; label.top(btex $A$ etex, A);
+  B:=point 3 of p; label.ulft(btex $B'$ etex, B);
+  C:=point 4.8 of p; label.llft(btex $B$ etex, C);
+  D:=point 0.5 of p; label.rt(btex $A'$ etex, D);
+  H:=whatever[A,C]=whatever[B,D]; % H: Point d'intersection de (AC) et (BD)
+  draw C--A; draw D--B;
+  dotlabel.bot(btex $M$ etex, H);
+  label.lrt(btex $\Gamma$ etex, point 7 of p ); %Cercle Gamma
+  %draw C--A--B--cycle;
+  
+endfig;
+beginfig(17)  %%% Puissance d'un point (extérieur)
+   
+  pair A,B,C,D,E,F,H,J,K;
+  path p,q,r;
+   u:=3cm;
+ 
+  p=fullcircle scaled u;
+  draw p;
+  O:=(0,0);
+  %dotlabel.bot(btex $O$ etex, O);
+  A:=point 1.5 of p; label.top(btex $A$ etex, A);
+  B:=point 3 of p; label.ulft(btex $B$ etex, B);
+  C:=point 5.5 of p; label.llft(btex $B'$ etex, C);
+  D:=point 0.5 of p; label.rt(btex $A'$ etex, D);
+  H:=whatever[A,B]=whatever[C,D]; % H: Point d'intersection de (AB) et (CD)
+  draw B--H--C;
+  label.rt(btex $M$ etex, H);
+  label.lrt(btex $\Gamma$ etex, point 7 of p ); %Cercle Gamma
+  %draw C--A--B--cycle;
+  
+endfig;
+
+beginfig(18)  %%% Spirale d'Archimède
+  pair A[],O;
+   u:=2cm;
+   O:=(0,0); A0=(1,0)*u;
+   angle_radius:=0.2default_angle_radius ;
+   %marksize:=2pt;
+   marked(O--A0,2);
+  dotlabel.bot(btex $O$ etex, O);
+ 
+  for i=0 upto 15:
+   
+    A[i+1]:=A[i] rotated 90 scaled u/abs(A[i]) shifted A[i];
+    draw O--A[i]--A[i+1];
+    marked(A[i]--A[i+1],2);
+    mark_rt_angle(A[i+1],A[i],O);
+    
+  endfor
+  draw O--A[16];
+  drawarrow(-3,0)*u--(4.5,0)*u dashed evenly;
+  drawarrow(0,-3.5)*u--(0,2)*u dashed evenly;
+  %marksize:=4pt;
+  
+endfig;
+beginfig(19)  %%% 
+  pair A[],O;
+   u:=0.1cm;
+   O:=(0,0); A0=(1,0)*u;
+   angle_radius:=0.2default_angle_radius ;
+   %marksize:=2pt;
+   
+  dotlabel.bot(btex $O$ etex, O);
+ 
+  for i=0 upto 1000:
+       A[i+1]:=A[i] rotated 90 scaled u/abs(A[i]) shifted A[i];
+    draw A[i]--A[i+1];
+     endfor
+  endfig;
+
+ 
+
+  beginfig(19) %construction regle et compas de sqrt(13)
+    u:=1cm;
+    papierun((0,0),(4,3),0.3white);%papiercinq((0,0),(3,4),orange);
+    pair A[],O;
+    path p, pp;
+  numeric L;
+    O:=(0,0);
+    A2:=O shifted(1,0)*u;
+   A3:=O shifted(0,1)*u;
+   angle_radius:=0.5default_angle_radius ;
+   drawarrow O--A2;
+   drawarrow O--A3;
+  
+   A0:=O shifted(3,2)*u;
+   A1:=O shifted(4,0)*u; %point B
+   draw O--A0;
+%   draw A1..A0{down};
+   L=2*(13**(0.5))*u;
+   p=fullcircle  scaled L shifted O;
+%7.21110u shifted O;
+   A4:= point 1 of p;
+   A5:= point 0 of p;
+   draw subpath (0,1) of p dashed evenly;
+  
+   dotlabel.bot(btex $B$ etex, A5);
+   dotlabel.urt(btex $A$ etex, A0);
+   label.llft(btex $O$ etex, O);
+   %pp= A1--O--A0;
+  % draw p cutbefore pp;
+  % draw p;
+ endfig;
+  beginfig(20) %construction regle et compas de 5/3
+    u:=1cm;
+    papierun((0,0),(5,4),0.3white);%papiercinq((0,0),(3,4),orange);
+    pair A[],O;
+   
+    O:=(0,0);
+   A2:=O shifted(1,0)*u;
+   A3:=O shifted(0,1)*u;
+   angle_radius:=0.5default_angle_radius ;
+   drawarrow O--A2;
+   drawarrow O--A3;
+  A7:=O shifted(4.5,3.9)*u;
+   A0:=point 0.85 of (O--A7); %O shifted(3.82,3.3)*u; %point B
+   A1:=O shifted(5,0)*u; %point C
+   A4:=O shifted(5/3,0)*u; %point D
+   A5:=1/3[O,A0]; %point A
+   A6:=2/3[O,A0]; %point  au deux tiers de OB
+   
+   draw O--A7;
+   draw A1--A0 dashed evenly;
+   draw A4--A5 dashed evenly;
+
+   dotlabel.bot(btex $C$ etex, A1);
+   dotlabel.bot(btex $D$ etex, A4);
+   dotlabel.top(btex $B$ etex, A0);
+   dotlabel.top(btex $A$ etex, A5);
+    dotlabel.ulft(btex $$ etex,  A6);
+    label.llft(btex $O$ etex, O);
+    label.lrt(btex $\Delta$ etex, A7);
+   marked(O--A5,2);
+   marked(A6--A5,2);
+    marked(A6--A0,2);
+  endfig;
+  beginfig(21)  %%%% Triangle qq angles NON  marques
+  u:=2cm;
+ angle_radius:=0.25default_angle_radius ;
+pair A,B,C,D,E,F,I,J,K;
+path p,q,r;
+%transform T;
+B:=(0.3,1)*u; A:=(0,0)*u; C:=(1,0)*u;
+p=A--B--C--cycle;
+draw p;
+label.lft(btex $B$ etex, A);
+  label.top(btex $A$ etex, B);
+  label.rt(btex $C$ etex, C);
+ % mark_angle(C,A,B,1);
+ % mark_angle(A,B,C,2);
+ % mark_angle(B,C,A,0);
+ % T=identity
+endfig;
+beginfig(22)  %%%% Triangle qq angles NON  marques
+  u:=2cm;
+ angle_radius:=0.25default_angle_radius ;
+pair A,B,C,D,E,F,I,J,K;
+path p,q,r;
+transform T;
+B:=(0.3,1)*u; A:=(0,0)*u; C:=(1,0)*u;
+p=A--B--C--cycle;
+draw p;
+label.lft(btex $C$ etex, A);
+  label.top(btex $A$ etex, B);
+  label.rt(btex $B$ etex, C);
+ % mark_angle(C,A,B,1);
+ % mark_angle(A,B,C,2);
+ % mark_angle(B,C,A,0);
+ % T=identity
+endfig;
+beginfig(23)  %%%% Carré ABCD + triso
+  u:=3cm; %phi=(1+sqrt5)/2;
+  pair A,B,C,D,I,J, K;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(1,0)*u; D:=(1,1)*u;% E:=(1,0)*u; F:=(1,1)*u;
+  I:=(0.65,0)*u; J:=(1,0.65)*u;
+  K=whatever[A,I]=whatever[B,J];
+    %pickup pencircle scaled 0.5bp;
+  draw A--B--C--D--cycle;
+  draw A--I;
+  draw B--J;
+  marked(B--I,2); marked(C--J,2);
+  %mark_rt_angle(A,K,J); % c'est ce qu'il faut prouver!
+  
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $I$ etex, I);
+  label.rt(btex $J$ etex, J);
+  label.top(btex $K$ etex, K);
+endfig;
+ beginfig(24); %Construction pentagone reg avec rectangle d'Or
+
+u:=2cm; phi:=(1+sqrt5)/2;
+  pair A,B,C,D,E,F,G,H,I,J,K[];
+  A:=(0,1)*u; B:=(0,0)*u; C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; G:=(2,0)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 0.5pt;
+  draw B--C;
+  draw E--F;
+  %pickup pencircle scaled 0.5pt;
+  draw B--G;
+  %label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.bot(btex $C$ etex, C);
+  %label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+  I=0.5*(E-B);
+   J=0.5*(C-E)+E;
+  dotlabel.bot(btex $I$ etex, I);
+  draw I--F dashed evenly;
+  path p, q, r,s;
+  p = halfcircle scaled ((phi-0.5)*2u) shifted I;
+    %draw p dashed evenly;
+  q=subpath (0,1.6) of p;
+  draw q dashed evenly;
+  draw_marked(B--I,2);
+  draw_marked(E--I,2);
+%%%
+  r = fullcircle scaled 2u shifted E;
+  draw r;
+  s= (J--(2.5*u,0) rotatedaround(J,90));
+  draw s dashed evenly;
+  K[1]= r intersectionpoint s;
+  dotlabel.urt(btex $A_1$ etex, K[1]);
+  draw_marked(E--J,3);
+  draw_marked(C--J,3);
+  K[2]=K[1] rotatedaround(E,72);
+  K[3]=K[2] rotatedaround(E,72);
+  K[4]=K[3] rotatedaround(E,72);
+  K[5]=K[4] rotatedaround(E,72);
+  dotlabel.ulft(btex $A_2$ etex, K[2] );
+  dotlabel.llft(btex $A_3$ etex, K[3] );
+  dotlabel.lrt(btex $A_4$ etex, K[4] );
+  dotlabel.urt(btex $A_0$ etex, K[5] );
+  draw K[5]--K[1]--K[2]--K[3]--K[4]--cycle;
+    endfig;
+%%%%%%%%
+    end

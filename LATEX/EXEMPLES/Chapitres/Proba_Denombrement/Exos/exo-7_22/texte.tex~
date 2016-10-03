@@ -1,0 +1,10 @@
+\begin{exercice}
+\begin{enumerate}
+\item On choisit au hasard un nombre dans l'intervalle $[0;7]$; le choix est modélisé par une loi uniforme.
+\begin{enumerate}
+\item Calculer la probabilité que ce nombre soit dans $[2;5]$.
+\item Calculer la probabilité que ce nombre soit dans $[4;6]$.
+\item Calculer $P_{[2;5]}([4;6])$.
+\end{enumerate}
+ 
+\end{exercice}

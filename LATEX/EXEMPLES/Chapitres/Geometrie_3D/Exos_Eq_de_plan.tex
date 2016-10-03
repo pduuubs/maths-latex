@@ -1,0 +1,109 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pst-math}
+\usepackage{pst-plot}
+\begin{document}
+\fexos{Applications du produit scalaire}{\term S}
+%%%---------------------------------------
+\exercice
+Soit $A(2;1;-1)$. Donner des équations des plans plans passant par $A$
+qui sont parallèles aux plans de coordonnées. (\ie{} $(xOy)$, $(xOz)$, $(yOz)$)
+%%%---------------------------------------
+\exercice
+Soit une droite $\Dr$ de vecteur directeur $\vu(1;-2;3)$ et la droite
+$(AB)$ où $A(-1;0;2)$ et $B(-3;2;4)$. Prouver que $\Dr$ et $(AB)$ sont orthogonales.
+%%%---------------------------------------
+\exercice
+Soit $\Para$ le plan passant par $B(-1;2;-3)$ et perpendiculaire à la
+droite $\Dr$ dont une paramétrisation est:
+\[\left\{
+\begin{array}{ll}
+  x=3t-1\\
+y=-t \\
+z=2t+5
+\end{array}\right.\qquad t\in\R\]
+\begin{enumerate}
+\item Calculer la distance du point $A(0;1;-1)$ au plan $\Para$.
+\item Calculer les coordonnées du point d'intersection de $\Dr$ et $\Para$.
+\end{enumerate}
+
+%%%---------------------------------------
+\exercice
+Soit les plans $\Para$ et $\Para'$ d'équations respectives:
+$x+y+z+2=0$ et $2x-y-2z+1=0$.
+\begin{enumerate}
+\item Ces plans sont ils sécants?
+\item Déterminer le point $A$ d'abscisse nulle appartenant à $\Para$
+  et $\Para'$.
+\item Déterminer un autre point $B$ appartenant à
+  $\Para\cap\Para'$.
+
+\item Donner une paramétrisation de la droite $\Dr=\Para\cap\Para'$.
+\end{enumerate}
+%%%---------------------------------------
+\exercice
+Dans un tétraèdre régulier $ABCD$, on considère le centre de gravité
+$G$ de la face $ABC$. On veut prouver que $(DG)$ est orthogonale à
+$(ABC)$. On note $A'$ le milieu de $[BC]$.
+\begin{enumerate}
+\item%
+  \begin{enumerate}
+  \item Justifier rapidement que $(GA')$ et $(A'D)$ sont perpendiculaires à $(BC)$.
+  \item En déduire que $\V{GD}\cdot\V{BC}=0$.
+  \end{enumerate}
+\item On pourrait prouver de la même manière que $(GD)$ est
+  orthogonale à $(AB)$ mais je vous propose une autre méthode:
+  \begin{enumerate}
+  \item Justifier que $(GD)$ est dans le plan médiateur de $[AB]$.
+  \item Conclure.
+  \end{enumerate}
+\item Conclure.
+\end{enumerate}
+%%%---------------------------------------
+\begin{center}
+  \input{Figures/tetraedre.psf}
+\includegraphics[width=4cm]{Figures/tetraedre}
+\end{center}
+
+\exercice
+Dans l'espace muni d'un repère orthonormé, montrer qu'il
+existe une unique sphère passant par les points
+$$A(4;5;1)\ B(2;5;-5)\ C(-4;5;1)\ D(4;3;3)$$
+On déterminera le centre et le rayon de cette sphère.
+\\
+
+Méthode: Montrer que les plans médiateurs de $[AB]$, $[AC]$ et
+$[AD]$ ont un point commun après en avoir déterminé des équations
+cartésiennes. 
+
+
+
+\end{document}
+
+
+\begin{pspicture}*(-7,-4)(7,4)
+                          \psaxes{->}(0,0)(-6,-4)(7,4)                         
+                          \psplot[linecolor=gray]{-7}{7}{x TAN }
+                          \end{pspicture}
+
+
+ 
+
+\begin{pspicture}*(-5,-5)(5,5)
+                          \psaxes{->}(0,0)(-5,-5)(5,5)
+                          \psplot[linecolor=gray]{-5}{5}{x COSH }
+                          \psplot[linecolor=red]{-5}{5}{x SINH }
+                          \psplot[linecolor=green]{-5}{5}{x TANH }
+                          \end{pspicture}
+
+
+\begin{pspicture}*(-5,-5)(5,5)
+                          \psaxes{->}(0,0)(-5,-5)(5,5)
+                          \psgrid[griddots=1,%
+                          subgriddiv=2,
+                          gridlabels=0pt,%
+                          xunit=1]
+                          (-5,-5)(5,5)
+                          \end{pspicture}

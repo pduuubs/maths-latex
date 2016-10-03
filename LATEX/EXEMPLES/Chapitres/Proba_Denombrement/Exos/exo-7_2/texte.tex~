@@ -1,0 +1,16 @@
+\begin{exercice}
+ Une encyclopédie comporte 26 tomes de A à Z. On range au
+hasard sur
+une étagère ces 26 tomes. Combien y a-t-il de tels rangements? Quelle
+est la probabilité que les tomes A et B apparaissent côte à côte dans
+cet ordre?
+\exercice L'aphabet comporte 26 lettres. On appelle \og mot\fg{} une
+succession de lettres ayant un sens ou non. On appelle mot simple un
+mot où toutes les lettres sont deux à deux distinctes.
+\begin{enumerate}
+\item Combien de mots de 4 lettres peut-on former?
+
+\item Combien de mots simples de 4 lettres peut-on former?
+\item Combien de mots simples ayant entre 4 et 6 lettres peut-on former?
+\end{enumerate}
+\end{exercice}

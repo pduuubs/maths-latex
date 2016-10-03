@@ -1,0 +1,48 @@
+\begin{exercice}
+\noindent
+La suite de \textsc{Fibonacci}\footnote{Très célèbre, particulièrement depuis le
+  succès du livre \textsl{Da Vinci Code}.} est la suite $(U_n)$ définie par $U_1=U_2=1$ et
+la relation de récurrence pour tout $n$ dans~$\mathbb{N}^*$:
+\begin{equation}
+  \label{eq:rel_fonk_fibo}
+  U_{n+2}=U_{n+1}+U_n
+\end{equation}
+
+Je vous propose une démonstration de l'étonnante formule  découverte
+par \textsc{De Moivre}:
+\begin{equation}
+  \label{eq:fibo_tg}
+ \forall n\in \mathbb{N}^*,\  U_n=\frac{1}{\sqrt{5}}\left[
+   \left(\frac{1+\sqrt{5}}{2} \right)^n- \left(\frac{1-\sqrt{5}}{2} \right)^n\right]
+\end{equation}
+\begin{enumerate}
+\item  Calculer $U_n$ pour $n$ allant de $1$ à $6$ à l'aide de~\eqref{eq:rel_fonk_fibo}.
+\item Comme la suite de Fibonacci vérifie~\eqref{eq:rel_fonk_fibo} on
+  résout d'abord dans $\mathbb{R}$ l'équation associée\footnote{C'est
+    une technique qui se généralise à toutes les suites récurrentes linéaires
+    d'ordre deux, \emph{i.e.} vérifiant une relation du type:
+    $U_{n+2}=aU_{n+1}+bU_n$ pour $a\in\R$, $b\in\R$.}:
+  \begin{equation}
+    \label{eq:trino_fibo}
+    x^2=x+1
+  \end{equation}
+On notera $\phi$ (le nombre d'or) la racine positive et $\bar{\phi}$ la racine négative
+de~\eqref{eq:trino_fibo}.
+\item \label{avecphi1} En utilisant uniquement l'équation~\eqref{eq:trino_fibo} vérifiée par
+  $\phi$ , exprimer $\phi^n$ pour $n$ valant $2$, $3$, $4$, $5$, puis
+  $6$ sous la forme $a\phi +b$ où à chaque fois $a$ et $b$ sont des entiers naturels. Que remarque-t-on sur les coefficients $a$ et $b$ ?
+\item \label{avecphi2} Prouver alors par récurrence que pour tout entier $n$ supérieur à~2:
+\[\phi^n=U_n\times\phi+U_{n-1}\]
+
+\item En déduire la formule~\eqref{eq:fibo_tg}. \hfill
+  \rotatebox{180}{{\footnotesize Indication: Peut--on traiter les questions
+  \textbf{\ref{avecphi1}.} et  \textbf{\ref{avecphi2}.} en remplaçant
+  $\phi$ par  $\bar{\phi}$?}}
+
+\item En déduire la limite de $U_n$.
+
+\item $\bigstar$ Quelle est la limite de $(\frac{\bar{\phi}}{\phi})^n$? En déduire
+  que la limite du quotient $\frac{U_{n+1}}{U_n}$ vaut~$\phi$.
+\end{enumerate}
+
+ \end{exercice}

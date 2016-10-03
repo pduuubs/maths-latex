@@ -1,0 +1,38 @@
+\begin{exercice}
+\section{Caract\'erisation de  l'exponentielle }
+Le but de cet exercice est de d\'eterminer toutes les fonctions $f$
+(diff\'erentes de la fonction nulle)
+d\'efinies et d\'erivables sur $\R$ v\'erifiant la relation fonctionnelle\footnote{On dit qu'une telle fonction $f$ est un \emph{morphisme} du groupe additif
+$\R$ dans le groupe multiplicatif~$\R^*$}:
+\begin{equation}
+  \label{eq:fonc}
+  \forall a\in\R,\forall b\in\R,\ f(a+b)=f(a)f(b) 
+\end{equation}
+
+On consid\`ere une fonction $f$ non identiquement nulle v\'erifiant \eqref{eq:fonc}.
+ Soit $b\in\R$. On consid\`ere la fonction $\Psi_b$ de variable~$x$ et de param\`etre r\'eel~$b$ d\'efinie par:
+\[\forall x\in\R,\ \Psi_b(x)=f(x+b)\]
+\begin{enumerate}
+\item Prouver que si $f(0)=0$, alors $f$ est la fonction
+  nulle. Combien vaut donc $f(0)$?
+\item Calculer $\Psi_b'(x)$ de deux mani\`eres.
+\item En d\'eduire que pour tout r\'eel $b$ la fonction $f$ v\'erifie:
+  $ f'(b)=f'(0)f(b)$
+
+\item Justifier alors que $f$ a n\'ecessairement une
+  expression de la forme: $f(x)=\e^{\alpha x}$
+o\`u $\alpha$ est une constante que l'on pr\'ecisera.
+
+\item R\'eciproquement, justifier que toute fonction $g$ dont
+  l'expression est de la forme \mbox{$g(x)=\e^{\alpha x}$} o\`u
+  $\alpha$ est une constante r\'eelle v\'erifie la relation~\eqref{eq:fonc}
+\item Enoncer la propri\'et\'e d\'emontr\'ee.
+\end{enumerate}
+  %\item Quelles sont les deux valeurs possibles pour $f(0)$?
+  %\item Prouver que si $f(0)=0$ alors $f$ est la fonction nulle. ($\forall x\in\R,\ f(x)=0$)
+  %\item On suppose \`a partir de maintenant que $f$ n'est pas la
+   % fonction nulle. Prouver que $f$ ne s'annule jamais.
+
+
+ 
+\end{exercice}

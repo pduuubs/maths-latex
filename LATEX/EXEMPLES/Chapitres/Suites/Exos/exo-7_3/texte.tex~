@@ -1,0 +1,57 @@
+\begin{exercice}
+
+  \textbf{\gray Baccalaur\'eat S Nouvelle-Cal\'edonie  novembre 2006}
+ 
+
+\vspace{1ex}
+
+
+\noindent \textbf{\textsc{Exercice 3}\hfill 5 points}\\
+\noindent \textbf{Commun \`a tous les candidats}\\
+Soit la suite $\left(u_{n}\right)$ d\' efinie pour tout entier naturel $n$ par :
+
+\[u_{0} = \dfrac{1}{2} \quad \text{et}\quad u_{n+1}	=	\dfrac{1}{2}\left(u_{n} + \dfrac{2}{u_{n}}\right)\]
+
+\begin{enumerate}
+\item  \begin{enumerate}
+\item  Soit $f$ la fonction d\' efinie sur $]0~;~ +\infty[$ par
+\[f(x) = \dfrac{1}{2}\left(x + \dfrac{2}{x}\right)\]
+\'Etudier le sens de variation de $f$, et tracer sa courbe repr\' esentative dans le plan muni d'un
+rep\`ere orthonormal $\oij$.	(On prendra comme unit\' e 2 cm).
+
+\item Utiliser le graphique ci-dessous pour construire les points
+  A$_{0}$,~A$_{1}$,~A$_{2}$ et A$_{3}$ de l'axe $\oi$ 
+%$\left(\text{O}~;\vect{\imath}\right)$
+d'abscisses respectives: $u_{0},~u_{1},~u_{2}$ et $u_{3}$.
+\end{enumerate}
+\item	\begin{enumerate}
+\item  Montrer que pour tout entier naturel $n$ non nul $u_{n} \geqslant \sqrt{2}$.	
+\item  Montrer que pour tout $x \geqslant \sqrt{2} ,~ f(x) \leqslant x$.
+\item  En d\' eduire que la suite $\left(u_{n}\right)$ est d\' ecroissante \`a partir du rang $1$.
+\item  Prouver qu'elle converge.
+\end{enumerate}
+\item Soit $\ell$ la limite de la suite $\left(u_{n}\right)$. Montrer que $\ell$ est solution de l'\' equation
+
+\[x = \dfrac{1}{2}\left(x + \dfrac{2}{x}\right)\]
+
+En d\' eduire sa valeur.
+\end{enumerate}
+\centering
+\psset{xunit=2cm,yunit=2cm}
+\begin{pspicture}(-1,-1)(6,5)
+\psgrid[griddots=1,gridlabels=0pt,subgriddiv=2]
+                          \psaxes{->}(0,0)(-1,-1)(6,5)                         
+                          
+\psline{-}(0.2,5)(0.25,4.125)(0.4,2.7)(0.5,2.25)(0.55,2.093)(0.6,1.967)(0.7,1.7785)(0.8,1.65)(0.9,1.56)(1,1.5)%
+(1.1,1.459)(1.2,1.433)(1.3,1.419)(1.414,1.414)(1.7,1.438)(2,1.5)(2.5,1.65)(3,1.833)(3.3,1.953)(4,2.25)(4.6,2.517)(5,2.7)(6,3.1667)
+%\put{$O$}(-0.2,-0.2)
+%\psline{-}(0,0)(5,5)
+\psplot{-1}{6}{%
+x dup 1 neg exp 2 mul sum 2 div
+}
+\psplot%[linecolor=gray]
+{-1}{6}{%
+x %dup 1 neg exp 2 mul sum 2 div
+}
+                          \end{pspicture}
+\end{exercice}

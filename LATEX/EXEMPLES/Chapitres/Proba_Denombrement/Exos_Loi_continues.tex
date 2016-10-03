@@ -1,0 +1,134 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pst-math}
+\usepackage{pst-plot}
+\begin{document}
+\fexos{Loi exponentielle-Annales}{\term S}
+\cfoot{}
+%%%---------------------------------------
+%\exercice
+\noindent
+\textbf{\Large France juin 2004}
+
+\vspace{0,5cm}
+
+On s'int\'eresse \`a la dur\'ee de vie, exprim\'ee en semaines, d'un composant \'electronique.
+ On mod\'elise cette situation par une loi de probabilit\'e $p$ de dur\'ee de vie sans
+ vieillissement d\'efinie sur l'intervalle $[0~;~ + \infty[$ : la probabilit\'e que le 
+composant ne soit plus en \'etat de marche au bout de $t$ semaines est:
+
+\[p([0~;~ t[)  = \displaystyle\int_0^t \lambda \text{e}^{-\lambda 
+x}\:\text{d}x.\]
+
+\noindent Une \'etude statistique, montrant qu'environ $50\:\%$ d'un lot important de 
+ces composants sont encore en \'etat de marche au bout de 200 semaines, permet de 
+poser $p([0~;~ 200[) = 0,5$.
+
+\begin{enumerate} \item Montrer que $\lambda = \cfrac{\ln 2}{200}$.
+
+\item Quelle est la probabilit\'e qu'un de ces composants pris au hasard ait une dur\'ee
+ de vie sup\'erieure ? 300 semaines ? On donnera la valeur exacte et une valeur 
+approch\'ee d\'ecimale au centi\`eme pr\`es.
+
+\item On admet que la dur\'ee de vie moyenne $d_m$ de ces composants est la limite quand 
+$A$ tend vers $+ \infty$ de $\displaystyle\int_0^A \lambda x\text{e}^{-\lambda 
+x}\:\text{d}x$.
+
+\begin{enumerate} \item Montrer que $\displaystyle\int_0^A \lambda x\text{e}^{-\lambda 
+x}\:\text{d}x = \cfrac{- \lambda A\text{e}^{-\lambda A} - \text{e}^{- 
+\lambda A} + 1}{\lambda}$.
+
+\item En d\'eduire $d_m$. On donnera la valeur exacte et une valeur approch\'ee d\'ecimale \`a
+la semaine pr\`es.
+
+\end{enumerate}
+
+\end{enumerate}
+\vspace{0,5cm}
+%%%---------------------------------------
+%\exercice
+\textbf{\Large Polyn\'esie juin 2004}
+
+\vspace{0,5cm}
+
+Le laboratoire de physique d'un lycée dispose d'un parc d'oscilloscopes
+ identiques. La durée de vie en années d'un oscilloscope est une variable
+ aléatoire notée $X$ qui suit la \og loi de durée de vie sans vieillissement \fg{}
+ (ou encore loi exponentielle de paramètre $\lambda$ avec $\lambda > 0$.
+
+\noindent Toutes les probabilités seront données à $10^{-3}$ près.
+
+\begin{enumerate}\item Sachant que $p(X > 10) = 0,286$, montrer qu'une valeur approchée à $10^{-3}$
+près de $\lambda$ est $0,125$.
+
+\noindent On prendra $0,125$ pour valeur de $\lambda$ dans la suite de l'exercice.
+
+\item Calculer la probabilité qu'un oscilloscope du modèle étudié ait une
+ durée de vie inférieure à 6 mois.
+
+\item Sachant qu'un appareil a déjà fonctionné huit années, quelle est la
+ probabilité qu'il ait une durée de vie supérieure dix ans ?
+
+\item On considère que la durée de vie d'un oscilloscope est indépendante
+ de celle des autres appareils. Le responsable du laboratoire décide de
+ commander 15 oscilloscopes. Quelle est la probabilité qu'au moins un 
+oscilloscope ait une durée de vie supérieure â 10 ans ?
+
+\item Combien l'établissement devrait-il acheter d'oscilloscopes pour que
+ la probabilité qu'au moins l'un d'entre eux fonctionne plus de 10 ans
+ soit supérieure à 0,999 ?
+
+\vspace{0.4cm}\\
+
+\noindent Rappel :
+
+\noindent \textit{Loi exponentielle de paramètre $\lambda$ sur $[0~;~ + \infty [$,
+ dite aussi loi de durée de vie sans vieillissement }:
+
+\noindent pour $0 \leqslant a \leqslant  b,~ p([a~;~b]) = \displaystyle\int_a^b  
+\lambda \text{e}^{-\lambda t}\:\text{d}t \qquad$  et 
+
+\noindent pour $c \geqslant  0,~ 
+p([c~;~+ \infty[) = 1 -  \displaystyle\int_0^c \lambda \text{e}^{-\lambda t}
+\:\text{d}t$.
+
+\end{enumerate}
+
+\end{document}
+%%%---------------------------------------
+\exercice
+%%%---------------------------------------
+\exercice
+
+
+
+
+\end{document}
+
+
+\begin{pspicture}*(-7,-4)(7,4)
+                          \psaxes{->}(0,0)(-6,-4)(7,4)                         
+                          \psplot[linecolor=gray]{-7}{7}{x TAN }
+                          \end{pspicture}
+
+
+ 
+
+\begin{pspicture}*(-5,-5)(5,5)
+                          \psaxes{->}(0,0)(-5,-5)(5,5)
+                          \psplot[linecolor=gray]{-5}{5}{x COSH }
+                          \psplot[linecolor=red]{-5}{5}{x SINH }
+                          \psplot[linecolor=green]{-5}{5}{x TANH }
+                          \end{pspicture}
+
+
+\begin{pspicture}*(-5,-5)(5,5)
+                          \psaxes{->}(0,0)(-5,-5)(5,5)
+                          \psgrid[griddots=1,%
+                          subgriddiv=2,
+                          gridlabels=0pt,%
+                          xunit=1]
+                          (-5,-5)(5,5)
+                          \end{pspicture}

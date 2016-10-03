@@ -1,0 +1,158 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -57 -57 57 57 
+%%Creator: MetaPost
+%%CreationDate: 2008.04.02:1519
+%%Pages: 1
+%%DocumentFonts: CMMI10
+ /cmmi10 /CMMI10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+gsave newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto
+56.6929 56.6929 lineto
+-56.6929 56.6929 lineto
+ closepath clip
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath -56.6929 0 moveto
+56.6929 0 lineto stroke
+newpath 52.99733 -1.53079 moveto
+56.6929 0 lineto
+52.99733 1.53079 lineto
+ closepath
+gsave fill grestore stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 -56.6929 moveto
+0 56.6929 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 1.53079 52.99733 moveto
+0 56.6929 lineto
+-1.53079 52.99733 lineto
+ closepath
+gsave fill grestore stroke
+-9.976 -8.90779 moveto
+(O) cmmi10 9.96265 fshow
+ 0.7 setgray
+newpath -56.6929 0 moveto
+56.6929 0 lineto stroke
+newpath -56.6929 28.34645 moveto
+56.6929 28.34645 lineto stroke
+newpath -56.6929 56.6929 moveto
+56.6929 56.6929 lineto stroke
+newpath -56.6929 0 moveto
+56.6929 0 lineto stroke
+newpath -56.6929 -28.34645 moveto
+56.6929 -28.34645 lineto stroke
+newpath -56.6929 -56.6929 moveto
+56.6929 -56.6929 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 -56.6929 moveto
+0 56.6929 lineto stroke
+newpath 28.34645 -56.6929 moveto
+28.34645 56.6929 lineto stroke
+newpath 56.6929 -56.6929 moveto
+56.6929 56.6929 lineto stroke
+newpath 0 -56.6929 moveto
+0 56.6929 lineto stroke
+newpath -28.34645 -56.6929 moveto
+-28.34645 56.6929 lineto stroke
+newpath -56.6929 -56.6929 moveto
+-56.6929 56.6929 lineto stroke
+ 0 setgray 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath -56.6929 -56.6929 moveto
+-51.0237 -53.85852 lineto
+-45.35449 -51.0237 lineto
+-39.68486 -48.18887 lineto
+-34.01566 -45.35449 lineto
+-28.34645 -42.51968 lineto
+-22.67725 -39.68529 lineto
+-17.00804 -36.85048 lineto
+-11.33841 -34.01566 lineto
+-5.6692 -31.18127 lineto
+0 -28.34645 lineto
+5.6692 -25.51163 lineto
+11.33841 -22.67725 lineto
+17.00804 -19.84242 lineto
+22.67725 -17.00761 lineto
+28.34645 -14.17323 lineto
+34.01566 -11.33841 lineto
+39.68486 -8.50403 lineto
+45.35449 -5.6692 lineto
+51.0237 -2.83438 lineto
+56.6929 0 lineto stroke
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+grestore
+showpage
+%%EOF

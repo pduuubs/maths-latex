@@ -1,0 +1,738 @@
+\chapter*{Suites adjacentes}
+\label{chap:Suites.adjacentes}
+%\section{Limites, par la définition}
+\section{Convergence monotone}
+\subsection{Limites par la définition, rappels}
+On va énoncer des résultats sur les suites, ils se traduisent aussi en
+énoncés valables pour les fonctions. Dans la suite, $(u_n)$ désigne
+une suite réelle, définie sur~$\mathbb{N}$.
+\begin{Def}
+  On dit que $(u_n)$ tend vers $+\infty$, si pour tout réel $M$ fixé
+  il existe un rang~$p$ à partir duquel tous les termes de la suite
+  sont supérieurs à $M$. \emph{i.e.} 
+\[\forall M\in\R, \exists p\in\N, n\geq p\implies u_n\geq M\]
+\end{Def}
+Le rang $p$ dépend de $M$ et \emph{a priori}, plus $M$ est grand, plus $p$ sera grand.
+\begin{rem}
+  Ce n'est pas pareil que de dire que \og la suite n'est majorée par
+  aucun réel\fg{}. En effet la suite définie sur $\N^*$ par
+  $u_n=n\times (-1)^n $ n'est majorée par aucun réel mais elle ne
+  tend pas vers $+\infty$.\DangerZ
+\end{rem}
+\begin{Def}
+On dit que $(u_n)$ converge vers un réel $\ell$ si tout intervalle
+ouvert contenant~$\ell$ contient aussi tous les termes de la suite à
+partir d'un certain rang.
+\end{Def}
+
+\begin{rem}
+  On peut dans cette définition se restreindre aux intervalles ouverts
+  centrés en~$\ell$, c'est à dire de la forme
+  $\left]\,\ell-\epsilon;\ell+\epsilon\right[$ où~$\epsilon$ est un
+  réel strictement positif. De plus dire
+  $u_n\in\left]\,\ell-\epsilon;\ell+\epsilon\right[$ signifie que
+  $u_n-\ell\in\left]\,-\epsilon;\epsilon\right[$ soit encore
+  $|u_n-\ell| <\epsilon$. Cette définition est donc équivalente à:\\
+\og Aussi petit que soit $\epsilon$ strictement positif, au bout d'un
+moment, tous les termes de la suite sont à une distance strictement inférieure à
+$\epsilon$ du réel~$\ell$.\fg{} Ce qui se note ainsi:
+\end{rem}
+\noindent%
+\begin{minipage}{1.0\linewidth - 8.2cm}
+  La suite  $(u_n)$ converge vers un réel $\ell$ si:
+\[ \forall \epsilon\in\R_+^*, \exists p\in\N, n\geq p\implies
+|u_n-\ell| <\epsilon  \]
+Le rang $p$ dépend de $\epsilon$ et \emph{a priori}, plus $\epsilon$ est petit, plus $p$ sera grand.
+\end{minipage}\hfill
+\begin{minipage}{7.6cm}
+  \begin{center}
+  \includegraphics[width=7.5cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Limites.1}  
+  \end{center}
+  
+\end{minipage}
+
+
+\begin{Def}
+  Une suite non convergente est dit \emph{divergente}. 
+\end{Def}
+Dire $(u_n)$ diverge ne signifie pas \og $(u_n)$ n'a pas de
+limite\fg{}. L'ensemble des suites divergentes contient les suites qui tendent vers  $+\infty$, celles qui tendent vers $-\infty$ et celles qui n'ont pas
+  de limite. On peut par exemple dire: \og $(u_n)$ diverge vers~$+\infty$. \fg{}
+
+\subsection{ L'axiome de la convergence monotone.}
+Une suite croissante ne tend pas nécéssairement vers $+\infty$, elle
+peut aussi converger. On admet le résultat suivant (c'est un axiome) qui est lié à
+la structure de l'ensemble des nombres réels:
+\begin{theo}[Convergence monotone] 
+  Une suite croissante et majorée (ou décroissante et minorée) converge.
+\end{theo}
+%Ainsi pour une suite croissante, il peut se passer deux choses, soit
+%elle est majorée et alors elle converge, soit elle n'est pas majorée,
+%et dans ce cas elle diverge vers $+\infty$. (Preuve laissée en exercice)
+
+Ce théorème est un théorème d'existence, il ne permet pas de calculer
+une limite.
+Si $(u_n)$ est croissante est majorée par 3 par exemple, elle
+converge, mais pas nécéssairement vers 3. Certainement vers un réel
+inférieur (ou égal) à~3.\DangerZ \\
+
+\section{\'Etude des suites du type $u_{n+1}=f(u_n)$}
+On se donne une fonction $f$ définie, continue sur un intervalle $I$ de
+$\R$. Soit $u_0\in I$.
+\subsection{Intervalle stable}
+\Def{On dit que $I$ est stable par $f$ si $f(I)\subset I$}
+\exemples{
+  \begin{enumerate}
+  \item $f(x)=x(1-x)$ sur $I=\intf{0}{1}$. $I$ est stable par f, mais
+pas par $g=5f$. Il suffit d'étudier $f$.
+\item $f(x)=\frac{1}{x-1}$ et $u_0=\frac32$ Vérifier que la relation
+  $u_{n+1}=f(u_n)$ ne définit pas une suite. 
+  \end{enumerate}
+}
+La condition $I$ stable par $f$ permet de garantir que la suite est
+définie et que tous les termes de la suite sont dans l'intervalle $I$.
+(récurrence immédiate)
+
+\subsection{Sens de variation}
+
+Il est faut de dire que $f$ croissante donne $(u_n)$ croissante, on a
+en fait:
+\begin{prop}
+\begin{enumerate} 
+  \item $f$ croissante $\implies$ $(u_n)$ monotone. Le sens de var est
+    donné par le signe de $u_1-u_0$
+  \item $f$ décroissante $\implies$ $(u_{2n})$ et $(u_{2n+1})$ sont
+    monotones de monotonies contraires
+\end{enumerate}
+\end{prop}
+\begin{proof}
+   Supposons $u_1>u_0$.
+\begin{enumerate} 
+  \item Par récurrence. $\Para (n)$: \og $u_{n+1}-u_n\geq 0$\fg{}
+  \item On pose $p_n=u_{2n}$ et $i_n=u_{2n+1}$. Alors:
+\[p_{n+1}=f\circ f(p_n) \quad \et{}\quad i_{n+1}=f\circ f(i_n)\]
+Or $f$ dec. implique $fof$ croissante donc par le 1. $p$ et $i$ sont
+monotones.
+Supposons $p$ croissante, alors $u_2\geq u_0$ donc, en appliquant $f$
+qui est dec. on a $u_3\leq u_1$ donc $i_1 \leq i_0$ donc $i$ est dec.
+\end{enumerate}
+\end{proof}
+Si $f-Id$ est de signe constant, on a un résultat sur le sens de
+variation de~$(u_n)$:
+\begin{prop} Un critère pour obtenir le sens de variation de $(u_n)$:
+  \begin{enumerate} 
+  \item $ \forall x \in I,\ f(x)-x\geq 0 \implies$ $(u_n)$ croissante
+  \item $\forall x \in I,\ f(x)-x\leq 0 \implies$ $(u_n)$ décroissante 
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  
+\end{proof}
+
+\subsection{Convergence}
+\Def{On appelle point fixe d'une fonction $f$ un réel $x$  tel que $f(x)=x$}
+\begin{theo}Si $f$ est continue sur un intervalle fermé $I$ et que $(u_n)$ converge, alors la  limite est nécessairement un point fixe de~$f$.
+\end{theo}
+\begin{proof}
+  
+\end{proof}
+Attention: L'existence d'un point fixe ne garantit pas la convergence
+de $(u_n)$. Mais l'absence de point fixe suffit à justifier que $(u_n)$
+ne converge pas.\DangerZ
+En pratique: On justifie que $(u_n)$ CV (croissante majorée par
+exemple) puis on détermine la limite en cherchant les points fixes de
+$f$. Si le point fixe est unique, c'est facile, sinon il faut
+raisonner avec le sens de variation de $(u_n)$.
+
+\exemple $u_{n+1}=\frac{u_n}{2-u_n}$ et $u_0 \in \intf{0}{1}$
+\newpage
+
+\subsection{Différents comportements asymptotiques.}
+Je vous ai tracé ci-dessous différentes représentations graphiques en
+\og toile d'araignée \fg{} d'une suite $(u_n)$ définie par une
+relation de récurrence $u_{n+1}=f(u_n)$. J'ai donc tracé $C_f$ la
+courbe de $f$ ainsi que la droite d'équation~$y=x$.\\
+% \noindent
+% \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.1}\quad% 
+% \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.2}\quad% 
+% \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.3}\\
+% \noindent%
+% \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.4}\quad%  
+% \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.5}\quad% 
+% \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.7}\\
+
+% \vspace{-2ex}
+\setlength{\columnsep}{0.3cm}
+% \setlength{\columnseprule}{0.5pt}
+\begin{multicols}{3}
+\noindent
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.1}\\
+\noindent $f$ croissante, $(u_n)$ décroissante, convergeant vers le point fixe.\\
+
+\noindent \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.2}\\
+\noindent $f$ croissante, $(u_n)$ croissante, convergeant vers le
+point fixe attractif, zéro est un point fixe répulsif.\\
+%
+\noindent \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.5}\\
+\noindent $f$ croissante, $(u_n)$ croissante, divergeant vers plus l'infini, le point
+fixe est répulsif.\\
+\end{multicols}%\vspace{-2ex}
+
+\begin{multicols}{3}
+\noindent \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.3}\\
+\noindent $f$ décroissante, $(u_n)$ non monotone, convergeant vers le point
+fixe (attractif).\\
+
+\noindent \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.4}\\
+\noindent $f$ décroissante, $(u_n)$ non monotone, divergeant (pas de limite ici), le point
+fixe est répulsif.\\
+\noindent \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.7}\\
+\noindent La suite est attirée vers un 2-cycle. Asymptotiquement, elle tend à
+être 2-périodique. Elle ne converge donc pas, le point fixe est
+répulsif, mais $f\circ f$ admet un point fixe attractif\dots
+\end{multicols}%\vspace{-2ex}
+
+
+\newpage
+
+\subsection{Suite logistique}
+\label{sec:logistique}
+\begin{small}
+  
+
+Ci--dessous des schémas en toile d'araignée pour la famille de fonctions
+$f_k$ où:
+\[f_k(x)=k \times x(4-x)\]
+Lorsque le paramètre $k$ varie de 0 à 1, on a divers comportements, de
+la simple convergence à des phénomènes dits chaotiques. L'étude de
+tels phénomènes constitue le domaine des \og systèmes dynamiques
+discrets\fg{}. Il est intimement lié aux fractales. \\
+J'ai rangé les figures par ordre croissant de $k$. Au début, zéro est
+le seul point fixe, il est attractif, puis nait un second point fixe
+qui devient aussitôt attractif alors que zéro devient répulsif. Ce
+nouveau point fixe attire de plus en plus lentement, et devient
+répulsif, un 2-cycle devient attracteur. Puis c'est un 4-cycle qui
+devient attracteur (6\ieme{} figure), il s'en suit une série infinie de doublement de
+périodes (8-cycles, puis 16-cycles\dots ). Ensuite on trouve malgré
+tout des trois cycles ($k=0,958$) ce qui indique que le chaos va survenir (d'après
+le théorème de Sarkovski). Sur la dernière figure (pour $k=1$), on observe que la
+suite prend \og presque toutes les valeurs\fg{} dans $\left[0\,;4\right]$.
+\[\]
+\end{small}
+\noindent%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.11}\quad%  
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.13}\quad% 
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.12}\\[0.2cm]
+\noindent%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.7}\quad%  
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.8}\quad% 
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.6}\\[0.2cm]
+
+\noindent%
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.9}\quad%  
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.10}\quad% 
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Suites-rec.14}%\\[0.2cm]
+
+
+
+
+\section{Théorèmes de comparaison}
+On a les propriétés suivantes de comparaison:
+\begin{prop}
+  Soit $(u_n)$ et $(v_n)$ deux suites convergentes, et $M$ un réel.
+  \begin{dingautolist}{172}
+  \item Si pour tout $n$ à partir d'un certain rang on a
+    $u_n < M$ alors : $\lim\limits_{ n \to +\infty }
+    u_n\leq M$
+  \item Si pour tout $n$ à partir d'un certain rang on a
+    $u_n < v_n$ alors : $\lim\limits_{ n \to +\infty }
+    u_n\leq \lim\limits_{ n \to +\infty } v_n$
+  \end{dingautolist}
+  
+\end{prop}
+\begin{prop}
+  Si $v_n$ diverge vers $+\infty$ et que pour tout $n$ à partir d'un certain rang on a
+    $u_n \geq v_n$ alors : $\lim\limits_{ n \to +\infty }
+    u_n=+\infty$
+\end{prop}
+Utile pour prouver que des suites comme $u_n=2*(-1)^n+n$ tendent
+vers $+\infty$.
+Ces propriétés sont valables pour les fonctions. Par exemple le
+théorème des gendarmes vu sur les suites en 1\iere{} est valable pour
+les fonctions.
+\begin{theo}[Théorème des gendarmes]
+  Si on a trois fonctions $f$, $g$ et $h$ telles que:
+  \begin{dingautolist}{172}
+ \item Pour tout $x$ supérieur à un réel $x_0$ on a l'encadrement:
+\[f(x)\leq g(x)\leq h(x)\]
+  \item $f$ et $h$ ont une limite finie identique $\ell$ en $+\infty$
+    (par exemple) 
+%$\lim\limits_{ x \to \infty } f(x)=\lim\limits_{ x \to \infty} h(x)\ell$
+  \end{dingautolist}
+Alors $g$ aussi admet une limite en $+\infty$ et c'est aussi~$\ell$.
+  
+\end{theo}
+\begin{figure}[h]
+  \centering
+  \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Limites.2}
+  \caption{Illustration pour la preuve du théorème des gendarmes.}
+  \label{fig:Theogendarmes}
+\end{figure}
+\begin{proof}
+  Soit $\epsilon\in\R_+^*$.\\
+$\lim\limits_{ x \to \infty } f(x)=\ell$ donc il existe $x_1$ tel que:
+$x\geq x_1\implies \epsilon \leq f(x)-\ell\leq \epsilon$\\
+$\lim\limits_{ x \to \infty } h(x)=\ell$ donc il existe $x_2$ tel que:
+$x\geq x_2\implies\epsilon \leq h(x)-\ell\leq \epsilon$\\
+Pour $x\geq \max\{x_0, x_1,x_2\}$ on a donc:
+\[\epsilon \leq f(x)-\ell\leq g(x)-\ell\leq h(x)-\ell\leq \epsilon\]
+Et donc $\epsilon \leq  g(x)-\ell\leq \epsilon$
+\end{proof}
+\begin{rem}
+  Le $+\infty$ peut être remplacé par $-\infty$. 
+\end{rem}
+\section{Suites adjacentes}
+\begin{Def}
+  On dit que deux suites sont adjacentes si elles
+  vérifient les deux conditions:
+  \begin{dingautolist}{172}
+  \item L'une est croissante, et l'autre décroissante.
+  \item Leur différence tend vers zéro.
+  \end{dingautolist}
+  
+\end{Def}
+\begin{theo}
+\label{theo:suitadj}
+  Deux suites adjacentes sont convergentes et convergent vers la même
+  limite.
+\end{theo}
+Pour prouver cette propriété on prouve d'abord le lemme suivant:
+\begin{lemme}
+   Si $(u_n)$ et $(v_n)$ sont adjacentes avec $(u_n)$ croissante et
+  $(v_n)$ décroissante alors pour tout $n$, $u_n\leq v_n$
+\end{lemme}
+\begin{proof}
+  \emph{(du lemme.)} 
+On pose pour tout $n$: $w_n=u_n-v_n$. Claim: La suite $(w_n)$ est croissante
+et tend vers zéro donc est négative. En effet: 
+\[ w_{n+1}-w_n=u_{n+1}-u_n-(v_{n+1}-v_n)=\underbrace{u_{n+1}-u_n}_{\geq
+  0}+\underbrace{(v_n-v_{n+1})}_{\geq
+  0}\geq 0\]
+Ceci pour tout $n$ donc $(w_n)$ est croissante.
+Si il existait $p\in\N$ tel que $w_p$ soit strictement positif, alors
+tous les $w_n$ pour $n$ supérieur à $p$ seraient supérieurs à $w_p$,
+mais celà est impossible car $(w_n)$ tend vers zéro donc l'intervalle
+$\left]-\epsilon\,;\epsilon\right[$ où $\epsilon=w_p$ contient tous
+les $w_n$ à partir d'un certains rang. Donc c'est absurde, ainsi $w_n$
+est toujours négatif, \emph{i.e.}  $\forall n \in\mathbb{N},$ $u_n\leq v_n$.
+\end{proof}
+\begin{proof} du théorème~\ref{theo:suitadj}. Soit $(u_n)$ et $(v_n)$  adjacentes avec $(u_n)$ croissante et
+  $(v_n)$ décroissante. D'après le lemme, $\forall n \in\mathbb{N},$
+  $u_n\leq v_n$. Comme $(v_n)$ est décroissante on a donc en
+  particulier que: $\forall n \in\mathbb{N},$
+  $u_n\leq v_0$. Donc $u_n$ est croissante et majorée, ainsi elle
+  converge vers un réel~$\ell$. De même, $(v_n)$ est décroissante et
+  minorée par $u_0$ donc elle
+  converge vers un réel~$\ell'$. Il reste à voir que $\ell=\ell'$. Or
+  $\lim\limits_{n\to\infty } (u_n-v_n)=0=\ell-\ell'$. Donc $\ell=\ell'$.
+  
+\end{proof}
+\begin{prop}
+Si deux suites sont adjacentes, leurs termes donnent un encadrement de
+leur limite commune. \emph{i.e.} 
+  si $(u_n)$ et $(v_n)$ sont adjacentes (avec $(u_n)$ croissante et
+  $(v_n)$ décroissante) et si on note $\ell$ leur limite commune, pour
+  tout $n$ on a:
+\[u_n\leq \ell \leq v_n\]
+\end{prop}
+\begin{proof}
+  Par un raisonnement identique à celui fait dans le lemme,
+  $(u_n-\ell)$ est croissante et tend vers zéro, donc est négative,
+  donc $ \forall n \in\mathbb{N}$, $u_n\leq\ell$. De même $(v_n-\ell)$ est décroissante et tend vers zéro, donc est positive.
+\end{proof}
+{\bf Application:} \[\sum_{k=0}^{+\infty}\frac{1}{k!}=\e\]
+On considère les suites:
+\[S_n=\sum_{k=0}^{n}\frac{1}{k!}\quad\text{et}\quad
+\sigma_n=S_n+\frac{1}{n!}\]
+Prouver que les deux suites ont une limite commune dont on donnera une
+valeur approchée à $10^{-3}$ près.
+Suite en DM.
+\section{Application: preuve du T.V.I. par dichotomie}
+\label{sect:preuve.TVI}
+\subsection{\'Enoncés équivalents au T.V.I.}
+Soit $f$ une fonction continue sur un intervalle contenant deux réels
+$a$ et $b$ avec $a<b$. Soit $\lambda$ compris entre $f(a)$ et
+$f(b)$. Le théorème des valeurs intermédiaires nous dit qu'il existe (au moins) un réel $c$ dans $\into{a}{b}$ tel que
+$f(c)=\lambda$. \ie{}
+\begin{equation}
+  \label{eq:c}
+  \exists c\in\into{a}{b}; f(c)=\lambda
+\end{equation}
+
+Simplifions le problème:
+\begin{enumerate}
+\item On pose $g=f-\lambda$. La fonction $g$ vérifie-t-elle les hypothèses du
+  théorème?
+\item Compléter: $f(c)=\lambda \iff g(\ldots)=\ldots$.
+\item Que peut-on dire des réels $g(a)$ et $g(b)$?
+\item Justifier que le théorème des valeurs intermédiaires équivaut à:
+\begin{theo}
+Soit $h$ une fonction continue sur un intervalle $\intf{a}{b}$ 
+\[h(a)h(b)<0\implies \exists c\in\into{a}{b}; h(c)=0 \]
+\end{theo}
+\end{enumerate}
+\subsection{Démonstration}
+Ce théorème se prouve par dichotomie. On va \og couper l'intervalle
+$\intf{a}{b}$ en deux \fg{}, voir dans quelle moitiée $h$ change de
+signe puis recommencer avec cet intervalle de longueur moitiée,
+jusqu'à isoler la racine cherchée $c$. 
+On définit trois suites $(a_n)$, $(b_n)$ et $(c_n)$ sur $\N$ par:
+
+
+\[ a_0=a\ ; \  b_0=b\ \et{}\ \forall n\in\N,\
+c_{n}=\frac{a_n+b_n}{2}\ \text{puis:}\]
+\begin{list}{$\bullet$}{}
+  \begin{minipage}{0.4\linewidth}
+\item {\bf \text{Si:}} $h(a_n)h(c_n)<0$
+\item {\bf \text{alors:}} $\left( a_{n+1}=a_n\quad \et{}\quad b_{n+1}=c_n \right)$
+\item {\bf \text{sinon:}}$\left( a_{n+1}=c_n\quad \et{}\quad b_{n+1}=b_n \right)$
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\linewidth}
+    \begin{list}{}{}
+    \item {\sl \ie{} $h$ change de signe sur $\into{a_n}{c_n}$}
+    \item {\sl On se place alors sur l'intervalle $\intf{a_n}{c_n}$}
+    \item {\sl On se place alors sur l'intervalle $\intf{c_n}{b_n}$}
+    \end{list}
+  \end{minipage}
+\end{list}
+Alors les deux suites $(a_n)$ et $(b_n)$ sont adjacentes, leur limite
+commune, notons la~$c$ vérifie: $h(c)=0$.\\
+
+Exemple graphique pour la compréhension. Sur ce schéma on a tracé une
+courbe représentant une fonction $h$ continue sur $\into{a}{b}$ et qui
+change de signe sur $\into{a}{b}$.\\
+\noindent
+\begin{minipage}{9.3cm}
+\begin{pspicture}*(-0.2,-4)(9,1.5)
+  \psaxes[Dx=1,Ox=0,yAxis=false,labels=none,tickstyle=below](0,0)(8,0)
+  \pscurve[linewidth=0.5pt,linecolor=gray]%
+  (0,-1)%
+  (1.5,0.6)%
+  (4,-0.6)%
+  (5.6,0)%
+  (7,0.8)%
+  (8,1)%
+\put(-0.1,0.4){$a_0=a$}
+\put(7.9,0.4){$b_0=b$}
+\put(3.9,0.4){$c_0$}
+
+\psline{-}(4,-2)(8,-2)  \put(3.9,-1.7){$a_1$}  \put(7.9,-1.7){$b_1$}
+\psline{-}(4,-3)(6,-3)  \put(3.9,-2.7){$a_2$}  \put(5.9,-2.7){$b_2$}
+\psline{-}(5,-4)(6,-4)  \put(4.9,-3.7){$a_3$}  \put(5.9,-3.7){$b_3$}
+
+
+                    %\psset{xunit=0.5cm,yunit=0.5cm}
+                          
+                          %\psgrid% griddots=1,%
+                          %subgriddiv=2,
+                          %gridlabels=0pt,%
+                          %xunit=1]
+                          %\psaxes{->}(0,0)(0,0)(8,0)
+                           %\psaxes{->}(0,0)(-1.5,-2)(1.5,1.5)
+                          %\psdots*[dotscale=0.7](-1,1)
+                          %\put(-1.5,1){$A$}\put(-0.4,-0.4){$O$}
+                          \end{pspicture}
+\end{minipage}\hfill%
+\begin{minipage}{5cm}
+ On a les valeurs suivantes: 
+\begin{enumerate}
+\item $c_0=\frac{a_0+b_0}{2}$. Bien que $h$ ait des racines sur
+  $\into{a_0}{c_0}$ on a $h(a_0)h(c_0)\geq 0$ donc\\ 
+$a_1=c_0$ et $b_1=b_0$
+\item $c_1=\frac{a_1+b_1}{2}$. Cette fois ci, $h(a_1)h(c_1)< 0$ donc:\\
+  $a_2=a_1$ et $b_2=c_1$
+\end{enumerate}
+\end{minipage}\\
+\begin{proof} \emph{(de la convergence de la méthode)}
+  \begin{enumerate}
+  \item Justifier que $(a_n)$ est croissante et $(b_n)$ est décroissante.
+  \item Que représente $b_n-a_n$ ? Prouver que: $ \forall n\in\N,\ b_n-a_n=\frac{b-a}{2^n}$
+  \item Prouver que $(a_n)$ et $(b_n)$ ont une limite commune que l'on
+    notera~$c$.
+  \item  Justifier que $h(a_n)$ et $h(b_n)$ convergent
+    vers $h(c)$.
+  \item On a par construction: $\forall n\in\N,\
+    h(a_n)h(b_n)<0$. En déduire que $h(c)=0$.
+ 
+  \end{enumerate}
+\end{proof}
+%\newpage
+\subsection{Algorithme et programmation}
+On utilise la démonstration précédente pour déterminer numériquement
+un encadrement d'amplitude $P$ d'une racine d'une fonction. On va
+calculer les différents termes des suites $(a_n)$ et $(b_n)$ jusqu'à ce que la
+différence entre $b_n$ et $a_n$ soit inférieure à~$P$.  On suppose rentrée en $Y_1$ dans le menu graph l'expression  de la fonction dont on  cherche une racine.
+ Voici l'algorithme\footnote{Un algorithme (d'après le nom d'\textsc{Al Kwarizmi}, père de
+   l'algèbre, \emph{al jabr} en arabe) est un nombre fini de
+   règles à appliquer dans un ordre déterminé à un nombre fini de
+   données, pour arriver en un nombre fini d'étapes, à un certain
+   résultat, et cela indépendamment des valeurs des données.}:
+
+\vspace{0.3cm}
+\noindent
+\begin{minipage}{0.6\linewidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{footnotesize}
+\psframebox[linearc=1,cornersize=absolute]{%
+  \begin{psmatrix}[rowsep=0.4,colsep=0.5]
+    \psovalbox[fillstyle=solid,fillcolor=white]{$A=$? $B=$? $P=$?} \\~&&&\\
+    \psframebox{$(A+B)/2\to C$} \\
+    \psdiabox[fillstyle=solid,fillcolor=white]{Si $Y_1(A)\star Y_1(C)<0$} &
+       \psframebox{Sinon: $C\to A$} \\%& \psframebox{Call to SP2} \\
+    \psframebox{Alors: $C\to B$} \\
+    ~&\\
+\psdiabox[fillstyle=solid,fillcolor=white]{Si $|B-A|\leq P$} &
+       \psovalbox{Sinon}& \\ \psovalbox{Alors}\\
+    %\psframebox{Action 2} \\
+    \psovalbox[fillstyle=solid,fillcolor=yellow]{Afficher $A$ et $B$}
+    % Links
+    \ncline{->}{1,1}{3,1}
+    
+    \ncline{->}{3,1}{4,1}
+    \ncline{->}{4,1}{4,2}
+\ncline{-}{4,2}{6,2} \ncline{->}{6,2}{6,1}
+        \ncline{->}{4,1}{5,1}
+    \ncline{->}{5,1}{7,1}
+    \ncline{->}{7,1}{7,2}
+    
+\ncline{-}{7,2}{7,3} 
+    \ncline{->}{7,1}{8,1}
+    \ncline{->}{8,1}{9,1}
+        \ncbar[angleA=90,armB=0,nodesepB=0]{->}{7,3}{2,1}%{2,3}
+    \end{psmatrix}%
+}
+\end{footnotesize}
+\end{center}
+\end{minipage}\hfill%
+\begin{minipage}{0.32\linewidth}
+\begin{small}
+\begin{enumerate}
+\item On demande à l'utilisateur les réels: $A$, $B$, et la précision $P$ souhaitée.
+\item On calcule $C$ la moyenne de $A$ et $B$.
+\item On teste pour savoir sur quel intervalle la fonction change de signe.
+\item On en déduit les valeurs de $a_{n+1}$ et $b_{n+1}$ qui sont
+  encore notées $A$ et~$B$.
+\item Si la précision voulue est atteinte, on affiche \og{\sl La racine
+  est encadrée par:}\fg{} et on affiche $A$ et $B$,
+  sinon on recommence.
+\end{enumerate}
+\end{small}
+\end{minipage}
+\vspace{0.3cm}\\
+Pour demander les valeurs de $A$, $B$ et $P$ on utilise la commande
+\emph{Input} ou \emph{Prompt} avec une TI et :? avec une Casio.
+Le test \og Si\ldots alors\ldots sinon\fg{} se note:
+If\ldots then\ldots else puis End (IfEnd avec une Casio ou EndIf avec
+une grosse TI) On utilise aussi la fonction \emph{Goto n} qui renvoit
+au label numéroté $n$ (\emph{Lbl n}). Tester et comprendre le programme
+suivant, ensuite taper un programme pour l'algorithme de la~dichotomie.\\[1cm]
+%\vspace{0.4cm}
+%\newpage
+%%%%%%%%%%%%%%
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$''$ Donne un entier entre 1 et 6$''$\\
+Lbl 1\\
+$''N''?\to N$\\
+If $N=A$ \\
+Then $''$Gagné en:$''$ $I\blacktriangle$\\
+Else $''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+IfEnd\\
+%Stop
+}%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI} \end{center}
+\hrule \vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$Disp\ ''$Donne un entier entre 1 et~6$''$\\
+Lbl 1\\
+$Prompt \ N$\\
+If $N=A$ \\
+Then $Disp\ ''$Gagné en:$''$ $Disp\ I$\\
+Else $Disp\ ''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+End\\
+}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%
+\hrule \vspace{0.3cm} 
+\noindent
+\begin{small}
+  \begin{minipage}{0.45\linewidth}
+\noindent
+On commence toujours par Shift / Var
+\begin{list}{$\bullet$}{}
+  \item (?) se trouve en  F4
+  \item  < se trouve en F6 / F3
+  \item If Then, Else,  IfEnd  dans: COM (F1) 
+  \item Goto, Lbl  dans: Jump (F3)
+  \item $\blacktriangle$ (pour afficher) en: F5
+  \item La flèche se trouve sur le clavier.
+  \end{list}
+\end{minipage}\hfill
+\begin{minipage}{0.45\linewidth}
+  \begin{list}{$\bullet$}{}
+  \item If Then, Else, Goto, Lbl, End se trouvent dans: Catalogue / Control  
+  \item Disp et Prompt se trouvent dans: Catalogue / $I/O$ (In/Out)
+  \item < se trouve dans: Catalogue / Test
+  \item La flèche se trouve sur le clavier (STO comme \emph{store} ou flèche). 
+  \end{list}
+
+\end{minipage}\\
+\end{small}
+
+\vspace{2cm} 
+
+
+
+
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$''$ Donne un entier entre 1 et 6$''$\\
+Lbl 1\\
+$''N''?\to N$\\
+If $N=A$ \\
+Then $''$Gagné en:$''$ $I\blacktriangle$\\
+Else $''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+IfEnd\\
+%Stop
+}%%%%%%%%%%%%%%%%%%%%%%
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI} \end{center}
+\hrule \vspace{0.2cm}
+{\small
+$1\to I$\\
+Int(6$\times$ Rand)+1$\to A$\\
+$Disp\ ''$Donne un entier entre 1 et~6$''$\\
+Lbl 1\\
+$Prompt \ N$\\
+If $N=A$ \\
+Then $Disp\ ''$Gagné en:$''$ $Disp\ I$\\
+Else $Disp\ ''$Essaye encore$''$\\
+$I+1\to I$\\ 
+Goto 1\\
+End\\
+}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%
+\hrule \vspace{0.3cm} 
+\noindent
+\begin{small}
+\begin{minipage}{0.45\linewidth}
+\noindent
+On commence toujours par Shift / Var
+\begin{list}{$\bullet$}{}
+  \item (?) se trouve en  F4
+  \item  < se trouve en F6 / F3
+  \item If Then, Else,  IfEnd  dans: COM (F1) 
+  \item Goto, Lbl  dans: Jump (F3)
+  \item $\blacktriangle$ (pour afficher) en: F5
+  \item La flèche se trouve sur le clavier
+  \end{list}
+\end{minipage}\hfill
+\begin{minipage}{0.45\linewidth}
+  \begin{list}{$\bullet$}{}
+  \item If Then, Else, Goto, Lbl, End se trouvent dans: Catalogue / Control  
+  \item Disp et Prompt se trouvent dans: Catalogue / $I/O$ (In/Out)
+  \item < se trouve dans: Catalogue / Test
+  \item La flèche se trouve sur le clavier (STO comme \emph{store} ou flèche).
+  \end{list}
+
+\end{minipage}
+\end{small}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{center}
+{\large {\bf Programme de dichotomie} }
+\end{center}
+
+
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf Casio} \\
+Pour \texttt{Y1} aller dans Graph/Yvar/Y puis taper 1
+\end{center}
+\hrule 
+\vspace{0.2cm}
+{\small
+$''A''?\to A$\\
+$''B''?\to B$\\
+$''P''?\to P$\\
+Lbl 1\\
+$(A+B)/2\to C$\\
+$A\to X$\\
+$Y1 \to Y$\\
+$C\to X$\\
+$Y1 \to Z$\\
+If $Y\times Z<0$\\
+Then $C\to B$\\
+Else \ldots\\% $C\to A$\\
+IfEnd\\
+If \ldots \\
+Then \\
+$''$LA RACINE EST ENCADREE PAR:$''$\\
+$A\blacktriangle$\\
+ $B\blacktriangle$\\
+Else Goto 1\\
+IfEnd \\
+%Stop
+}
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+  \begin{center}
+ {\bf TI}\\
+Pour \texttt{Y}$_1$ aller dans VAR/Yvar/$Y_1$ \end{center}
+\hrule \vspace{0.2cm}
+{\small
+Prompt $A$,$B$,$P$\\
+Lbl 1\\
+$(A+B)/2\to C$\\
+If $Y_1(A)\times Y_1(C)<0$\\
+Then $C\to B$\\
+Else \ldots\\% $C\to A$\\
+End\\
+If \ldots \\
+Then \\
+Disp $''$LA RACINE EST ENCADREE PAR:$''$\\
+Disp $A$, $B$\\
+Else Goto 1\\
+End \\
+%Stop
+}
+
+\end{minipage}

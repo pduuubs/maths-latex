@@ -1,0 +1,31 @@
+
+
+\documentclass[chemtex,a4paper]{report}
+\usepackage[]{pan_pan} 
+%\usepackage{chemtex}
+\usepackage{mflogo}
+\usepackage[marginratio=1:1,textwidth=15cm,lines=59,marginparwidth=0pt,headheight=3cm]{geometry}
+\setcounter{totalnumber}{4}
+\setcounter{topnumber}{2}
+\renewcommand{\topfraction}{.5}
+\renewcommand{\bottomfraction}{0.5}
+\begin{document}
+\textfont1=\tenrm
+\initial
+%\input {macros.tex}
+%\fexos{Complexes}{\term}
+%\Titre{}
+\lfoot{} % si commenté donne \footnotesize{Prof. \bsc{Pantaloni} \copyright }
+\cfoot{} % si commenté donne page n° x/ nb_de_pages
+%\input{Exos/exo-7_1/texte.tex}
+%\input{Exos/exo-7_2/texte.tex}
+
+\MP
+%\chair{CH_3}{H_2}{H_2}{NH_3^+}{H_2}{O_H}{H_2}{COOH}
+\begin{picture}(5cm,5cm)
+\ethene{CH_3}{CH_3}{CH_3}{CH_3}  
+\end{picture}
+
+\end{document}
+
+

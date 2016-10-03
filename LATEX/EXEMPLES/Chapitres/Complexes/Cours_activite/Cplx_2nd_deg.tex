@@ -1,0 +1,88 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\activite{Nombres complexes 3}{\term}
+
+\Titre{\'Equation du second degr\'e}
+\hline
+\medskip
+
+L'objectif est de r\'esoudre dans $\C$ toutes les \'equations du
+second degr\'e \`a coefficients r\'eels. \ie{} de la forme:
+\[az^2+bz+c=0\quad \text{o\`u}\ a\in\R^*,\ b\in\R,\ c\in\R\]
+\section{Forme canonique}
+On commence \`a la main, sans formule, en utilsant la forme canonique.
+\exemple On veut r\'esoudre: $z^2+2z+5=0$:
+\[z^2+2z+5=(z+1)^2-1+5=(z+1)^2+4=(z+1)^2-(2i)^2\]
+D'o\`u la factorisation et la r\'esolution:
+\[ z^2+2z+5=0 \iff \left( z+1-2i\right)\cdot\left(z+1+2i\right)=0 \iff
+z\in\{-1+2i\,;\,-1-2i\}\]
+R\'esoudre de la m\^eme mani\`ere les \'equations du
+second degr\'e suivantes dans $\C$:
+\qcmabc{$z^2-4z+5=0$}{$z^2+6z+11=0$}{$2z^2-4z+3=0$}
+\section{Formules}
+Cette technique vue par factorisation gr\^ace \`a la forme canonique est
+syst\'ematique et on peut donc obtenir des formules, similaires \` a
+celles des racines r\'eelles.
+\begin{enumerate}
+\item Mettre $az^2+bz+c$ sous forme canonique. On fera appara\^itre $\Delta=b^2-4ac$
+\item On suppose que $\Delta <0$. \'Ecrire $\dfrac{\Delta}{4a^2}$
+  comme le carr\'e d'un nombre complexe.
+
+
+\item En d\'eduire une factorisation de $az^2+bz+c$ sous la forme:
+\[ az^2+bz+c= a(z-z_1)(z-\overline{z_1})\quad \text{o\`u}\ z_1\in\C \]
+
+\item En d\'eduire les formules donnant les racines complexes de
+  $az^2+bz+c$ dans le cas o\`u le discriminant est n\'egatif.
+\end{enumerate}
+\textbf{Remarque:} Comme dans $\R$, si $b$, le coefficient de $z$, est nul on
+n'applique pas ces formules comme un \^ane. On proc\`ede ainsi: 
+\exemple $z^2+3=0\iff z^2-(i\sqrt3)^2=0 \iff z \in  \{i\sqrt3\,;\,-i\sqrt3\}$
+\section{Application}
+\Exo[]{
+R\'esoudre dans $\C$ les \'equations suivantes en appliquant les
+formules pr\'ec\'edentes.
+\begin{enumerate}
+\item \qcmabc{$2z^2+4z+5=0$}{$-2z^2+6z-5=0$}{$-5z^2+2z+2=0$}
+\item \qcmabc{$z^2+z+1=0$}{$(z^2+2)(z^2-4z+4)=0$}{$(z+1)^2=-(2z+1)^2$}
+\item \qcmabc{$2z^4-9z^2+4=0$}{$\left(z^2+1\right)^2=1$}{$\dfrac{z-1}{z+1}=z+2$}
+\end{enumerate}
+}
+
+\Exo[]{\textbf{\'Equation \`a coefficients sym\'etriques}. Soit l'\'equation $(E)$:
+  $z^4-5z^3+6z^2-5z+1=0$\\
+Prouver que $(E)$ est \'equivalente au syst\`eme:
+$\left\{\begin{array}{ll}
+  u^2-5u+4=0\\
+u=z+\dfrac{1}{z} 
+\end{array}\right.$\\
+
+R\'esoudre $u^2-5u+4=0$, puis r\'esoudre l'\'equation $(E)$ dans $\C$.
+}
+\end{document}
+
+
+
+\Exo[]{Un grand classique du rire. On veut r\'esoudre une \'equation
+  de degr\'e trois dans $\C$. On ne vous donnera pas de formule, mais
+  on vous pr\'esentera toujours les choses \`a peu pr\`es ainsi: On exhibe
+  ou fait trouver une \og solution \'evidente\fg{} $z_0$, on factorise
+  par $(z-z_0)$ le polynome de d\'epart, et on est alors ramen\'e \`a
+  une \'equation de degr\'e deux.
+  \begin{enumerate}
+  \item Pour tout complexe $z$, on pose
+    $P(z)=z^3-12z^2+48z-128$. Calculer $P(8)$. D\'eterminer trois
+    r\'eels $a$, $b$, $c$ tels que pour tout complexe $z$:
+\[ P(z)=(z-8)(az^2+bz+c)\]
+R\'esoudre dans $\C$ l'\'equation $P(z)=0$.
+
+
+  \end{enumerate}
+  
+
+}
+\end{document}

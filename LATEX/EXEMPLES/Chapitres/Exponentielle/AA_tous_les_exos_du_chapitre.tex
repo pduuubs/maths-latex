@@ -1,0 +1,31 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[]{pan_pan} 
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\pagestyle{fancy}
+
+
+\begin{document}
+\newcommand{\CHEMIN}{/home/pan/Desktop/TeX_MiX/TS/Chapitres}
+\newcommand{\CHAP}{Exponentielle} %%% A CHANGER ICI ONLY
+\noindent
+\lhead{Tous les exos de TS du chapitre: \textbf{\CHAP}}
+
+\noindent$\bigstar$\hspace{\stretch{1}} {\Large
+  \textbf{\CHAP}}\hspace{\stretch{1}}$\bigstar$
+\\
+\newcounter{nbexo}
+\setcounter{nbexo}{1}
+\newcounter{fin}\setcounter{fin}{0}
+\whiledo{\thefin=0}{%
+\InputIfFileExists%
+{Exos/exo-7_\thenbexo/texte.tex}%
+{\typeout{OK}\vspace{.5cm}\addtocounter{nbexo}{1}}{\setcounter{fin}{1}}%
+}
+\end{document}
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -10 -10 114 86 
+%%Creator: MetaPost
+%%CreationDate: 2008.02.05:2247
+%%Pages: 1
+%%DocumentFonts: CMMI10
+ /cmmi10 /CMMI10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0.3 setgray 0 0.5 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+113.3858 0 lineto stroke
+newpath 0 28.34645 moveto
+113.3858 28.34645 lineto stroke
+newpath 0 56.6929 moveto
+113.3858 56.6929 lineto stroke
+newpath 0 85.03935 moveto
+113.3858 85.03935 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 85.03935 lineto stroke
+newpath 28.34645 0 moveto
+28.34645 85.03935 lineto stroke
+newpath 56.6929 0 moveto
+56.6929 85.03935 lineto stroke
+newpath 85.03935 0 moveto
+85.03935 85.03935 lineto stroke
+newpath 113.3858 0 moveto
+113.3858 85.03935 lineto stroke
+ 0 setgray 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 0 0 moveto
+28.34645 0 lineto stroke
+newpath 24.65088 -1.53079 moveto
+28.34645 0 lineto
+24.65088 1.53079 lineto
+ closepath
+gsave fill grestore stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 28.34645 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 1.53079 24.65088 moveto
+0 28.34645 lineto
+-1.53079 24.65088 lineto
+ closepath
+gsave fill grestore stroke
+newpath 0 0 moveto
+85.03935 56.6929 lineto stroke
+ [3 3 ] 0 setdash
+newpath 102.2044 0 moveto
+102.2044 27.1075 91.43439 53.1015 72.26794 72.26794 curveto stroke
+98.1761 -9.8078 moveto
+(B) cmmi10 9.96265 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+newpath 102.2044 0 moveto 0 0 rlineto stroke
+87.13934 58.7929 moveto
+(A) cmmi10 9.96265 fshow
+newpath 85.03935 56.6929 moveto 0 0 rlineto stroke
+-9.976 -8.90779 moveto
+(O) cmmi10 9.96265 fshow
+showpage
+%%EOF

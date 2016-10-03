@@ -1,0 +1,68 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\fcours{Complexes et transformations}%{\term}
+\chead{} \rhead{}
+%%-----------------------
+Soit $\Fr$ une transformation du plan qui au point $M$ associe le
+point $M'$. \ie{} $\Fr(M)=M'$. On associe à cette transformation la
+fonction complexe $f$ qui à l'affixe $z$ de $M$ associe l'affixe $z'$
+de~$M'$. On dit que {\bf $z'=f(z)$ est l'écriture complexe de la
+transformation~$\Fr$.} On va donner les écritures complexes de trois
+transformations usuelles.
+\section{Translation}
+\begin{prop} Soit $\vw$ un vecteur d'affixe $b$. 
+L'écriture complexe de la translation de vecteur $\vw$ est:
+\[\boxed{z'=z+b}\]
+\end{prop}
+
+\begin{proof} Ici $\Fr$ est la translation de vecteur
+  $\vw$.  
+\[\Fr(M)=M' \iff \V{MM'}=\vw\iff z'-z=b\iff z'=z+b\]
+\end{proof}
+\section{Homothétie}
+\begin{prop} Soit $\Omega$ un point d'affixe $z_{\Omega}$ et
+  $k\in\R^*$. L'écriture complexe de l'homothétie de centre $\Omega$ et de rapport $k$ est:
+\[\boxed{z'-z_{\Omega}=k(z-z_{\Omega})}\]
+\end{prop}
+
+\begin{proof}Ici $\Fr$ est l'homothétie de centre $\Omega$ et de
+  rapport $k$.
+\[\Fr(M)=M' \iff \V{\Omega M'}=k \V{\Omega M} \iff z'-z_{\Omega}=k(z-z_{\Omega})\]
+\end{proof}
+\section{Rotation}
+\begin{prop} Soit $\theta\in\R$.
+L'écriture complexe de la rotation de  centre $\Omega$ et d'angle
+$\theta$ est:
+\[\boxed{z'-z_{\Omega}=\e^{i\theta}(z-z_{\Omega})}\]
+\end{prop}
+
+\begin{proof}Ici $\Fr$ est la rotation de  centre $\Omega$ et d'angle
+$\theta$. 
+\begin{list}{$\bullet$}{}
+\item Si $M=\Omega$ alors $\Fr(M)=M' \iff M'=\Omega \iff z'=z_{\Omega}$. Car le centre
+  d'une rotation est l'unique point invariant par cette
+  rotation. L'égalité voulue est donc vraie (0=0)
+\item Si $M\neq \Omega$ alors $\Fr(M)=M'$ signifie:
+\[ \Omega M'=\Omega M\quad \et{}\quad (\V{\Omega M};\V{\Omega
+  M'})=\theta\]
+Ce qui se traduit en module et argument par:
+\[ |z'-z_{\Omega}|=|z-z_{\Omega}|\quad \et{}\quad
+arg(\frac{z'-z_{\Omega}}{z-z_{\Omega}})=\theta [2\pi]\]
+C'est à dire que le complexe $\frac{z'-z_{\Omega}}{z-z_{\Omega}}$ est
+de module 1 et d'argument $\theta$. Il est donc égal à
+$\e^{i\theta}$. D'où le résultat:
+\[ \frac{z'-z_{\Omega}}{z-z_{\Omega}}=\e^{i\theta}\iff z'-z_{\Omega}=\e^{i\theta}(z-z_{\Omega})\]
+\end{list}
+\end{proof}
+\noindent
+{\bf Cas particulier.} $z'=iz$ est l'écriture complexe de la rotation
+de centre $O$ et d'angle $\frac{\pi}{2}$ car
+$i=\e^{i\frac{\pi}{2}}$. Donc le triangle $OMM'$ est isocèle rectangle
+en~ $O$.
+
+%%-----------------------
+\end{document}

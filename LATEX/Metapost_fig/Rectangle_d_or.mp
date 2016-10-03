@@ -1,0 +1,418 @@
+prologues:=2;
+verbatimtex
+etex
+%% MACROS
+%% define draw_mark (crossmarks on lines) and similar angle marking operations
+%%
+%% These macros are stolen from mpman.ps and manfig.mp
+marksize:=4pt; % how big the tics on lines are
+ % how big the arc in an angle is. We define it using := rather than = so that
+% it can easily be overridden later if desired.
+default_angle_radius:=28pt;
+angle_radius:=default_angle_radius ;
+
+% don't use this; it is used by draw_marked. Use that instead.
+def draw_mark(expr p, a) =
+  begingroup
+  save t, dm; pair dm;
+  t = arctime a of p;
+  dm = marksize*unitvector direction t of p
+    rotated 90;
+  draw (-.5dm.. .5dm) shifted point t of p;
+  endgroup
+enddef;
+
+% draws n tics in the middle of path p
+def draw_marked(expr p, n) =
+  begingroup
+  save amid;
+  amid = .5*arclength p;
+  for i=-(n-1)/2 upto (n-1)/2:
+    draw_mark(p, amid+.6marksize*i);
+  endfor
+  draw p;
+  endgroup
+enddef;
+
+% draw an angle arc and label it with n tics.
+def mark_angle(expr a, b, c, n) =
+  begingroup
+  save s, p; path p;
+  p = unitvector(a-b){(a-b)rotated 90}..unitvector(c-b);
+  s = .9marksize/length(point 1 of p - point 0 of p);
+  if s<angle_radius: s:=angle_radius; fi
+  draw_marked(p scaled s shifted b, n);
+  endgroup
+enddef;
+
+% written by DJCM mar 2003
+% just like mark_angle but in addition to the n tics also add the
+%   label "texts" which is typically           something like    btex $\alpha$ etex
+%   at a sensible location near the arc.
+default_label_distance_factor := 2.3 ;
+label_distance_factor := default_label_distance_factor ;
+def label_angle(expr a, b, c, n, texts ) =
+  begingroup
+  save s, p; path p;
+  p = unitvector(a-b){(a-b)rotated 90}..unitvector(c-b);
+  % the clever notation (x){y}..(z) forces the curve x..z to have tangent y at x.
+  % (x)..(z) would make the simplest curve from x to z, namely a straight line.
+  s = .9marksize/length(point 1 of p - point 0 of p);
+  if s<angle_radius: s:=angle_radius; fi
+  draw_marked(p scaled s shifted b, n);
+
+  save lc ; pair lc ; % label coordinates added by DJCM
+  ldfs := label_distance_factor*s ;
+  lc = point 0.5 of ( p scaled ldfs shifted b ) ;
+  label ( texts , lc );
+
+  endgroup
+enddef;
+
+def mark_rt_angle(expr a, b, c) =
+  draw ((1,0)--(1,1)--(0,1))
+         zscaled (angle_radius*unitvector(a-b)) shifted b
+  % not sure what zscaled means
+       enddef;
+       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(1)  %%%% 
+  u:=3cm; phi=(1+sqrt5)/2;
+  pair A,B,C,D,E,F;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  draw A--C; draw D--E; 
+  pickup pencircle scaled 1bp;
+  draw A--B--C--D--cycle;
+  draw E--F;
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+endfig;
+
+ 
+
+beginfig(2);  %%%% 
+
+  u:=3cm; phi:=(1+sqrt5)/2;
+   pair A,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+   draw E--F--D--C--(0,0)--A--F;
+   pickup pencircle scaled 0.1 bp;
+   draw A--C; draw D--E;
+  def recto(expr B,nrot,nfact)=
+    %begingroup
+  pair A,C,D,E,F;
+  A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  path pp;
+  pp=  E--F--D--C--(0,0)--A--F--quartercircle scaled 2u rotated 90 shifted E;% rotated (-n*90);
+    draw pp   rotated (-nrot*90) scaled ((phi-1)**nfact) shifted B withpen pencircle scaled 0.1bp;
+enddef;
+recto((0,0)*u,0,0) ; recto((1,1)*u,1,1) ;recto((phi,1-(phi-1))*u,2,2) ;
+recto((phi-(phi-1)**2,0)*u,3,3) ; recto((1,(phi-1)**3)*u,0,4);
+recto((1+(phi-1)**4,(phi-1)**4+(phi-1)**3)*u,1,5);
+recto((1+(phi-1)**3,(phi-1)**3+(phi-1)**4-(phi-1)**5)*u,2,6);
+recto((1+(phi-1)**3-(phi-1)**6,(phi-1)**3)*u,3,7);
+recto((1+(phi-1)**4,(phi-1)**3+(phi-1)**7)*u,0,8);
+recto((1+(phi-1)**4+(phi-1)**8,(phi-1)**3+(phi-1)**7+(phi-1)**8)*u,1,9);
+recto((1+(phi-1)**4+(phi-1)**7,(phi-1)**3+(phi-1)**7+(phi-1)**8-(phi-1)**9)*u,2,10);
+
+endfig;
+beginfig(3);  %%%% Plus simple!!
+
+  u:=5cm; phi:=(1+sqrt5)/2; n:=12;
+   pair A,B,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; B:=origin;
+   
+   draw A--B--C--D--cycle;
+   pickup pencircle scaled 0.1 bp;
+   draw E--F;
+   path trait;
+   trait=E--F;
+      for i=0 upto n:
+       trait:=trait rotated -90 scaled (phi-1) shifted F;
+       draw trait;
+      endfor
+    endfig;
+    
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(4);  %%%% Plus simple et spirale
+
+  u:=20cm; phi:=(1+sqrt5)/2; n:=15;
+   pair A,B,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; B:=origin;
+   
+   draw A--B--C--D--cycle;
+   pickup pencircle scaled 0.1 bp;
+   draw E--F{left}..B{down};
+   path trait;
+   trait=E--F{left}..B{down};
+      for i=0 upto n:
+       trait:=trait rotated -90 scaled (phi-1) shifted F;
+       draw trait;
+      endfor
+    endfig;
+%%%%%%%%
+    beginfig(5); %Construction
+
+u:=2cm; phi:=(1+sqrt5)/2;
+  pair A,B,C,D,E,F,I;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 1pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+  pickup pencircle scaled 0.5pt;
+  draw C--D--F;
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+  I=0.5*(E-B);
+  dotlabel.bot(btex $I$ etex, I);
+  draw I--F dashed evenly;
+  path p, q;
+  p = halfcircle scaled ((phi-0.5)*2u) shifted I;
+    %draw p dashed evenly;
+  q=subpath (0,1.6) of p;
+  draw q dashed evenly;
+  draw_marked(B--I,2);
+  draw_marked(E--I,2);
+    endfig;
+%%%%%%%%
+    beginfig(6);  %%%% Plus simple et tordu
+
+  u:=3cm; phi:=(1+sqrt5)/2; n:=12;
+   pair A,B,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; B:=origin;
+   pickup pencircle scaled 0.1 bp;
+   draw A--B--C--D--cycle dashed withdots;
+   
+   
+   path trait;
+   trait=E{dir 140}..F{dir 120}..B{dir -60}..cycle;
+   draw trait;
+      for i=0 upto n:
+       trait:=trait rotated -90 scaled (phi-1) shifted F;
+       draw trait;
+      endfor
+    endfig;
+
+    beginfig(7);  %%%% 
+
+  u:=30cm; phi:=(1+sqrt5)/2; n:=12;
+   pair A,B,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; B:=origin;
+    pickup pencircle scaled 2 bp;
+    draw A--B--C--D--cycle;
+    draw A--C;  draw D--E;
+   pickup pencircle scaled 0.5 bp;
+   draw E--F{left}..B{down};
+   path trait;
+   trait=E--F{left}..B{down};
+      for i=0 upto n:
+       trait:=trait rotated -90 scaled (phi-1) shifted F;
+       draw trait;
+      endfor
+    endfig;
+  beginfig(8); %Construction
+
+u:=2cm; phi:=(1+sqrt5)/2;
+  pair A,B,C,D,E,F,I;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 1pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+  pickup pencircle scaled 1pt;
+  draw C--D--F;
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+ 
+ 
+endfig;
+ beginfig(9); %Construction avec un rectangle 2x3 (1)
+
+u:=1.5cm; ix=1.5;
+  pair A,B,C,D,E,F,I;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(ix,0)*u; D:=(ix,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 1pt;
+  draw A--B--C--D--cycle;
+   
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  
+ 
+ 
+endfig;
+ beginfig(10); %Construction avec un rectangle 2x3 (2)
+
+u:=1.5cm; ix:=1.5;
+  pair A,B,C,D,E,F,I;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(ix,0)*u; D:=(ix,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 1pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+  pickup pencircle scaled 1pt;
+  draw C--D--F;
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+ 
+ 
+endfig;
+ beginfig(11); %Construction avec un rectangle 2x3 (3)
+
+u:=1.5cm; ix:=1.5;
+  pair A,B,C,D,E,F,G,H;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(ix,0)*u; D:=(ix,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 1pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+  pickup pencircle scaled 1pt;
+  draw C--D--F;
+  label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+ 
+  G=(1,0.5)*u;
+  H=(ix,0.5)*u;
+  label.lft(btex $G$ etex, G);
+  label.rt(btex $H$ etex, H);
+ 
+  draw G--H;
+  
+ 
+endfig;
+beginfig(12);
+ u:=2cm; phi:=(1+sqrt5)/2; n:=12;
+   pair A,B,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; B:=origin;
+   
+   draw A--B--C--D--cycle;
+   draw E--F;
+    label.ulft(btex $A$ etex, A);
+  label.llft(btex $B$ etex, B);
+  label.lrt(btex $C$ etex, C);
+  label.urt(btex $D$ etex, D);
+  label.bot(btex $E$ etex, E);
+  label.top(btex $F$ etex, F);
+   pickup pencircle scaled 0.1 bp;
+   
+   path trait;
+   trait=E--F;
+      for i=0 upto n:
+       trait:=trait rotated -90 scaled (phi-1) shifted F;
+       draw trait;
+      endfor
+    endfig;
+
+ beginfig(13); %Construction avec un rectangle 3x5 (3)
+
+u:=1.5cm; ix:=5/3;
+  pair A,B,C,D,E,F,G,H, I, J;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(ix,0)*u; D:=(ix,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 0.6pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+   draw C--D--F;
+ 
+  G=(1,2-ix)*u;
+  H=(ix,2-ix)*u;
+  draw G--H;
+   I:=(2ix-2,0)*u;
+  J:=(2ix-2,2-ix)*u;
+  %I=(3-ix,0)*u;
+  %J=(3-ix,2-ix)*u;
+    draw I--J;
+  endfig;
+  beginfig(14); %Construction avec un rectangle 5x8 (3)
+
+u:=2.5cm; ix:=8/5;
+  pair A,B,C,D,E,F,G,H, I, J, K, L;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(ix,0)*u; D:=(ix,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 0.6pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+   draw C--D--F;
+ 
+  G:=(1,2-ix)*u;
+  H:=(ix,2-ix)*u;
+  draw G--H;
+  I:=(2ix-2,0)*u;
+  J:=(2ix-2,2-ix)*u;
+  draw I--J;
+
+  K=I+0.5(J-I);%(3-ix,0)*u;
+  L=(u,0)+0.5(J-I);
+    draw K--L;
+  endfig;
+  beginfig(15); %Construction avec un rectangle 13x8 (3)
+
+u:=4cm; ix:=13/8;
+  pair A,B,C,D,E,F,G,H, I, J, K, L, M, N;
+  A:=(0,1)*u; B:=(0,0)*u; C:=(ix,0)*u; D:=(ix,1)*u; E:=(1,0)*u; F:=(1,1)*u;
+  %draw A--C; draw D--E; 
+  pickup pencircle scaled 0.6pt;
+  draw A--B--E--F--cycle;
+  draw E--C;
+   draw C--D--F;
+ 
+  G:=(1,2-ix)*u;
+  H:=(ix,2-ix)*u;
+  draw G--H;
+  I:=(2ix-2,0)*u;
+  J:=(2ix-2,2-ix)*u;
+  draw I--J;
+
+  K=(2ix-2,2ix-3)*u;%I+0.5(J-I);%(3-ix,0)*u;
+  L=(1,2ix-3)*u;
+  draw K--L;
+
+  M=(ix-0.5,2ix-3)*u;%I+(K-I)+0.5(L-K);
+  N=(ix-0.5,3ix-4.5)*u;
+  draw M--N;
+endfig;
+beginfig(16);  %%%% Plus simple et spirale
+
+  u:=3cm; phi:=(1+sqrt5)/2; n:=12;
+   pair A,B,C,D,E,F;
+   A:=(0,1)*u;  C:=(phi,0)*u; D:=(phi,1)*u; E:=(1,0)*u; F:=(1,1)*u; B:=origin;
+   
+   draw A--B--C--D--cycle;
+   pickup pencircle scaled 0.8 bp;
+  % draw E--F{left}..B{down};
+   path trait;
+   trait=E--F{left}..B{down}--cycle;
+   for i=0 upto n:
+      fill trait withcolor (0.5+0.08*i)*white;
+        %pickup pencircle scaled 1bp/(i+1);
+       draw trait withpen pencircle scaled 0.5; 
+       trait:=trait rotated -90 scaled (phi-1) shifted F;
+       
+      
+      endfor
+    endfig;
+   
+    end

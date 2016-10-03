@@ -1,0 +1,58 @@
+\begin{exercice}
+On d\'efinit deux suites $u$ et $v$ par  $u_0 = 1,~ v_0 = 12$ et pour tout 
+entier naturel  $n$ :
+
+\[ %\Bigg\{%
+\left\{ %
+%\renewcommand{\arraystretch}{1.5}
+\raisebox{0.5ex}{
+%\begin{array}[l]{r}
+%\phantom{u_{n+1}}\\
+%\phantom{u_{n+1}}
+%\end{array}\right.%
+\renewcommand{\arraystretch}{2}
+%\hspace{-8ex}
+\begin{array}[l]{r c r}
+u_{n+1}& =& \dfrac{1}{3} \left(u_n  +2v_n\right)\\
+v_{n+1} & = & \dfrac{1}{4}\left(u_n  +3v_n\right)
+\end{array}%
+\right.%
+}
+\]
+\renewcommand{\arraystretch}{1}
+\begin{enumerate} \item	On appelle $w$ la suite d\'efinie pour tout entier
+ naturel $n$ par :  $w_n =  v_n - u_n$.
+
+\begin{enumerate} \item Montrer que $w$ est une suite g\'eom\'etrique \`a termes positifs, dont
+ on pr\'ecisera la raison.
+
+\item D\'eterminer la limite de la suite $w$.
+
+\end{enumerate}
+
+\item \begin{enumerate} \item Montrer que la suite $u$ est croissante.
+
+\item Montrer que la suite $v$ est d\'ecroissante.
+
+%\item En d\'eduire que, pour tout entier naturel $n,~ u_0 \leqslant u_n  \leqslant v_n \leqslant  v_0$.
+
+\end{enumerate}
+
+%\item On admet que les suites $u$ et $v$ convergent. Montrer qu'elles ont alors m\^eme limite que l'on appellera $\ell$.
+
+\item On appelle $t$ la suite d\'efinie pour tout entier
+ naturel $n$ par : $t_n = 3u_n + 8v_n$.
+
+\begin{enumerate} \item Montrer que $t$ est une suite constante.
+ D\'eterminer cette constante.
+\item D\'eterminer alors l'expression de $u_n$ et de $v_n$ en fonction
+  de~$n$.
+\item Prouver que $u_n$ et $v_n$ ont la même limite~$\ell$ que l'on déterminera.
+
+%\item D\'eterminer alors la valeur de $\ell$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{exercice}

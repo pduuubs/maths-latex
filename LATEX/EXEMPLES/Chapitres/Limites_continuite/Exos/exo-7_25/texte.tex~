@@ -1,0 +1,12 @@
+\begin{exercice}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par:
+\[ f(x)=-x^4+x+2\]
+  \begin{enumerate}
+  \item Prouver que l'équation $f(x)=1$ admet au moins une solution sur $\left]-1\,;1\right[$
+  \item Tracer sur votre calculette la courbe de $x \longmapsto f(x)-1$.
+  \item Combien l'équation $f(x)=1$ semble-t-elle avoir de solutions
+    sur  $\left]-1\,;1\right[$?
+  \item Donner une valeur approchée à $10^{-2}$ près de chaque solution.
+   
+  \end{enumerate}
+\end{exercice}

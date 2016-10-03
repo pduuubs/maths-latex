@@ -1,0 +1,31 @@
+\begin{exercice}
+
+ Ci-dessous la courbe de la fonction $f$ définie sur $\R$ par:
+\[f(x)=\e^{-x^2}\]
+On cherche à trouver par diverses méthodes une valeur approchée de:
+\[I=\int_{0}^{1}\e^{-x^2}\ud x\]
+\begin{enumerate}
+\item Justifier par un raisonnement graphique que: $2I=\int_{-1}^{1}\e^{-x^2}\ud x$
+\item Justifier l'encadrement: $0 \leq I\leq 1$
+\item Déterminer une valeur approchée de $I$ à l'aide de la calculette.
+\item En utilisant le quadrillage, déterminer un encadrement de $I$. (Amplitude au plus 0,2)
+\item En utilisant le point d'abscisse $0,3$ et deux trapèzes,
+  déterminer une nouvelle valeur approchée de~$I$.
+\item Comme on ne sait pas trouver de primitive de $f$, une technique
+  consiste à trouver un polynôme \og assez proche\fg{} de $f$ et d'en
+  calculer l'intégrale sur le même intervalle. Déterminer le polynôme $P$
+  de degré trois tel que:
+\[ P(0)=f(0),\quad P'(0)=f'(0),\quad P(1)=f(1),\quad P'(1)=f'(1) \]
+\item Vérifier à l'aide de la calculette que la courbe de $P$ est
+  assez proche de celle de $f$ sur $\intf{0}{1}$. Est-ce le cas sur $\intf{-1}{1}$?
+\item En déduire une nouvelle valeur approchée de $I$.
+\item Prouver que le domaine compris entre la courbe et l'axe des
+  abscisses, pour $x\geq 1$ est d'aire finie, en donner un encadrement. \emph{On pourra comparer
+  $f(x)$ et $xf(x)$.}
+\item Conclure en donnant une valeur approchée de:
+\[\int_{-\infty}^{+\infty}\e^{-x^2}\ud x\]
+La valeur exacte est $\sqrt \pi$
+\end{enumerate}
+\noindent
+\includegraphics[width=15cm]{Chapitres/Integration/Exos/exo-7_13/Gaussienne}
+\end{exercice}

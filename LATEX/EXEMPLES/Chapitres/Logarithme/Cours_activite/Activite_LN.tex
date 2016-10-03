@@ -1,0 +1,86 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\activite{Logaritme néperien}{\term}
+
+\section{Propriétés algébriques}
+\subsection{Relation fonctionnelle}
+Soient deux réels $a$ et $b$ strictement positifs.
+\begin{enumerate}
+\item Simplifier $\e^{\ln(a)}$, $\e^{\ln(b)}$, $\e^{\ln(ab)}$. Ecrire
+  le produit  $ab$ de deux manières.
+\item En déduire la relation fonctionnelle: $\boxed{\ln(ab)=
+    \phantom{\sum \sum \sum \sum }}$
+\item L'exponentielle transforme les sommes en produits. Que fait sa
+  fonction réciproque?
+\end{enumerate}
+\subsection{Puissance}
+\begin{enumerate}
+\item Par récurrence on peut montrer que pour tout entier naturel $n$
+  on a donc: $\boxed{\ln(a^n)=
+    \phantom{\sum \sum \sum  }}$
+\item En posant $a=\e^\alpha$ (donc $\alpha=\ldots$) prouver cette
+  même propriété directement.
+% en utilisant les propriétés de  l'exponentielle.
+
+\item Etablir une formule pour $\boxed{\ln(\sqrt a)=
+    \phantom{\sum \sum \sum  }}$
+\end{enumerate}
+\subsection{Inverse et quotients}
+\begin{enumerate}
+\item En calculant $\ln(a\times\frac{1}{a})$ de deux manières,
+  compléter la formule: $\boxed{\ln(\frac{1}{a})=
+    \phantom{\sum \sum \sum  }}$
+\item En déduire la formule: $\boxed{\ln(\frac{a}{b})=
+    \phantom{\sum \sum \sum  }}$
+\end{enumerate}
+\subsection{Applications}
+Exprimer en fonction de $\ln(2)$ uniquement les réels suivants:% ($n\in\N$):
+\begin{enumerate}
+\item \qcmabc{$\ln(2^9\times \e^7)$}{$\frac12\ln(16)$}{$\ln(\frac{32}{\e})$}
+\item \qcmabc{$\frac{\ln{2^n}}{\ln(2)}$}{$\e^{3\ln(2)}$}{$\ln(-2)$}
+\end{enumerate}
+
+
+\section{Propriétés analytiques}
+\subsection{Dérivée}
+{\small
+La courbe de la fonction $\exp$ et celle de la fonction $\ln$ sont
+symétriques par rapport à la droite d'équation $y=x$. Ainsi
+géométriquement il est clair que la courbe de $\ln$ admet une tangente
+en tout point.% de $\R^{+*}$ 
+(car $\exp$ est dérivable sur $\R$). On
+admet donc que $\ln$ est dérivable sur  $\R^{+*}$.}
+\begin{enumerate}
+\item Déterminer l'expression de la dérivée de la fonction
+  $\ln$. Rappel: $\forall x \in \R^{+*}, \e^{\ln x}=x\qquad$
+
+
+\item Déterminer la formule pour la dérivée d'une composée de la forme
+  $\ln(u)$ où $u$ est une fonction dérivable, strictement positive.
+$\boxed{\ln'(x)=\phantom{\sum \sum }}\qquad$  $\boxed{\left(\ln(u)\right)'=\phantom{\sum \sum }}$
+\end{enumerate}
+
+\item {\bf Applications}
+Déterminer l'ensemble de dérivabilité puis dériver les fonctions
+suivantes:
+\qcmabc{$f(x)=x\ln(x)$}{$g(x)=\frac{\ln(x)}{x}$}{$h(x)=\ln{x^3-1}$}
+\subsection{Inéquations}
+
+%\item Donner le tableau de variation puis de signe de $\ln$ sur $\R^{+*}$.
+ Pour étudier le signe d'une dérivée qui comporte des $\ln$ on se
+  ramène à résoudre des inéquations du type $\ln(X)\leq a$ où
+  $a\in\R$. Compléter et justifier: $\boxed{\ln(X)\leq a \iff
+     ( X\leq\phantom{\sum \sum } \et{}\ X>\phantom{\sum})}$  
+{\bf Application.} Résoudre les inéquations suivantes:
+\begin{enumerate}
+\item \qcmabc{$1+\ln(x)\leq 0$}{$\ln(x-1)<3$}{$\ln(-2x+3)\geq 2$}
+\item \qcmabc{$\ln(2x)-\ln(x^2)<1$}{$\ln x+\ln x^2+\ln x^3 >1$}{$\ln(x^2)-\ln(x+3)<0$}
+
+\item \'Etudier les variations de $f$ sur $\R^{+*}$ où: $f(x)=x^2\ln(x)$.
+\end{enumerate}
+
+\end{document}

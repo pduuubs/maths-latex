@@ -1,0 +1,17 @@
+\begin{exercice}
+Soit $(I_n)$ la suite d'intégrales définie pour $n\in \NN$ 
+par $I_n = \displaystyle \int_{0}^{1} t^n \e^t  \, dt$.
+\begin{enumerate}
+\item 
+\'Etudier la monotonie de $(I_n)$.
+\item
+Trouver une relation de récurrence entre $I_n$ et $I_{n-1}$ pour
+$n\geq 1$.
+\item
+Monter que pour tout $n\geq 1$, $0 \leq I_n \leq \frac{\e}{n+1}$.
+\item
+Que peut-on en déduire sur la suite $(I_n)$ ?
+
+\end{enumerate}
+ 
+\end{exercice}

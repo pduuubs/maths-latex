@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[]{pan_pan} 
+\usepackage{eso-pic} %pour filigrane
+%\setlength{\textheight}{24cm}
+%\setlength{\textwidth}{16cm}
+\usepackage[marginratio=1:1,textwidth=16cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\usepackage[dvips,ps2pdf,colorlinks=true]{hyperref} %gestions des hyperliens dans un document .dvi
+\pagestyle{fancy}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+%%
+%% Pour en faire un BOOKLET A5
+%%
+% Suppose your source code is in the file Tous_les_exos_de_VP.tex, then the following
+% commands typed into the command prompt will convert the file into an
+% A5 booklet: 
+%
+% latex Tout_le_cours_TS.tex
+% latex Tout_le_cours_TS.tex
+% dvips -o Tout_le_cours_TS.ps Tout_le_cours_TS.dvi
+% psbook Tout_le_cours_TS.ps Tout_le_cours_TS.bk.ps
+% psnup -2 Tout_le_cours_TS.bk.ps Tout_le_cours_TS.booklet.ps
+% En pdf ensuite avec ps2pdf:
+% ps2pdf Tout_le_cours_TS.booklet.ps Tout_le_cours_TS.booklet.pdf
+
+%  The resulting file exam.booklet.ps should then be printed doubled-sided, stapled down the middle, and folded to produce an A5 booklet. The paper size can be changed by using different command line options, see the psutils documentation for more information.
+
+%% Chemins des images
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+%penser à Command/File pour creer un .ps pour Metapost
+%\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+
+%%% Reste à faire:
+%
+%  1) chercher et remplacer les includegraphics par un environnement
+%  figure puis \tableoffigures
+%  2) Donner les ref des exos concernés à chaque partie... du livre
+%  aussi (?)
+%  3) Répertorier les exos séparément ? En faire une toc? Corrections
+%  en fin d'ouvrage?
+%  4) Faire un index et donc référencer des mots clefs
+%  
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style du livre AMS-math
+%%%%
+
+\renewcommand{\chaptermark}[1]%
+   {\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+\renewcommand{\sectionmark}[1]%
+   {\markright{\MakeUppercase{\thesection.\ #1}}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\Police}{%
+   \fontfamily{%
+%lmr
+pag%style des hauts de page en avant garde small caps
+}\fontseries{m}\fontshape{sc}\fontsize{9}{11}\selectfont}
+\fancyhf{}
+\fancyhead[LE,RO]{\Police \thepage}
+\fancyhead[LO]{\Police \rightmark}
+\fancyhead[RE]{\Police \leftmark}
+%%%%%%%%%%%
+\title{%
+{\bf Cours de Mathématiques en \term S}}
+%\\rule{0cm}{1cm}\noindent\begin{center}
+%includegraphics[width=7cm]{petite_frise_bague_viking}
+%end{center}}
+\author{Vincent PANTALONI}
+\date{{\small {\Police Version du \today}}}
+\renewcommand{\iff}{\Longleftrightarrow}
+%%%%
+%\makeindex
+%------------- Fin préambule ----
+\begin{document}
+\frontmatter
+%\newcommand{\Pdpweb}{{\footnotesize {\tt
+%http://prof.pantaloni.free.fr}}}
+%\newcommand{\Pdpweblink}{\url{http://prof.pantaloni.free.fr}}
+\lfoot{\Pdpweblink}
+\rfoot{{\small {\Police Version du \today}}}
+\AddToShipoutPicture*{\AtTextUpperLeft{\rotatebox{270}{\
+      \includegraphics[scale=0.5]{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(111)%
+}}}}
+\maketitle
+
+\tableofcontents
+
+%\AddToShipoutPicture*{\AtTextLowerLeft{\includegraphics[width=16cm]{petite_frise_bague_viking}}}
+%\listoffigures
+\mainmatter
+\lfoot{\Pdpweb}%\lfoot{}
+\rfoot{}
+%%___________________________________
+%%
+%%------------- Debut des INPUT  ----
+%%___________________________________
+\input{Suites.1}
+\input{Limites.continuite.tex}
+
+\input{Exponentielle.1}
+\input{Complexes.1}
+\input{Barycentres.Droites.3D} 
+%%_______________________________Fin 1er trimestre
+\input{Equa.diff}
+\input{Proba.1} %conditionnelles
+\input{Complexes.2} %Forme trigo, expo, transfos.
+%%_______________________________Fin 2e trimestre
+%\input{Limites.par.def}
+\input{Suites.2} %Adjacentes
+\input{Ln}
+\input{Eq.de.plans}
+\input{Integration}
+\input{Proba.2} %Lois de proba
+\end{document}

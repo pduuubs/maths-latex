@@ -1,0 +1,14 @@
+This is MetaPost, Version 0.641 (Web2C 7.5.4) (mem=mpost 2007.1.22)  27 JUN 2007 23:29
+**cercle-trigo.mp
+(cercle-trigo.mp (constantes.mp) (papiers.mp)
+>> cercle-trigo.mp
+>> cercle-trigo.mpx
+! Unable to make mpx file.
+l.74 	    i:=length(p)/12; 	    mylabel(btex
+                                             ${\pi}\over {6}$ etex,p,i);
+The two files given above are one of your source files
+and an auxiliary file I need to read to find out what your
+btex..etex blocks mean. If you don't know why I had trouble,
+try running it manually through MPto -tex, TeX, and DVItoMP.
+
+

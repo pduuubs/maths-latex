@@ -1,0 +1,113 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -19 -12 295 157 
+%%Creator: MetaPost
+%%CreationDate: 2007.09.18:1119
+%%Pages: 1
+%%DocumentFonts: CMMI10 CMR10
+ /cmmi10 /CMMI10 def
+ /cmr10 /CMR10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0 0.49814 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+294.09402 0 lineto stroke
+ 0.49814 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 155.90527 lineto stroke
+newpath 0 1.88977 moveto
+0 -1.88977 lineto stroke
+newpath 70.86613 1.88977 moveto
+70.86613 -1.88977 lineto stroke
+newpath 141.73227 1.88977 moveto
+141.73227 -1.88977 lineto stroke
+newpath 212.5984 1.88977 moveto
+212.5984 -1.88977 lineto stroke
+newpath 283.46454 1.88977 moveto
+283.46454 -1.88977 lineto stroke
+newpath 0 1.88977 moveto
+0 -1.88977 lineto stroke
+ 0 0.49814 dtransform truncate idtransform setlinewidth pop
+newpath 1.88977 0 moveto
+-1.88977 0 lineto stroke
+newpath 1.88977 70.86613 moveto
+-1.88977 70.86613 lineto stroke
+newpath 1.88977 141.73227 moveto
+-1.88977 141.73227 lineto stroke
+newpath 1.88977 0 moveto
+-1.88977 0 lineto stroke
+ 0 0.99626 dtransform truncate idtransform setlinewidth pop
+newpath 0 0 moveto
+70.86613 0 lineto stroke
+newpath 67.16974 -0.99045 moveto
+70.86613 0 lineto
+67.16974 0.99045 lineto
+ closepath
+gsave fill grestore stroke
+ 0.99626 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 70.86613 lineto stroke
+ 0 0.99626 dtransform truncate idtransform setlinewidth pop
+newpath 0.99045 67.16974 moveto
+0 70.86613 lineto
+-0.99045 67.16974 lineto
+ closepath
+gsave fill grestore stroke
+-9.976 -8.90779 moveto
+(O) cmmi10 9.96265 fshow
+23.08742 -9.5706 moveto
+(i) cmmi10 9.96265 fshow
+-18.30249 33.11636 moveto
+(j) cmmi10 9.96265 fshow
+ 0 0.49814 dtransform truncate idtransform setlinewidth pop
+newpath 0 141.73227 moveto
+4.33957 134.73006 9.07182 127.97897 14.17409 121.51137 curveto
+18.61853 115.87761 23.33838 110.46584 28.34819 105.32817 curveto
+32.84953 100.71194 37.57869 96.3235 42.51794 92.17918 curveto
+47.07603 88.35469 51.80789 84.74242 56.69205 81.34424 curveto
+61.29277 78.14326 66.02446 75.13513 70.86613 72.31187 curveto
+75.49954 69.61005 80.23044 67.0794 85.04022 64.7058 curveto
+89.69821 62.4071 94.42784 60.25687 99.21432 58.23943 curveto
+103.88869 56.26924 108.61559 54.4264 113.38408 52.69652 curveto
+118.07268 50.99562 122.80025 49.40437 127.55818 47.90839 curveto
+132.25623 46.43124 136.983 45.04726 141.73227 43.74419 curveto
+146.43704 42.45332 151.16325 41.24205 155.90636 40.1001 curveto
+160.61606 38.96619 165.34195 37.90074 170.08046 36.89395 curveto
+174.79239 35.8928 179.51643 34.94974 184.25021 34.05762 curveto
+188.9662 33.16885 193.69157 32.33072 198.42432 31.53595 curveto
+203.14232 30.74365 207.86746 29.99448 212.5984 29.28354 curveto
+217.31786 28.57434 222.04295 27.90321 226.77249 27.2647 curveto
+231.4931 26.6274 236.21805 26.02258 240.9466 25.44698 curveto
+245.6666 24.87242 250.39008 24.32697 255.11635 23.8066 curveto
+259.8385 23.28667 264.56337 22.7918 269.29045 22.31868 curveto
+274.01305 21.84602 278.7378 21.3951 283.46454 20.96593 curveto stroke
+244.13637 31.34602 moveto
+(F) cmmi10 9.96265 fshow
+68.37549 -9.4204 moveto
+(1) cmr10 9.96265 fshow
+139.24162 -9.4204 moveto
+(2) cmr10 9.96265 fshow
+169.9701 -9.4204 moveto
+(2) cmr10 9.96265 fshow
+174.95139 -9.4204 moveto
+(;) cmmi10 9.96265 fshow
+179.3792 -9.4204 moveto
+(5) cmr10 9.96265 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop
+newpath 177.16534 0 moveto 0 0 rlineto stroke
+-7.9813 67.65593 moveto
+(1) cmr10 9.96265 fshow
+-7.9813 138.52206 moveto
+(2) cmr10 9.96265 fshow
+173.2488 38.43307 moveto
+(C) cmmi10 9.96265 fshow
+newpath 177.16534 35.43307 moveto 0 0 rlineto stroke
+2.09999 143.83226 moveto
+(A) cmmi10 9.96265 fshow
+newpath 0 141.73227 moveto 0 0 rlineto stroke
+72.96613 74.41187 moveto
+(B) cmmi10 9.96265 fshow
+newpath 70.86613 72.31187 moveto 0 0 rlineto stroke
+showpage
+%%EOF

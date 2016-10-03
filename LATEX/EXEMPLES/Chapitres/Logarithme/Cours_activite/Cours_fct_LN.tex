@@ -1,0 +1,116 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Fonction logarithme}%{\term}
+
+%%-----------------------
+
+\section{Premi\`eres propri\'et\'es}
+\label{sec:para1}
+
+La fonction $\exp$ est continue et strictement croissante sur
+$\R$. Ses limites en $-\infty$ et $+\infty$ sont respectivement $0$ et
+$+\infty$. Donc d'après le théorème des valeurs intermédiaires, pour
+tout réel strictement positif $y$, l'équation en $x$:
+\begin{equation}
+  \label{eq:exy}
+  \e^x=y
+\end{equation}
+a une unique solution que l'on note: $\ln(y)$ appellée logarithme
+néperien de~$y$. Ainsi $\ln$ est la fonction réciproque de
+$\exp$. Elle est définie sur $\into{0}{+\infty}$.
+\begin{equation}
+  \label{eq:def}
+  \forall y\in \into{0}{+\infty},\quad \e^x=y \iff x=\ln(y)
+\end{equation}
+\exemples $\e^0=1$ donc $0=\ln(1)$. $\e^1=\e$ donc $1=\ln(\e)$ 
+\Def{Pour tout réel $x$ strictement positif on définit le logarithme
+néperien de~$x$ noté $\ln(x)$ comme étant l'unique réel $a$ vérifiant:
+\[ \exp(a)=x.\quad \text{On a donc: }\quad  \boxed{\exp(\ln(x))=x}\]}
+\begin{prop}
+On a ainsi défini la fonction logarithme néperien sur
+  $\into{0}{+\infty}$. $\ln$ est la fonction réciproque de
+$\exp$. Elle  vérifie:
+\begin{eqnarray}
+  \label{eq:recip}
+  \forall x \in \into{0}{+\infty},\quad \e^{\ln(x)}=x\\
+  \forall x \in \R, \quad \ln(\e^x)=x \label{eq:recip2}
+\end{eqnarray}
+\end{prop}
+\begin{proof}
+\eqref{eq:recip} c'est la définition. On prouve la suivante \eqref{eq:recip2}:
+Soit un réel $x$, on note $y=\e^x$. Alors par définition
+$x=\ln(y)$. En remplaçant $y$ dans cette dernière par $\e^x$ on a le
+résultat.
+\end{proof}%, pour tout réel $x$: $\quad \ln(\e^x)=x$}
+\exercice 
+Dresser le tableau de variation de la fonction $\ln$ par un raisonnement
+graphique de la résolution de $\e^x=y$. Prouver que $\ln$ est
+croissante sur $\into{0}{+\infty}$.
+\exercice Résoudre les équations suivantes:
+\begin{enumerate}
+\item $\e^x=2$
+\item $\e^{2x}=4$
+\item $\e^{\e^x}=3$
+\item $\ln(x)=2$
+\item $\ln(x^2)=4$
+\end{enumerate}
+\begin{prop}
+Comme conséquence de la croissance de $\ln$ sur
+  $\into{0}{+\infty}$ on a pour tous réels $a$ et $b$ strictement
+  positifs:
+\[\ln(a)\leq\ln(b)\iff a\leq b \quad\et{}\quad \ln(a)=\ln(b)\iff a= b\]
+\end{prop}
+\exemple Résoudre $\ln(x-2)\leq 1$ Sol: $ \iff x-2>0\ \et{}\ x-2\leq\e\iff
+2<x\leq \e+2$
+
+%\hfill{\stretch{1}}
+\newpage
+\begin{center}
+Comme la fonction $\ln$ est la réciproque de la fonction exponentielle, leurs courbes sont symétriques l'une de l'autre par rapport à la droite $\Dr$ d'équation $y=x$\\
+\vspace{0.5cm}
+\psfrag{i}{$\vec{\imath}$} \psfrag{j}{$\vec{\jmath}$} \psfrag{O}{$O$}
+\psfrag{F}{$\Cr_{\exp}$}
+\psfrag{L}{$\Cr_{\ln}$}
+\psfrag{D}{$\Dr:\ y=x$}
+\psfrag{e}{$\e$}
+\includegraphics{TeX_MiX/Figures/Courbes/Courbe.5}\\
+\vspace{3cm}
+ Comme la fonction $\ln$ est la réciproque de la fonction
+ exponentielle, leurs courbes sont symétriques l'une de l'autre par
+ rapport à la droite $\Dr$ d'équation $y=x$\\
+\vspace{0.5cm}
+\includegraphics{/Figures/Courbes/Courbe.5}
+\end{center}
+\newpage
+\section{Propriétés algébriques}
+cf module pour les preuves.
+\section{Résolutions d'équations et inéquations}
+On veut résoudre des équations telles que $\ln(X)=a$ ou $\ln(X)\geq
+a$. On détermine d'abord l'ensemble des nombres réels
+  pour lesquels l'inéquation a un sens, sachant que $\ln(X)$ n'est
+défini que pour $X>0$. 
+\begin{list}{$\bullet$}{}
+\item \'Equation. $\ln(X)=a \iff X=\e^a$
+\item Inéquation. 
+\end{list}
+
+
+\exemples Résoudre:\\
+\qcmabc{$\ln(3x-2)=-1$}{$\ln(2x-1)-\ln(x)=-1$}{$\ln(x-1)\geq -3$}\\
+\qcmabc{$\ln(x-2)<5$}{$\ln(-2x+1)-\ln(x)\leq
+  1$}{$\ln(-2x+1)+\ln(x)=-2$}
+\section{\'Etude de la fonction $\ln$}
+\subsection{Limites}
+\begin{list}{$\bullet$}{}
+\item En $+\infty$. Soit A>0 Pour $x>\e^A$ alors $\ln(x)>A$
+\item En $0$. On pose $X=\frac{1}{x}$.
+\end{list}
+\subsection{Continuité, dérivée}
+
+
+\end{document}

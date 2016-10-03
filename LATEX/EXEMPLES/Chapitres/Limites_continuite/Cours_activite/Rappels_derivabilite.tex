@@ -1,0 +1,160 @@
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan}
+\usepackage[marginratio=1:1,textwidth=18cm,textheight=24.5cm,marginparwidth=0pt,headheight=3cm]{geometry}
+\newcommand{\inputexo}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/\CLASSE/Chapitres/#1/Exos/exo-7_#2/texte.tex}}
+\newcommand{\inputBANK}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/Seconde/Bankexos/#1/exo-#2/texte.tex}}
+\newcommand{\Mfig}[2]{\includegraphics[width=#2]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/#1}}% 1: Nom fichier, 2:largeur image
+%---------
+\newcounter{CL}
+%%%%%%%%%%%%%%%%%%%%%%---------CHANGER ICI (ONLY) LA CLASSE
+\setcounter{CL}{1}  %% 2: Seconde et Sinon Terminale
+%%%%%%%%%%%%%%%%%%%%%%---------
+\ifthenelse{\theCL=2}{\def\CLASSE{Seconde} \def\ClasseABR{\seconde}}%
+{\def\CLASSE{TS} \def\ClasseABR{\term}}
+
+\renewcommand{\exercice}{} 
+%\renewenvironment{exercice}{\exocursif} 
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CHAP}{Nombres}      % Changer ici le chapitre
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\fcours{Titre}
+%\fexos{Titre}{\ClasseABR}
+%\activite{Titre}{\ClasseABR}
+%\ds{\ClasseABR}
+%\dl{2}{Titre}{\ClasseABR}
+
+\pagestyle{fancy}  
+\rhead{\Large{\textbf{Dérivation: Rappels et notation différentielle} }}
+\lhead{\textsl{\ClasseABR S}}
+ \lfoot{\Pdpmail}
+\cfoot{}  % si commenté donne page n° x/ nb_de_pages
+%%#######################################################
+
+%\section{Définition}
+\begin{Def}
+ 
+Soit $a\in I$ où $I$ est un intervalle \emph{ouvert}. Soit $f$
+  une fonction définie sur $I$. On dit que $f$ est dérivable en $a$
+  si le taux de variation de $f$ entre $a$ et $a+h$:
+\[\frac{f(a+h)-f(a)}{h}\]
+admet une limite finie quand $h$ tend  vers~0.
+Si cette limite finie existe, on l'appelle le nombre dérivé de $f$ en
+$a$, noté~$f'(a)$.
+   \end{Def}
+\begin{rem}
+En posant $x=a+h$, cette définition équivaut à: $ \boxed{\lim\limits_{ x \to a } \frac{f(x)-f(a)}{x-a}=f'(a)}$
+\end{rem}
+
+\centrage{Interprétation graphique}
+\begin{multicols}{2}
+  
+  Avec les notations du graphique, on a: 
+\[\frac{\Delta y}{\Delta x}=\frac{f(a+h)-f(a)}{h}\]
+Quand  $h$ tend vers zéro  le point $M_h$ se rapproche du point
+$A$. Dire que $f$ est dérivable en $a$ signifie que la sécante
+$(AM_h)$ admet une position limite. On appelle alors tangente  à la courbe de~$f$ au point d'abscisse~$a$,
+la droite~$T_a$ passant par~$A$ et de coefficient directeur~$f'(a)$.
+Ainsi l'équation réduite de $T_a$ est: 
+\[ \boxed{y=f'(a)(x-a)+f(a)}\]
+
+  \includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.18}
+\end{multicols}
+  Autour du point $A$, la courbe de $f$ et sa tangente $T_a$ sont \og
+  très proches \fg{}. D'où la propriété:%Cette constatation donne lieu à:
+\begin{prop}[Approximation affine] Si $f$ est dérivable
+en $a$, et que $h$ est proche de zéro: \\
+$\boxed{f(a+h)\approx f(a)+hf'(a)}$. Ou encore, si $x$ est proche de $a$, on a: $\boxed{f(x)\approx f(a)+(x-a)f'(a)}$
+\end{prop}
+\begin{proof}
+  La définition 1 signifie que $\frac{f(a+h)-f(a)}{h}=f'(a)+\varepsilon(h)$
+où $\varepsilon$ est une fonction qui tend vers 0 en~0. D'où le
+résultat, qui consiste à négliger le terme $h\varepsilon(h)$. L'autre
+expression vient en posant $x=a+h$.
+\end{proof}
+%\exemples Pour $x$ proche de 0: %$\e^x\approx x+1$ 
+%$\sin x \approx x$, $(1+x)^n\approx 1+nx$\\
+
+\centrage{Notation différentielle et sciences physiques}
+\begin{multicols}{2}
+Soit $f$ une fonction dérivable sur un intervalle $I$, c'est à dire
+dérivable en tout réel $a$ à l'intérieur de $I$. Alors en
+mathématiques, on note $f'$ la fonction dérivée de $f$, mais pas en
+physique\dots{} Comme:
+\[ f'(a)=\lim\limits_{\Delta x \to 0 } \frac{\Delta y}{\Delta x}\]
+Lorsque le $\Delta x$ est infiniment petit, on le note ${\rm d}x$.  De
+même le $\Delta y$ devient ${\rm d}y$. En physique, au lieu de noter
+$f'$ on notera alors $\frac{{\rm d}y}{{\rm d}x}$ ou $\frac{{\rm
+    d}f}{{\rm d}x}$. De plus, en physique, la variable est souvent le
+temps, donc noté $t$ au lieu de $x$. On a donc: $f:\ t \longmapsto
+f(t)$. Si on dérive à nouveau $f'$ on obtient la dérivée
+\emph{seconde} de $f$ notée $f''$. Si on redérive cette dernière on
+obtient $f'''$ que l'on note aussi $f^{(3)}$, ainsi de suite,
+$f^{(4)}$ désigne la dérivée quatrième de~$f$. Avec la notation
+différentielle utilisée en physique, celà donne:
+\[ f'=\frac{{\rm d}f}{{\rm d}t}\qquad f''=(f')'=\frac{{\rm d}}{{\rm d}t}\left(\frac{{\rm d}f}{{\rm d}t}\right)=\frac{{\rm d}^2f}{{\rm d}t^2}\]
+Remarquez comme l'opération \og dériver par rapport à $t$\fg{} se
+comporte avec cette notation comme si on multipliait par l'opérateur:
+$\frac{{\rm d}}{{\rm d}t}$.
+\par Pour embrouiller un peut plus, la fonction
+en physique est souvent notée $x$. $x(t)$ représente typiquement
+l'abscisse d'un point mobile en fonction du temps~$t$. La vitesse
+moyenne du point entre les temps $t_1$ et $t_2$ est alors:
+\[\frac{\Delta x}{\Delta t}=\frac{x(t_2)-x(t_1)}{t_2-t_1}\]
+ La vitesse
+instantanée est alors la limite de $\frac{\Delta x}{\Delta t}$ quand
+$\Delta t$ tend vers zéro, c'est donc: $x'(t)$, euh\ldots pardon
+$\frac{{\rm d}x}{{\rm d}t}$. Mais les physiciens aussi feignants que les mathématiciens
+on trouvé une notation plus courte~$\dot{x}$ qui désigne donc la
+vitesse $v$. De même vous savez (ou apprendrez) que l'accélération est la dérivée
+de la vitesse. On a alors:
+\[\dot{x}=\frac{{\rm d}x}{{\rm d}t}=x'\quad\text{et}\quad
+\ddot{x}=\frac{{\rm d}^2x}{{\rm d}t^2}\]
+Comment note--t--on alors la vitesse instantanée au temps~$t_1$? En
+maths ce serait $x'(t_1)$, en physique il y a trois notations
+possibles:
+
+\[\dot{x}(t_1)=\left(\frac{{\rm d}x}{{\rm d}t}\right)(t_1)=\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t=t_1}\]
+\end{multicols}
+
+\end{document}
+%%#######################################################
+\exo{--- } 
+\inputexo{\CHAP}{1}
+\exods{--- Titre }{5} % donne le bareme (5pts)
+\exo{--- }
+\inputBANK{\BANK}{606}
+\Mfig{NewCourbe.5}{6cm}
+
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+
+%% Chapitres de TS
+Complexes
+Equa_diff
+Etude_de_fonction
+Exponentielle
+Geometrie_3D
+Integration
+Limites_continuite
+Logarithme
+Proba_Denombrement
+Suites
+
+%% Chapitres de Seconde
+Nombres
+Vecteurs
+Fonctions
+Droites.Systemes
+Geometrie_2D
+Geometrie_3D
+Triangles
+Stat

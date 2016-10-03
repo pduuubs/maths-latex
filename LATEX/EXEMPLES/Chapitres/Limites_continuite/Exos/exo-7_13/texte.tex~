@@ -1,0 +1,14 @@
+\begin{exercice}
+Les fonctions suivantes dont on donne l'expression pour tout réel $x$ sont-elles
+continues (resp. dérivables) en zéro?
+\begin{enumerate}
+\item $f(x)=|x|$
+\item $f(x)=\exp\left(-\frac{1}{x^2}\right)$ pour $\x\in\R^*$ et $f(0)=0$.
+\item $f(x)=x\sin \left( \frac{1}{x} \right)$ pour $\x\in\R^*$ et
+  $f(0)=0$. \emph{On pourra utiliser que $\sin$ n'a pas de limite en
+    l'infini}
+
+\item $f(x)=x^2\sin \left( \frac{1}{x} \right)$
+\end{enumerate}
+ 
+\end{exercice}

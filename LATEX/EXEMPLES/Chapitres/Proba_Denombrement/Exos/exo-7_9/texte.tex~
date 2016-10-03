@@ -1,0 +1,8 @@
+\begin{exercice}
+Combien y a-t-il de façons de choisir 29
+jours différents parmi 365?  Quelle est la probabilité que dans une
+classe de 29 élèves, deux élèves soient nés le même jour? 
+%(En supposant bien sûr qu'\emph{a priori} les dates de naissances
+%sont aléatoires et uniformément réparties dans l'année)
+ 
+\end{exercice}

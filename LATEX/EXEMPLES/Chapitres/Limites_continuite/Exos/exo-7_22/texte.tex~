@@ -1,0 +1,29 @@
+\begin{exercice}
+Soit $f$ la fonction définie sur $\left]0\,;+\infty\right[$ par:
+\[ f(x)=\sin\left(\frac{1}{x}\right)\]
+  \begin{enumerate}
+  \item Prouvons que cette fonction n'a pas de limite en zéro:
+    \begin{enumerate}
+    \item Soit $(x_n)$ la suite définie sur $\mathbb{N}^*$ par:
+      $x_n=\frac{1}{n\pi}$. Donner la limite de $(x_n)$ et celle de $f(x_n)$.
+    \item Si $f$ admet une limite en zéro, quelle devrait-elle être?
+    \item Reprendre les deux dernières questions avec: $x_n'=\frac{2}{(2n+1)\pi}$
+    \item Conclure. Pour rigoler, vous pouvez demander l'impossible à
+      votre calculette graphique: Tracer la courbe de~$f$.
+    \end{enumerate}
+  \item On considère maintenant la fonction $g$ définie sur
+    $\left[0\,;+\infty\right[$ par: $ g(x)=
+\begin{cases} 
+x\sin\left(\frac{1}{x}\right) & \text{si $x>0$,}\\
+0 &\text{si $x=0$.}
+\end{cases}%
+$\\
+\begin{enumerate}
+\item Justifier que: $\forall x \in\mathbb{R}^+,\ |g(x)|\leq x$. En
+déduire que $g$ est continue en~0.
+\item Prouver que $g$ n'est pas dérivable en~0.
+\item Prouver que $x \longmapsto xg(x)$ est dérivable en~0.
+\end{enumerate}
+
+  \end{enumerate}
+\end{exercice}

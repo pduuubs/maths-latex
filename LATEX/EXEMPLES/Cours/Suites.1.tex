@@ -1,0 +1,180 @@
+\chapter{Suites, raisonnement par r�currence.}% suites adjacentes}
+\section{Rappels}
+\par \noindent
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{||c|p{5.2cm}|p{5.5cm}||}
+\hline
+%Ligne 1
+  Suite $(u_n)$, $n\in \N$ & \hspace{\stretch{1}} Suite \textbf{arithm�tique} de raison $r$  \hspace{\stretch{1}} & \hspace{\stretch{1}}  Suite \textbf{g�om�trique} de raison $q$ \hspace{\stretch{1}} \\\hline \hline
+%Ligne 2
+D�finition & On passe de chaque terme au suivant en ajoutant le m�me r�el $r$ \[u_{n+1}=u_n+r \] & On passe de chaque terme au suivant en multipliant par le m�me r�el $q$ \[u_{n+1}=q\times u_n \]\\ \hline
+%Ligne 3
+ Terme g�n�ral& \[u_n=u_0+nr\]\[u_n=u_1+(n-1)r\] & \[u_n=u_0\times q^n\]\[u_n=u_1\times q^{n-1}\] \\\hline
+%Ligne 4
+Somme de termes & ``Nombre de termes''$\times$ ``Moyenne du premier et dernier terme''
+\[ \sum_{k=0}^{n}u_k=(n+1)\times \frac{u_0+u_n}{2}\]& ``Premier terme''$\times \dfrac{1-q^{\text{nb de termes}}}{1-q}$ \[ \sum_{k=0}^{n}u_k=u_0\times \frac{1-q^{n+1}}{1-q}\]
+\\\hline
+
+ Cas particuliers& \[1+2+\cdots+n=\dfrac{n(n+1)}{2}\]& \[1+q+q^2+\cdots+q^n=\frac{1-q^{n+1}}{1-q}\]\\\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1.5}
+\subsection{Exercices corrig�s}
+%-------------------
+\setcounter{Aff}{1}  %<<<<<<<<<<<<<<<<<<<
+%-------------------
+%
+%Si ``Aff'' vaut 0 on n'affiche pas les solutions sinon, on les affiche, s'il y en a... ( Aff=\theAff )
+\Exo[C'est une somme g�om�trique du type $1+q+q^2+\cdots+q^n $ avec $q=x^2$. D'o�: $S=\dfrac{1-(x^2)^{n+1}}{1-x^2}$ si $x^2\neq1$. Si $x=1$ alors $S=1+1+\cdots+1=n+1$]{Calculer $S = 1 + x^2 + x^4 +\cdots + x^{2n}$}
+\Exo[On a $u_n=u_0+nr$. En rempla�ant $n$ par 34, on d�termine $r$. Puis on calcule $u_{100}$]{Soit $(u_n)$ une suite arithm�tique de raison $r$. On donne: $u_0=3$ et $u_{34}=321$. D�terminer $u_{100}$.}
+\Exo[C'est la somme des termes de la suite $(u_n)$ g�om�trique de raison 2 et de premier terme 5. Il reste � d�terminer le nombre de termes de la somme. $u_n=5\times 2^n \implies 5\times 2^n =5120 \implies 2^n=1024 \implies n=10$. Donc $S=u_0+\cdots+u_{10}$ qui comporte 11 termes. D'o�: $S=5\times \dfrac{1-2^{11}}{1-2}=5(2^{11}-1)=10235$ ]{Calculer la somme: $S=5+10+20+40+\cdots+5120$}
+\Exo[$v_{n+1}=u_{n+1}-1=-2u_n+3-1=-2(u_n-1)$. Donc $v_{n+1}=-2v_n$, $(v_n)$ est g�om�trique de raison -2 et de premier terme $v_0=u_0-1=4$. D'o� $v_n=4\times (-2)^n$. Ainsi $u_n=4\times (-2)^n+1$ ]{Soit la suite d�finie par $\forall n \in \N, u_{n+1}=-2u_n+3$ et $u_0=5$. On pose aussi $v_n=u_n-1$. Montrer que $(v_n)$ est g�om�trique, d�terminer le terme g�n�ral de $(u_n)$.}
+%%
+\setcounter{Aff}{0}
+%%
+\begin{prop}
+  Limite de $q^n$.
+\end{prop}
+\section{Comportement global d'une suite}
+\subsection{Monotonie}
+\begin{Def}
+  Croissante, d�croissante, constante, monotone
+\end{Def}
+\begin{rem}
+  Pareil avec strict.
+\end{rem}
+\subsection{Major�e, minor�e, born�e}
+\begin{Def}
+  Maj, min, born�e.
+\end{Def}
+\begin{rem}
+Pas unicit� d'un maj.
+\end{rem}
+\exemple $u_n=4-\frac{1}{n}$
+\section{Raisonnement par r�currence}
+Le raisonnement par r�currence (on dit aussi par induction) est un principe de raisonnement (comme le raisonnement par l'absurde) qui sert � �tablir une propri�t� valable pour une infinit� d'entiers naturels. Ce raisonnement comporte quatre �tapes: L'initialisation, l'hypoth�se de r�currence, l'h�r�dit� et la conclusion.
+\subsection{Principe}
+\noindent Soit $\Para (n)$ une propri�t� d�pendant d'un entier~$n$ dont on veut prouver qu'elle est vraie pour tout $n$ dans $\N$. (Parfois pour tout $n$ dans $\N^*$ ou $n\geq 3$ \dots etc)\medskip\\
+\fbox{%{0.5\linewidth}{
+
+\parbox{0.9\linewidth}{
+%\noindent Soit $\Para (n)$ une propri�t� d�pendant d'un entier~$n$ dont on veut prouver qu'elle est vraie pour tout $n$ dans $\N$. (Parfois pour tout $n$ dans $\N^*$ ou $n\geq 3$ \dots etc)
+\begin{itemize}
+\item[\bf Initialisation.] On v�rifie que $\Para(0)$ est vraie.
+\item[\bf Hypoth�se de r�currence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie.
+\item[\bf H�r�dit�.] On montre que sous l'hypoth�se de r�currence, $\Para (k+1)$ est aussi vraie.
+\item[\bf Conclusion.] Alors par r�currence, la propri�t� $\Para (n)$ est vraie pour tout $n\in\N$.
+\end{itemize}
+}}\medskip\\
+Toutes les phases du raisonnement sont n�c�ssaires, mais l'essentiel de la difficult� provient en g�n�ral dans la phase de l'h�r�dit�. \`A cet endroit il faut trouver un lien entre $\Para (k)$ et $\Para (k+1)$.
+Pour expliquer ce raisonnement on utilise parfois l'analogie suivante:
+\subsection{Analogie: gravir un escalier}
+\noindent On se trouve sur la premi�re marche d'un escalier infini � gravir. Si on sait monter une marche, alors on peut acc�der � n'importe quelle marche de l'escalier.
+\begin{itemize}
+\item[\bf Initialisation.] On est sur la premi�re marche, donc on peut commencer.
+\item[\bf Hypoth�se de r�currence.] On suppose que pour un certain $k\in\N$, on soit sur la $k$-i�me marche.
+\item[\bf H�r�dit�.] On v�rifie qu'on peut alors passer � la marche suivante, la $(k+1)$-i�me.
+\item[\bf Conclusion.] Alors par r�currence, on peut acc�der � la marche num�ro $n$ pour tout $n$ dans~$\N^*$.
+\end{itemize}
+\subsection{Exemples}
+\begin{dingautolist}{172}
+\item
+Prouver la formule suivante donnant la somme des premiers entiers naturels:
+\[ 1+2+3+\cdots+n=\frac{n(n+1)}{2}\]
+\begin{proof}
+
+On note pour tout $n\in\N^*$: $S_n=1+2+3+\cdots+n$. La propri�t� � prouver par recurrence pour tout $n$ de $\N^*$ est donc:
+\[ \Para (n): \qquad S_n=\frac{n(n+1)}{2}\]
+\begin{itemize}
+\item[\bf Initialisation.] $S_1=1$ et pour $n=1$, $\frac{n(n+1)}{2}$ vaut $\frac{1\times 2}{2}=1$. Donc $\Para (1)$ est vraie.
+\item[\bf Hypoth�se de r�currence.] On suppose que pour un certain $k\in\N$, $\Para (k)$ est vraie \ie{}  $S_k=\frac{k(k+1)}{2}$.
+\item[\bf H�r�dit�.] Ici on veut prouver que $S_{k+1}= \frac{(k+1)(k+2)}{2}$. Or\footnote{L'argument qui suit est la clef pour passer du rang $k$ au rang suivant~$k+1$.}: $S_{k+1}=S_k+(k+1)$. Comme par hypoth�se de r�currence $S_k=\frac{k(k+1)}{2}$ on en d�duit que:
+\[S_{k+1}=\frac{k(k+1)}{2}+(k+1)=(k+1)(1+\frac{k}{2})=\frac{(k+1)(k+2)}{2}\]
+Ainsi $\Para (k+1)$ est vraie.
+\item[\bf Conclusion.] Par r�currence, on a prouv� que  pour tout $n$ dans~$\N^*$,  $S_n=\frac{n(n+1)}{2}$.
+
+\end{itemize}
+\end{proof}
+
+\item Prouver par r�currence que pour $n$ entier assez grand, $2^n \geq  n^2$.
+\begin{proof} On commence par chercher � la main ou avec une calculette un rang � partir duquel la propri�t� semble vraie. On pense � $n=4$. Soit $\Para (n)$ la propri�t�: $2^n \geq  n^2$. On veut prouver qu'elle est vraie pour tout $n$ dans $\N$ sup�rieur ou �gal �~$4$.
+\begin{itemize}
+\item[\bf Initialisation.] $2^4=16$ et $4^2=16$ donc $2^4 \geq  4^2$. Donc $\Para (4)$ est vraie.
+\item[\bf Hypoth�se de r�currence.] On suppose que pour un certain
+  $k\in\N$, avec  $k\geq 4$, $\Para (k)$ est vraie \ie{} $2^k \geq  k^2$.
+
+\item[\bf H�r�dit�.] Ici on veut prouver que $2^{k+1} \geq  (k+1)^2$.
+\[2^{k+1}=2\times 2^{k} \geq 2k^2  \]
+Il suffit donc de prouver que pour $k\geq 4$ on a $2k^2\geq
+(k+1)^2$. Les deux membres sont positifs, cette �galit� est
+�quivalente � $\sqrt{2}k\geq k+1$ soit $k\geq \frac{1}{\sqrt{2}-1}$,
+ou encore $k\geq \sqrt{2}+1$. Or $\sqrt{2}+1\leq 4$.
+Ainsi $\Para (k+1)$ est vraie.
+\item[\bf Conclusion.] Par r�currence, on a prouv� que  pour tout
+  entier $n$ sup�rieur � 4, $2^n \geq  n^2$.
+
+\end{itemize}
+\end{proof}
+\end{dingautolist}
+
+
+
+\section{\'Etude des suites du type $u_{n+1}=f(u_n)$}
+On se donne une fonction $f$ d�finie, continue sur un intervalle $I$ de
+$\R$. Soit $u_0\in I$.
+\subsection{Intervalle stable}
+\Def{On dit que $I$ est stable par $f$ si $f(I)\subset I$}
+\exemples
+  \begin{enumerate}
+  \item $f(x)=x(1-x)$ sur $I=\intf{0}{1}$. $I$ est stable par f, mais
+pas par $g=5f$. Il suffit d'�tudier $f$.
+\item $f(x)=\frac{1}{x-1}$ et $u_0=\frac32$ V�rifier que la relation
+  $u_{n+1}=f(u_n)$ ne d�finit pas une suite.
+  \end{enumerate}
+
+La condition $I$ stable par $f$ permet de garantir que la suite est
+d�finie et que tous les termes de la suite sont dans l'intervalle $I$.
+(r�currence imm�diate)
+
+\subsection{Sens de variation}
+\begin{prop}
+  \begin{enumerate}
+  \item $ \forall x \in I,\ f(x)-x\geq 0 \implies$ $(u_n)$ croissante
+  \item $\iff \forall x \in I,\ f(x)-x\leq 0 \implies$ $(u_n)$ d�croissante
+  \end{enumerate}
+\end{prop}
+
+\proof{Facile}
+\begin{prop}
+\begin{enumerate}
+  \item $f$ croissante $\implies$ $(u_n)$ monotone. Le sens de var est
+    donn� par le signe de $u_1-u_0$
+  \item $f$ d�croissante $\implies$ $(u_{2n})$ et $(u_{2n+1})$ sont
+    monotones de monotonies contraires
+\end{enumerate}
+\end{prop}
+\proof{ Supposons $u_1>u_0$.
+\begin{enumerate}
+  \item Par r�currence. $\Para (n)$: \og $u_{n+1}-u_n\geq 0$\fg{}
+  \item On pose $p_n=u_{2n}$ et $i_n=u_{2n+1}$. Alors:
+\[p_{n+1}=f\circ f(p_n) \quad \et{}\quad i_{n+1}=f\circ f(i_n)\]
+Or $f$ dec. implique $f\circ f$ croissante donc par le 1. $p$ et $i$ sont
+monotones.
+Supposons $p$ croissante, alors $u_2\geq u_0$ donc, en appliquant $f$
+qui est dec. on a $u_3\leq u_1$ donc $i_1 \leq i_0$ donc $i$ est dec.
+\end{enumerate}
+}
+
+\subsection{Convergence}
+\Def{On appelle point fixe d'une fonction $f$ un r�el tel que $f(x)=x$}
+\begin{theo}Si $f$ est continue sur $I$ et que $(u_n)$ converge, alors la
+  limite est n�cessairement un point fixe de $f$
+\end{theo}
+Attention: L'existence d'un point fixe ne garantit pas la convergence
+de $(u_n)$. Mais l'absence de point fixe suffit � justifier que $(u_n)$
+ne converge pas.
+En pratique: On justifie que $(u_n)$ CV (croissante major�e par
+exemple) puis on d�termine la limite en cherchant les points fixes de
+$f$. Si le point fixe est unique, c'est facile, sinon il faut
+raisonner avec le sens de variation de $(u_n)$.
+
+\exemple $u_{n+1}=\frac{u_n}{2-u_n}$ et $u_0 \in \intf{0}{1}$

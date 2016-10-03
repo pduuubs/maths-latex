@@ -1,0 +1,93 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -10 -10 146 114 
+%%Creator: MetaPost
+%%CreationDate: 2008.02.05:2247
+%%Pages: 1
+%%DocumentFonts: CMMI10 CMR10
+ /cmmi10 /CMMI10 def
+ /cmr10 /CMR10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0.3 setgray 0 0.5 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+141.73225 0 lineto stroke
+newpath 0 28.34645 moveto
+141.73225 28.34645 lineto stroke
+newpath 0 56.6929 moveto
+141.73225 56.6929 lineto stroke
+newpath 0 85.03935 moveto
+141.73225 85.03935 lineto stroke
+newpath 0 113.3858 moveto
+141.73225 113.3858 lineto stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 113.3858 lineto stroke
+newpath 28.34645 0 moveto
+28.34645 113.3858 lineto stroke
+newpath 56.6929 0 moveto
+56.6929 113.3858 lineto stroke
+newpath 85.03935 0 moveto
+85.03935 113.3858 lineto stroke
+newpath 113.3858 0 moveto
+113.3858 113.3858 lineto stroke
+newpath 141.73225 0 moveto
+141.73225 113.3858 lineto stroke
+ 0 setgray 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 0 0 moveto
+28.34645 0 lineto stroke
+newpath 24.65088 -1.53079 moveto
+28.34645 0 lineto
+24.65088 1.53079 lineto
+ closepath
+gsave fill grestore stroke
+ 0.5 0 dtransform exch truncate exch idtransform pop setlinewidth
+newpath 0 0 moveto
+0 28.34645 lineto stroke
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 1.53079 24.65088 moveto
+0 28.34645 lineto
+-1.53079 24.65088 lineto
+ closepath
+gsave fill grestore stroke
+newpath 0 0 moveto
+127.55904 110.55098 lineto stroke
+ [3 3 ] 0 setdash
+newpath 141.73225 0 moveto
+108.42598 93.969 lineto stroke
+newpath 47.24423 0 moveto
+36.14145 31.32253 lineto stroke
+137.8157 -9.8078 moveto
+(C) cmmi10 9.96265 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+newpath 141.73225 0 moveto 0 0 rlineto stroke
+42.98174 -9.8078 moveto
+(D) cmmi10 9.96265 fshow
+newpath 47.24423 0 moveto 0 0 rlineto stroke
+104.39767 96.969 moveto
+(B) cmmi10 9.96265 fshow
+newpath 108.42598 93.969 moveto 0 0 rlineto stroke
+32.40544 34.32253 moveto
+(A) cmmi10 9.96265 fshow
+newpath 36.14145 31.32253 moveto 0 0 rlineto stroke
+newpath 72.28453 62.64647 moveto 0 0 rlineto stroke
+-9.976 -8.90779 moveto
+(O) cmmi10 9.96265 fshow
+129.65903 101.64319 moveto
+(\001) cmr10 9.96265 fshow
+ 0 0.5 dtransform truncate idtransform setlinewidth pop
+newpath 18.47182 13.37218 moveto
+15.86192 16.38365 lineto stroke
+newpath 20.27898 14.93842 moveto
+17.66908 17.94989 lineto stroke
+newpath 53.81195 49.2736 moveto
+56.42184 46.26213 lineto stroke
+newpath 52.00468 47.70732 moveto
+54.61458 44.69585 lineto stroke
+newpath 90.75635 76.01865 moveto
+88.14645 79.03012 lineto stroke
+newpath 92.5635 77.58488 moveto
+89.95361 80.59636 lineto stroke
+showpage
+%%EOF

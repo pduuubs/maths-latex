@@ -1,0 +1,67 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\fcours{Barycentres (rappels)}%{\term}
+\chead{}
+\cfoot{}
+\rhead{}
+%%-----------------------
+
+%\section{Barycentre de trois points (et plus)}
+On peut d\'efinir le barycentre d'un nombre quelconque de points
+pond\'er\'es, pourvu que la somme des masses soit non nulle. Je traite ici
+le cas de trois points.
+ \begin{Def}
+Soit le syst\`eme de points pond\'er\'es $\left\{(A;a);(B;b);(C;c)\right\}$ avec:
+$a+b+c\neq 0$. Il~existe un unique point $G$ appel\'e barycentre de ce syst\`eme v\'erifiant:
+  \begin{equation} \label{fonda3}
+  \boxed{ a.\V{GA}+b.\V{GB}+c.\V{GC}=\V{0}}
+  \end{equation}
+ \end{Def}
+\begin{prop}[\textbf{Homog\'en\'eit\'e du barycentre}]
+ Soit $k$ un r\'eel non nul. Le barycentre reste inchang\'e si on multiplie toutes les masses par $k$. 
+\end{prop}
+\begin{prop}[\textbf{Position du barycentre de deux points}]
+Soit $ G=Bar\{(A;a);(B;b)\}$
+\begin{itemize}
+\item[$(i)$] $G\in (AB)$. 
+\item[$(ii)$] Si $a$ et $b$ sont de m\^eme signe: $G$ appartient \`a $[AB]$ et est plus pr\`es du point qui est affect\'e de la masse la plus grande en valeur absolue. 
+\item[$(iii)$] Si $a$ et $b$ sont de signes contraires: $G$ est en dehors du segment $[AB]$ du c\^ot\'e du point qui est affect\'e de la masse la plus grande en valeur absolue.
+\end{itemize}
+\end{prop}
+ \begin{prop}
+   Pour tout point $M$, si $a+b+c\neq0$ on note $G=Bar\left\{(A;a);(B;b);(C;c)\right\}$ et on~a:
+\begin{equation} \label{MG}
+  \boxed{ a.\V{MA}+b.\V{MB}+c.\V{MC}=(a+b+c)\V{MG}}
+  \end{equation}
+ \end{prop}
+On le d\'emontre \`a partir de \eqref{fonda3} en incrustant le point $M$ dans les quatre vecteurs \`a l'aide de la relation de Chasles. En particulier si on est dans un plan muni d'un rep\`ere $\oij$ on en d\'eduit les coordonn\'ees du $G$ en posant $M=O$ dans \eqref{MG}:
+\begin{prop}
+   Les coordonn\'ees de $G=Bar\left\{(A;a);(B;b);(C;c)\right\}$ dans $\oij$ sont:
+\[ \boxed{ x_G=\frac{ax_A+bx_B+cx_C}{a+b+c} \qquad y_G=\frac{ay_A+by_B+cy_C}{a+b+c}} \]
+ \end{prop}
+En rempla\c{c}ant $M$ par le point $A$ dans \eqref{MG} on a une expression
+utile pour placer~$G$:
+\[  \boxed{\V{AG}=\frac{b}{a+b+c}\V{AB} + \frac{c}{a+b+c}\V{AC} }\]
+
+La relation ci-dessus prouve que $G$ appartient au plan $(ABC)$ et que
+ses coordonn\'ees dans le rep\`ere $(A;\V{AB};\V{AC})$ sont: $G(\dfrac{b}{a+b+c};\dfrac{c}{a+b+c})$
+
+\begin{prop}[\textbf{Th\'eor\`eme d'associativit\'e}]
+Soit trois r\'eels $a,\ b$ et $c$ tels que: $a+b+c\neq0$ et $a+b\neq0$. On consid\`ere alors les deux barycentres:
+  \[ G=Bar\left\{(A;a);(B;b);(C;c)\right\} \ \text{et} \ H=Bar\left\{(A;a);(B;b)\right\}. \]
+Alors: \[ G=Bar\left\{(H;a+b);(C;c)\right\} \]
+\end{prop}
+
+Plus g\'en\'eralement, le barycentre $G$ de $n$ points pond\'er\'es
+($n\in\N,\, n\geq 3$) est inchang\'e si on remplace $p$ points
+pond\'er\'es ($p<n$) dont la somme des masses $m$ est non nulle par leur
+barycentre $H$ (dit partiel) affect\'e de ladite masse~$m$.
+
+
+
+%%-----------------------
+\end{document}

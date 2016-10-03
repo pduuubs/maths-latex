@@ -1,0 +1,13 @@
+\begin{exercice}
+
+ \begin{enumerate}
+\item Simplifier les expressions suivantes (sans calculette\ldots):\\
+\mbox{{\bf 1.1. } \qcmabc{$\cfrac{7!}{3!}$}{$\cfrac{6\times 4!}{5!}$}{$\cfrac{6!}{3!3!}$}}\\
+\mbox{{\bf 1.2. } \qcmabc{$\cfrac{(n+1)!}{(n-1)!}$}{$\cfrac{1}{n!}-\cfrac{1}{(n+1)!}$}{$\cfrac{(n-1)!}{n!}-\cfrac{n!}{(n+1)!}$}}
+%\item 
+\item Donner une formule avec des factorielles pour le produit des $n$
+  premiers nombres pairs non nuls. En déduire une pour le produit des $n$
+  premiers nombres impairs.
+
+\end{enumerate}
+\end{exercice}

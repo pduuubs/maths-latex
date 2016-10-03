@@ -1,0 +1,21 @@
+\begin{exercice}
+
+ \subsection{Aspect calculatoire}
+On va d'abord approximer $f$ sur l'intervalle $\intf{0}{1}$.
+\begin{list}{$\bullet$}{}
+\item Soit $n\in\N^*$. On pose $h=\frac{1}{n}$ pour le pas de la méthode. On fera ensuite tendre le pas vers zéro en faisant tendre $n$ vers l'infini.
+\item On définit une suite d'abscisses. On part de $x_0=0$ et $x_{k+1}=x_k+h$ pour tout entier naturel $k$. Cette suite est arithmétique de raison $h=\frac{1}{n}$ donc on a le terme général: 
+\[ \forall k \in \N \quad x_k=\frac{k}{n}\]
+\item On définit maintenant la suite des ordonnées des points que l'on place. On part de $y_0=1$ puisque $f(0)=1$. On applique alors l'approximation affine,  $f(x_{k+1})=f(x_k+h)$ d'où: $f(x_{k+1})=f(x_k+h)\approx f(x_k)+hf'(x_k)$.  Or $f$ vérifie aussi $f=f'$ sur $\R$ donc: $f(x_{k+1})\approx f(x_k)(1+h)$. On veut que $y_{k}$ soit proche de $f(x_{k})$ et donc que $y_{k+1}$ soit proche de $f(x_{k+1})$. On définit donc la suite $(y_k)$ par la relation de récurrence: \[ y_{k+1}=y_k(1+h)\]
+Cette suite est géométrique de raison $(1+h)$ et comme $y_0=0$ et $h=\frac{1}{n}$ on a donc: 
+\[ \forall k \in \N \quad y_k=(1+\frac{1}{n})^k\]
+\end{list}
+\end{exercice}
+
+\noindent
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_17/meth_euler.2}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_17/meth_euler.3}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_17/meth_euler.4}\\
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_17/meth_euler.5}
+\includegraphics{Chapitres/Exponentielle/Exos/exo-7_17/meth_euler.6}
+\end{exercice}

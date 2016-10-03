@@ -1,0 +1,93 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -32 -23 189 175 
+%%Creator: MetaPost
+%%CreationDate: 2007.07.10:0059
+%%Pages: 1
+%%DocumentFonts: CMMI10
+ /cmmi10 /CMMI10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0 0.8 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+113.3858 0 lineto
+159.82596 32.51779 lineto
+159.82596 145.9036 lineto
+113.3858 113.3858 lineto
+0 113.3858 lineto
+ closepath stroke
+ 0.8 0 dtransform exch truncate exch idtransform pop setlinewidth 1 setlinecap
+newpath 113.3858 0 moveto
+113.3858 113.3858 lineto stroke
+ 0 0.8 dtransform truncate idtransform setlinewidth pop
+ [3 3 ] 0 setdash
+newpath 0 0 moveto
+46.44016 32.51779 lineto
+46.44016 145.9036 lineto stroke
+newpath 159.82596 32.51779 moveto
+46.44016 32.51779 lineto stroke
+ [] 0 setdash
+newpath 0 113.3858 moveto
+46.44016 145.9036 lineto
+159.82596 145.9036 lineto stroke
+-9.57199 -8.90779 moveto
+(A) cmmi10 9.96265 fshow
+115.4858 -8.90779 moveto
+(B) cmmi10 9.96265 fshow
+162.82596 29.11389 moveto
+(C) cmmi10 9.96265 fshow
+48.54015 34.61778 moveto
+(D) cmmi10 9.96265 fshow
+-10.0286 115.4858 moveto
+(E) cmmi10 9.96265 fshow
+109.49069 116.3858 moveto
+(F) cmmi10 9.96265 fshow
+161.92595 148.00359 moveto
+(G) cmmi10 9.96265 fshow
+35.24927 148.00359 moveto
+(H) cmmi10 9.96265 fshow
+23.69916 137.16449 moveto
+(I) cmmi10 9.96265 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop
+newpath 30.96034 135.0645 moveto 0 0 rlineto stroke
+53.4516 -9.8078 moveto
+(J) cmmi10 9.96265 fshow
+newpath 56.6929 0 moveto 0 0 rlineto stroke
+139.75919 11.8709 moveto
+(K) cmmi10 9.96265 fshow
+newpath 144.34615 21.6787 moveto 0 0 rlineto stroke
+ 0 0.8 dtransform truncate idtransform setlinewidth pop
+ [0 2.5 ] 1.25 setdash
+newpath 144.34615 21.6787 moveto
+188.16837 32.51779 lineto
+159.82596 32.51779 lineto stroke
+newpath 0 0 moveto
+-30.96144 -21.67952 lineto
+56.6929 0 lineto stroke
+newpath -30.96144 -21.67952 moveto
+0 56.69394 lineto stroke
+newpath 30.96034 135.0645 moveto
+46.44016 174.24905 lineto
+46.44016 145.9036 lineto stroke
+newpath 46.44016 174.24905 moveto
+74.78519 145.9036 lineto stroke
+newpath 188.16837 32.51779 moveto
+159.82596 60.86153 lineto stroke
+ 1 0 0 setrgbcolor [] 0 setdash
+newpath 30.96034 135.0645 moveto
+0 56.69394 lineto
+56.6929 0 lineto stroke
+newpath 30.96034 135.0645 moveto
+74.78519 145.9036 lineto stroke
+newpath 144.34615 21.6787 moveto
+159.82596 60.86153 lineto stroke
+ [3 3 ] 0 setdash
+newpath 56.6929 0 moveto
+144.34615 21.6787 lineto stroke
+newpath 56.6929 0 moveto
+0 56.69394 lineto stroke
+newpath 74.78519 145.9036 moveto
+159.82596 60.86153 lineto stroke
+showpage
+%%EOF

@@ -1,0 +1,48 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -45 -43 53 50 
+%%Creator: MetaPost
+%%CreationDate: 2008.02.05:2247
+%%Pages: 1
+%%DocumentFonts: CMMI10 CMSY7 CMR10
+ /cmmi10 /CMMI10 def
+ /cmsy7 /CMSY7 def
+ /cmr10 /CMR10 def
+/fshow {exch findfont exch scalefont setfont show}bind def
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath 42.51968 0 moveto
+42.51968 11.27742 38.03908 22.0916 30.06534 30.06534 curveto
+22.0916 38.03908 11.27742 42.51968 0 42.51968 curveto
+-11.27742 42.51968 -22.0916 38.03908 -30.06534 30.06534 curveto
+-38.03908 22.0916 -42.51968 11.27742 -42.51968 0 curveto
+-42.51968 -11.27742 -38.03908 -22.0916 -30.06534 -30.06534 curveto
+-22.0916 -38.03908 -11.27742 -42.51968 0 -42.51968 curveto
+11.27742 -42.51968 22.0916 -38.03908 30.06534 -30.06534 curveto
+38.03908 -22.0916 42.51968 -11.27742 42.51968 0 curveto closepath stroke
+12.53554 42.28267 moveto
+(A) cmmi10 9.96265 fshow
+-43.01703 32.16533 moveto
+(B) cmmi10 9.96265 fshow
+-34.96043 35.78073 moveto
+(0) cmsy7 6.97385 fshow
+-44.57903 -33.86714 moveto
+(B) cmmi10 9.96265 fshow
+42.28265 12.5267 moveto
+(A) cmmi10 9.96265 fshow
+49.75465 16.1421 moveto
+(0) cmsy7 6.97385 fshow
+ 1 setlinecap
+newpath -34.42244 -24.95935 moveto
+16.27155 39.28267 lineto stroke
+newpath 39.28265 16.27156 moveto
+-30.06534 30.06534 lineto stroke
+-1.67729 13.54147 moveto
+(M) cmmi10 9.96265 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop
+newpath 3.69836 23.34927 moveto 0 0 rlineto stroke
+32.16533 -38.97313 moveto
+(\000) cmr10 9.96265 fshow
+showpage
+%%EOF

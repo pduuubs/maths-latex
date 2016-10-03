@@ -1,0 +1,288 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[]{paul}
+
+\usepackage{eso-pic} %pour filigrane
+\usepackage{minitoc}
+
+\usepackage[marginratio=1:1,textwidth=15cm,textheight=24.5cm,marginparwidth=12pt,headheight=3cm]{geometry}
+
+\usepackage[dvips,ps2pdf,colorlinks=false]{hyperref} %gestions des hyperliens dans un document .dvi
+
+\pagestyle{fancy}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\Alph{section}}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+
+\newcommand{\coordp}[2]{%
+	\left(\begin{array}{c}
+	#1 \\ #2
+	\end{array}\right)%
+}
+\newsavebox{\fmbox}
+\newenvironment{encadrer}{%
+\smallskip \par \noindent
+    \begin{lrbox}{\fmbox}\begin{minipage}{.98\linewidth}}
+    {%\vspace{1em}
+    \end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}
+	\vspace{0.2em}
+	%\vspace{1em minus .5em }
+	}
+	\renewcommand{\sectionmark}[1]%
+	   {\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+	\renewcommand{\sectionmark}[1]%
+	   {\markright{\MakeUppercase{\thesection.\ #1}}}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\newcommand{\Police}{%
+	   \fontfamily{%
+	pag%style des hauts de page en avant garde small caps
+	}\fontseries{m}\fontshape{sc}\fontsize{9}{11}\selectfont}
+	\fancyhf{}
+	\fancyhead[LE,RO]{\Police \thepage}
+	\fancyhead[LO]{\Police \rightmark}
+	\fancyhead[RE]{\Police \leftmark}
+\usepackage{epstopdf}
+
+	\title{%
+	{\bf Restitutions organisees des Connaissances en \term}}
+	\author{Paul PLANCHON}
+	\date{{\small {\Police Version du \today}}}
+	\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 				          DEBUT DU DOCUMENT                       %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\lfoot{\Pdpweblink}
+	\rfoot{{\small {\Police Version du \today}}}
+
+	\maketitle
+  \tableofcontents
+	\mainmatter
+
+	\chapter{Les suites, rappelles de premiere}
+  \section{Generalitees sur les suites}
+  \label{sec:Generalitees sur les suites}
+
+	\subsection{Monotonie d'une suite}
+	\label{sub:Monotonie d'une suite}
+
+
+  \begin{proof}
+      $U_{n+1} - U_n = U_n(\frac{U_{n+1}}{U_n} - 1)$, donc le signe de $UI_{n+1} - U_n$ est alors le signe de $\frac{U_{n+1}}{U_n} - 1$ :
+      \begin{enumerate}
+        \item si on a : $\frac{U_{n+1}}{U_n} - 1 \geq 0$, la suite est alors croissante
+        \item si on a : $\frac{U_{n+1}}{U_n} - 1 \leq 0$, la suite est alors decroissante
+      \end{enumerate}
+  \end{proof}
+
+  \subsection{Theoreme de la suite monotone}
+  \label{sub:Theoreme de la suite monotone}
+
+  \begin{proof}
+    On part de $\forall n \in \mathbb{N}$ et $U_n \in Df \subset \mathbb{R}^+, n \leq n+1$,
+    \begin{enumerate}
+      \item alors $f(n) \leq f(n+1)$ car $f$ est croissante sur $\mathbb{R}^+$. ($\mathbb{R}^+ \subset \mathbb{N}$), donc $U_n \leq U_{n+1}$ donc la suite est croissante.
+      \item alors $f(n) \geq f(n+1)$ car $f$ est decroissante sur $\mathbb{R}^+$. ($\mathbb{R}^+ \subset \mathbb{N}$), donc $U_n \geq U_{n+1}$ donc la suite est decroissante.
+    \end{enumerate}
+  \end{proof}
+
+  \subsection{Suites minoree et majoree}
+  \label{sub:Suites minoree et majoree}
+
+  \begin{proof}
+    \begin{enumerate}
+      \item Prendre $U_0 \leq U_1 \leq U_2 \leq U_3 \leq ... \leq U_n$, donc $\forall n \in \mathbb{N}, U_n \geq U_0$.
+      \item Prendre $U_0 \geq U_1 \geq U_2 \geq U_3 \geq ... \geq U_n$, donc $\forall n \in \mathbb{N}, U_n \leq U_0$.
+    \end{enumerate}
+  \end{proof}
+  \newpage
+  \section{Suites arithmetiques et geometriques}
+  \label{sec:Suites arithmetiques et geometriques}
+
+  \subsection{Somme des termes d'une suite}
+  \label{sub:Somme des termes d'une suite}
+
+  \begin{proof}
+    (par recurrence)\\
+    \begin{enumerate}
+      \item Methode 1 :
+      \begin{enumerate}
+        \item Initialisation : \\pour $n=0, U_n + nr = U_0 + 0r = U_0$ donc vrai pour $U_0$.
+        \item Heredite :
+          \begin{description}
+            \item On suppose qu'il $\forall k \in \mathbb{N}, U_k = U_0 +kr$ (HR).
+            \item $U_{n+1} = U_k + r$
+            \item $U_{n+1} = (U_0 + kr) + r$
+            \item $U_{n+1} = U_0 + (k+1)r$
+          \end{description}
+        \item donc vrai pour $n+1$.
+      \end{enumerate}
+      \item Methode 2 :
+      \begin{enumerate}
+        \item Initialisation : \\pour $\sum_{k=0}^{0} U_k = U_0$, et le terme de droite prend $\frac{(0+1)(U_0 + U_0)}{2} = \frac{2U_0}{2} = U_0$. Donc vrai pour n = 0.
+        \item Heredite :
+          \begin{description}
+            \item On suppose qu'il $\forall p \in \mathbb{N}, \sum_{p=0}^{0} U_p = \frac{(p+1)(U_0 + U_p)}{2}$ (HR).
+            \item $S_n = U_0 + U_1 + ... + U_p + U_{p+1}$
+            \item $S_n = \frac{(p+1)(U_0 + U_p)}{2} + U_{p+1}$
+            \item $S_n = \frac{(p+1)(U_0 + U_{p+1} - r)}{2} + U_{p+1}$
+            \item $S_n = \frac{(p+1)(U_0 + U_{p+1} - r)(2)(U_{p+1})}{2}$
+            \item $S_n = \frac{(p+1)U_0 + (p+3)(U_{p+1} -(p+1))}{2}$
+            \item $S_n = \frac{(p+2)U_0 - U_0 + (p+2)U_{p+1} -(p+1) + U_{p+1}}{2}$
+            \item $S_n = \frac{(p+2)U_0 + (p+2)U_{p+1} + U_{p+1} - U_0 -(p+1)}{2}$
+            \item $S_n = \frac{(p+2)(U_0 + U_p+1)}{2}$
+          \end{description}
+        \item donc vrai pour $n+1$.
+      \end{enumerate}
+    \end{enumerate}
+    \end{proof}
+
+    \newpage
+  \subsection{Definition de la suite geometrique}
+  \label{sub:Definition de la suite geometrique}
+
+  \begin{proof}
+    \textit{(par recurrence):}\\
+    \begin{enumerate}
+      \item Methode A:
+        \begin{enumerate}
+          \item Init : pour $n=0$, $U_0 * q^n = U_0 * q^0 = U_0 * 1 = U_0$, donc vrai pour $n=0$.
+          \item Heredite :
+            \begin{description}
+              \item On suppose que $\forall p \in \mathbb{N} / U_p = U_0 * q^p$
+              \item alors, $U_{p+1} = q * U_p = q * U_0 * q^p = U_0 * q^{p+1}$, vrai pour $p+1$.
+            \end{description}
+        \end{enumerate}
+      \item Methode B:
+        \begin{enumerate}
+          \item Initialisation : pour $k=0, \sum_{k=0}^{p} U_k = U_0 * \frac{1-q^{p+1}}{1-q} = U_0 * 1 = U_0$ donc vrai pour $k=0$
+          \item Heredite :
+            \begin{description}
+              \item On suppose $\forall p \in \mathbb{N}, \sum_{k=0}^{p} = U_0 * \frac{1-q^{p+1}}{1-q}$
+              \item or, $U_0 + U_1 + ... U_n + U_{n+1}$
+              \item $ = U_0 * \frac{1-q^{p+1}}{1-q} + U_{p+1}$
+              \item $ = U_0 * (\frac{1-q^{p+1}}{1-q}) + U_0 * q^{p+1}$
+              \item $ = U_0[\frac{1-q^{p+1}}{1-q} + q^{p+1}]$
+              \item $ = U_0[\frac{1-q^{p+1} + (1-q)(q^{p+1})}{1-q}]$
+              \item $ = U_0[\frac{1-q^{p+1} + q^{p+1} + q^{p+2}}{1-q}]$
+              \item $ = U_0[\frac{1-q^{p+2}}{1-q}]$
+              \item $ = U_0[\frac{1-q^{(p+1)+1}}{1-q}]$
+              \item donc vrai pour $p+1$.
+            \end{description}
+        \end{enumerate}
+      \end{enumerate}
+  \end{proof}
+
+  \subsection{Formule importantes des suites}
+  \label{sub:Formule importantes des suites}
+
+  \begin{proof}
+    Prenons $(U_n)$, une suite geo. avec $U_0 = 1$ et de raison $q$ alors
+    \begin{description}
+      \item $\forall k \in \mathbb{N}, U_k = U_0 * q^k = q^k$
+      \item $U_0 + U_1 + U_2 + ... U_n = 1 + q + q^2 + ... + q^{n-1} + q^n$
+      \item $ = U_0 * (\frac{1-q^{n+1}}{1-q})$
+      \item $1*(\frac{1-q^{n+1}}{1-q}) = \frac{1-q^{n+1}}{1-q}$
+    \end{description}
+  \end{proof}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %                  FIN DU CHAPITRE 1                        %
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \chapter{Convergence et divergence d'une suite}
+  \label{chap:Convergence et divergence d'une suite}
+
+  \section{Convergence d'une suite}
+  \label{sec:Convergence d'une suite}
+
+  \subsection{Suite convergente vers $l$}
+  \label{sub:Suite convergente vers l}
+
+  \begin{proof}
+    Suppossons qu'il existe un $n_0 \in \mathbb{N} / u_{n_0} > l$\\
+    Comme la suite est croissante, on est assure que $\forall n \geq n_0$, on aura, $u_n \geq u_{n_0} \geq l$ puis la suite est convergente vers $l$ donc :\\
+    $(\forall \varepsilon > 0)(\exists n_1 \in \mathbb{N}) / (\forall n \geq n_1, n \in \mathbb{N})$,
+    \begin{enumerate}
+      \item $|u_n -l| < \varepsilon $
+      \item $- \varepsilon < u_n - l < \varepsilon $
+      \item $-\varepsilon + l < u_n < \varepsilon + l$\\
+    \end{enumerate}
+    Notons $n_2$ le maximum de ces deux nombres, c'est a dire : $n_2 > n_0$ et $n_2 > 1$\\
+    alors pour $n \geq n_2$ on aura en simultane,
+    \begin{enumerate}
+      \item $u_n \geq u_{n_0} \geq l$
+      \item $l - \varepsilon < u_n < l + \varepsilon$\\
+    \end{enumerate}
+
+    Prenons alors $\varepsilon = \frac{u_{n_0} - l}{3}$, remarquons que $u_{n_0} > l$ donc $u_{n_0} - l > 0$, donc $\frac{u_{n_0} - l}{3} > 0$.\\
+    Alors, on aura $\forall n \geq n_2$ :
+    \begin{enumerate}
+      \item $l \leq u_{n_0} \leq u_n \leq l + \frac{u_{n_0} - l}{3}$, donc par transitivite,
+      \item $u_{n_0} < l \frac{u_{n_0} - l}{3} \Leftrightarrow u_{n_0} - l < \frac{u_{n_0} - l}{3}$
+      \item $3(u_{n_0} - l) < u_{n_0} - l \Leftrightarrow 2(u_{n_0} - l) < 0$ or $2 > 0$ donc,
+      \item $u_{n_0} - l < 0 \Leftrightarrow u_{n_0} < l$ ceci est absurde.
+    \end{enumerate}
+
+    La supposition faite est donc fausse.
+  \end{proof}
+
+  \subsection{Suite constante et convergence}
+  \label{subs:Suite constante et convergence}
+
+  \begin{proof}
+    $\exists \varepsilon / \forall n \in \mathbb{N}, u_n = k$.\\
+    On veut montrer que cette suite est convergente vers $k$. On prend $\varepsilon > 0$ au hasard et on cherche $n_0$ / $n \in \mathbb{N}$ avec $n \geq n_0$, alors, $|u_n - k| < \varepsilon$.\\
+    ici, $|u_n - k| < \varepsilon \Leftrightarrow |c - c| < \varepsilon \Leftrightarrow 0 < \varepsilon$, vrai. \\
+    Donc, n'importe quel entier jouera le role de $n_0$
+  \end{proof}
+
+  \newpage
+
+  \subsection{$u_n < v_n$ donc $l < l'$}
+  \label{sub:$u_n < v_n$ donc $l < l'$}
+
+  \begin{proof}
+    On suppose que $l > l'$.\\
+    Alors, prenons $\varepsilon = \frac{l - l'}{3}$, (comme $l > l'$, $l-l'<0$ donc $\frac{l - l'}{3} > 0$)\\
+    Pour cet $\varepsilon$, $\exists n_1 \in \mathbb{N}$ / $\forall n \in \mathbb{N}, n \geq n_1$, $|u_n - l| < \frac{l - l'}{3}$.
+    \begin{description}
+      \item $\Leftrightarrow -\frac{l - l'}{3} < u_n - l < \frac{l - l'}{3}$
+      \item $\Leftrightarrow l-\frac{l - l'}{3} < u_n < \frac{l - l'}{3} + l$
+      \item $\Leftrightarrow -\frac{2l - l'}{3} < u_n < \frac{4l - l'}{3}$
+    \end{description}
+
+    pour cet $\varepsilon$,  $\exists n_2 \in \mathbb{N}$ / $\forall n \in \mathbb{N}, n \geq n_2$, $|v_n - l| < \frac{l - l'}{3}$.
+    \begin{description}
+      \item $\Leftrightarrow -\frac{l - l'}{3} < v_n - l' < \frac{l - l'}{3}$
+      \item $\Leftrightarrow l'-\frac{l - l'}{3} < v_n < \frac{l - l'}{3}+l'$
+      \item $\Leftrightarrow \frac{l - 4l'}{3} < v_n < \frac{l + 2l'}{3}$
+    \end{description}
+
+    Notons, $n_3 =$ Max($n_0; n_1; n_2$),\\
+    donc, $u_3 \geq n_0$, $n_3 \geq n_1$ et $n_3 \geq n_2$. On aura donc en simulane, $n \geq n_3$
+    \begin{description}
+      \item $\Leftrightarrow u_n \leq v_n$
+      \item $\Leftrightarrow -\frac{2l - l'}{3} < u_n < \frac{4l - l'}{3}$
+      \item $\Leftrightarrow \frac{l - 4l'}{3} < v_n < \frac{l + 2l'}{3}$
+    \end{description}
+
+    donc, $\forall n \geq n_3$, on aura, (entre autre),
+    \begin{description}
+       \item $\Leftrightarrow -\frac{2l - l'}{3} < u_n \leq v_n< \frac{l + 2l'}{3}$
+       \item $\Leftrightarrow -\frac{2l - l'}{3} < \frac{l + 2l'}{3}$
+       \item $\Leftrightarrow 2l - l' < l + 2l'$
+       \item donc, $l < l'$ absurde.
+    \end{description}
+    La supposition faite est donc fausse. On a donc bien $l \leq l'$
+  \end{proof}
+
+
+
+
+
+
+	\end{document}

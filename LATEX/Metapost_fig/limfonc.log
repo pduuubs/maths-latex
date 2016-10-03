@@ -1,0 +1,14 @@
+This is MetaPost, Version 0.641 (Web2C 7.5.4) (mem=mpost 2007.1.22)  18 SEP 2007 10:58
+**limfonc.mp
+(limfonc.mp (Kourbes.mp) (geo.mp)
+>> limfonc.mp
+>> limfonc.mpx
+! Unable to make mpx file.
+l.42 dotlabel.lrt(btex
+                       $A$ etex, rpoint(2,3.5));
+The two files given above are one of your source files
+and an auxiliary file I need to read to find out what your
+btex..etex blocks mean. If you don't know why I had trouble,
+try running it manually through MPto -tex, TeX, and DVItoMP.
+
+

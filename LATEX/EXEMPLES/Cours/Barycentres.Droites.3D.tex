@@ -1,0 +1,339 @@
+\chapter{Barycentres et droites de l'espace}
+\section{Barycentre: rappels}
+Rappel des différentes utilisations du barycentre
+en sciences physiques: 
+\begin{itemize}
+\item Centre d'inertie. Cette notion permet de modéliser des systèmes
+  solides complexes par des masses ponctuelles, les forces subies par le
+  système s'appliquant au centre de masse, ou centre d'inertie. 
+\item Point d'équilibre d'un système.
+%\item Moment d'une force.
+\item Utilisation en chimie: molécules polaires (moment
+  dipolaire). Importance pour la question de solubilité d'une molécule
+  dans un solvant.
+\end{itemize}
+Feuille de rappels (mathématiques) lue et commentée.\\ 
+Séances d'exercices, annales à partir des connaissances de première. 
+\centrage{Rappels}
+On peut d\'efinir le barycentre d'un nombre quelconque de points
+pond\'er\'es, pourvu que la somme des masses soit non nulle. Je traite ici
+le cas de trois points.
+ \begin{Def}
+Soit le syst\`eme de points pond\'er\'es $\left\{(A;a);(B;b);(C;c)\right\}$ avec:
+$a+b+c\neq 0$. Il~existe un unique point $G$ appel\'e barycentre de ce syst\`eme v\'erifiant:
+  \begin{equation} \label{fonda3}
+  \boxed{ a.\V{GA}+b.\V{GB}+c.\V{GC}=\V{0}}
+  \end{equation}
+ \end{Def}
+\begin{prop}[\textbf{Homog\'en\'eit\'e du barycentre}]
+ Soit $k$ un r\'eel non nul. Le barycentre reste inchang\'e si on multiplie toutes les masses par $k$. 
+\end{prop}
+\begin{prop}[\textbf{Position du barycentre de deux points}]
+Soit $ G=Bar\{(A;a);(B;b)\}$
+\begin{itemize}
+\item[$(i)$] $G\in (AB)$. 
+\item[$(ii)$] Si $a$ et $b$ sont de m\^eme signe: $G$ appartient \`a $[AB]$ et est plus pr\`es du point qui est affect\'e de la masse la plus grande en valeur absolue. 
+\item[$(iii)$] Si $a$ et $b$ sont de signes contraires: $G$ est en dehors du segment $[AB]$ du c\^ot\'e du point qui est affect\'e de la masse la plus grande en valeur absolue.
+\end{itemize}
+\end{prop}
+ \begin{prop}
+   Pour tout point $M$, si $a+b+c\neq0$ on note $G=Bar\left\{(A;a);(B;b);(C;c)\right\}$ et on~a:
+\begin{equation} \label{MG}
+  \boxed{ a.\V{MA}+b.\V{MB}+c.\V{MC}=(a+b+c)\V{MG}}
+  \end{equation}
+ \end{prop}
+On le d\'emontre \`a partir de \eqref{fonda3} en incrustant le point $M$ dans les quatre vecteurs \`a l'aide de la relation de Chasles. En particulier si on est dans un plan muni d'un rep\`ere $\oij$ on en d\'eduit les coordonn\'ees du $G$ en posant $M=O$ dans \eqref{MG}:
+\begin{prop}
+   Les coordonn\'ees de $G=Bar\left\{(A;a);(B;b);(C;c)\right\}$ dans $\oij$ sont:
+\[ \boxed{ x_G=\frac{ax_A+bx_B+cx_C}{a+b+c} \qquad y_G=\frac{ay_A+by_B+cy_C}{a+b+c}} \]
+ \end{prop}
+En rempla\c{c}ant $M$ par le point $A$ dans \eqref{MG} on a une expression
+utile pour placer~$G$:
+\[  \boxed{\V{AG}=\frac{b}{a+b+c}\V{AB} + \frac{c}{a+b+c}\V{AC} }\]
+
+La relation ci-dessus prouve que $G$ appartient au plan $(ABC)$ et que
+ses coordonn\'ees dans le rep\`ere $(A;\V{AB};\V{AC})$ sont: $G(\dfrac{b}{a+b+c};\dfrac{c}{a+b+c})$
+
+\begin{prop}[\textbf{Th\'eor\`eme d'associativit\'e}]
+Soit trois r\'eels $a,\ b$ et $c$ tels que: $a+b+c\neq0$ et $a+b\neq0$. On consid\`ere alors les deux barycentres:
+  \[ G=Bar\left\{(A;a);(B;b);(C;c)\right\} \ \text{et} \ H=Bar\left\{(A;a);(B;b)\right\}. \]
+Alors: \[ G=Bar\left\{(H;a+b);(C;c)\right\} \]
+\end{prop}
+
+Plus g\'en\'eralement, le barycentre $G$ de $n$ points pond\'er\'es
+($n\in\N,\, n\geq 3$) est inchang\'e si on remplace $p$ points
+pond\'er\'es ($p<n$) dont la somme des masses $m$ est non nulle par leur
+barycentre $H$ (dit partiel) affect\'e de ladite masse~$m$.
+
+\subsection{Droites, segments de l'espace}
+Dans cette partie, $\mathscr{E}$ désigne l'ensemble des points de
+l'espace à trois dimensions. $A$ et $B$ sont deux points distincts de $\mathscr{E}$.
+\subsubsection{Relation vectorielle}% $\overrightarrow{AM}=k\overrightarrow{AB}$}
+On considère le point $M_k$ de $\mathscr{E}$ vérifiant la relation
+suivante où $k$ désigne un réel:
+\begin{equation}
+  \label{eq:amkab}
+  \overrightarrow{AM_k}=k\overrightarrow{AB}
+\end{equation}
+Alors on a les résultats suivants qui proviennent du repérage sur une
+droite, car $k$ représente l'abscisse du point $M_k$ dans le repère
+$(A;\overrightarrow{AB})$ de la droite~$(AB)$.
+\begin{dingautolist}{172}
+\item Lorsque $k$ décrit $\mathbb{R}$, $M_k$ décrit~$(AB)$.
+\item Lorsque $k$ décrit $\mathbb{R}^+$, $M_k$ décrit~$[AB)$.
+\item Lorsque $k$ décrit $\left[0\,;1\right]$, $M_k$ décrit~$[AB]$.
+\item Lorsque $k$ décrit $\mathbb{R}^*$, $M_k$ décrit~$(AB)$ privée de~$A$.
+\item Lorsque $k$ décrit $\mathbb{R}\setminus\{a\}$, $M_k$
+  décrit~$(AB)$ privée de~$M_a$. (où $a\in\mathbb{R}$)
+\end{dingautolist}
+
+\subsubsection{Caractérisation barycentrique}
+\paragraph{Droites}
+\begin{prop}
+  La droite $(AB)$ est l'ensemble des barycentres de $A$ et
+  $B$. \emph{i.e.} \[M\in(AB)\iff\exists (a;b)\in \mathbb{R}^2;\ 
+  M=\Bary\{ (A;a);(B;b)\} \quad \text{avec}\quad a+b\neq 0 \]
+\end{prop}
+\begin{proof}
+  On prouve les deux sens séparément, en utilisant la caractérisation:\\
+  $M\in(AB)\iff\exists k\in \mathbb{R};\ \overrightarrow{AM}=k\overrightarrow{AB}$
+  
+\end{proof}
+\paragraph{Segment}
+\begin{prop}
+  Le segment $[AB]$ est l'ensemble des barycentres de $A$ et
+  $B$ avec des masses de même signe. \emph{i.e.} \[M\in[AB]\iff\exists (a;b)\in \mathbb{R}^2;\ 
+  M=\Bary\{ (A;a);(B;b)\}\quad \text{avec}\quad a+b\neq 0 \quad\text{et}\quad ab\geq 0\]
+\end{prop}
+\begin{proof}
+  cf Première, et feuille de rappels pour la position du
+  barycentres (plus près de quel point?). Rappels à l'oral sur le cas où les masses sont de  signes contraires.   
+\end{proof}
+
+\subsection{Plans et triangles}
+\subsubsection{Caractérisation barycentrique}
+\paragraph{Plan}
+\begin{prop}
+  Le plan $(ABC)$ est l'ensemble des barycentres de $A$, $B$ et
+  $C$. \emph{i.e.} \[M\in(ABC)\iff\exists (a;b;c)\in \mathbb{R}^3;\ 
+  M=\Bary\{ (A;a);(B;b);(C;c)\}\ \text{avec}\ a+b+c\neq 0 \]
+\end{prop}
+\begin{proof}
+  On prouve les deux sens séparément, en utilisant la caractérisation:\\
+  $M\in(ABC)\iff\exists (x;y)\in \mathbb{R}^2;\ \overrightarrow{AM}=x\overrightarrow{AB}+y\overrightarrow{AC}$
+  \end{proof}
+\paragraph{Intérieur d'un triangle}
+\begin{prop}
+  L'intérieur du triangle $ABC$ est l'ensemble des barycentres de $A$, $B$ et
+  $C$ avec des masses strictement positives. 
+\end{prop}
+\begin{proof}
+  On prouve les deux sens séparément, géométriquement, par le théorème
+  d'associativité. 
+  \begin{dingautolist}{172}
+  \item Soit $a$, $b$, $c$ trois réels strictement positifs. On considère
+    $M=\Bary\{ (A;a);(B;b);(C;c)\}$. Comme $b+c>0$ on peut considérer
+    $H=\Bary\{(B;b);(C;c)\}$ qui appartient à $[BC]$, alors par associativité du barycentre:
+\[ M=\Bary\{ (A;a);(H;b+c)\} \]
+Comme $a$ et $b+c$ sont du même signe, non nuls,
+$M\in[AH]$ différent de $A$ et $H$. Figure. \og Donc \fg{} $M$ est à l'intérieur du triangle $ABC$.
+\item Réciproque, on refait la construction dans l'autre sens. On
+  appelle $H$ l'intersection de $[AM]$ et $[BC]$. Comme $H\in[BC]$
+  (différent de $B$ et $C$) alors il existe $b$
+  et $c$ strictement positifs tels que: $H=\Bary\{(B;b);(C;c)\}$. De
+  même il existe $a'$ et $k$ strictement positifs tels que:
+  $M=\Bary\{(A;a');(H;k)\}$. Par homogénéité en multipliant les masses
+  par $\frac{b+c}{k}$ (strictement positif), on obtient, en notant
+  $a=a' \times \dfrac{b+c}{k}$:
+\[ M=\Bary\{(A;a);(H;b+c)\} \quad\text{donc}\quad M=\Bary\{
+(A;a);(B;b);(C;c)\}\]
+
+  \end{dingautolist}
+  
+  \end{proof}
+  \begin{rem}
+    La preuve peut être refaite avec des masses strictement
+    négatives. Par conséquent, on retiendra qu'un point appartient à
+    l'intérieur du triangle $ABC$ ssi il est barycentre de $A$, $B$ et
+    $C$ affectés de masses non nulles, de même signe.
+  \end{rem}
+  \begin{rem}
+    Si une des masse $a$, $b$ ou $c$ est nulle, le point appartient à un côté du
+    triangle, et si deux masses sont nulles, le point est un sommet du triangle.
+  \end{rem}
+\medskip Exercice d'application: cf Poly \texttt{Barycentres fp3}
+\section{Représentations paramétriques d'une droite de l'espace}
+\subsection{T.P. sur GeoGebra (cas des droites du plan) }
+Compte rendu sur feuille par binôme, puis oral en classe. Ramasser quelques
+comptes rendus.\\
+Questions complémentaires pour faire le point sur leurs connaissances
+et leur compréhension de la problématique soulevée par le TP (à l'oral): 
+\begin{dingautolist}{172}
+\item Une représentation paramétrique d'une droite est elle unique?
+  (Bah non! observer (1) et (2) qui définissent toutes deux~$\Delta$)
+\item Mais alors, quel lien y a-t-il entre ces deux représentations
+  paramétriques?
+\item Quel nom donne-t-on aux vecteurs $\vec{u}\,$ et $\vec{v}\,$ dont
+  on a trouvé les coordonnées au \textbf{6.c.} et \textbf{6.d.}?
+\item Que peut-on dire de ces deux vecteurs (directeurs de $\Delta$) ?
+
+\item Cette condition de colinéarité est elle suffisante pour établir
+  que les deux systèmes représentent la même droite?
+\item Comment caractériser une droite? (Deux points, oui\dots{} mais
+  encore\dots{} barycentres\dots{} vecteur directeur et un point.)
+\end{dingautolist}
+
+\subsection{Caractérisation analytique d'une droite de l'espace}
+\subsubsection*{Introduction}
+\textsl{En T.P. on a étudié le problème physique de la trajectoire rectiligne de deux
+points mobiles dans le plan. On a vu qu'il fallait distinguer point
+d'intersection des trajectoires et \og collision \fg{} des deux
+points mobiles. Dans le plan, pour savoir si des trajectoires
+rectilignes sont sécantes, il suffit de savoir si les droites sont parallèles, ce qui
+est simple.\\
+Que donne le même problème dans l'espace? L'objectif est de savoir
+déterminer par le calcul si deux droites sont sécantes, et le cas
+échéant savoir calculer les coordonnées de ce point
+d'intersection. Pour celà il nous faut une caractérisation analytique
+d'une droite de l'espace. Malheureusement, il n'y a pas d'équation de
+droite dans l'espace\dots{} On verra ensuite qu'une équation de la
+forme $ax+by+cz+d=0$ est en fait celle d'un plan. \\}
+
+\hrule
+\medskip
+
+
+Une droite~$\mathscr{D}$ de~$\mathscr{E}$ est définie:
+\begin{itemize}
+\item Soit par deux points distincts $A$ et $B$ de~$\mathscr{D}$. (Alors  $\mathscr{D}=(AB)$)
+\item Soit par un point $A$ et un vecteur directeur
+  $\vec{u}\,$. (Alors  $(A;\vec{u}\,)$ est un repère de~$\mathscr{D}$)
+\end{itemize}
+\textsl{(Rappels oraux sur les vecteurs directeurs.)}
+\begin{Def}
+ Soit $\vec{u}\,$ un vecteur non nul et $A$ un point
+de~$\mathscr{E}$. La droite passant par~$A$ et de vecteur
+directeur~$\vec{u}\,$ est l'ensemble des points $M$ de~$\mathscr{E}$ tels que
+$\overrightarrow{AM}=t\vec{u}\,$ où $t$ décrit~$\mathbb{R}$.
+\end{Def}
+
+On veut traduire celà avec des coordonnées. Dans la suite, l'espace est rapporté à un repère~$(O~;\vec{\imath},\vec{\jmath},\vec{k})$. 
+\begin{prop}[Représentation paramétrique de droite] Soit $\mathscr{D}$
+  une droite de l'espace. On note $A(x_A;y_A;z_A)$ un point
+  de~$\mathscr{D}$ et $\vec{u}\,(a;b;c)$%
+% \left(
+%     \begin{array}[l]{c}
+%       a\\
+%       b \\
+%       c
+%     \end{array}
+%   \right)$%
+ un vecteur directeur de~$\mathscr{D}$. ($x_A,\,y_A,\,z_A,\,a,\,b,\,c$
+sont des réels avec $a,\,b,\,c$ non tous nuls).\\
+ La droite~$\mathscr{D}$ est l'ensemble des points $M(x;y;z)$
+ de~$\mathscr{E}$ pour lesquels il existe un réel~$t$ tel
+ que~\mbox{$\overrightarrow{AM}=t\vec{u}\,$}. $\mathscr{D}$ est donc caractérisée
+ par le système:
+ \begin{equation}
+   \label{eq:represparadroite}
+\left\{
+\begin{array}{ll}
+x=x_A+ta\\
+y=y_A+tb\\
+z=z_A+tc
+\end{array}
+\right.\quad ,\text{où:}\ t\in\R
+ \end{equation}
+\end{prop}
+\begin{proof} Straight forward.
+Deux vecteurs sont égaux ssi ils ont les mêmes coordonnées. Or:
+\[ \overrightarrow{AM}\left(
+     \begin{array}[l]{c}
+       x-x_A\\
+       y-y_A \\
+       z-z_A
+     \end{array}
+   \right) \quad\text{et}\quad
+ \vec{u}\, \left(
+     \begin{array}[l]{c}
+       a\\
+       b \\
+       c
+    \end{array}
+   \right)\quad\text{donc}\quad %
+t\vec{u}\, \left(
+     \begin{array}[l]{c}
+       ta\\
+       tb \\
+       tc
+    \end{array}
+   \right)
+\]
+$M\in\mathscr{D}\iff \exists t\in\mathbb{R};\ \overrightarrow{AM}=t\vec{u}\,$. En identifiant les trois coordonnées, on obtient le résultat.
+\end{proof}
+Un système comme~\eqref{eq:represparadroite} s'appelle une
+représentation paramétrique de~$\mathscr{D}$. Le paramètre est~$t$. On
+peut mettre n'importe quelle lettre à la place de~$t$. Il peut être
+utile de se représenter~$t$ comme le temps (variant dans $\mathbb{R}$)
+et le point~$M$ comme un point mobile dans l'espace en fonction du
+temps dont les coordonnées vérifient le
+système~\eqref{eq:represparadroite}.
+ \begin{rem}
+  Une représentation paramétrique comme~\eqref{eq:represparadroite}
+  caractérise la droite passant par $A(x_A;y_A;z_A)$ et de vecteur
+  directeur~$\vec{u}\,(a;b;c)$. On peut déterminer
+  $x_A,\,y_A,\,z_A,\,a,\,b,\,c$ à partir du système que constitue~\eqref{eq:represparadroite}.
+  \end{rem}
+\begin{exercice}
+  \begin{enumerate}
+  \item Donner une représentation paramétrique de la droite~$(IJ)$ où
+  $I(-1;\,0;\,2 )$ et $J(3;-2;\,1)$.\\
+Une fois fait: Tout le monde a-t-il la même représentation
+paramétrique? En donner une autre.
+\item Le point $A(3;0,1)$ appartient-il à $(IJ)$? Et $B(3;-2;1)$? Et $C(4;4;4)$?
+\item Donner une représentation paramétrique de la droite parallèle à
+  $(IJ)$ passant par~$A$.
+\item Déterminer l'intersection de $(IJ)$ avec le plan~$(xOy)$.
+
+  \end{enumerate}
+ 
+
+\rotatebox{180}{{\bf Solution:} On choisit un vecteur directeur, par
+  exemple $\overrightarrow{IJ}(4;-2;-1)$ et un point, $I$ ou~$J$\dots}\\
+\end{exercice}
+ 
+Une fois fait: Tout le monde a-t-il la même représentation
+paramétrique? En donner une autre.
+\begin{rem}
+Une droite n'a pas une unique représentation paramétrique. On a le
+choix pour le vecteur directeur et pour le point. Alors comment savoir
+si deux représentations différentes caractérisent la même droite?
+\end{rem}
+
+\centrage{Exercices}
+cf. Représentations paramétriques de droites. fp.1 (fichier \texttt{Exos\_Repres\_par\_droites\_fp1.tex})
+\centrage{Compétences à avoir.}
+\begin{dingautolist}{172}
+\item Savoir vérifier si un point appartient à une droite dont on
+  donne une représentation paramétrique.
+\item Savoir déterminer les coordonnées de deux (ou plus) points sur une droite dont on donne une représentation paramétrique.
+\item Savoir déterminer une représentation paramétrique d'une droite
+  $\mathscr{D}$ connaissant:
+  \begin{itemize}
+  \item Un point et un vecteur directeur de $\mathscr{D}$.
+  \item Deux points distincts de $\mathscr{D}$.
+  \item Un point et sachant que $\mathscr{D}$ est  parallèle à une droite $\mathscr{D}'$ dont on a une représentation paramétrique.
+  %\item 
+  \end{itemize}
+
+\item Savoir décider si deux droites dont on donne des représentations
+  paramétriques sont:
+\begin{itemize}
+  \item Parallèles.
+  \item Confondues.
+  \item Sécantes, et dans ce cas savoir déterminer les coordonnées du point d'intersection.
+  \end{itemize}
+\item Savoir déterminer les coordonnées du point d'intersection (si il
+  existe) d'une
+  droite avec un plan (parallèle à un plan de coordonnées d'abord).
+\end{dingautolist}

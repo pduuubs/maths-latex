@@ -1,0 +1,147 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node} 
+\begin{document}
+\fcours{Dénombrement}%{\term}
+
+%%-----------------------
+\section{Dénombrer des listes}
+Dans ce paragraphe, $E$ désigne un ensemble à $n$ éléments ($n\in
+\N^*$). On imagine l'existence d'une urne $U$ contenant $n$ jetons sur
+lequels sont inscrits les $n$ éléments de $E$. 
+\begin{Def} On appelle \emph{liste} de $p$ éléments de $E$ une énumération
+  {\bf ordonnée} de ces $p$ éléments. On la note comme des coordonnées
+  de points.
+\end{Def}
+\exemple Si $a$, $b$, $c$ sont trois éléments de $E$, $(a\,;b\,;c)$ et
+$(a\,;c\,;b)$ sont deux listes distinctes avec les trois éléments $a$,
+$b$ et $c$.
+Dans ce paragraphe on s'intéresse donc à dénombrer dans des situations
+où l'{\bf ordre} des éléments compte.
+\subsection{Permutations d'un ensemble}
+% On veut répondre aux questions du type:
+% \begin{list}{$\bullet$}{}
+% \item Combien peut-on écrire de mots distincts avec les lettres A, B, C?
+% \item Combien y a-t-il de quintés avec les chevaux 1, 2, 3, 4, 5?
+% \item Combien y a-t-il de listes des $n$ éléments de $E$?
+% \end{list}
+Le modèle est celui du tirage aléatoire dans l'urne $U$ des $n$
+jetons, sans remise, et en notant l'ordre de sortie.
+\begin{Def} On
+  appelle \emph{permutation} de $E$ une liste de ses $n$ éléments.
+\end{Def}
+\exemple Si $E=\left\{A,\,B,\, C\right\}$ il y a six permutations de
+$E$ et donc six mots distincts avec les trois lettres $A$, $B$ et $C$. On les
+trouve avec un arbre en distinguant les choix pour le 1\ier{}, le 2\ieme{} et
+le 3\ieme{} élément: ABC, ACB, BAC, BCA, CAB, CBA.
+\begin{Def} Soit $n\in\N^*$. On note $n!$ l'entier appellé
+  \emph{factorielle $n$} défini par: $n!=1\times 2\times\cdots\times
+  n$.
+Par convention on pose $0!=1$
+\end{Def}
+\begin{prop}
+Il y a $n!$ \emph{permutations} des $n$ éléments de $E$.
+\end{prop}
+\begin{proof} On le prouve avec un arbre ou en imaginant remplir des
+  cases: Il il a $n$ choix pour le 1\ier{} élément, et pour chacun de
+  ces choix il y a $n-1$ choix pour le 2\ieme{} élément \ldots \emph{etc}
+  puis plus qu'un choix pour le dernier élément. On trouve donc:
+  $n\times(n-1)\times\cdots\times 1=n!$
+\end{proof}
+\exemple Cinq chevaux font la course. Combien y a-t-il d'arrivées
+possibles (on suppose qu'il ne peut pas y avoir
+d'\emph{ex-\ae{}quo}). Une arrivée est une permutation de l'ensemble
+des cinq chevaux. Il y a donc $5!=120$ quintés possibles avec 5 chevaux donnés.
+
+ 
+\subsection{Liste sans répétition de $p$ éléments parmi $n$}
+Le modèle est celui du tirage aléatoire dans l'urne $U$ de $p$
+jetons, {\bf sans remise}, et en notant l'ordre de sortie. Où $p$ est entier,
+$1\leq p\leq n$.
+\begin{Def} Une \emph{liste sans répétition} de $p$ éléments de $E$ est une
+  liste où les $p$ éléments sont deux à deux distincts.
+\end{Def}
+\begin{prop}
+Il y a $\dfrac{n!}{(n-p)!}=n\times(n-1)\times\cdots\times (n-(p-1))$  listes sans répétition de $p$ éléments de $E$.
+\end{prop}
+\begin{proof} On le prouve avec un arbre ou en imaginant remplir des
+  cases: Il il a $n$ choix pour le 1\ier{} élément, et pour chacun de
+  ces choix il y a $n-1$ choix pour le 2\ieme{} élément \ldots \emph{etc}
+  puis $(n-(p-1))$ choix pour le $p$\ieme{} et dernier élément.
+\end{proof}
+\exemple Combien y a-t-il de tiercés possibles avec $10$ chevaux au
+départ? Ici $E$ est l'esemble des 10 chevaux. Un tiercé est une liste
+sans répétition de trois de ces chevaux. Il y a donc: $\dfrac{10!}{7!}=10\times 9\times 8=720$ tiercés
+possibles avec $10$ chevaux au départ.
+\subsection{Liste avec répétition de $p$ éléments parmi $n$}
+Le modèle est celui du tirage aléatoire dans l'urne $U$ de $p$
+jetons, {\bf avec remise}, et en notant l'ordre de sortie. Ici
+$p\in\N$. On peut donc avoir $p\geq n$.
+\begin{Def} Une \emph{liste avec répétition} de $p$ éléments de $E$ est une
+  liste où les $p$ éléments ne sont pas nécessairement deux à deux distincts.
+\end{Def}
+\og{} Avec répétition \fg{} est donc à comprendre au sens où \og il peut y
+avoir répétiton\fg{}. Remarquez que si $p>n$ il y a nécéssairement
+répétition. (C'est le principe des tiroirs: Si il y a plus de
+chaussettes que de tiroirs, il y a au moins un tiroir qui comporte au
+moins deux chaussettes.)
+\begin{prop}
+Il y a $n^p$ listes avec répétition de $p$ éléments de $E$.
+\end{prop}
+\exemple Combien y a-t-il de points de l'espace dont les coordonnées sont $-1$
+ou $1$? Ici $p=3$ et $n=2$ car $E=\{-1;\,1\}$. Il y a deux choix pour
+l'abscisse, deux pour l'ordonnée et deux aussi pour la cote. Soit
+$2^3=8$ points en tout. Ce sont les coordonnées des sommets d'un cube. 
+
+\section{Combinaisons}
+Maintenant on ne dénombrera plus des listes mais des sous ensembles de
+$E$, l'ordre des éléments ne comptera pas. $E$ désigne encore un ensemble à $n$ éléments ($n\in
+\N^*$) et $p$ désigne un entier compris entre $0$ et $n$.\\
+\noindent Le modèle est celui du tirage aléatoire dans l'urne $U$ de $p$
+jetons, {\bf sans remise}, et sans tenir compte de l'ordre de sortie.
+\subsection{Choisir $p$ éléments parmi $n$}
+\begin{Def} Une \emph{combinaison} de $p$ éléments de $E$ est un sous
+  ensemble (ou partie) de $E$ qui comporte $p$ éléments.
+\end{Def}
+\begin{Def} Le nombre de combinaisons de $p$ éléments d'un  ensemble à
+  $n$ éléments est noté:$\binom{n}{p}$ et se lit \og{}$p$ parmi $n$\fg{}. (En France
+  on le  notait autrefois $\mathrm{C}_n^p$)
+\end{Def}
+
+\exemple Si $E=\left\{a\,;\,b\,;\,c\right\}$, alors:
+  \begin{list}{$\bullet$}{}
+  \item $\binom{3}{3}=1$. Il y a une combinaison de  trois éléments de $E$, c'est $E$ lui même.
+  \item $\binom{3}{2}=3$. Il y a trois combinaisons de deux éléments de $E$:
+    $\left\{a\,;\,b\right\}$; $\left\{a\,;\,c\right\}$; $\left\{b\,;\,c\right\}$
+  \item $\binom{3}{1}=3$. Il y a trois combinaisons d'un élément de $E$:
+    $\left\{a\right\}$; $\left\{b\right\}$; $\left\{c\right\}$
+
+  \item $\binom{3}{0}=1$. Il y a une combinaison de 0 élément de $E$ c'est l'ensemble vide: $\emptyset$
+  \end{list}
+{\bf Calculette.} Pour calculer $\binom{5}{3}$ à la calculette, utiliser la fonction notée nCr (5 nCr 3 {\sc Exe}). Menu Proba (TI:
+Math/Prb, Casio: Optn/Prob). 
+\subsection{Nombre de combinaisons}
+
+\begin{prop}
+$\displaystyle \boxed{\binom{n}{p}=\frac{n!}{p!(n-p)!}$}
+\end{prop}
+\begin{proof} On sait qu'il y a  $\frac{n!}{(n-p)!}$ listes sans
+  répétition de $p$ éléments de $E$. Quand on a un ensemble à $p$
+  éléments il y a $p!$ permutations, soit $p!$ listes sans répétition
+  avec ces $p$ éléments. C'est pourquoi pour obtenir le nombre de
+  parties (\ie{} de combinaisons) de $E$ à $p$ éléments on doit
+  diviser $\frac{n!}{(n-p)!}$ par $p!$
+\end{proof}
+\exemple Combien y a-t-il de mains différentes au bridge? (On joue à
+quatre au bridge avec un jeu de 52 cartes que l'on distribue
+entièrement). On doit donc compter le nombre de façons de choisir 13
+cartes parmi 52, soit $\binom{52}{13}=\frac{52!}{13!(39)!}=1905040678800\approx 1,9.10^{12}$
+% Combien y a-t-il de façons de choisir 29
+% jours différents parmi 365?
+%  Quelle est la probabilité que deux élèves d'une classe de 29
+% soient nés le même jour? 
+%%-----------------------
+\end{document}

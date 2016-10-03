@@ -1,0 +1,53 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan_pan} 
+\usepackage[marginratio=1:1,textwidth=15cm,lines=59,marginparwidth=0pt,headheight=3cm]{geometry}
+
+\usepackage{calc}
+\newcommand{\inputexo}[2]{%1:Chapitre 2: n° de l'exo
+\input{/home/pan/Desktop/TeX_MiX/TS/Chapitres/#1/Exos/exo-7_#2/texte.tex}}
+\newcommand{\Mfig}[2]{\includegraphics[width=#2]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/#1}}% 1: Nom fichier, 2:largeur image
+%---------
+\begin{document}
+\newcommand{\CHAP}{Suites} % Changer ici le chapitre
+
+\activite{Raisonnement par récurrence}{\term}
+\cfoot{}  % si commenté donne page n° x/ nb_de_pages
+%\renewenvironment{exercice}{\exocursif}
+%\Titre{}
+%\lfoot{} % si commenté donne \Pdpmail
+\rfoot{Chap. \CHAP}  
+
+\exercice 
+On définit la suite 
+
+
+
+%\inputexo{\CHAP}{1}
+%\inputexo{\CHAP}{4}
+
+%\Mfig{NewCourbe.5}{6cm}
+%\inputexo{\CHAP}{}
+%\inputexo{\CHAP}{}
+%\inputexo{\CHAP}{}
+
+\end{document}
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/NewCourbe.10}
+%penser à Command/File pour creer un .ps pour Metapost
+\includegraphics{/home/pan/Desktop/TeX_MiX/Figures/Fig_num/FIGURE_(99)}}
+
+\inputexo{}{}
+Complexes
+Equa_diff
+Etude_de_fonction
+Exponentielle
+Geometrie_3D
+Integration
+Limites_continuite
+Logarithme
+Proba_Denombrement
+Suites
+
+
+

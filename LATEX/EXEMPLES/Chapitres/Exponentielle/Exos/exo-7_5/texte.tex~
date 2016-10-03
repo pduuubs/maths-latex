@@ -1,0 +1,28 @@
+\begin{exercice}
+\textsl{Juin 2006 Asie} \textbf{Ex. \no 4} \\
+\noindent\textbf{Partie A}
+
+\noindent On consid\`ere l'\'equation diff\'erentielle 
+\[(\text{E}) : \quad  y'+ y = \text{e}^{- x}.\]
+
+\begin{enumerate}
+\item  D\'emontrer que la fonction $u$ d\'efinie sur l'ensemble $\R$ des nombres r\'eels par $u(x) = x\text{e}^{- x}$ est une solution de (E).
+\item R\'esoudre l'\'equation diff\'erentielle (E$_{0}) : \quad  y'+ y = 0$.
+\item D\'emontrer qu'une fonction $v$, d\'efinie et d\'erivable sur $\R$, est solution de (E) si et seulement si $v - u$ est solution de (E$_{0}$).
+\item En d\'eduire toutes les solutions de (E).
+\item D\'eterminer la fonction $f_{2}$, solution de (E), qui prend la valeur $2$ en $0$.
+\end{enumerate}
+ 
+\medskip
+
+\noindent \textbf{Partie B}
+
+\noindent  $k$ \'etant un nombre r\'eel donn\'e, on note $f_{k}$ la fonction d\'efinie sur l'ensemble $\R$ par :
+\[f_{k}(x) = (x + k)\text{e}^{- x}.\]
+\noindent  On note $\mathcal{C}_{k}$ la courbe repr\'esentative de la fonction $f_{k}$ dans un rep\`ere orthonormal $\oij$.
+\begin{enumerate}
+\item  D\'eterminer les limites de $f_{k}$ en $-\infty$ et $+ \infty$.
+\item Calculer $f_{k}'(x)$ pour tout r\'eel $x$.
+\item En d\'eduire le tableau de variations de $f_{k}$.
+ 
+\end{exercice}

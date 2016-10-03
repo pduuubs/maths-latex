@@ -1,0 +1,146 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{pst-tree} 
+\begin{document}
+\fcours{Variables aléatoires-Lois discrètes}%{\term}
+\rhead{}
+\chead{}
+%%-----------------------
+\section{Définitions}
+Soit $\Omega$ un univers fini à $n$ éléments ($n\in\N$). On note
+$(\omega_i)_{1\leq i\leq n}$ les $n$ événements élémentaires qui
+constituent $\Omega$. Donc $\Omega=\{\omega_1;\,\omega_2;\ldots ;\omega_n\,\}$
+\begin{Def}
+  On appelle \emph{variable aléatoire} sur $\Omega$ toute fonction $X$ qui va de
+  $\Omega$ dans $\R$. Pour chaque $i=1,2,\ldots, n$ on note
+  $x_i=X(\omega_i)$.
+  \begin{eqnarray}
+    X:&&\Omega \to \R\notag\\
+       &&\omega_i \mapsto X(\omega_i)=x_i \notag
+  \end{eqnarray}
+\end{Def}
+L'ensemble des $x_i$ est donc l'ensemble des valeurs possibles pour
+$X$. 
+\exemple {\sl Une urne contient 3 jetons noirs et 2 jetons blancs. On tire
+sans remise deux jetons dans une urne. On note $X$ le nombre de jetons
+noirs tirés.}\\
+On peut choisir: $\Omega=\{ \{N;N \};\{N;B \};\{B;B \} \}$\\
+ Alors:
+$X\left(\{N;N \}\right)=2$ ; $X(\{N;B \})=1$ ; $X(\{B;B\})=0$. \\
+On peut aussi choisir: $\Omega'=\{ (N;N);(N;B);(B;N);(B;B) \}$. On
+aurait alors: \\
+ $X((N;B))=X((B;N))=1$\ldots
+
+\begin{Def} On appelle \emph{loi de probabilité} d'une variable aléatoire $X$
+  la donnée pour chaque valeur $x_i$ possible pour $X$ de
+  $p_i=P(X=x_i)$. On la présente en général sous forme de tableau.
+ 
+\end{Def}
+ Ce tableau est à rapprocher de ceux qu'on peut dresser en
+ statistiques lorsqu'on a une série de valeurs et leur fréquence
+ d'aparition.
+ \begin{prop}
+   La somme des $p_i=P(X=x_i)$ vaut 1.
+ \end{prop}
+Cela vient de ce que les \og$X=x_i$\fg{} forment une partition de $\Omega$.
+\exemple On reprend l'exemple précédent. On dresse un arbre. 
+
+%\psset{radius=6pt,dotsize=4pt,treefit=loose}
+%\begin{center}
+% \pstree[treemode=R]
+%     {\Tcircle{0}}
+%     {\pstree{\Tcircle{N}^{$\frac{3}{5}$}}%_{$\frac{1}{2}$}}
+%             {\pstree{\Tcircle[name=XU2,linestyle=dashed]{N}}%^{U}}
+                    %{\Tdot~{(N,N)}^{L}
+                     %\Tdot~{(4,1)}_{R}}
+%\pstree{\Tcircle[name=XD2,linestyle=dashed]{B}}
+                    %{\Tdot~{(3,0)}^{L}
+                     %\Tdot~{(1,1)}_{R}}}
+%     \pstree{\Tcircle{B}_{$\frac{1}{2}$}}%_{Y}}
+%            {\pstree{\Tcircle[name=YU2,linestyle=dashed]{N}}
+                    %{\Tdot~{(1,2)}^{L}
+                    % \Tdot~{(2,0)}_{R}}
+%             \pstree{\Tcircle[name=YD2,linestyle=dashed]{B}}
+                    %{\Tdot~{(3,3)}^{L}
+                    % \Tdot~{(0,1)}_{R}}}}
+%\end{center}
+\vspace{4cm}
+On trouve
+$P({N;N})=0,3$; $P({N;B})=0,6$; $P({B;B})=0,1$. D'où la loi de $X$.
+\[
+\begin{array}{|c|c|c|c|}
+\hline
+  x_i&0&1&2 \\ \hline
+P(X=x_i)&0,1&0,6&0,3 \\
+\hline
+\end{array}
+\]
+\begin{Def} On appelle \emph{fonction de répartition} d'une variable aléatoire $X$
+  la fonction $F$ définie sur $R$ par:  $F(x)=P(X\leq x)$. 
+\end{Def}
+Cette fonction est croissante sur $\R$, varie de 0 à 1 mais n'est
+\emph{a priori} pas continue. En effet dans notre cas présent, $X$ ne prend qu'un nombre
+fini de valeurs. En chacune de ces valeurs $x_i$, $F$ présente une
+discontinuité et même plus précisément un saut de hauteur $P(X=x_i)$. Entre deux
+valeurs consécutives, $F$ est constante.
+\exemple On reprend notre exemple. Pour $x<0$, $P(X<x)=0$ et
+$P(X=0)=0,1$ donc $P(X\leq 0)=0,1$. Soit $F(0)=0,1$ etc \ldots
+
+La connaissance de $F$ permet de rouver la loi de probabilité de
+$X$. Plus tard, on définira des variables aléatoires continues, par leur fonction de répartition.
+\section{Espérance mathématique, variance}
+
+\begin{Def} $E(X)=\sum \ldots$
+\end{Def}
+Linéarité 
+
+\begin{prop}
+  $ E(X+Y)=E(X)+E(Y)$
+ \end{prop}
+\begin{prop}
+$   E(aX+b)=aE(X)+b$
+ \end{prop}
+
+\begin{Def} $V(X)=E\left(\left(X-E(X)\right)^2\right)$
+\end{Def}
+\begin{prop}
+$V(X)=E(X^2)-E(X)^2$
+ \end{prop}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{pspicture}(0,-0.5)(5,4.5)
+\rput(2.2,4){{\it diagramme de Venn}}
+\rput(2.2,3){$A\cup B$}
+\psframe(0,0)(4.5,3.6)
+\pscircle[fillstyle=hlines](1.5,1.5){1}
+\pscircle[fillstyle=hlines](3,1.5){1}
+\rput(1.5,1.5){A}
+\rput(3,1.5){B}
+\end{pspicture}
+\begin{pspicture}(0,-0.5)(5,4.5)
+\rput(2.2,4){{\it diagramme de Venn}}
+\rput(2.2,3){$A\cap B$}
+\psclip{% bloc colorier
+\pscustom{% 1re partie colorier
+\pscircle(1.5,1.5){1}}
+\pscustom{% 2me partie
+\pscircle(3,1.5){1}}
+\psframe[fillstyle=hlines](0,0)(4,3)} % hachurer l'intersection des 2
+% parties qui se trouvent dans le frame indiquÃ©
+\endpsclip % fin bloc colorier (pas de } fermant)  %% style=hachured
+
+\psframe(0,0)(4.5,3.6)
+\pscircle(1.5,1.5){1}
+\pscircle(3,1.5){1}
+\rput(1.5,1.5){A}
+\rput(3,1.5){B}
+\end{pspicture}\\
+Bla bla
+%%-----------------------
+\end{document}

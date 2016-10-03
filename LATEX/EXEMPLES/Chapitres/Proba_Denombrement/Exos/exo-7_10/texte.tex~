@@ -1,0 +1,39 @@
+\begin{exercice}
+
+ {\bf Exercice de génétique probabiliste }\\
+%\hline
+\vspace{0.4cm}
+
+\noindent On suppose valable le modèle simplifié suivant:
+\begin{list}{$\bullet$}{}
+\item Il n'y a que des yeux bleus et marrons.
+\item Un seul gène code pour la couleur des yeux.
+\item Le caractère \og yeux bleus\fg{} est recessif.
+\end{list}
+Un peu de ma généalogie: Mon grand père maternel avait les yeux bleus,
+mais ma mère n'a pas les yeux bleus. Mon père a les yeux marrons, et
+on peut considérer vu ses ascendants et ses origines qu'il a deux
+allèles codant pour des yeux marrons. Quant à moi, j'ai les yeux
+marrons. 
+\begin{enumerate}
+\item Avec ces données, quelle est la probabilité que j'ai un allèle
+  codant pour des yeux bleus? On notera $p$ cette probabilité.
+\item On s'interesse maintenant à ma descendance. Ma femme a les yeux bleus.
+On notera:
+\begin{list}{$\bullet$}{}
+\item Bb pour un allèle codant pour les yeux bleus.
+\item BB pour deux allèles codant pour les yeux bleus.
+\item $M_1$: \og avoir un enfant aux yeux marrons\fg{}
+\item $M_2$: \og avoir deux enfants aux yeux marrons\fg{}
+\end{list}
+
+\item Calculer $P(M_1)$ en fonction de $p$.
+
+\item En fait, j'ai une fille aux yeux marrons. En déduire la
+  probabilité que j'ai un allèle  codant pour des yeux bleus.
+
+\item En fait, j'ai aussi une deuxième fille aux yeux marrons. En déduire la
+  probabilité que j'ai un allèle  codant pour des yeux bleus.
+\item Calculer alors la probabilité qu'un troisième enfant ait les yeux bleus.
+\end{enumerate}
+\end{exercice}

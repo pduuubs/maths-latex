@@ -1,0 +1,138 @@
+\begin{exercice}
+
+ {\bf Mastermind CORRIG\'E}
+%\newcommand{\I}{{\rm i}}
+\cfoot{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rule{1cm}{-1cm}
+\noindent
+\begin{minipage}{0.5\linewidth}
+{\bf Partie A}
+\begin{enumerate}
+\item Six possibilités pour chaque pion donne $6^4=1296$ codes possibles.
+\item Six possibilités pour le 1\ier pion, 5 pour le 2\ieme, 4 pour le
+  3\ieme, 3 pour le 4\ieme donne:\\ $6\times 5\times 4\times 3=360$ codes possibles.
+\end{enumerate} 
+\noindent
+{\bf Partie B - Stratégie 1}
+\begin{enumerate}
+\item Un code correct parmi 1296 puisqu'ici on s'autorise la
+  répétition des couleurs. Soit une probabilité de $\frac{1}{1296}$.
+\item On est dans un schéma de Bernoulli où on répète quatre fois la
+  même épreuve. Le succès est: \og{}obtenir la bonne couleur\fg{}. La
+  probabilité de ce succès est $\frac16$. $Y$~suit donc une loi
+  binômiale de paramètres $4$ et $\frac16$. Donc: 
+\end{enumerate}
+\end{minipage} \hfill 
+%\rule{0.02cm}{8.5cm}%\hfill%
+\framebox{%
+\begin{minipage}{0.45\linewidth}
+  \begin{tiny}
+Le Mastermind est un jeu où un joueur cache une combinaison de quatre
+pions de couleur en ligne (donc dans un ordre précis) qu'on nommera code. Il existe six couleurs. L'autre joueur
+qu'on appelera Maurice tente de deviner le code caché.\\
+\noindent
+{\bf Partie A}
+\begin{enumerate}
+\item Si on s'autorise à mettre des pions de couleurs identiques,
+  combien y a-t-il de codes possibles?
+\item On joue dans la suite une version simplifiée où le code ne comporte pas de
+  couleurs identiques. Combien y a-t-il de tels codes?
+\end{enumerate}
+On va étudier deux stratégies pour le premier coup. On dispose d'une
+urne comportant six jetons, un de chaque couleur.\\
+\noindent
+{\bf Partie B - Stratégie 1}
+On choisit un jeton de l'urne, on pose un pion de cette couleur sur
+la première case, on remet le jeton dans l'urne et on recommence ainsi
+pour chacun des trois pions restant. On note $Y$ le nombre de pions
+ayant la bonne couleur, à la bonne place.
+\begin{enumerate}
+\item Quelle est la probabilité de deviner directement le code?
+\item Calculer $P(Y=2)$ et $P(Y\geq 2)$. %Déterminer la loi de $Y$, calculer
+\end{enumerate}
+\noindent
+{\bf Partie C - Stratégie 2}
+On choisit simultanément quatre jetons de l'urne. On note $X$ le
+nombre de couleurs correctes. Ensuite on pose au hasard quatre pions ayant les
+couleurs tirées. 
+\begin{enumerate}
+\item Déterminer la loi, l'espérance et l'écart type de $X$.
+\item Justifier que si $X=4$ est réalisé, $Y=3$ est de probabilité nulle.
+\item Calculer: $P(Y=4)$,  $P(Y=3)$,  $P(Y=2)$, $P(Y\geq 2)$. 
+Comparer les deux stratégies.
+\end{enumerate}
+\end{tiny}
+\end{minipage}%
+}
+%\hrule
+% {\bf Partie A}
+% \begin{enumerate}
+% \item Six possibilités pour chaque pion donne $6^4=1296$ codes possibles.
+% \item Six possibilités pour le 1\ier pion, 5 pour le 2\ieme,\ldots
+%   donne: $6\times 5\times 4\times 3=360$ codes possibles.
+% \end{enumerate} 
+
+% \noindent
+% {\bf Partie B - Stratégie 1}
+
+% \begin{enumerate}
+% \item Un code correct parmi 1296 puisqu'ici on s'autorise la
+%   répétition des couleurs. Soit une probabilité de $\frac{1}{1296}$.
+% \item On est dans un schéma de Bernoulli où on répète quatre fois la
+%   même épreuve. Le succès est \og{}Obtenir la bonne couleur\fg{}. La
+%   probabilité de ce succès est $\frac16$. $Y$~suit donc une loi
+%   binômiale de paramètres $4$ et $\frac16$. Donc: 
+\vspace{0.3cm}
+\[P(Y=2)=\binom{4}{2}\left(\frac16\right)^2\left(\frac56\right)^2=\frac{6\times25}{6^4}=\frac{25}{216}\approx
+11,57\%\]
+ $P(Y\geq 2)=P(Y=2)+P(Y=3)+P(Y=4)$. On a déjà $P(Y=2)$ et $P(Y=4)$.
+\[ P(Y\geq 2)=\frac{25\times
+  6}{6^4}+\binom{4}{3}\left(\frac16\right)^3\left(\frac56\right)^1+\frac{1}{6^4}=\frac{150+20+1}{6^4}=\frac{171}{6^4}\approx 13,19\%\]%Déterminer la loi de $Y$, calculer
+%\end{enumerate}
+\noindent
+{\bf Partie C - Stratégie 2}
+
+\begin{enumerate}
+\item Il y a quatre \og bonnes \fg{} couleurs et deux \og
+  mauvaises\fg{}. En choisissant quatres jetons on peut donc avoir
+  les quatre bonnes, trois bonnes et une mauvaise ou deux bonnes et
+  les deux mauvaises. Les valeurs de $X$ sont donc: 4, 3 et 2. Il y a
+  $\binom{6}{4}=15$ ensembles de quatre couleurs parmi les six. Donc
+  $P(X=4)=\frac{1}{15}$. L'événement \og$X=3$\fg signifie qu'on
+  choisit trois bonnes couleurs parmi les quatre, $\binom{4}{3}$
+  possibilités et une mauvaise couleur parmi les deux, $\binom{2}{1}=2$
+  possibilités. On peut faire le même raisonnement pour $X=2$.  
+\[
+P(X=3)=\frac{\binom{4}{3}\times\binom{2}{1}}{\binom{6}{4}}=\frac{8}{15}\]
+On détermine
+$P(X=2)=1-P(X=3)-P(X=4)=1-\frac{8}{15}-\frac{1}{15}=\frac{6}{15}$.
+On a la loi de $X$.
+\[E(X)=2\times\frac{6}{15}+3\times\frac{8}{15}+4\times\frac{1}{15}=\frac{40}{15}=\frac{8}{3}\approx 2,67\]
+\[E(X^2)=2^2\times\frac{6}{15}+3^2\times\frac{8}{15}+4^2\times\frac{1}{15}=\frac{112}{15}\implies
+V(X)=E(X^2)-\left(E(X)\right)^2=\frac{16}{45}\]
+D'où l'écart type de $X$: $\sigma(X)=\sqrt{V(X)}=\sqrt{\frac{16}{45}}\approx 0,596$.
+\item $X=4$ est réalisé, on a les quatre bonnes couleurs, donc si on
+  en place trois correctement, la quatrième est automatiquement elle
+  aussi bien placée. Donc $P_{X=4}(Y=3)=0$.
+\item Pour réaliser $Y=4$, il faut avoir les quatre bonnes couleurs
+  (donc réaliser $X=4$) et les placer correctement. Il y a $4!=24$
+  permutations de ces quatre couleurs (car elles sont
+  distinctes). %Donc: 
+\[P(Y=4)=P(X=4)\times\frac{1}{4!}=\frac{1}{24\times
+  15}=\frac{1}{360}\]
+Par la formule des probabilités totales, on décompose $P(Y=2)$ selon les valeurs de~$X$:
+\[P(Y=2)=P(X=2)\times P_{X=2}(Y=2)+P(X=3)\times
+P_{X=3}(Y=2)+P(X=4)\times P_{X=4}(Y=2)\]
+\[P(Y=2)= \frac{6}{15}\times \frac{2}{4!}+
+\frac{8}{15}\times \frac{1}{4!}\binom{3}{2}+
+\frac{1}{15}\times \frac{1}{4!}\binom{4}{2}=\frac{7}{60}\approx 11,67\%\]
+D'où $P(Y\geq
+2)=P(Y=2)+P(X=3)P_{X=3}(Y=3)+P(Y=4)=\frac{7}{60}+\frac{8}{15}\frac{1}{4!}+\frac{1}{360}=\frac{17}{120}\approx
+14,17\%\ $ 
+Pour les deux stratégies, la probabilité d'avoir la moitié
+des pions bien placés ($P(Y=2)$)est très proche ($11,67\%$ contre $11,57\%$), mais pour avoir plus de la
+moitié ($Y\geq 2$), la stratégie 2 est sensiblement meilleure que la
+stratégie~1 ($14,17\%$ contre $13,19\%$).
+\end{enumerate}
+\end{exercice}

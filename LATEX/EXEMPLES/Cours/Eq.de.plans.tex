@@ -1,0 +1,115 @@
+\chapter{Géométrie spatiale: plans de l'espace.}
+\section{\'Equation cartésienne de plan}
+\newsavebox{\fmbox}
+\newenvironment{fmpage}[1]
+     {\begin{lrbox}{\fmbox}\begin{minipage}{#1}}
+     {\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}}
+
+% Utilisation :
+% \begin{fmpage}{3cm}
+%    Texte à encadrer dans une boîte ne dépassant pas 3
+%    centimètres de large.
+% \end{fmpage}
+%%%% fin exemple %%%%
+%\newcommand{\vn}{\vec{n}\,}% mis dans pan_pan.sty
+On se place dans un repère orthonormal $\oijk$ de l'espace.
+%\section{}
+%\label{sec:para1}
+Soit  $\Para$ le plan passant par $A(x_A;y_A;z_A)$ et de vecteur
+normal~$\vn(a;\,b;\,\,c)$. 
+\[ M\in\Para\iff\V{AM}\cdot\vn =0 \]
+D'où une équation cartésienne de $\Para$:
+$a(x-x_A)+b(y-y_A)+c(z-z_A)=0$.
+%\begin{prop}%\end{prop}
+%\\
+%\shadowbox{
+%\hrule
+%\vspace{0.1cm}
+\\
+\noindent
+\begin{fmpage}{14.8cm}
+{\it
+Tout plan admettant $\vn(a;\,b\,;\,c)$ comme vecteur normal a une
+équation cartésienne de la forme \[\boxed{ax+by+cz+d=0}\]
+Réciproquement toute équation cartésienne de la forme $ax+by+cz+d=0$
+ (avec $a$, $b$, $c$ non tous nuls) est celle d'un plan de vecteur
+ normal $\vn(a;\,b\,;\,c)$.
+}
+\end{fmpage}
+\vspace{0.2cm}
+%}
+%\end{prop}
+
+\noindent
+{\bf En pratique: } Pour trouver une équation d'un plan $\Para$ passant par un
+point $A(x_A;y_A;z_A)$, on cherche un
+vecteur normal (ce qui donne $a$, $b$ et $c$), puis on trouve $d$ en
+utilisant que: 
+\[A\in\Para\iff ax_A+by_A+cz_A+d=0\]
+\exercice
+Soit $\Para$ le plan d'équation: $x+2y-3z+7=0$
+\begin{enumerate}
+\item Donner un vecteur normal à $\Para$ ainsi qu'un point appartenant
+  à $\Para$.
+\item Déterminer l'équation du plan $\mathscr{Q}$ parallèle à $\Para$,
+  passant par $I(1;2;3)$.
+\item Soit $\Para'$ et $\mathscr{Q}'$ d'équations respectives : $5x-y+z+4=0\quad\et{}\quad-2x-4y+6z-1=0$
+Prouver que: $\Para\bot\Para'$ et $\Para\parallele\mathscr{Q}'$
+\item Déterminer une équation du plan médiateur du segment $[AB]$ où:
+  $A(0;-1;2)$ et $B(-2;3;4)$.
+\end{enumerate}
+\hrule
+\vspace{0.2cm}
+{\bf Distance d'un point à un plan.} La distance d'un point
+$A(x_A;y_A;z_A)$ au plan $\Para$
+d'équation cartésienne $ax+by+cz+d=0$ est notée $d(A;\Para)$. Elle
+vaut:
+\[\boxed{d(A;\Para)=\frac{|ax_A+by_A+cz_A+d|}{\sqrt{a^2+b^2+c^2} }}\]
+\begin{proof} $d(A;\Para)=AH$ où $H$ est le projeté orthogonal de $A$
+  sur $\Para$. Soit $B$ un point de~$\Para$. 
+  %\begin{enumerate}
+  %\item 
+Justifier que: $\V{AB}\cdot\vn=\V{AH}\cdot\vn$ puis que:
+    \[\boxed{AH=\frac{|\V{AB}\cdot\vn|}{\|\vn\|}}\]
+%
+%  \item 
+Enfin, justifier que: $d=-(ax_B+by_B+cz_B)$ puis conclure. \end{proof}
+%  \end{enumerate}\end{proof}
+% $H$ est le point de $\Para$ tel que $\V{AH}$ et $\vn$  sont colinéaires. 
+%
+% \begin{rem}%\end{rem}
+% Le dénominateur est la norme du vecteur normal $\vn(a;\,b;\,c)$ au
+% plan $\Para$.
+% \end{rem}
+\noindent
+{\bf Demi-espace.} Toute inéquation de la forme $ax+by+cz+d\geq 0$ ou
+$ax+by+cz+d\leq 0$ définit un demi-espace fermé de frontière le plan
+$\Para$ d'équation $ax+by+cz+d=0$.
+\exercice
+On considère le plan $\Para$ d'équation: $x-2y+3z-2=0$ et le point $A(1;3;1)$
+\begin{enumerate}
+\item Le point $A$ appartient-il à $\Para$? Calculer la distance $d(A;\Para)$.
+\item Le plan $\Para$ est la frontière de deux demi-espaces. Donner
+  une inéquation du demi-espace contenant le point~$A$.
+\end{enumerate}
+%\section{Angles et distances}
+%\subsection{distance entre deux points}
+%\subsection{distance d'un point à un plan}
+%{\bf Distance d'un point à un plan.} 
+%\begin{prop}%\end{prop}
+
+\hrule
+\vspace{0.2cm}
+\noindent
+{\bf Sphère.}
+%\section{\'Equation cartésienne de sphère}
+ La sphère $\mathscr{S}$ de centre $\Omega(x_\Omega;\,y_\Omega;\,z_\Omega)$ et de
+rayon $R$ ($R\in\R^+$) a pour équation cartésienne:\\
+$\circ$\hspace{\stretch{1}}
+$\boxed{(x-x_\Omega)^2+(y-y_\Omega)^2+(z-z_\Omega)^2=R^2}$ \hspace{\stretch{1}}$\circ$
+\begin{proof}
+$M\in\mathscr{S}\iff \Omega M=R\iff \Omega M^2=R^2 \iff \V{\Omega M}\cdot\V{\Omega M}=R^2$
+\end{proof}
+\noindent
+L'ensemble des points $M$ de l'espace tels que $\V{MA}\cdot\V{MB}=0$
+est la sphère de diamètre $[AB]$.

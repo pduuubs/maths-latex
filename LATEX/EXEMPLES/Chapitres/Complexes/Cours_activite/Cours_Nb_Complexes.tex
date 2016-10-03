@@ -1,0 +1,73 @@
+
+
+\documentclass[a4paper]{article}
+\usepackage[]{pan}
+
+\begin{document}
+\fcours{Nombres complexes}%{\term}
+
+%%-----------------------
+
+\section{Introduction-Premi\`eres d\'efinitions}
+\label{sec:para1}
+
+\subsection{Historique}
+\label{sec:histo}
+Cf. activit\'e. Bombelli en voulant r\'esoudre $x^3=15x+4$ a utilis\'e
+des racines de nombres reels negatifs. Comme $\sqrt{-1}$. On a peu a
+peu construit un ensemble plus grand que $\R$ qui contient un nombre
+imaginaire note i solution de l'equation $x^2=1$
+
+\subsection{Construction de $\C$}
+\label{sec:cons}
+\Def{On appelle ens. des nombres complexes note $\C$ l'ens des $a+ib$
+  o\`u $a$ et $b$ sont des reels et i une solution de $x^2=-1$}
+\\
+Remarque: $\C \in \R$. Si b=0 on dit que z est reel, si a=0, on dit
+que z est un imaginaire pur.\\
+Les regles de calcul de $\R$ se prolongent a
+$\C$ en tenant compte de $i^2=-1$
+On definit l'addition et la multiplication de deux complexes:
+\begin{itemize}
+\item Addition: z+z'=...(Elle est asso et commutative, l'element
+  neutre est 0. tout complexe admet un oppose.
+\item Multiplcation...idem, tout complexe admet un inverse ($zz'=1$)
+\end{itemize}
+
+\prop{$\C$ est stable par addition, multiplication, la multiplication
+  est distributive sur l'addition, tout complexe non nul admet un
+  inverse qui est un nombre complexe. On dit que $\C$ est un corps.}
+\prop{Tout complexe $z$ s'ecrit de maniere unique sous la forme
+  $a+ib=Re(z)+Im(z)$ appelee forme algebrique du complexe $z$}
+\proof{
+  \begin{itemize}
+  \item $a+ib=0 \iff a=0\ \et{}\ b=0$ Car sinon $i\in\R$
+  \item $z=z' \iff z-z'=0 \iff ...$\qed
+  \end{itemize}
+}
+Consequence: $z=z' \iff Re(z)=Re(z') \et{}\ Im(z)=Im(z')$
+\subsection{Conjugu\'e d'un nombre complexe}
+\label{sec:conj}
+\Def{On appelle conjugu\'e de $z$, not\'e $\bar{z}$}
+\prop{conjugu\'e de: $z+z'$, $zz'$, $z^n$, $\dfrac{z}{z'}$ }
+\prop{$z\in\R \iff z=\bar{z}$ et $z\in i\R \iff z+\bar{z}=0$}
+\proof{$z=\bar{z}\iff \cdots \iff 2ib=0\iff b=0 \iff z\in \R$}
+En particulier, $\bar{\lambda z}=\lambda \bar{z}$ pour $\lambda \in \R$\\
+
+\subsection{Module d'un nombre complexe}
+\prop{$z\bar{z}\in\R^+$ Et on a la formule $z\bar{z}=a^2+b^2$}
+\Def{On appelle module d'un nombre complexe, not\'e $|z|$ le r\'eel
+  positif: $\sqrt{z\bar{z}}$}\\
+
+Remarque, cette notation est la m\^eme que la valeur absolue d'un reel
+et c'est bien justifie, les deux coincident sur $\R$.
+\prop{module de $zz'$, $z/z'$}\\
+
+Remarque: $\C$ c'est cool, mais on a perdu qqchose: l'ordre, c'est le
+bordel, mais il reste le module...
+Formule de l'inverse: $1/z=\bar{z}/z\bar{z}$
+
+%\section{Representation g\'eom\'etrique}
+
+%%-----------------------
+\end{document}

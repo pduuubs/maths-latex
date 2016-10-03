@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage[]{panpan}
+
+\begin{document}
+\fcours{Limites de référence}
+\chead{} \rhead{}
+\lhead{\textsl{\'Eveil}}
+\rule{0cm}{0.5cm}\\
+\noindent 
+Le problème
+
+%\chead{ \begin{LARGE} \textbf{Formulaire sur les suites} \end{LARGE}}
+%\lhead{}
+%\rhead{}
+%\cfoot{}
+
+
+\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.2} %Para
+\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.6} %Cube
+\includegraphics[totalheight=6cm]{/home/pan/Desktop/TeX_MiX/Figures/Metapost_fig/Courbe.3} %Hyper
+
+
+
+\end{document}  
+
+\par \noindent
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{||c|p{5.45cm}|p{5.5cm}||}
+\hline 
+%Ligne 1
+  Suite $(u_n)$, $n\in \N$ & \hspace{\stretch{1}} Suite \textbf{arithmétique} de raison $r$  \hspace{\stretch{1}} & \hspace{\stretch{1}}  Suite \textbf{géométrique} de raison $q$ \hspace{\stretch{1}} \\\hline \hline
+%Ligne 2
+Définition & On passe de chaque terme au suivant en ajoutant le même réel $r$ \[u_{n+1}=u_n+r \] & On passe de chaque terme au suivant en multipliant par le même réel $q$ \[u_{n+1}=q\times u_n \]\\ \hline
+%Ligne 3
+ Terme général& \[u_n=u_0+nr\]\[u_n=u_1+(n-1)r\] & \[u_n=u_0\times q^n\]\[u_n=u_1\times q^{n-1}\] \\\hline
+%Ligne 4 
+Somme de termes & ``Nombre de termes''$\times$ ``Moyenne du premier et dernier terme'' 
+\[ \sum_{k=0}^{n}u_k=(n+1)\times \frac{u_0+u_n}{2}\]& ``Premier terme''$\times \dfrac{1-q^{\text{nb de termes}}}{1-q}$ \[ \sum_{k=0}^{n}u_k=u_0\times \frac{1-q^{n+1}}{1-q}\] 
+\\\hline
+
+ Cas particuliers& \[1+2+\cdots+n=\dfrac{n(n+1)}{2}\]& \[1+q+q^2+\cdots+q^n=\frac{1-q^{n+1}}{1-q}\]\\\hline
+\end{tabular}
+
+
+ 
+
+

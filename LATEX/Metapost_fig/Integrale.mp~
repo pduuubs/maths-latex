@@ -1,0 +1,102 @@
+prologues:=2;
+verbatimtex
+ %\documentclass{article}
+ %\usepackage[latin1]{inputenc}
+ %\usepackage[frenchb]{babel}
+ %\usepackage{amsmath}
+ %\begin{document}
+etex
+
+
+beginfig(1) 
+  u:=1cm; 
+  pair O,A,B,C,D,E,F,G;
+  path p[];
+   O:=(0,0);A:=(0,3u); B:=(2.7u,1.5u); C:=(5*u,0.8u);
+  D:=(xpart C,0); E:=(xpart B,0); F:=(xpart C,ypart B);
+  G:=(xpart B,ypart C);
+    %pickup pencircle scaled 0.5bp;
+  
+  %draw E--F;
+  %dotlabel.urt(btex $A$ etex, A);
+  %dotlabel.urt(btex $B$ etex, B);
+  %label.urt(btex $C$ etex, C);
+  %label.urt(btex $D$ etex, D);
+  %label.bot(btex $E$ etex, E);
+  %label.top(btex $F$ etex, F);
+  p0=O--A{dir -3}..B{dir -20}--E--cycle;
+  fill p0 withcolor 0.7white;
+  p1= E--G--C--D--cycle;
+  p2= E--B--F--D--cycle;
+  fill p2 withcolor 0.9white;
+  draw E--B--F--D dashed evenly;
+  N:=16;
+  pickup pencircle scaled 1.2bp;
+  for i=1 upto N:
+    draw (xpart B+0.5pt,i*(ypart C)/(N+1))--(xpart C-0.5pt,i*(ypart C)/(N+1)) dashed withdots scaled 0.4;
+    endfor;
+  pickup pencircle scaled 0.8bp;
+  draw O--A{dir -3}..B{dir -20}..C{dir -7}..(xpart C+0.4*u,ypart C-0.05*u);
+  drawarrow O--(xpart C+0.5*u,0);
+  drawarrow O--(0,ypart A+0.5*u);
+  pickup pencircle scaled 0.5bp;
+  draw C--(0,ypart C) dashed evenly scaled 0.5;
+  draw B--(0,ypart B) dashed evenly scaled 0.5;
+  label(btex $A(x)$ etex, (1.2u,2u));
+  label.bot (btex $x$ etex, (xpart B,0));
+   label.bot (btex $0$ etex, (0,0));
+  label.bot (btex $x+h$ etex, (xpart C,0));
+  label.lft (btex $f(x)$ etex, (0,ypart B));
+  label.lft (btex $f(x+h)$ etex, (0,ypart C));
+  label.urt(btex $C_f$ etex, (1.4u,2.3u));
+endfig;
+
+
+beginfig(2) 
+  u:=1cm; 
+  pair O,A,B,C,D,E,F,G,O[];
+  path p[];
+  O1:=(0,0);O:=(0.6u,0);A:=(0.6u,1.5u); B:=(3.3u,2u); C:=(5*u,1.3u);
+  D:=(xpart C,0); E:=(xpart B,0); %F:=(xpart C,ypart B);
+  G:=(xpart B,ypart C);
+    %pickup pencircle scaled 0.5bp;
+  
+  %draw E--F;
+  %label.urt(btex $A$ etex, A);
+  
+  %label.urt(btex $B$ etex, B);
+  %label.urt(btex $C$ etex, C);
+  %label.urt(btex $D$ etex, D);
+  %label.bot(btex $E$ etex, E);
+  %label.top(btex $F$ etex, F);
+  p0=O--A{dir -3}..B{dir -20}--E--cycle;
+  fill p0 withcolor 0.7white;
+
+
+   p3= E--B{dir -20}..C{dir -7}--D--cycle;
+   fill p3 withcolor 0.8white;
+   
+   draw E--B dashed evenly;
+   draw D--C dashed evenly;
+   draw (xpart A, 0)--A dashed evenly;
+ 
+  pickup pencircle scaled 1.2bp;
+ %COURBE
+  pickup pencircle scaled 0.8bp;
+  draw A{dir -3}..B{dir -20}..C{dir -7}..(xpart C+0.4*u,ypart C-0.05*u);
+  %AXES
+  drawarrow O1--(xpart C+0.5*u,0);
+  drawarrow O1--(0,ypart A+0.5*u);
+  pickup pencircle scaled 0.5bp;
+
+  label.bot (btex $c$ etex, (xpart B,0));
+   label.bot (btex $0$ etex, (0,0));
+   label.bot (btex $b$ etex, (xpart C,0));
+   label.bot (btex $a$ etex, (xpart O,0));
+ 
+   label.top(btex $C_f$ etex, C);
+
+   label.bot(btex $\displaystyle\int_a^c f(x) {\rm d}x$ etex, ((0.5*xpart A+0.5*xpart E),1.2u) );
+   label.bot(btex $\displaystyle\int_c^b f(x) {\rm d}x$ etex, ((0.5*xpart E+0.5*xpart D),1.2u) );
+endfig;
+end
